@@ -1,2 +1,2 @@
 # FinancialManager
-School Project
+School Capstone Project
