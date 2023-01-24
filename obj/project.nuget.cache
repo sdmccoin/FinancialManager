@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vcrFYV1Tc8gIfmTf6b3W9jrysW49Dc8fZU75ThtoZ2Dc0vzbSrXmRvgcS4GMrIYi7kCwdw8vJ5iGopHiWrXyGg==",
+  "dgSpecHash": "Bxo+TYLEWC81sgVZ4sU57NpYeJpXOd/B+RzKD/1GQFIaGubx1otcXkNVQdE14bJtxUR1Fdp1PBGYZ3tPtf3IZg==",
   "success": true,
-  "projectFilePath": "C:\\git\\src\\FinancialManager\\FinancialManager.csproj",
+  "projectFilePath": "C:\\git\\src\\FinancialManager\\FinancialManager\\FinancialManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.2\\microsoft.data.sqlite.core.7.0.2.nupkg.sha512",

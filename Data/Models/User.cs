@@ -11,4 +11,8 @@ public partial class User : EntityBase
     public string UserName { get; set; } = null!;
 
     public string Password { get; set; } = null!;
+
+    public virtual ICollection<Expense> Expenses { get; } = new List<Expense>();
+
+    public virtual Investment? Investment { get; set; }
 }

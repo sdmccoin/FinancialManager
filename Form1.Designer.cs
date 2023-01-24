@@ -31,6 +31,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtnIncome = new System.Windows.Forms.ToolStripButton();
             this.txBtnExpense = new System.Windows.Forms.ToolStripButton();
+            this.txBtnInvestments = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.txBtnInvestments = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +53,10 @@
             this.tsBtnIncome,
             this.txBtnExpense,
             this.txBtnInvestments});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 51);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(748, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1817, 51);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +66,7 @@
             this.tsBtnIncome.Image = global::FinancialManager.Properties.Resources.IncomeImage2;
             this.tsBtnIncome.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnIncome.Name = "tsBtnIncome";
-            this.tsBtnIncome.Size = new System.Drawing.Size(44, 44);
+            this.tsBtnIncome.Size = new System.Drawing.Size(58, 44);
             this.tsBtnIncome.Text = "Income";
             this.tsBtnIncome.Click += new System.EventHandler(this.tsBtnIncome_Click);
             // 
@@ -76,9 +76,19 @@
             this.txBtnExpense.Image = global::FinancialManager.Properties.Resources.Expense2;
             this.txBtnExpense.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.txBtnExpense.Name = "txBtnExpense";
-            this.txBtnExpense.Size = new System.Drawing.Size(44, 44);
+            this.txBtnExpense.Size = new System.Drawing.Size(58, 44);
             this.txBtnExpense.Text = "Expenses";
             this.txBtnExpense.Click += new System.EventHandler(this.txBtnExpense_Click);
+            // 
+            // txBtnInvestments
+            // 
+            this.txBtnInvestments.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.txBtnInvestments.Image = global::FinancialManager.Properties.Resources.Investments;
+            this.txBtnInvestments.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.txBtnInvestments.Name = "txBtnInvestments";
+            this.txBtnInvestments.Size = new System.Drawing.Size(58, 44);
+            this.txBtnInvestments.Text = "Investments";
+            this.txBtnInvestments.Click += new System.EventHandler(this.tsBtnInvestments_Click);
             // 
             // menuStrip1
             // 
@@ -88,8 +98,8 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(748, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1817, 51);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,7 +110,7 @@
             this.exitToolStripMenuItem1,
             this.exitToolStripMenuItem2});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -108,84 +118,74 @@
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(244, 54);
             this.exitToolStripMenuItem.Text = "New";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(293, 54);
             this.accountToolStripMenuItem.Text = "Account";
             this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(244, 54);
             this.exitToolStripMenuItem1.Text = "Edit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem2
             // 
             this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(244, 54);
             this.exitToolStripMenuItem2.Text = "Exit";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 48);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // pnlLeft
             // 
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 71);
-            this.pnlLeft.Margin = new System.Windows.Forms.Padding(1);
+            this.pnlLeft.Location = new System.Drawing.Point(0, 102);
+            this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(133, 479);
+            this.pnlLeft.Size = new System.Drawing.Size(323, 1401);
             this.pnlLeft.TabIndex = 4;
             // 
             // pnlBottom
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(133, 517);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(1);
+            this.pnlBottom.Location = new System.Drawing.Point(323, 1413);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(615, 33);
+            this.pnlBottom.Size = new System.Drawing.Size(1494, 90);
             this.pnlBottom.TabIndex = 5;
             // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlMain.Location = new System.Drawing.Point(133, 71);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(1);
+            this.pnlMain.Location = new System.Drawing.Point(323, 194);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(612, 444);
+            this.pnlMain.Size = new System.Drawing.Size(1486, 1214);
             this.pnlMain.TabIndex = 6;
-            // 
-            // txBtnInvestments
-            // 
-            this.txBtnInvestments.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.txBtnInvestments.Image = global::FinancialManager.Properties.Resources.Investments;
-            this.txBtnInvestments.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.txBtnInvestments.Name = "txBtnInvestments";
-            this.txBtnInvestments.Size = new System.Drawing.Size(44, 44);
-            this.txBtnInvestments.Text = "Investments";
-            this.txBtnInvestments.Click += new System.EventHandler(this.tsBtnInvestments_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 550);
+            this.ClientSize = new System.Drawing.Size(1817, 1503);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMain);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Financial Manager";

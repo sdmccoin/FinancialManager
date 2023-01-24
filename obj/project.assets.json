@@ -1374,11 +1374,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\src\\FinancialManager\\FinancialManager.csproj",
+      "projectUniqueName": "C:\\git\\src\\FinancialManager\\FinancialManager\\FinancialManager.csproj",
       "projectName": "FinancialManager",
-      "projectPath": "C:\\git\\src\\FinancialManager\\FinancialManager.csproj",
+      "projectPath": "C:\\git\\src\\FinancialManager\\FinancialManager\\FinancialManager.csproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\src\\FinancialManager\\obj\\",
+      "outputPath": "C:\\git\\src\\FinancialManager\\FinancialManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

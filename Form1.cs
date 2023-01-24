@@ -2,6 +2,7 @@ using FinancialManager.UI.Controls;
 using FinancialManager.Data.Repositories;
 using FinancialManager.Data.Models;
 using FinancialManager.Extensions;
+using FinancialManager.Utilities;
 
 namespace FinancialManager
 {  
@@ -14,11 +15,17 @@ namespace FinancialManager
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //UserRepository<User> userRepository = new UserRepository<User>();
-            //User user = userRepository.GetById(1);
+        {        
             Login login = new Login();
             login.ShowDialog();
+
+            // ensure only authenticated users can use the system
+            if (ActiveUser.id < 0)
+                this.Close();
+            else if (ActiveUser.id == 0)
+            {
+                DisableUI();
+            }
                 
         }
 
@@ -31,6 +38,37 @@ namespace FinancialManager
         private void ClearMain()
         {
             pnlMain.Controls.Clear();
+        }
+
+        private void DisableUI()
+        {
+            toolStrip1.Enabled = false;
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                DisableMenuItems(item);
+            }
+        }
+
+        /// <summary>
+        /// Recursive method used to disable all menu items
+        /// </summary>
+        /// <param name="item"></param>
+        private void DisableMenuItems(ToolStripMenuItem item)
+        {
+            // enable only account creation for admin account
+            if (item.Text == "File" || item.Text == "New" || item.Text == "Account")
+                item.Enabled = true;
+            else
+                item.Enabled = false;
+
+        
+            foreach (ToolStripItem i in item.DropDownItems)
+            {
+                if (i is ToolStripMenuItem)
+                {
+                    DisableMenuItems((ToolStripMenuItem)i);
+                }
+            }
         }
 
         private void txBtnExpense_Click(object sender, EventArgs e)
