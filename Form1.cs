@@ -95,6 +95,12 @@ namespace FinancialManager
             ClearMain();
             pnlMain.Controls.Add(new ucInvestmentForm());
         }
+
+        private void tsBtnReports_Click(object sender, EventArgs e)
+        {
+            ClearMain();
+            pnlMain.Controls.Add(new ucReportForm());
+        }
     }
     // admin - Pa$$word1 - DB
     // root - flannelman

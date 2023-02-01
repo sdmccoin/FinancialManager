@@ -42,6 +42,7 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.tsBtnReports = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnIncome,
             this.txBtnExpense,
-            this.txBtnInvestments});
+            this.txBtnInvestments,
+            this.tsBtnReports});
             this.toolStrip1.Location = new System.Drawing.Point(0, 51);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -110,7 +112,7 @@
             this.exitToolStripMenuItem1,
             this.exitToolStripMenuItem2});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -144,7 +146,7 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 48);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 45);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // pnlLeft
@@ -173,6 +175,16 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1486, 1214);
             this.pnlMain.TabIndex = 6;
+            // 
+            // tsBtnReports
+            // 
+            this.tsBtnReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnReports.Image = global::FinancialManager.Properties.Resources.reporting;
+            this.tsBtnReports.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnReports.Name = "tsBtnReports";
+            this.tsBtnReports.Size = new System.Drawing.Size(58, 44);
+            this.tsBtnReports.Text = "Reports";
+            this.tsBtnReports.Click += new System.EventHandler(this.tsBtnReports_Click);
             // 
             // Form1
             // 
@@ -215,5 +227,6 @@
         private ToolStripMenuItem exitToolStripMenuItem2;
         private ToolStripMenuItem accountToolStripMenuItem;
         private ToolStripButton txBtnInvestments;
+        private ToolStripButton tsBtnReports;
     }
 }

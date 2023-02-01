@@ -41,12 +41,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
             this.pnlGoogleMaps = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -184,23 +187,25 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
-            // btnAdd
+            // btnInsert
             // 
-            this.btnAdd.Location = new System.Drawing.Point(510, 741);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(182, 63);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnInsert.Location = new System.Drawing.Point(53, 753);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(132, 58);
+            this.btnInsert.TabIndex = 12;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dgvExpenses
             // 
             this.dgvExpenses.AllowUserToAddRows = false;
             this.dgvExpenses.AllowUserToDeleteRows = false;
+            this.dgvExpenses.AllowUserToResizeColumns = false;
             this.dgvExpenses.AllowUserToResizeRows = false;
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExpenses.ColumnHeadersVisible = false;
             this.dgvExpenses.Location = new System.Drawing.Point(53, 850);
             this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvExpenses.MultiSelect = false;
@@ -209,8 +214,10 @@
             this.dgvExpenses.RowHeadersVisible = false;
             this.dgvExpenses.RowHeadersWidth = 102;
             this.dgvExpenses.RowTemplate.Height = 49;
+            this.dgvExpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExpenses.Size = new System.Drawing.Size(1299, 344);
             this.dgvExpenses.TabIndex = 11;
+            this.dgvExpenses.SelectionChanged += new System.EventHandler(this.dgvExpenses_SelectionChanged);
             // 
             // pnlGoogleMaps
             // 
@@ -258,7 +265,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Controls.Add(this.dgvExpenses);
             this.panel1.Controls.Add(this.pnlGoogleMaps);
             this.panel1.Controls.Add(this.groupBox1);
@@ -268,7 +278,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1484, 1375);
             this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(491, 753);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 58);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(347, 753);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(126, 58);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(195, 753);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 58);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // ucExpenseForm
             // 
@@ -303,11 +342,14 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button btnAdd;
+        private Button btnInsert;
         private DataGridView dgvExpenses;
         private Panel pnlGoogleMaps;
         private Label label1;
         private GroupBox groupBox1;
         private Panel panel1;
+        private Button btnClear;
+        private Button btnDelete;
+        private Button btnUpdate;
     }
 }

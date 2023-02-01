@@ -1,10 +1,11 @@
-﻿using FinancialManager.Data.Repositories;
+﻿using FinancialManager.Data.Interfaces;
+using FinancialManager.Data.Repositories;
 using System;
 using System.Collections.Generic;
 
 namespace FinancialManager.Data.Models;
 
-public partial class Income : EntityBase
+public partial class Income : IEntity
 {
     public long Id { get; set; }
 
@@ -15,4 +16,8 @@ public partial class Income : EntityBase
     public string? Address { get; set; }
 
     public string Frequency { get; set; } = null!;
+
+    public long UserId { get; set; }
+
+    public virtual User User { get; set; } = null!;
 }

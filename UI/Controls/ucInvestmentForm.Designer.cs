@@ -31,7 +31,10 @@
             this.dgvInvestments = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,6 +63,7 @@
             // 
             this.dgvInvestments.AllowUserToAddRows = false;
             this.dgvInvestments.AllowUserToDeleteRows = false;
+            this.dgvInvestments.AllowUserToResizeColumns = false;
             this.dgvInvestments.AllowUserToResizeRows = false;
             this.dgvInvestments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvestments.Location = new System.Drawing.Point(53, 963);
@@ -70,8 +74,10 @@
             this.dgvInvestments.RowHeadersVisible = false;
             this.dgvInvestments.RowHeadersWidth = 102;
             this.dgvInvestments.RowTemplate.Height = 49;
+            this.dgvInvestments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvestments.Size = new System.Drawing.Size(1370, 344);
             this.dgvInvestments.TabIndex = 11;
+            this.dgvInvestments.SelectionChanged += new System.EventHandler(this.dgvInvestments_SelectionChanged);
             // 
             // label1
             // 
@@ -87,7 +93,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dgvInvestments);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,15 +106,46 @@
             this.panel1.Size = new System.Drawing.Size(1484, 1375);
             this.panel1.TabIndex = 12;
             // 
-            // btnAdd
+            // btnClear
             // 
-            this.btnAdd.Location = new System.Drawing.Point(905, 884);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(188, 58);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnClear.Location = new System.Drawing.Point(496, 884);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 58);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(352, 884);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(126, 58);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(200, 884);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 58);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(55, 884);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(123, 58);
+            this.btnInsert.TabIndex = 16;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // groupBox1
             // 
@@ -324,7 +364,6 @@
         private DataGridView dgvInvestments;
         private Label label1;
         private Panel panel1;
-        private Button btnAdd;
         private GroupBox groupBox1;
         private Label label2;
         private TextBox textBox1;
@@ -342,5 +381,9 @@
         private TextBox txtName;
         private Label label11;
         private Label label13;
+        private Button btnClear;
+        private Button btnDelete;
+        private Button btnUpdate;
+        private Button btnInsert;
     }
 }

@@ -10,21 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinancialManager.Data.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using FinancialManager.Utilities;
+using FinancialManager.UI.Controllers;
+using FinancialManager.UI;
+using FinancialManager.Interfaces;
+using FinancialManager.Data.Interfaces;
 
 namespace FinancialManager.UI.Controls
 {
     public partial class ucIncomeForm : UserControl
     {
+        IController controller;
+
         public ucIncomeForm()
         {
             InitializeComponent();
+
+            // user a factory pattern to get an income controller
+            controller = ControllerFactory.GetController("Income");
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+              
         private void ucIncomeForm_Load(object sender, EventArgs e)
         {
             LoadIncome();
@@ -33,74 +38,59 @@ namespace FinancialManager.UI.Controls
             Action clear = () => ClearForm();
             DelayMilliseconds(100, clear);    
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-     
-
+          
+      
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            var button = groupBox1.Controls.OfType<RadioButton>()
-                           .FirstOrDefault(n => n.Checked);
-            IncomeRepository<Income> incomeRepository = new IncomeRepository<Income>();
-            Income income = new Income() { 
-                Source = txtName.Text, 
-                Amount = txtAmount.Text,
-                Address = txtAddress1.Text,
-                Frequency = button.Text};
-
-            Income existingIncome = incomeRepository.GetByEntity(income);
-
-            // make sure the entry doesn't already exist
-            if (existingIncome == null)
+            try
             {
-                incomeRepository.Create(income);
-                LoadIncome();
+                Income income = new Income()
+                {
+                    Source = txtName.Text,
+                    Amount = txtAmount.Text,
+                    Address = txtAddress1.Text,
+                    Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
+                    UserId = ActiveUser.id
+                };
+
+                // make sure the entry doesn't already exist
+                if (controller.Exists(income) == null)
+                {
+                    controller.Add(income);
+                    LoadIncome();
+
+                    MessageBox.Show("Income Added", "Success");
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Unable to Add Income", "Failed", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void LoadIncome()
         {
-            IncomeRepository<Income> incomeRepository = new IncomeRepository<Income>();
-            IEnumerable<Income> incomes = incomeRepository.GetAllEntities();
-           // dgvIncome.Rows.Clear();
             dgvIncome.AutoSize = true;
-            dgvIncome.DataSource = incomes;
+            dgvIncome.DataSource = controller.GetAll(ActiveUser.id);//.GetIncome;
         }
 
         private void dgvIncome_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvIncome.SelectedRows)
-            {
-                LoadRowSelection(row);
-            }
+            LoadRowSelection(Utilities.GetSelectedRow(dgvIncome));           
         }
 
         private void LoadRowSelection(DataGridViewRow row)
         {
-            txtName.Text = row.Cells[1].Value.ToString();
-            txtAddress1.Text = row.Cells[3].Value.ToString();
-            txtAmount.Text = row.Cells[2].Value.ToString();
-
-            foreach (Control ctrl in groupBox1.Controls)
+            if (row != null)
             {
-                if (ctrl is RadioButton)
-                {
-                    if (row.Cells[4].Value.ToString() == ((RadioButton)ctrl).Text)
-                    {
-                        ((RadioButton)ctrl).Checked = true;
-                    }
-                }
-            }
+                txtName.Text = row.Cells[1].Value.ToString();
+                txtAddress1.Text = row.Cells[3].Value.ToString();
+                txtAmount.Text = row.Cells[2].Value.ToString();
 
+                Utilities.SelectRadioButton(groupBox1, row.Cells[4].Value.ToString());
+            }
         }
 
         private void ClearForm()
@@ -109,36 +99,33 @@ namespace FinancialManager.UI.Controls
             txtAmount.Text = "";
             txtAddress1.Text = "";
             txtAddress2.Text = "";
-            
-            foreach(Control ctrl in groupBox1.Controls)
-            {
-                if (ctrl is RadioButton)
-                    ((RadioButton)ctrl).Checked = false;
-            }
+
+            Utilities.UnSelectAllRadioButtons(groupBox1);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var button = groupBox1.Controls.OfType<RadioButton>()
-                          .FirstOrDefault(n => n.Checked);
-            IncomeRepository<Income> incomeRepository = new IncomeRepository<Income>();
-            Income income = new Income()
-            {
-                Source = txtName.Text,
-                Amount = txtAmount.Text,
-                Address = txtAddress1.Text,
-                Frequency = button.Text
-            };
-
             try
             {
-                incomeRepository.Update(income);
+                Income income = new Income()
+                {
+                    Source = txtName.Text,
+                    Amount = txtAmount.Text,
+                    Address = txtAddress1.Text,
+                    Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
+                    Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome,0).Value.ToString()),
+                    UserId = ActiveUser.id
+                };
+
+                controller.Update(income);
+                LoadIncome();
+
+                MessageBox.Show("Income Updated", "Success");
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show("Unable to Update Income", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            LoadIncome();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -149,27 +136,32 @@ namespace FinancialManager.UI.Controls
         private async void DelayMilliseconds(int milliseconds, Action method)
         {            
             await Task.Delay(milliseconds);
-            method.Invoke();
-            //ClearForm();            
+            method.Invoke();         
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-            var button = groupBox1.Controls.OfType<RadioButton>()
-                          .FirstOrDefault(n => n.Checked);
-            IncomeRepository<Income> incomeRepository = new IncomeRepository<Income>();
-            Income income = new Income()
+        {            
+            try
             {
-                Source = txtName.Text,
-                Amount = txtAmount.Text,
-                Address = txtAddress1.Text,
-                Frequency = button.Text,
-                Id = long.Parse(dgvIncome.SelectedRows[0].Cells[0].Value.ToString())
-                
-            };
+                Income income = new Income()
+                {
+                    Source = txtName.Text,
+                    Amount = txtAmount.Text,
+                    Address = txtAddress1.Text,
+                    Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
+                    Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString())
+                };
 
-            incomeRepository.Delete(income);
-            LoadIncome();
+                controller.Delete(income);
+                LoadIncome();
+                MessageBox.Show("Income Deleted", "Success");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Unable to Delete Income", "Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }

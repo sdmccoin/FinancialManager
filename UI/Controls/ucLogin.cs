@@ -12,18 +12,18 @@ namespace FinancialManager.UI.Controls
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            UserRepository<User> userRepository = new UserRepository<User>();
-            User user = userRepository.GetByEntity(
-                new User() { UserName = txtUserName.Text, Password = txtPassword.Text});
+            //UserRepository<User> userRepository = new UserRepository<User>();
+            //User user = userRepository.GetByEntity(
+            //    new User() { UserName = txtUserName.Text, Password = txtPassword.Text});
 
-            if (user != null)
-            {
-                Console.WriteLine("continue");
-            }
-            else
-            {
-                Console.WriteLine("Failed to Login");
-            }
+            //if (user != null)
+            //{
+            //    Console.WriteLine("continue");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to Login");
+            //}
         }
     }
 }

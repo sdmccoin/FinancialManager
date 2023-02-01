@@ -9,7 +9,7 @@ using System.Data.SQLite;
 
 namespace FinancialManager.Data.Repositories
 {
-    public class UserRepository<T> : IRepository<User> where T : EntityBase
+    public class UserRepository<T> : IRepository<User>//<User> where T : EntityBase
     {
         public void Create(User entity)
         {
@@ -63,6 +63,41 @@ namespace FinancialManager.Data.Repositories
                 context.Users.Update(entity);
                 context.SaveChanges();
             }
+        }
+
+        public T1 GetById<T1>(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T1 GetByEntity<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T1> GetAllEntities<T1>(long userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<User> GetAllEntities(long userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

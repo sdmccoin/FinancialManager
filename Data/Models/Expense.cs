@@ -1,10 +1,11 @@
-﻿using FinancialManager.Data.Repositories;
+﻿using FinancialManager.Data.Interfaces;
+using FinancialManager.Data.Repositories;
 using System;
 using System.Collections.Generic;
 
 namespace FinancialManager.Data.Models;
 
-public partial class Expense : EntityBase
+public partial class Expense : IEntity
 {
     public long Id { get; set; }
 

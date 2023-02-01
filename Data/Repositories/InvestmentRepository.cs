@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    internal class InvestmentRepository<T> : IRepository<Investment> where T : EntityBase
+    public class InvestmentRepository<T> : IRepository<Investment>//<Investment> where T : EntityBase
     {
         public void Create(Investment entity)
         {
@@ -54,13 +54,13 @@ namespace FinancialManager.Data.Repositories
             return investment;
         }
 
-        public IEnumerable<Investment> GetAllEntities()
+        public IEnumerable<Investment> GetAllEntities(long userId)
         {
             IEnumerable<Investment> entities = new List<Investment>();
 
             using (var context = new FinancialManagerContext())
             {
-                entities = context.Investments.ToList<Investment>();
+                entities = context.Investments.Where(u => u.UserId == userId).ToList<Investment>();
             }
 
             return entities;
@@ -73,6 +73,36 @@ namespace FinancialManager.Data.Repositories
                 context.Investments.Update(entity);
                 context.SaveChanges();
             }
+        }
+
+        public T1 GetById<T1>(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T1 GetByEntity<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T1> GetAllEntities<T1>(long userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete<T1>(T1 entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

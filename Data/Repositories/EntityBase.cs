@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    public abstract class EntityBase
-    {
-        public int Id { get; set; }
-    }
+    //public abstract class EntityBase
+    //{
+    //    public int Id { get; set; }
+    //}
 }

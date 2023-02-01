@@ -51,19 +51,27 @@ public partial class FinancialManagerContext : DbContext
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
             entity.Property(e => e.Frequency).HasColumnType("TEXT (20)");
             entity.Property(e => e.Source).HasColumnType("TEXT (100)");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Incomes)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
         modelBuilder.Entity<Investment>(entity =>
         {
             entity.HasIndex(e => e.Id, "IX_Investments_Id").IsUnique();
 
-            entity.HasIndex(e => e.UserId, "IX_Investments_UserId").IsUnique();
-
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
+            entity.Property(e => e.Frequency)
+                .HasDefaultValueSql("Weekly")
+                .HasColumnType("TEXT (25)");
             entity.Property(e => e.Source).HasColumnType("TEXT (150)");
+            entity.Property(e => e.Type)
+                .HasDefaultValueSql("Stock")
+                .HasColumnType("TEXT (25)");
 
-            entity.HasOne(d => d.User).WithOne(p => p.Investment)
-                .HasForeignKey<Investment>(d => d.UserId)
+            entity.HasOne(d => d.User).WithMany(p => p.Investments)
+                .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
         });
 

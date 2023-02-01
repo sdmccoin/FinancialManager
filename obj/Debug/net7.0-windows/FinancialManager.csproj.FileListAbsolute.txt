@@ -135,6 +135,7 @@ C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialM
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucIncomeForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucInvestmentForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucLogin.resources
+C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucReportForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.csproj.GenerateResource.cache
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.GeneratedMSBuildEditorConfig.editorconfig
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.AssemblyInfoInputs.cache
