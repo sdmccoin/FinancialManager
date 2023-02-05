@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Data Source=C:\git\src\FinancialManager\DataSources\sqlite\FinancialManager.db" Microsoft.EntityFrameworkCore.Sqlite -OutputDir Data\Models -force
