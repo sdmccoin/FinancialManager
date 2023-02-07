@@ -80,7 +80,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 93);
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 1282);
+            this.panel1.Size = new System.Drawing.Size(1484, 1339);
             this.panel1.TabIndex = 10;
             // 
             // btnClear
@@ -131,8 +131,7 @@
             this.dgvIncome.AllowUserToResizeColumns = false;
             this.dgvIncome.AllowUserToResizeRows = false;
             this.dgvIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncome.ColumnHeadersVisible = false;
-            this.dgvIncome.Location = new System.Drawing.Point(53, 850);
+            this.dgvIncome.Location = new System.Drawing.Point(53, 804);
             this.dgvIncome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvIncome.MultiSelect = false;
             this.dgvIncome.Name = "dgvIncome";
@@ -140,9 +139,11 @@
             this.dgvIncome.RowHeadersVisible = false;
             this.dgvIncome.RowHeadersWidth = 102;
             this.dgvIncome.RowTemplate.Height = 49;
+            this.dgvIncome.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIncome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncome.Size = new System.Drawing.Size(1299, 344);
+            this.dgvIncome.Size = new System.Drawing.Size(1299, 507);
             this.dgvIncome.TabIndex = 11;
+            this.dgvIncome.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIncome_CellDoubleClick);
             this.dgvIncome.SelectionChanged += new System.EventHandler(this.dgvIncome_SelectionChanged);
             // 
             // pnlGoogleMaps
@@ -192,6 +193,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(135, 47);
             this.txtAmount.TabIndex = 11;
+            this.txtAmount.MouseLeave += new System.EventHandler(this.txtAmount_MouseLeave);
             // 
             // txtAddress1
             // 
@@ -317,7 +319,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ucIncomeForm";
-            this.Size = new System.Drawing.Size(1484, 1375);
+            this.Size = new System.Drawing.Size(1484, 1432);
             this.Load += new System.EventHandler(this.ucIncomeForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncome)).EndInit();

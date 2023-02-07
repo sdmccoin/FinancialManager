@@ -1,5 +1,4 @@
 ﻿using FinancialManager.Data.Interfaces;
-using FinancialManager.Data.Repositories;
 using System;
 using System.Collections.Generic;
 
@@ -18,4 +17,8 @@ public partial class User : IEntity
     public virtual ICollection<Income> Incomes { get; } = new List<Income>();
 
     public virtual ICollection<Investment> Investments { get; } = new List<Investment>();
+
+    public virtual ICollection<Notification> Notifications { get; } = new List<Notification>();
+
+    public virtual ICollection<Reminder> Reminders { get; } = new List<Reminder>();
 }

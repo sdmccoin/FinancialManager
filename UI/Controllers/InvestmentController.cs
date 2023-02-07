@@ -20,9 +20,9 @@ namespace FinancialManager.UI.Controllers
             investmentRepository = new InvestmentRepository<Investment>();
         }
 
-        public void Add(IEntity entity)
+        public IEntity Add(IEntity entity)
         {
-            investmentRepository.Create(ConvertEntity(entity));
+            return investmentRepository.Create(ConvertEntity(entity));
         }
 
         public void Delete(IEntity entity)

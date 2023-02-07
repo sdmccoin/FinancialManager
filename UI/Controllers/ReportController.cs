@@ -21,7 +21,7 @@ namespace FinancialManager.UI.Controllers
             reportingService = new ReportingService();
         }
 
-        public void Add(IEntity entity)
+        public IEntity Add(IEntity entity)
         {
             throw new NotImplementedException();
         }

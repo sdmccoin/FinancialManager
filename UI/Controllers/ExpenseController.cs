@@ -20,9 +20,9 @@ namespace FinancialManager.UI.Controllers
             expenseRepository = new ExpenseRepository<Expense>();
         }
                 
-        public void Add(IEntity entity)
+        public IEntity Add(IEntity entity)
         {
-            expenseRepository.Create(ConvertEntity(entity));
+            return expenseRepository.Create(ConvertEntity(entity));
         }
 
         public void Delete(IEntity entity)

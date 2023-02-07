@@ -6,18 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace FinancialManager.Data.Repositories
 {
     public class UserRepository<T> : IRepository<User>//<User> where T : EntityBase
     {
-        public void Create(User entity)
+        public User Create(User entity)
         {
+            EntityEntry<User> entityAdded = null;
             using (var context = new FinancialManagerContext())
             {
-                context.Users.Add(entity);
+                entityAdded = context.Users.Add(entity);
                 context.SaveChanges();
+
             }
+            return entityAdded.Entity;
         }
 
         public void Delete(User entity)

@@ -10,7 +10,7 @@ namespace FinancialManager.Interfaces
 {
     public interface IController
     {
-        void Add(IEntity entity);
+        IEntity Add(IEntity entity);
         void Delete(IEntity entity);
         void Update(IEntity entity);
         IEntity Exists(IEntity entity);

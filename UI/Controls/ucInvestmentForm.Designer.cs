@@ -77,6 +77,7 @@
             this.dgvInvestments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvestments.Size = new System.Drawing.Size(1370, 344);
             this.dgvInvestments.TabIndex = 11;
+            this.dgvInvestments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvestments_CellDoubleClick);
             this.dgvInvestments.SelectionChanged += new System.EventHandler(this.dgvInvestments_SelectionChanged);
             // 
             // label1

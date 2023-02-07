@@ -10,27 +10,23 @@ namespace FinancialManager.UI.Controllers
 {
     public static class ControllerFactory 
     {
+        // replace with a design pattern here
         public static IController GetController(string controller)
         {
-            switch (controller)
+            return controller switch
             {
-                case "Income":
-                    return new IncomeController();
-                    break;
-                case "Expense":
-                    return new ExpenseController();
-                    break;
-                case "Investment":
-                    return new InvestmentController();
-                    break;
-                case "Reports":
-                    return new ReportController();
-                    break;
-                default:
-                    return null;
-                    break;
-
-            }
+                "Income" => new IncomeController(),
+                "Expense" => new ExpenseController(),
+                "Investment" => new InvestmentController(),
+                "Reports" => new ReportController(),
+                "User" => new UserController(),
+                "Reminder" => new ReminderController(),
+                "Notification" => new NotificationController(),
+                "IncomeReminder" => new IncomeReminderController(),
+                "IncomeNotification" => new IncomeNotificationController(),
+                "ExpenseReminder" => new ExpenseReminderController(),
+                "InvestmentReminder" => new InvestmentReminderController()
+            };
         }
     }
 }

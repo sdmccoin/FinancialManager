@@ -50,5 +50,30 @@ namespace FinancialManager.UI
             return dgv.SelectedRows[0].Cells[cellIndex];
         }
         #endregion
+
+        #region General
+        public static bool IsNumeric(string value)
+        {
+            return int.TryParse(value, out _);
+        }
+        public static bool IsDecimal(string value)
+        {
+            return decimal.TryParse(value, out _);
+        }
+
+        public static bool IsValidCurrency(Control ctrl)
+        {
+            bool isValid = false;
+            if (IsNumeric(ctrl.Text) || IsDecimal(ctrl.Text))            
+                isValid = true;
+
+            return isValid;
+            
+        }
+        public static bool IsEmpty(Control ctrl)
+        {
+            return ctrl.Text == String.Empty;
+        }
+        #endregion
     }
 }

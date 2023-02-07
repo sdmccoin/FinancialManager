@@ -52,9 +52,9 @@ namespace FinancialManager.UI.Controllers
         //    throw new NotImplementedException();
         //}
 
-        public void Add(IEntity entity)
+        public IEntity Add(IEntity entity)
         {
-            incomeRepository.Create(ConvertEntity(entity));
+            return incomeRepository.Create(ConvertEntity(entity));
         }
 
         public void Delete(IEntity entity)

@@ -1,5 +1,4 @@
 ﻿using FinancialManager.Data.Interfaces;
-using FinancialManager.Data.Repositories;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +17,8 @@ public partial class Expense : IEntity
     public string Frequency { get; set; } = null!;
 
     public long UserId { get; set; }
+
+    public virtual ICollection<ExpenseReminder> ExpenseReminders { get; } = new List<ExpenseReminder>();
 
     public virtual User User { get; set; } = null!;
 }

@@ -1,0 +1,57 @@
+﻿using FinancialManager.Data.Interfaces;
+using FinancialManager.Data.Models;
+using FinancialManager.Data.Repositories;
+using FinancialManager.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FinancialManager.UI.Controllers
+{
+    internal class IncomeReminderController : IController
+    {
+        IRepository<IncomeReminder> incomeReminderRepository;
+
+        public IncomeReminderController()
+        {
+            incomeReminderRepository = new IncomeReminderRepository();
+        }
+
+        public IEntity Add(IEntity entity)
+        {
+            return incomeReminderRepository.Create(ConvertEntity(entity));
+        }
+
+        public void Delete(IEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEntity Exists(IEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IEntity> GetAll(long userId)
+        {
+            return incomeReminderRepository.GetAllEntities(userId);
+        }
+
+        public IEntity GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(IEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        private IncomeReminder ConvertEntity(IEntity entity)
+        {
+            return (IncomeReminder)Convert.ChangeType(entity, typeof(IncomeReminder));
+        }
+    }
+}

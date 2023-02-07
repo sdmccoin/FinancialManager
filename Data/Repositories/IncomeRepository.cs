@@ -1,5 +1,6 @@
 ﻿using FinancialManager.Data.Interfaces;
 using FinancialManager.Data.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,16 @@ namespace FinancialManager.Data.Repositories
 {
     public class IncomeRepository : IRepository<Income>// where T : IEntity
     {
-        public void Create(Income entity)
+        public Income Create(Income entity)
         {
+            EntityEntry<Income> entityAdded = null;
             using (var context = new FinancialManagerContext())
             {
-                context.Incomes.Add(entity);
+                entityAdded = context.Incomes.Add(entity);
                 context.SaveChanges();
+                
             }
+            return entityAdded.Entity;
         }
 
         public void Delete(Income entity)

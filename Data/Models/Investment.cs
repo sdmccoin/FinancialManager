@@ -1,5 +1,4 @@
 ﻿using FinancialManager.Data.Interfaces;
-using FinancialManager.Data.Repositories;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +17,8 @@ public partial class Investment : IEntity
     public string Frequency { get; set; } = null!;
 
     public string Type { get; set; } = null!;
+
+    public virtual InvestmentReminder? InvestmentReminder { get; set; }
 
     public virtual User User { get; set; } = null!;
 }

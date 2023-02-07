@@ -19,19 +19,36 @@ namespace FinancialManager.UI.Controls
     public partial class ucInvestmentForm : UserControl
     {
         IController controller;
+        IController investmentReminderController;
+        IController investmentNotificationController;
+
+        DataTable investmentTable;
 
         public ucInvestmentForm()
         {
             InitializeComponent();
+            InitializeInvestmentTable();
 
             // use a factory pattern to get an income controller
             controller = ControllerFactory.GetController("Investment");
         }
 
+        private void InitializeInvestmentTable()
+        {
+            investmentTable = new DataTable();
+            investmentTable.Columns.Add("Id", typeof(int));
+            investmentTable.Columns.Add("Name", typeof(string));
+            investmentTable.Columns.Add("Amount", typeof(string));
+            investmentTable.Columns.Add("Frequency", typeof(string));
+            investmentTable.Columns.Add("Type", typeof(string));
+            investmentTable.Columns.Add("Reminder", typeof(Image));
+            investmentTable.Columns.Add("Notification", typeof(Image));
+        }
+
         #region UI Event(s)
         private void ucInvestmentForm_Load(object sender, EventArgs e)
         {
-            LoadInvestments();
+            LoadInvestmentsGrid();            
 
             // delegate to clear the form after .1 seconds 
             Action clear = () => ClearForm();
@@ -44,90 +61,173 @@ namespace FinancialManager.UI.Controls
         #endregion
 
         #region CRUD Operations
-        private void LoadInvestments()
+        private void LoadInvestmentsGrid()
         {
-            dgvInvestments.AutoSize = true;
-            dgvInvestments.DataSource = controller.GetAll(ActiveUser.id);
+            // initialize controllers
+            investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
+            //investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
+
+            // get all the users income and associated reminders and notifications
+            List<Investment> investments = (List<Investment>)controller.GetAll(ActiveUser.id);
+            List<InvestmentReminder> reminders = (List<InvestmentReminder>)investmentReminderController.GetAll(ActiveUser.id);
+           // List<InvestmentNotification> notifications = (List<InvestmentNotification>)investmentNotificationController.GetAll(ActiveUser.id);
+
+            Bitmap reminderImage;
+            Bitmap notificationImage;
+            foreach (Investment investment in investments)
+            {
+                reminderImage = null;
+                notificationImage = null;
+
+                // load reminders
+                foreach (InvestmentReminder reminder in reminders)
+                {
+                    // determine whether to show reminder image
+                    if (reminder.InvestmentId == investment.Id)
+                    {
+                        reminderImage = new Bitmap(SystemIcons.Exclamation.ToBitmap(), 25, 25);
+                        break;
+                    }
+                }
+
+                // load notifications
+                //foreach (ExpenseNotification notification in notifications)
+                //{
+                //    if (notification.ExpenseId == income.Id)
+                //    {
+                //        notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 25, 25);
+                //        break;
+                //    }
+                //}
+
+                // set a "blank" image if there is no notification or reminder
+                if (reminderImage == null)
+                    reminderImage = new Bitmap(SystemIcons.Exclamation.ToBitmap(), 1, 1);
+                if (notificationImage == null)
+                    notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
+
+                investmentTable.Rows.Add(investment.Id, investment.Source, investment.Amount,
+                        investment.Frequency, investment.Type, reminderImage, notificationImage);
+
+                dgvInvestments.AutoSize = true;
+                dgvInvestments.DataSource = investmentTable;
+                this.dgvInvestments.Columns["Id"].Visible = false;
+                dgvInvestments.Columns[1].Width = 200;
+                dgvInvestments.Columns[2].Width = 450;
+                dgvInvestments.Columns[3].Width = 150;
+                dgvInvestments.Columns[4].Width = 200;
+                dgvInvestments.Columns[5].Width = 150;
+                dgvInvestments.Columns[6].Width = 150;
+                dgvInvestments.AutoSize = true;
+            }
         }
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            try
+            string errorMessage = "";
+            if (FormIsValid(ref errorMessage))
             {
-                Investment investment = new Investment()
+                try
                 {
-                    Source = txtName.Text,
-                    Amount = txtAmount.Text,
-                    UserId = ActiveUser.id,
-                    Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                    Type = Utilities.GetSelectedRadioButton(gbxType).Text
-                };
+                    Investment investment = new Investment()
+                    {
+                        Source = txtName.Text,
+                        Amount = txtAmount.Text,
+                        UserId = ActiveUser.id,
+                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
+                        Type = Utilities.GetSelectedRadioButton(gbxType).Text
+                    };
 
-                // make sure the entry doesn't already exist
-                if (controller.Exists(investment) == null)
+                    // make sure the entry doesn't already exist
+                    if (controller.Exists(investment) == null)
+                    {
+                        controller.Add(investment);
+                        LoadInvestmentsGrid();
+
+                        MessageBox.Show("Investment Added", "Success");
+                    }
+                }
+                catch (Exception ex)
                 {
-                    controller.Add(investment);
-                    LoadInvestments();
-
-                    MessageBox.Show("Investment Added", "Success");
+                    MessageBox.Show("Unable to Add Investment", "Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Unable to Add Investment", "Failed",
+                MessageBox.Show(errorMessage, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            string errorMessage = "";
+            if (FormIsValid(ref errorMessage))
             {
-                Investment investment = new Investment()
+                try
                 {
-                    Source = txtName.Text,
-                    Amount = txtAmount.Text,
-                    Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                    Type = Utilities.GetSelectedRadioButton(gbxType).Text,
-                    Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
-                    UserId= ActiveUser.id
+                    Investment investment = new Investment()
+                    {
+                        Source = txtName.Text,
+                        Amount = txtAmount.Text,
+                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
+                        Type = Utilities.GetSelectedRadioButton(gbxType).Text,
+                        Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
+                        UserId = ActiveUser.id
 
-                };
+                    };
 
-                controller.Update(investment);
-                LoadInvestments();
+                    controller.Update(investment);
+                    LoadInvestmentsGrid();
 
-                MessageBox.Show("Investment Updated", "Success");
+                    MessageBox.Show("Investment Updated", "Success");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Unable to Update Investment", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("Unable to Update Investment", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMessage, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            string errorMessage = "";
+            if (FormIsValid(ref errorMessage))
             {
-                Investment investment = new Investment()
+                try
                 {
-                    Source = txtName.Text,
-                    Amount = txtAmount.Text,
-                    Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                    Type = Utilities.GetSelectedRadioButton(gbxType).Text,
-                    Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
-                    UserId= ActiveUser.id
-                };
+                    Investment investment = new Investment()
+                    {
+                        Source = txtName.Text,
+                        Amount = txtAmount.Text,
+                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
+                        Type = Utilities.GetSelectedRadioButton(gbxType).Text,
+                        Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
+                        UserId = ActiveUser.id
+                    };
 
-                controller.Delete(investment);
-                LoadInvestments();
+                    controller.Delete(investment);
+                    LoadInvestmentsGrid();
 
-                MessageBox.Show("Investment Deleted", "Success");
+                    MessageBox.Show("Investment Deleted", "Success");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Unable to Delete Investment", "Failed", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("Unable to Delete Investment", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMessage, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,7 +264,31 @@ namespace FinancialManager.UI.Controls
             await Task.Delay(milliseconds);
             method.Invoke();         
         }
+
+        private bool FormIsValid(ref string errorMessage)
+        {
+            bool isValid = false;
+
+            if (Utilities.IsEmpty(txtName))
+                errorMessage += " - Name cannot be blank\r\n";
+            if (Utilities.GetSelectedRadioButton(gbxFrequency) == null)
+                errorMessage += " - You must select a frequency\r\n";
+            if (Utilities.GetSelectedRadioButton(gbxType) == null)
+                errorMessage += " - You must select a type\r\n";
+            if (Utilities.IsValidCurrency(txtAmount) == false)
+                errorMessage += " - Invalid Amount\r\n";
+
+            if (errorMessage == "")
+                isValid = true;
+
+            return isValid;
+        }
         #endregion
-                 
+
+        private void dgvInvestments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            NotificationFormPopup popup = new NotificationFormPopup(ReminderType.INVESTMENT, int.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()));
+            popup.ShowDialog();
+        }
     }
 }

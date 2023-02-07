@@ -15,7 +15,7 @@ namespace FinancialManager.Data.Repositories
         T GetById(int id);
         T GetByEntity(T entity);
         IEnumerable<T> GetAllEntities(long userId);
-        void Create(T entity);
+        T Create(T entity);
         void Update(T entity);
         void Delete(T entity);
     }

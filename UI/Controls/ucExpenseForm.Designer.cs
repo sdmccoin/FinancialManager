@@ -217,6 +217,7 @@
             this.dgvExpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExpenses.Size = new System.Drawing.Size(1299, 344);
             this.dgvExpenses.TabIndex = 11;
+            this.dgvExpenses.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellDoubleClick);
             this.dgvExpenses.SelectionChanged += new System.EventHandler(this.dgvExpenses_SelectionChanged);
             // 
             // pnlGoogleMaps

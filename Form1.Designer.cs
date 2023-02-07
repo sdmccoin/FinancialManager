@@ -32,6 +32,7 @@
             this.tsBtnIncome = new System.Windows.Forms.ToolStripButton();
             this.txBtnExpense = new System.Windows.Forms.ToolStripButton();
             this.txBtnInvestments = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnReports = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.tsBtnReports = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,16 @@
             this.txBtnInvestments.Size = new System.Drawing.Size(58, 44);
             this.txBtnInvestments.Text = "Investments";
             this.txBtnInvestments.Click += new System.EventHandler(this.tsBtnInvestments_Click);
+            // 
+            // tsBtnReports
+            // 
+            this.tsBtnReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnReports.Image = global::FinancialManager.Properties.Resources.reporting;
+            this.tsBtnReports.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnReports.Name = "tsBtnReports";
+            this.tsBtnReports.Size = new System.Drawing.Size(58, 44);
+            this.tsBtnReports.Text = "Reports";
+            this.tsBtnReports.Click += new System.EventHandler(this.tsBtnReports_Click);
             // 
             // menuStrip1
             // 
@@ -155,13 +165,13 @@
             this.pnlLeft.Location = new System.Drawing.Point(0, 102);
             this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(323, 1401);
+            this.pnlLeft.Size = new System.Drawing.Size(323, 1538);
             this.pnlLeft.TabIndex = 4;
             // 
             // pnlBottom
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(323, 1413);
+            this.pnlBottom.Location = new System.Drawing.Point(323, 1550);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(1494, 90);
@@ -173,24 +183,14 @@
             this.pnlMain.Location = new System.Drawing.Point(323, 194);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1486, 1214);
+            this.pnlMain.Size = new System.Drawing.Size(1486, 1350);
             this.pnlMain.TabIndex = 6;
-            // 
-            // tsBtnReports
-            // 
-            this.tsBtnReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnReports.Image = global::FinancialManager.Properties.Resources.reporting;
-            this.tsBtnReports.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnReports.Name = "tsBtnReports";
-            this.tsBtnReports.Size = new System.Drawing.Size(58, 44);
-            this.tsBtnReports.Text = "Reports";
-            this.tsBtnReports.Click += new System.EventHandler(this.tsBtnReports_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1817, 1503);
+            this.ClientSize = new System.Drawing.Size(1817, 1640);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.toolStrip1);
