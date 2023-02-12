@@ -52,7 +52,7 @@ namespace FinancialManager.UI.Controllers
 
         public IEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return investmentRepository.GetById(id);
         }
     }
 }

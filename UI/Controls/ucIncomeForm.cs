@@ -169,8 +169,8 @@ namespace FinancialManager.UI.Controls
             if (row != null && row.Index != 0)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
-                txtAddress1.Text = row.Cells[3].Value.ToString();
-                txtAmount.Text = row.Cells[2].Value.ToString();
+                txtAddress1.Text = row.Cells[2].Value.ToString();
+                txtAmount.Text = row.Cells[3].Value.ToString();
 
                 Utilities.SelectRadioButton(groupBox1, row.Cells[4].Value.ToString());
             }

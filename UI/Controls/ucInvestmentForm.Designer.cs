@@ -52,11 +52,18 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSymbol = new System.Windows.Forms.TextBox();
+            this.btnStockSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlDetails = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvestments)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbxFrequency.SuspendLayout();
             this.gbxType.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvInvestments
@@ -65,6 +72,7 @@
             this.dgvInvestments.AllowUserToDeleteRows = false;
             this.dgvInvestments.AllowUserToResizeColumns = false;
             this.dgvInvestments.AllowUserToResizeRows = false;
+            this.dgvInvestments.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvInvestments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvestments.Location = new System.Drawing.Point(53, 963);
             this.dgvInvestments.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -82,18 +90,21 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1484, 93);
+            this.label1.Size = new System.Drawing.Size(1486, 53);
             this.label1.TabIndex = 11;
             this.label1.Text = "Investments";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnUpdate);
@@ -104,7 +115,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 1375);
+            this.panel1.Size = new System.Drawing.Size(1486, 1493);
             this.panel1.TabIndex = 12;
             // 
             // btnClear
@@ -162,7 +173,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.groupBox1.Size = new System.Drawing.Size(1040, 754);
+            this.groupBox1.Size = new System.Drawing.Size(864, 754);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Source of Investment";
@@ -181,7 +192,7 @@
             this.textBox1.Location = new System.Drawing.Point(50, 553);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(955, 181);
+            this.textBox1.Size = new System.Drawing.Size(778, 181);
             this.textBox1.TabIndex = 15;
             // 
             // gbxFrequency
@@ -339,6 +350,69 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Name";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.pnlDetails);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnStockSearch);
+            this.groupBox2.Controls.Add(this.txtSymbol);
+            this.groupBox2.Location = new System.Drawing.Point(942, 119);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(488, 754);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Stock Search";
+            // 
+            // txtSymbol
+            // 
+            this.txtSymbol.Location = new System.Drawing.Point(28, 68);
+            this.txtSymbol.Name = "txtSymbol";
+            this.txtSymbol.Size = new System.Drawing.Size(312, 47);
+            this.txtSymbol.TabIndex = 0;
+            // 
+            // btnStockSearch
+            // 
+            this.btnStockSearch.BackColor = System.Drawing.Color.Green;
+            this.btnStockSearch.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnStockSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStockSearch.Location = new System.Drawing.Point(346, 68);
+            this.btnStockSearch.Name = "btnStockSearch";
+            this.btnStockSearch.Size = new System.Drawing.Size(116, 47);
+            this.btnStockSearch.TabIndex = 1;
+            this.btnStockSearch.Text = "Search";
+            this.btnStockSearch.UseVisualStyleBackColor = false;
+            this.btnStockSearch.Click += new System.EventHandler(this.btnStockSearch_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(0, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(488, 48);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Details";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDetails
+            // 
+            this.pnlDetails.Location = new System.Drawing.Point(6, 199);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(475, 478);
+            this.pnlDetails.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(59, 687);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(367, 47);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add Stock to Portfolio";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ucInvestmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -347,7 +421,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "ucInvestmentForm";
-            this.Size = new System.Drawing.Size(1484, 1375);
+            this.Size = new System.Drawing.Size(1486, 1493);
             this.Load += new System.EventHandler(this.ucInvestmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvestments)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -357,6 +431,8 @@
             this.gbxFrequency.PerformLayout();
             this.gbxType.ResumeLayout(false);
             this.gbxType.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,5 +462,11 @@
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnInsert;
+        private GroupBox groupBox2;
+        private Button button1;
+        private Panel pnlDetails;
+        private Label label3;
+        private Button btnStockSearch;
+        private TextBox txtSymbol;
     }
 }

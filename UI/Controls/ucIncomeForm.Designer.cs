@@ -57,18 +57,20 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1484, 93);
+            this.label1.Size = new System.Drawing.Size(1486, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Income ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnUpdate);
@@ -77,10 +79,10 @@
             this.panel1.Controls.Add(this.pnlGoogleMaps);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 93);
+            this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 1339);
+            this.panel1.Size = new System.Drawing.Size(1486, 1440);
             this.panel1.TabIndex = 10;
             // 
             // btnClear
@@ -130,6 +132,7 @@
             this.dgvIncome.AllowUserToDeleteRows = false;
             this.dgvIncome.AllowUserToResizeColumns = false;
             this.dgvIncome.AllowUserToResizeRows = false;
+            this.dgvIncome.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIncome.Location = new System.Drawing.Point(53, 804);
             this.dgvIncome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -319,7 +322,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ucIncomeForm";
-            this.Size = new System.Drawing.Size(1484, 1432);
+            this.Size = new System.Drawing.Size(1486, 1493);
             this.Load += new System.EventHandler(this.ucIncomeForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncome)).EndInit();

@@ -40,7 +40,7 @@ namespace FinancialManager.Data.Repositories
             using (var context = new FinancialManagerContext())
             {
                 income = context.Incomes
-                                   .Where(u => u.Id == 1)
+                                   .Where(u => u.Id == id)
                                    .FirstOrDefault<Income>();
             }
             return income;

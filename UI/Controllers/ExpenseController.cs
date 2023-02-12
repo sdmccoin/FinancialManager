@@ -42,7 +42,7 @@ namespace FinancialManager.UI.Controllers
 
         public IEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return expenseRepository.GetById(id);
         }
 
         public void Update(IEntity entity)

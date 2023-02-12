@@ -1,4 +1,5 @@
 ﻿using FinancialManager.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -12,19 +13,23 @@ namespace FinancialManager.Data.Repositories
     {
         public InvestmentReminder Create(InvestmentReminder entity)
         {
-            EntityEntry<InvestmentReminder> entityAdded = null;
             using (var context = new FinancialManagerContext())
             {
-                entityAdded = context.InvestmentReminders.Add(entity);
-                context.SaveChanges();
-
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("INSERT INTO InvestmentReminder (InvestmentId,ReminderId) VALUES (" + entity.InvestmentId + ", " + entity.ReminderId + ")");
             }
-            return entityAdded.Entity;
+            return new InvestmentReminder();
         }
 
         public void Delete(InvestmentReminder entity)
         {
-            throw new NotImplementedException();
+            using (var context = new FinancialManagerContext())
+            {
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("DELETE FROM InvestmentReminder WHERE InvestmentId = " + entity.InvestmentId + " AND ReminderId = " + entity.ReminderId + "; DELETE FROM Reminder WHERE Id = " + entity.ReminderId + ";");
+            }
         }
 
         public IEnumerable<InvestmentReminder> GetAllEntities(long userId)
@@ -46,7 +51,15 @@ namespace FinancialManager.Data.Repositories
 
         public InvestmentReminder GetById(int id)
         {
-            throw new NotImplementedException();
+            InvestmentReminder? investment = new InvestmentReminder();
+
+            using (var context = new FinancialManagerContext())
+            {
+                investment = context.InvestmentReminders
+                                   .Where(u => u.InvestmentId == id)
+                                   .FirstOrDefault<InvestmentReminder>();
+            }
+            return investment;
         }
 
         public void Update(InvestmentReminder entity)

@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(799, 451);
             this.Controls.Add(this.lblLoginMessage);
             this.Controls.Add(this.btnSubmit);
@@ -105,6 +106,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

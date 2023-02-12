@@ -1,4 +1,5 @@
 ﻿using FinancialManager.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,24 @@ namespace FinancialManager.Data.Repositories
     internal class IncomeReminderRepository : IRepository<IncomeReminder>
     {
         public IncomeReminder Create(IncomeReminder entity)
-        {
-            EntityEntry<IncomeReminder> entityAdded = null;
+        {            
             using (var context = new FinancialManagerContext())
             {
-                entityAdded = context.IncomeReminders.Add(entity);
-                context.SaveChanges();
-
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("INSERT INTO IncomeReminder (IncomeId,ReminderId) VALUES ("+entity.IncomeId+", "+entity.ReminderId+")");               
             }
-            return entityAdded.Entity;
-        }
+            return new IncomeReminder();    // return empty reminder since it's not needed yet
+        }      
 
         public void Delete(IncomeReminder entity)
         {
-            throw new NotImplementedException();
+            using (var context = new FinancialManagerContext())
+            {
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("DELETE FROM IncomeReminder WHERE IncomeId = " + entity.IncomeId + " AND ReminderId = " + entity.ReminderId +"; DELETE FROM Reminder WHERE Id = "+ entity.ReminderId +";");                    
+            }
         }
 
         public IEnumerable<IncomeReminder> GetAllEntities(long userId)
@@ -41,12 +46,28 @@ namespace FinancialManager.Data.Repositories
 
         public IncomeReminder GetByEntity(IncomeReminder entity)
         {
-            throw new NotImplementedException();
+            IncomeReminder? income = new IncomeReminder();
+
+            using (var context = new FinancialManagerContext())
+            {
+                income = context.IncomeReminders
+                                   .Where(u => u.IncomeId == entity.Id)
+                                   .FirstOrDefault<IncomeReminder>();
+            }
+            return income;
         }
 
         public IncomeReminder GetById(int id)
         {
-            throw new NotImplementedException();
+            IncomeReminder? income = new IncomeReminder();
+
+            using (var context = new FinancialManagerContext())
+            {
+                income = context.IncomeReminders
+                                   .Where(u => u.IncomeId == id)
+                                   .FirstOrDefault<IncomeReminder>();
+            }
+            return income;
         }
 
         public void Update(IncomeReminder entity)

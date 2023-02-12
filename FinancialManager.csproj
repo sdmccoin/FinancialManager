@@ -32,7 +32,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+    <PackageReference Include="System.Windows.Extensions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

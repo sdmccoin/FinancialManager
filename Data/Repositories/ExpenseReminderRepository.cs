@@ -1,4 +1,5 @@
 ﻿using FinancialManager.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -12,19 +13,23 @@ namespace FinancialManager.Data.Repositories
     {
         public ExpenseReminder Create(ExpenseReminder entity)
         {
-            EntityEntry<ExpenseReminder> entityAdded = null;
             using (var context = new FinancialManagerContext())
             {
-                entityAdded = context.ExpenseReminders.Add(entity);
-                context.SaveChanges();
-
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("INSERT INTO ExpenseReminder (ExpenseId,ReminderId) VALUES (" + entity.ExpenseId + ", " + entity.ReminderId + ")");
             }
-            return entityAdded.Entity;
+            return new ExpenseReminder();
         }
 
         public void Delete(ExpenseReminder entity)
         {
-            throw new NotImplementedException();
+            using (var context = new FinancialManagerContext())
+            {
+                // raw query needed due to table constraint issues in entity framework
+                var returned = context.Database
+                    .ExecuteSqlRaw("DELETE FROM ExpenseReminder WHERE ExpenseId = " + entity.ExpenseId + " AND ReminderId = " + entity.ReminderId + "; DELETE FROM Reminder WHERE Id = " + entity.ReminderId + ";");
+            }
         }
 
         public IEnumerable<ExpenseReminder> GetAllEntities(long userId)
@@ -46,7 +51,15 @@ namespace FinancialManager.Data.Repositories
 
         public ExpenseReminder GetById(int id)
         {
-            throw new NotImplementedException();
+            ExpenseReminder? expense = new ExpenseReminder();
+
+            using (var context = new FinancialManagerContext())
+            {
+                expense = context.ExpenseReminders
+                                   .Where(u => u.ExpenseId == id)
+                                   .FirstOrDefault<ExpenseReminder>();
+            }
+            return expense;
         }
 
         public void Update(ExpenseReminder entity)

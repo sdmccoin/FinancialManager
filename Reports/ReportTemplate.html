@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-size: 9pt;
+            font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+            color: black;
+            line-height: 5pt;
+            padding-left: 5pt;
+            padding-right: 5pt;
+            padding-top: 5pt;
+        }
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid blue;
+        }
+
+        thead th:nth-child(1) {
+            width: 30%;
+        }
+
+        thead th:nth-child(2) {
+            width: 20%;
+        }
+
+        thead th:nth-child(3) {
+            width: 15%;
+        }
+
+        thead th:nth-child(4) {
+            width: 35%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img src="https://i0.wp.com/images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg?w=1188&ssl=1" width="75" height="50" /></td>
+            <td colspan="2">{ReportType} Report</td>
+        </tr>
+        <tr>
+            <td colspan="2">From: {ReportStart}</td>
+            <td></td>
+            <td colspan="2"> To: {ReportEnd}</td>
+            <td></td>
+        </tr>
+    </table>
+    <table border="1" cellpadding="1" cellspacing="1" width="90%">
+        {Report}         
+    </table>
+</body>
+</html>
+
+

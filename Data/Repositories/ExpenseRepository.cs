@@ -43,7 +43,7 @@ namespace FinancialManager.Data.Repositories
             using (var context = new FinancialManagerContext())
             {
                 expense = context.Expenses
-                                   .Where(u => u.Id == 1)
+                                   .Where(u => u.Id == id)
                                    .FirstOrDefault<Expense>();
             }
             return expense;

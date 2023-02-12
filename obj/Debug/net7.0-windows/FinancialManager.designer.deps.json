@@ -209,6 +209,55 @@
           }
         }
       },
+      "Microsoft.Web.WebView2/1.0.1518.46": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.1518.46",
+            "fileVersion": "1.0.1518.46"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.1518.46",
+            "fileVersion": "1.0.1518.46"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.1518.46",
+            "fileVersion": "1.0.1518.46"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.1518.46"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.1518.46"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.1518.46"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "Mono.TextTemplating/2.2.1": {
         "dependencies": {
           "System.CodeDom": "4.4.0"
@@ -411,6 +460,25 @@
           "Stub.System.Data.SQLite.Core.NetStandard": "1.0.117"
         }
       },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/7.0.0": {
         "runtime": {
@@ -434,6 +502,25 @@
         },
         "runtime": {
           "lib/net7.0/System.Text.Json.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Windows.Extensions/7.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
+            "rid": "win",
+            "assetType": "runtime",
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.51805"
           }
@@ -582,6 +669,20 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
+    "Microsoft.Web.WebView2/1.0.1518.46": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1yQc90jUrLBmwtxPR8YIvJkBi/ZFLchkTUuw5TIjuNwKHVqAZv9AWGHSWrJigTLRuC0c/ivc6WbUY52/BbaIqQ==",
+      "path": "microsoft.web.webview2/1.0.1518.46",
+      "hashPath": "microsoft.web.webview2.1.0.1518.46.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
       "serviceable": true,
@@ -638,6 +739,13 @@
       "path": "system.data.sqlite.core/1.0.117",
       "hashPath": "system.data.sqlite.core.1.0.117.nupkg.sha512"
     },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
     "System.Memory/4.5.3": {
       "type": "package",
       "serviceable": true,
@@ -658,6 +766,13 @@
       "sha512": "sha512-DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
       "path": "system.text.json/7.0.0",
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
+      "path": "system.windows.extensions/7.0.0",
+      "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     }
   }
 }

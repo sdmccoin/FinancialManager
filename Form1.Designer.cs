@@ -41,24 +41,27 @@
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnIncome,
             this.txBtnExpense,
             this.txBtnInvestments,
             this.tsBtnReports});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 51);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1817, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(323, 51);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -104,6 +107,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -161,12 +165,25 @@
             // 
             // pnlLeft
             // 
+            this.pnlLeft.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlLeft.Controls.Add(this.panel1);
+            this.pnlLeft.Controls.Add(this.toolStrip1);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 102);
+            this.pnlLeft.Location = new System.Drawing.Point(0, 51);
             this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(323, 1538);
+            this.pnlLeft.Size = new System.Drawing.Size(323, 1589);
             this.pnlLeft.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 51);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(323, 739);
+            this.panel1.TabIndex = 1;
             // 
             // pnlBottom
             // 
@@ -179,11 +196,11 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlMain.Location = new System.Drawing.Point(323, 194);
+            this.pnlMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlMain.Location = new System.Drawing.Point(323, 51);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1486, 1350);
+            this.pnlMain.Size = new System.Drawing.Size(1486, 1493);
             this.pnlMain.TabIndex = 6;
             // 
             // Form1
@@ -193,7 +210,6 @@
             this.ClientSize = new System.Drawing.Size(1817, 1640);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlLeft);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMain);
             this.MainMenuStrip = this.menuStrip1;
@@ -206,6 +222,8 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +246,6 @@
         private ToolStripMenuItem accountToolStripMenuItem;
         private ToolStripButton txBtnInvestments;
         private ToolStripButton tsBtnReports;
+        private Panel panel1;
     }
 }

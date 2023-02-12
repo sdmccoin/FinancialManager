@@ -26,12 +26,12 @@ namespace FinancialManager.UI.Controllers
 
         public void Delete(IEntity entity)
         {
-            throw new NotImplementedException();
+            incomeReminderRepository.Delete(ConvertEntity(entity));
         }
 
         public IEntity Exists(IEntity entity)
         {
-            throw new NotImplementedException();
+            return incomeReminderRepository.GetByEntity(ConvertEntity(entity));
         }
 
         public IEnumerable<IEntity> GetAll(long userId)
@@ -41,7 +41,7 @@ namespace FinancialManager.UI.Controllers
 
         public IEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return incomeReminderRepository.GetById(id);
         }
 
         public void Update(IEntity entity)

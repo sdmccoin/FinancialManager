@@ -204,6 +204,7 @@
             this.dgvExpenses.AllowUserToDeleteRows = false;
             this.dgvExpenses.AllowUserToResizeColumns = false;
             this.dgvExpenses.AllowUserToResizeRows = false;
+            this.dgvExpenses.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExpenses.ColumnHeadersVisible = false;
             this.dgvExpenses.Location = new System.Drawing.Point(53, 850);
@@ -230,12 +231,13 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1484, 93);
+            this.label1.Size = new System.Drawing.Size(1486, 53);
             this.label1.TabIndex = 11;
             this.label1.Text = "Expenses";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,6 +268,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnUpdate);
@@ -277,7 +280,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 1375);
+            this.panel1.Size = new System.Drawing.Size(1486, 1493);
             this.panel1.TabIndex = 12;
             // 
             // btnClear
@@ -318,7 +321,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ucExpenseForm";
-            this.Size = new System.Drawing.Size(1484, 1375);
+            this.Size = new System.Drawing.Size(1486, 1493);
             this.Load += new System.EventHandler(this.ucExpenseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.groupBox1.ResumeLayout(false);

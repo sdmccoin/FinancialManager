@@ -66,7 +66,7 @@ namespace FinancialManager.Data.Repositories
             using (var context = new FinancialManagerContext())
             {
                 reminder = context.Reminders
-                                   .Where(u => u.Id == 1)
+                                   .Where(u => u.Id == id)
                                    .FirstOrDefault<Reminder>();
             }
             return reminder;

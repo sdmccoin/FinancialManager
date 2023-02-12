@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using FinancialManager.Data.Models;
 using Microsoft.VisualBasic.ApplicationServices;
 using FinancialManager.Interfaces;
+using FinancialManager.Data.Interfaces;
 
 namespace FinancialManager.Services
 {
-    public class ReportingService : IReportingService
+    public class ReportingService// : IReportingService
     {
         IncomeRepository incomeRepository;
 

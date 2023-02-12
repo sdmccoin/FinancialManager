@@ -2,6 +2,7 @@
 using FinancialManager.Data.Models;
 using FinancialManager.Data.Repositories;
 using FinancialManager.Interfaces;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace FinancialManager.UI.Controllers
 
         public void Delete(IEntity entity)
         {
-            throw new NotImplementedException();
+            expenseReminderRepository.Delete(ConvertEntity(entity));
         }
 
         public IEntity Exists(IEntity entity)
@@ -41,7 +42,7 @@ namespace FinancialManager.UI.Controllers
 
         public IEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return expenseReminderRepository.GetById(id);
         }
 
         public void Update(IEntity entity)
