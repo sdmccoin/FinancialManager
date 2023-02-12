@@ -1,9 +1,7 @@
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\CoverletSourceRootsMapping
-C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.csproj.AssemblyReference.cache
-C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.GeneratedMSBuildEditorConfig.editorconfig
-C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.AssemblyInfoInputs.cache
-C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.AssemblyInfo.cs
-C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.csproj.CoreCompileInputs.cache
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\testhost.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\FinancialManager.deps.json
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\FinancialManager.runtimeconfig.json
@@ -41,6 +39,9 @@ C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Micro
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.TestPlatform.Utilities.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.VisualStudio.TestPlatform.Common.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.Web.WebView2.Wpf.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\NuGet.Frameworks.dll
@@ -143,6 +144,11 @@ C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Finan
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\FinancialManager.pdb
 C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.csproj.AssemblyReference.cache
+C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.AssemblyInfoInputs.cache
+C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.AssemblyInfo.cs
+C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.csproj.CoreCompileInputs.cache
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.csproj.CopyComplete
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.dll
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\refint\FinancialManager.Test.dll
