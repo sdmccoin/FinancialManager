@@ -1,0 +1,10 @@
+C:\git\src\FinancialManager\FinancialManagerNotificationService\bin\Debug\FinancialManagerNotificationService.exe.config
+C:\git\src\FinancialManager\FinancialManagerNotificationService\bin\Debug\FinancialManagerNotificationService.exe
+C:\git\src\FinancialManager\FinancialManagerNotificationService\bin\Debug\FinancialManagerNotificationService.pdb
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.csproj.AssemblyReference.cache
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.csproj.SuggestedBindingRedirects.cache
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.ServiceEngine.resources
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.csproj.GenerateResource.cache
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.csproj.CoreCompileInputs.cache
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.exe
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.pdb

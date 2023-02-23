@@ -11,14 +11,18 @@ namespace FinancialManager.Test
     using FinancialManager.Interfaces;
     using FinancialManager.UI.Controllers;
     using Microsoft.Data.Sqlite;
+    using FinancialManager.Services;
+    using FinancialManager.Services.Models;
 
     [TestClass]
     public class Investments
     {
         IController controller;
+        StockService ss;
         public Investments()
         {
             controller = ControllerFactory.GetController("Investment");
+            ss = new StockService();
         }
 
         [TestMethod]
@@ -91,6 +95,63 @@ namespace FinancialManager.Test
 
             // null means insert was a success
             Assert.ThrowsException<SqliteException>(act);
+        }
+
+        [TestMethod]
+        public void SymbolSearch()
+        {
+            ss.URL =API.StockSearchURL + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<StockSearchResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockDailies()
+        {
+            ss.URL = API.StockSearchDailies + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<StockDailiesResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockOverview()
+        {
+            ss.URL = API.StockCompanyOverview + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyOverviewResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockIncomeStatement()
+        {
+            ss.URL = API.StockIncomeStatement + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyIncomeStatement>());
+        }
+
+
+         [TestMethod]
+        public void InvalidSymbolSearch()
+        {
+            ss.URL =API.StockSearchURL + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNull(ss.GetAsync<StockSearchResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockDailiesInvalidStock()
+        {
+            ss.URL = API.StockSearchDailies + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<StockDailiesResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockOverviewInvalidStock()
+        {
+            ss.URL = API.StockCompanyOverview + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyOverviewResponse>());
+        }
+
+        [TestMethod]
+        public void GetStockIncomeStatementInvalidStock()
+        {
+            ss.URL = API.StockIncomeStatement + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyIncomeStatement>());
         }
     }
 }
