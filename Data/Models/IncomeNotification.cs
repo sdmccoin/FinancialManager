@@ -12,7 +12,5 @@ public partial class IncomeNotification : IEntity
 
     public long NotificationId { get; set; }
 
-    public virtual Income Income { get; set; } = null!;
-
     public virtual Notification Notification { get; set; } = null!;
 }

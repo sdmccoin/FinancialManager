@@ -40,6 +40,7 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -111,7 +112,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
@@ -126,7 +128,7 @@
             this.exitToolStripMenuItem1,
             this.exitToolStripMenuItem2});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -160,8 +162,15 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 45);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 48);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(149, 48);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // pnlLeft
             // 
@@ -188,10 +197,10 @@
             // pnlBottom
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(323, 1550);
+            this.pnlBottom.Location = new System.Drawing.Point(323, 1584);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1494, 90);
+            this.pnlBottom.Size = new System.Drawing.Size(1494, 56);
             this.pnlBottom.TabIndex = 5;
             // 
             // pnlMain
@@ -200,7 +209,7 @@
             this.pnlMain.Location = new System.Drawing.Point(323, 51);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1486, 1493);
+            this.pnlMain.Size = new System.Drawing.Size(1486, 1527);
             this.pnlMain.TabIndex = 6;
             // 
             // Form1
@@ -247,5 +256,6 @@
         private ToolStripButton txBtnInvestments;
         private ToolStripButton tsBtnReports;
         private Panel panel1;
+        private ToolStripMenuItem settingsToolStripMenuItem;
     }
 }

@@ -18,8 +18,6 @@ public partial class Income : IEntity
 
     public long UserId { get; set; }
 
-    public virtual ICollection<IncomeNotification> IncomeNotifications { get; } = new List<IncomeNotification>();
-
     public virtual ICollection<IncomeReminder> IncomeReminders { get; } = new List<IncomeReminder>();
 
     public virtual User User { get; set; } = null!;

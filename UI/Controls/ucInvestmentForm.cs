@@ -14,7 +14,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using FinancialManager.Services.Models;
@@ -29,6 +28,8 @@ namespace FinancialManager.UI.Controls
         IController investmentNotificationController;
 
         DataTable investmentTable;
+
+        AutoCompleteStringCollection symbols = new AutoCompleteStringCollection();
 
         public ucInvestmentForm()
         {
@@ -54,11 +55,14 @@ namespace FinancialManager.UI.Controls
         #region UI Event(s)
         private void ucInvestmentForm_Load(object sender, EventArgs e)
         {
-            LoadInvestmentsGrid();            
+            LoadInvestmentsGrid();
+            txtSymbol.AutoCompleteCustomSource = symbols;
 
             // delegate to clear the form after .1 seconds 
             Action clear = () => ClearForm();
             DelayMilliseconds(100, clear);
+            btnMoreInfo.Image = new Bitmap(SystemIcons.Information.ToBitmap(), 50, 50);
+            //pbxMoreInfo.Image = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\Information_icon.png");
         }
         private void dgvInvestments_SelectionChanged(object sender, EventArgs e)
         {            
@@ -299,27 +303,105 @@ namespace FinancialManager.UI.Controls
 
         private void btnStockSearch_Click(object sender, EventArgs e)
         {
+            StockService ss = new StockService();
             string QUERY_URL = API.StockSearchURL + txtSymbol.Text + "&apikey=" +API.StockKey;
             string stockDailyUrl = API.StockSearchDailies + txtSymbol.Text + "&apikey=" + API.StockKey;
 
             Uri queryUri = new Uri(QUERY_URL);
+            StockSearchResponse json_data = new StockSearchResponse(); ;
+            StockDailiesResponse dailyResponse = new StockDailiesResponse();
+            decimal currentStockPrice = 0;
+            decimal yesterdayStockPrice = 0;
+            decimal twoDayAgoStockPrice = 0;
+            decimal fourMonthAveragePrice = 0;
+            Image stockUp = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\rsz_stockup.png");
+            Image stockDown = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\rsz_stockdown.png");
 
-            using (WebClient client = new WebClient())
-            {               
-                //StockSearchResponse json_data = JsonSerializer.Deserialize<StockSearchResponse>(client.DownloadString(queryUri));
-
-                //if (json_data != null)
-                //{
-                //    foreach (bestMatches match in json_data.bestMatches)
-                //    {
-                        
-                //    }
-                //}
-
-                StockDailiesResponse dailyResponse = JsonSerializer.Deserialize<StockDailiesResponse>(client.DownloadString(stockDailyUrl));
-                
-                if (dailyResponse != null) { }
+            ss.URL = QUERY_URL;
+            json_data = ss.GetAsync<StockSearchResponse>();
+            
+            if (json_data != null)
+            {
+                if (json_data.bestMatches != null)
+                {
+                    lblSymbol.Text = json_data.bestMatches[0].symbol;
+                    lblName.Text = json_data.bestMatches[0].name;
+                    lblStockType.Text = json_data.bestMatches[0].type;
+                }                    
             }
+
+            ss.URL = stockDailyUrl;
+            dailyResponse = ss.GetAsync<StockDailiesResponse>();
+            
+            if (dailyResponse != null)
+                {
+                    if (dailyResponse.Dailies!= null)
+                    {
+                        currentStockPrice = decimal.Parse(dailyResponse.Dailies.Values.Select(d => d.Open).First());
+                        yesterdayStockPrice = decimal.Parse(dailyResponse.Dailies.Values.Select(d => d.Open).ToList()[1].ToString());
+                        twoDayAgoStockPrice = decimal.Parse(dailyResponse.Dailies.Values.Select(d => d.Open).ToList()[2].ToString());
+                        fourMonthAveragePrice = decimal.Parse(dailyResponse.Dailies.Values.Average(d => decimal.Parse(d.Close)).ToString());
+
+                        lblCurrentStockPrice.Text = currentStockPrice.ToString();
+                        lblYesterdayStockPrice.Text = yesterdayStockPrice.ToString();
+                        lblFourMonthAveragePrice.Text = fourMonthAveragePrice.ToString();
+
+
+                        pbxCurrentStockPriceIndicator.Image = (currentStockPrice > yesterdayStockPrice) ? stockUp : stockDown;
+                        pbxYesterdayStockPriceIndicator.Image = (yesterdayStockPrice > twoDayAgoStockPrice) ? stockUp : stockDown;
+                        pbxFourMonthAverageIndicator.Image = (currentStockPrice > fourMonthAveragePrice) ? stockUp : stockDown;
+                    }                    
+                }               
+           // }
+        }
+
+        private void txtSymbol_TextChanged(object sender, EventArgs e)
+        {           
+            //GetSymbols();
+        }
+
+        private void GetSymbols()
+        {
+            string symbolSearchUrl = API.SymbolSearch + txtSymbol.Text + "&apikey=" + API.StockKey;
+            StockSearchResponse response = new StockSearchResponse();
+
+            object loc = new object();
+            using (WebClient client = new WebClient())
+            {
+                Task taskA = Task.Run(() => response = JsonSerializer.Deserialize<StockSearchResponse>(client.DownloadString(symbolSearchUrl)));
+                taskA.Wait();
+                taskA.ContinueWith(t => {
+                    if (response != null)
+                    {
+                        if (response.bestMatches != null)
+                        {
+                            try
+                            {
+                                symbols.AddRange(response.bestMatches.Select(m => m.symbol).ToArray());
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex);
+                            }
+                        }
+                    }
+                });
+                //response = JsonSerializer.Deserialize<StockSearchResponse>(client.DownloadString(symbolSearchUrl));
+                
+            }
+        }
+
+        private void btnAddStock_Click(object sender, EventArgs e)
+        {
+            AddInvestmentPopup popup = new AddInvestmentPopup(txtSymbol.Text);
+            popup.ShowDialog();
+        }
+
+        private void btnMoreInfo_Click(object sender, EventArgs e)
+        {
+            AdditionalStockDetailsPopup popup = new AdditionalStockDetailsPopup(txtName.Text, txtSymbol.Text);
+            popup.ShowDialog();
         }
     }
 

@@ -64,10 +64,6 @@
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.117, )"
-            },
-            "System.Windows.Extensions": {
-              "target": "Package",
-              "version": "[7.0.0, )"
             }
           },
           "imports": [

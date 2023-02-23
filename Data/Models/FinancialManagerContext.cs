@@ -33,6 +33,8 @@ public partial class FinancialManagerContext : DbContext
 
     public virtual DbSet<Reminder> Reminders { get; set; }
 
+    public virtual DbSet<Setting> Settings { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -90,10 +92,6 @@ public partial class FinancialManagerContext : DbContext
 
             entity.HasIndex(e => e.Id, "IX_IncomeNotification_Id").IsUnique();
 
-            entity.HasOne(d => d.Income).WithMany(p => p.IncomeNotifications)
-                .HasForeignKey(d => d.IncomeId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-
             entity.HasOne(d => d.Notification).WithMany(p => p.IncomeNotifications)
                 .HasForeignKey(d => d.NotificationId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
@@ -104,8 +102,6 @@ public partial class FinancialManagerContext : DbContext
             entity.ToTable("IncomeReminder");
 
             entity.HasIndex(e => e.Id, "IX_IncomeReminder_Id").IsUnique();
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Income).WithMany(p => p.IncomeReminders)
                 .HasForeignKey(d => d.IncomeId)
@@ -149,10 +145,6 @@ public partial class FinancialManagerContext : DbContext
             entity.HasOne(d => d.Investment).WithOne(p => p.InvestmentReminder)
                 .HasForeignKey<InvestmentReminder>(d => d.InvestmentId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-
-            entity.HasOne(d => d.Reminder).WithOne(p => p.InvestmentReminder)
-                .HasForeignKey<InvestmentReminder>(d => d.ReminderId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
         modelBuilder.Entity<Notification>(entity =>
@@ -182,6 +174,14 @@ public partial class FinancialManagerContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.Reminders)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+        });
+
+        modelBuilder.Entity<Setting>(entity =>
+        {
+            entity.HasIndex(e => e.Id, "IX_Settings_Id").IsUnique();
+
+            entity.Property(e => e.EmailAddress).HasColumnType("TEXT (50)");
+            entity.Property(e => e.Phone).HasColumnType("TEXT (15)");
         });
 
         modelBuilder.Entity<User>(entity =>

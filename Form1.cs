@@ -101,6 +101,12 @@ namespace FinancialManager
             ClearMain();
             pnlMain.Controls.Add(new ucReportForm());
         }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearMain();
+            pnlMain.Controls.Add(new ucSettingsForm());
+        }
     }
     // admin - Pa$$word1 - DB
     // root - flannelman

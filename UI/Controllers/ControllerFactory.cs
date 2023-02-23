@@ -25,7 +25,8 @@ namespace FinancialManager.UI.Controllers
                 "IncomeReminder" => new IncomeReminderController(),
                 "IncomeNotification" => new IncomeNotificationController(),
                 "ExpenseReminder" => new ExpenseReminderController(),
-                "InvestmentReminder" => new InvestmentReminderController()
+                "InvestmentReminder" => new InvestmentReminderController(),
+                "Settings" => new SettingsController()
             };
         }
     }

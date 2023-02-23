@@ -5,16 +5,14 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManager", "FinancialManager.csproj", "{0D145ECC-0876-42D7-8C3D-8C269A053E9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManager.Data", "..\FinancialManager.Data\FinancialManager.Data.csproj", "{16316214-4458-4BA2-AEE7-47DF7D33F76C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC15DD86-C67E-4E03-B692-8D53713034E3}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManager.UI.Controls", "..\FinancialManager.UI.Controls\FinancialManager.UI.Controls.csproj", "{FAB2D9CC-61A7-4FB1-8C3D-07E3A7F9E3BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManager.Test", "..\FinancialManager.Test\FinancialManager.Test.csproj", "{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManager.Test", "..\FinancialManager.Test\FinancialManager.Test.csproj", "{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagerNotificationService", "..\FinancialManagerNotificationService\FinancialManagerNotificationService.csproj", "{4A97804A-6A27-403B-9BBB-3E6C110BA624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +24,14 @@ Global
 		{0D145ECC-0876-42D7-8C3D-8C269A053E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D145ECC-0876-42D7-8C3D-8C269A053E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D145ECC-0876-42D7-8C3D-8C269A053E9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16316214-4458-4BA2-AEE7-47DF7D33F76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16316214-4458-4BA2-AEE7-47DF7D33F76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16316214-4458-4BA2-AEE7-47DF7D33F76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16316214-4458-4BA2-AEE7-47DF7D33F76C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAB2D9CC-61A7-4FB1-8C3D-07E3A7F9E3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAB2D9CC-61A7-4FB1-8C3D-07E3A7F9E3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAB2D9CC-61A7-4FB1-8C3D-07E3A7F9E3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAB2D9CC-61A7-4FB1-8C3D-07E3A7F9E3BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

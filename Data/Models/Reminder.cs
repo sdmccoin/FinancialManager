@@ -22,7 +22,5 @@ public partial class Reminder : IEntity
 
     public virtual ICollection<IncomeReminder> IncomeReminders { get; } = new List<IncomeReminder>();
 
-    public virtual InvestmentReminder? InvestmentReminder { get; set; }
-
     public virtual User User { get; set; } = null!;
 }

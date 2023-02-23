@@ -28,9 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvInvestments = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAddStock = new System.Windows.Forms.Button();
+            this.pnlDetails = new System.Windows.Forms.Panel();
+            this.btnMoreInfo = new System.Windows.Forms.Button();
+            this.pbxFourMonthAverageIndicator = new System.Windows.Forms.PictureBox();
+            this.pbxYesterdayStockPriceIndicator = new System.Windows.Forms.PictureBox();
+            this.pbxCurrentStockPriceIndicator = new System.Windows.Forms.PictureBox();
+            this.lblFourMonthAveragePrice = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblYesterdayStockPrice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCurrentStockPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblStockType = new System.Windows.Forms.Label();
+            this.lblt = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnStockSearch = new System.Windows.Forms.Button();
+            this.txtSymbol = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -52,18 +75,17 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtSymbol = new System.Windows.Forms.TextBox();
-            this.btnStockSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlDetails = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvestments)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.pnlDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFourMonthAverageIndicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxYesterdayStockPriceIndicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentStockPriceIndicator)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbxFrequency.SuspendLayout();
             this.gbxType.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvInvestments
@@ -117,6 +139,247 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1486, 1493);
             this.panel1.TabIndex = 12;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAddStock);
+            this.groupBox2.Controls.Add(this.pnlDetails);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnStockSearch);
+            this.groupBox2.Controls.Add(this.txtSymbol);
+            this.groupBox2.Location = new System.Drawing.Point(942, 119);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(488, 754);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Stock Search";
+            // 
+            // btnAddStock
+            // 
+            this.btnAddStock.BackColor = System.Drawing.Color.Green;
+            this.btnAddStock.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddStock.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddStock.Location = new System.Drawing.Point(59, 687);
+            this.btnAddStock.Name = "btnAddStock";
+            this.btnAddStock.Size = new System.Drawing.Size(367, 47);
+            this.btnAddStock.TabIndex = 4;
+            this.btnAddStock.Text = "Add Stock to Portfolio";
+            this.btnAddStock.UseVisualStyleBackColor = false;
+            this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
+            // 
+            // pnlDetails
+            // 
+            this.pnlDetails.AutoScroll = true;
+            this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetails.Controls.Add(this.btnMoreInfo);
+            this.pnlDetails.Controls.Add(this.pbxFourMonthAverageIndicator);
+            this.pnlDetails.Controls.Add(this.pbxYesterdayStockPriceIndicator);
+            this.pnlDetails.Controls.Add(this.pbxCurrentStockPriceIndicator);
+            this.pnlDetails.Controls.Add(this.lblFourMonthAveragePrice);
+            this.pnlDetails.Controls.Add(this.label9);
+            this.pnlDetails.Controls.Add(this.lblYesterdayStockPrice);
+            this.pnlDetails.Controls.Add(this.label8);
+            this.pnlDetails.Controls.Add(this.lblCurrentStockPrice);
+            this.pnlDetails.Controls.Add(this.label7);
+            this.pnlDetails.Controls.Add(this.lblStockType);
+            this.pnlDetails.Controls.Add(this.lblt);
+            this.pnlDetails.Controls.Add(this.lblName);
+            this.pnlDetails.Controls.Add(this.label6);
+            this.pnlDetails.Controls.Add(this.lblSymbol);
+            this.pnlDetails.Controls.Add(this.label4);
+            this.pnlDetails.Location = new System.Drawing.Point(0, 198);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(488, 479);
+            this.pnlDetails.TabIndex = 3;
+            // 
+            // btnMoreInfo
+            // 
+            this.btnMoreInfo.Location = new System.Drawing.Point(398, 0);
+            this.btnMoreInfo.Name = "btnMoreInfo";
+            this.btnMoreInfo.Size = new System.Drawing.Size(82, 58);
+            this.btnMoreInfo.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.btnMoreInfo, "View More Financial Details About This Stock");
+            this.btnMoreInfo.UseVisualStyleBackColor = true;
+            this.btnMoreInfo.Click += new System.EventHandler(this.btnMoreInfo_Click);
+            // 
+            // pbxFourMonthAverageIndicator
+            // 
+            this.pbxFourMonthAverageIndicator.Location = new System.Drawing.Point(277, 362);
+            this.pbxFourMonthAverageIndicator.Name = "pbxFourMonthAverageIndicator";
+            this.pbxFourMonthAverageIndicator.Size = new System.Drawing.Size(30, 35);
+            this.pbxFourMonthAverageIndicator.TabIndex = 17;
+            this.pbxFourMonthAverageIndicator.TabStop = false;
+            // 
+            // pbxYesterdayStockPriceIndicator
+            // 
+            this.pbxYesterdayStockPriceIndicator.Location = new System.Drawing.Point(157, 304);
+            this.pbxYesterdayStockPriceIndicator.Name = "pbxYesterdayStockPriceIndicator";
+            this.pbxYesterdayStockPriceIndicator.Size = new System.Drawing.Size(30, 35);
+            this.pbxYesterdayStockPriceIndicator.TabIndex = 16;
+            this.pbxYesterdayStockPriceIndicator.TabStop = false;
+            // 
+            // pbxCurrentStockPriceIndicator
+            // 
+            this.pbxCurrentStockPriceIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbxCurrentStockPriceIndicator.InitialImage = global::FinancialManager.Properties.Resources.stockup;
+            this.pbxCurrentStockPriceIndicator.Location = new System.Drawing.Point(131, 245);
+            this.pbxCurrentStockPriceIndicator.Name = "pbxCurrentStockPriceIndicator";
+            this.pbxCurrentStockPriceIndicator.Size = new System.Drawing.Size(30, 35);
+            this.pbxCurrentStockPriceIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxCurrentStockPriceIndicator.TabIndex = 15;
+            this.pbxCurrentStockPriceIndicator.TabStop = false;
+            // 
+            // lblFourMonthAveragePrice
+            // 
+            this.lblFourMonthAveragePrice.AutoSize = true;
+            this.lblFourMonthAveragePrice.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFourMonthAveragePrice.Location = new System.Drawing.Point(325, 365);
+            this.lblFourMonthAveragePrice.Name = "lblFourMonthAveragePrice";
+            this.lblFourMonthAveragePrice.Size = new System.Drawing.Size(24, 32);
+            this.lblFourMonthAveragePrice.TabIndex = 11;
+            this.lblFourMonthAveragePrice.Text = "-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(31, 365);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(232, 32);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Four Month Average:";
+            // 
+            // lblYesterdayStockPrice
+            // 
+            this.lblYesterdayStockPrice.AutoSize = true;
+            this.lblYesterdayStockPrice.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblYesterdayStockPrice.Location = new System.Drawing.Point(207, 304);
+            this.lblYesterdayStockPrice.Name = "lblYesterdayStockPrice";
+            this.lblYesterdayStockPrice.Size = new System.Drawing.Size(24, 32);
+            this.lblYesterdayStockPrice.TabIndex = 9;
+            this.lblYesterdayStockPrice.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(31, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 32);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Yesterday:";
+            // 
+            // lblCurrentStockPrice
+            // 
+            this.lblCurrentStockPrice.AutoSize = true;
+            this.lblCurrentStockPrice.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrentStockPrice.Location = new System.Drawing.Point(181, 248);
+            this.lblCurrentStockPrice.Name = "lblCurrentStockPrice";
+            this.lblCurrentStockPrice.Size = new System.Drawing.Size(24, 32);
+            this.lblCurrentStockPrice.TabIndex = 7;
+            this.lblCurrentStockPrice.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(31, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 32);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Current";
+            // 
+            // lblStockType
+            // 
+            this.lblStockType.AutoSize = true;
+            this.lblStockType.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStockType.Location = new System.Drawing.Point(135, 165);
+            this.lblStockType.Name = "lblStockType";
+            this.lblStockType.Size = new System.Drawing.Size(24, 32);
+            this.lblStockType.TabIndex = 5;
+            this.lblStockType.Text = "-";
+            // 
+            // lblt
+            // 
+            this.lblt.AutoSize = true;
+            this.lblt.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblt.Location = new System.Drawing.Point(31, 165);
+            this.lblt.Name = "lblt";
+            this.lblt.Size = new System.Drawing.Size(69, 32);
+            this.lblt.TabIndex = 4;
+            this.lblt.Text = "Type:";
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(135, 92);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(337, 63);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(31, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 32);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Name:";
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSymbol.Location = new System.Drawing.Point(135, 41);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(24, 32);
+            this.lblSymbol.TabIndex = 1;
+            this.lblSymbol.Text = "-";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(31, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 32);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Symbol:";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(0, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(488, 48);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Details";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnStockSearch
+            // 
+            this.btnStockSearch.BackColor = System.Drawing.Color.Green;
+            this.btnStockSearch.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnStockSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStockSearch.Location = new System.Drawing.Point(346, 68);
+            this.btnStockSearch.Name = "btnStockSearch";
+            this.btnStockSearch.Size = new System.Drawing.Size(116, 47);
+            this.btnStockSearch.TabIndex = 1;
+            this.btnStockSearch.Text = "Search";
+            this.btnStockSearch.UseVisualStyleBackColor = false;
+            this.btnStockSearch.Click += new System.EventHandler(this.btnStockSearch_Click);
+            // 
+            // txtSymbol
+            // 
+            this.txtSymbol.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSymbol.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSymbol.Location = new System.Drawing.Point(28, 68);
+            this.txtSymbol.Name = "txtSymbol";
+            this.txtSymbol.Size = new System.Drawing.Size(312, 47);
+            this.txtSymbol.TabIndex = 0;
+            this.txtSymbol.TextChanged += new System.EventHandler(this.txtSymbol_TextChanged);
             // 
             // btnClear
             // 
@@ -350,69 +613,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Name";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.pnlDetails);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.btnStockSearch);
-            this.groupBox2.Controls.Add(this.txtSymbol);
-            this.groupBox2.Location = new System.Drawing.Point(942, 119);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 754);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Stock Search";
-            // 
-            // txtSymbol
-            // 
-            this.txtSymbol.Location = new System.Drawing.Point(28, 68);
-            this.txtSymbol.Name = "txtSymbol";
-            this.txtSymbol.Size = new System.Drawing.Size(312, 47);
-            this.txtSymbol.TabIndex = 0;
-            // 
-            // btnStockSearch
-            // 
-            this.btnStockSearch.BackColor = System.Drawing.Color.Green;
-            this.btnStockSearch.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStockSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStockSearch.Location = new System.Drawing.Point(346, 68);
-            this.btnStockSearch.Name = "btnStockSearch";
-            this.btnStockSearch.Size = new System.Drawing.Size(116, 47);
-            this.btnStockSearch.TabIndex = 1;
-            this.btnStockSearch.Text = "Search";
-            this.btnStockSearch.UseVisualStyleBackColor = false;
-            this.btnStockSearch.Click += new System.EventHandler(this.btnStockSearch_Click);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(0, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(488, 48);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Details";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlDetails
-            // 
-            this.pnlDetails.Location = new System.Drawing.Point(6, 199);
-            this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(475, 478);
-            this.pnlDetails.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(59, 687);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(367, 47);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add Stock to Portfolio";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // ucInvestmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -425,14 +625,19 @@
             this.Load += new System.EventHandler(this.ucInvestmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvestments)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.pnlDetails.ResumeLayout(false);
+            this.pnlDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFourMonthAverageIndicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxYesterdayStockPriceIndicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentStockPriceIndicator)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbxFrequency.ResumeLayout(false);
             this.gbxFrequency.PerformLayout();
             this.gbxType.ResumeLayout(false);
             this.gbxType.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -463,10 +668,27 @@
         private Button btnUpdate;
         private Button btnInsert;
         private GroupBox groupBox2;
-        private Button button1;
+        private Button btnAddStock;
         private Panel pnlDetails;
         private Label label3;
         private Button btnStockSearch;
         private TextBox txtSymbol;
+        private Label lblSymbol;
+        private Label label4;
+        private Label lblName;
+        private Label label6;
+        private Label lblStockType;
+        private Label lblt;
+        private Label lblFourMonthAveragePrice;
+        private Label label9;
+        private Label lblYesterdayStockPrice;
+        private Label label8;
+        private Label lblCurrentStockPrice;
+        private Label label7;
+        private PictureBox pbxFourMonthAverageIndicator;
+        private PictureBox pbxYesterdayStockPriceIndicator;
+        private PictureBox pbxCurrentStockPriceIndicator;
+        private Button btnMoreInfo;
+        private ToolTip toolTip1;
     }
 }

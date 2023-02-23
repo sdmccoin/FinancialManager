@@ -13,6 +13,4 @@ public partial class InvestmentReminder : IEntity
     public long ReminderId { get; set; }
 
     public virtual Investment Investment { get; set; } = null!;
-
-    public virtual Reminder Reminder { get; set; } = null!;
 }

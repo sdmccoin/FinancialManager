@@ -74,6 +74,14 @@ namespace FinancialManager.UI
         {
             return ctrl.Text == String.Empty;
         }
+        public static string FormatCurrency(decimal value)
+        {
+            return string.Format("{0:C}", value);
+        }
+        public static string FormatCurrency(string value)
+        {
+            return (value == null || value == "None") ? "-" : string.Format("{0:C}", decimal.Parse(value));
+        }
         #endregion
     }
 }
