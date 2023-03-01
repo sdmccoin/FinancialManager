@@ -22,7 +22,7 @@ namespace FinancialManager.Test
         }
 
         [TestMethod]
-        public void AddExpense()
+        public void Test1AddExpense()
         {
             Expense expense = new Expense()
             {
@@ -32,14 +32,14 @@ namespace FinancialManager.Test
                 Frequency = "Monthly"
             };
 
-            Action act = () => { controller.Add(expense); };
+            Expense returned = (Expense)controller.Add(expense); 
 
-            // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            // null means insert was a success            
+            Assert.AreEqual(expense, returned);
         }
 
         [TestMethod]
-        public void ExpenseSelect()
+        public void Test2ExpenseSelect()
         {
             Expense expense = new Expense()
             {
@@ -54,7 +54,7 @@ namespace FinancialManager.Test
         }
 
         [TestMethod]
-        public void UpdateExpense()
+        public void Test3UpdateExpense()
         {
             Expense expense = new Expense()
             {
@@ -65,14 +65,15 @@ namespace FinancialManager.Test
                 Id = 1
             };
 
-            Action act = () => { controller.Update(expense); };
+            controller.Update(expense);
+            Expense exists = (Expense)controller.Exists(expense);
 
             // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            Assert.AreEqual(expense.Source, exists.Source);
         }
 
         [TestMethod]
-        public void DeleteExpense()
+        public void Test4DeleteExpense()
         {
             Expense expense = new Expense()
             {
@@ -83,10 +84,10 @@ namespace FinancialManager.Test
                 Id = 1
             };
 
-            Action act = () => { controller.Delete(expense); };
+            controller.Delete(expense); 
 
             // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            Assert.IsNull(expense);
         }
     }
 }

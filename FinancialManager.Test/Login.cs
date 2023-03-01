@@ -37,7 +37,7 @@ namespace FinancialManager.Test
             };
 
             User u = uRepo.GetByEntity(user);
-            Assert.AreNotEqual(user.UserName, u.UserName);
+            Assert.IsNull(u);
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace FinancialManager.Test
             };
 
             User u = uRepo.GetByEntity(user);
-            Assert.AreNotEqual(user.UserName, u.UserName);
+            Assert.IsNull(u);
         }
     }
 }

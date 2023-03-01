@@ -130,7 +130,7 @@ namespace FinancialManager.Test
         public void InvalidSymbolSearch()
         {
             ss.URL =API.StockSearchURL + "IBMMM&apikey=" + API.StockKey;
-            Assert.IsNull(ss.GetAsync<StockSearchResponse>());
+            Assert.AreEqual(ss.GetAsync<StockSearchResponse>().bestMatches.Count,0);
         }
 
         [TestMethod]
@@ -144,14 +144,39 @@ namespace FinancialManager.Test
         public void GetStockOverviewInvalidStock()
         {
             ss.URL = API.StockCompanyOverview + "IBMMM&apikey=" + API.StockKey;
-            Assert.IsNotNull(ss.GetAsync<CompanyOverviewResponse>());
+            Assert.IsNull(ss.GetAsync<CompanyOverviewResponse>().Industry);
         }
 
         [TestMethod]
         public void GetStockIncomeStatementInvalidStock()
         {
             ss.URL = API.StockIncomeStatement + "IBMMM&apikey=" + API.StockKey;
-            Assert.IsNotNull(ss.GetAsync<CompanyIncomeStatement>());
+            Assert.IsNull(ss.GetAsync<CompanyIncomeStatement>().AnnualReports);
+        }
+
+        [TestMethod]
+        public void GetStockBalanceSheet()
+        {
+            ss.URL = API.StockIncomeStatement + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyBalanceSheet>());
+        }
+        [TestMethod]
+        public void GetStockBalanceSheetInvalidStock()
+        {
+            ss.URL = API.StockIncomeStatement + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNull(ss.GetAsync<CompanyBalanceSheet>().AnnualReportsBalanceSheet);
+        }
+        [TestMethod]
+        public void GetStockCashFlow()
+        {
+            ss.URL = API.StockCashFlow + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<CompanyCashFlow>());
+        }
+        [TestMethod]
+        public void GetStockCashFlowInvalidStock()
+        {
+            ss.URL = API.StockCashFlow + "IBMMMM&apikey=" + API.StockKey;
+            Assert.IsNull(ss.GetAsync<CompanyCashFlow>().AnnualReportsCashFlow);
         }
     }
 }

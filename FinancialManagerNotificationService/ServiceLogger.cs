@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 
 namespace FinancialManagerNotificationService
 {
-    public class ServiceLogger
+    /// <summary>
+    /// Singleton class used for reading and writing log files
+    /// </summary>
+    public sealed class ServiceLogger
     {
-        public static void WriteToFile(string message)
+        private static readonly ServiceLogger instance = new ServiceLogger();
+
+        static ServiceLogger() { }
+        private ServiceLogger() { }
+
+        public static void Log(string message)
         {
-            using (StreamWriter w = File.AppendText("log.txt"))
+            using (StreamWriter w = File.AppendText("C:\\FinancialManager\\log.txt"))
             {
                 Log(message, w);
             }

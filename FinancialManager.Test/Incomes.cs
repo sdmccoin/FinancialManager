@@ -11,6 +11,7 @@ namespace FinancialManager.Test
     using FinancialManager.Interfaces;
     using FinancialManager.UI.Controllers;
     using Microsoft.Data.Sqlite;
+    using FinancialManager.Data.Interfaces;
 
     [TestClass]
     public class Incomes
@@ -22,7 +23,7 @@ namespace FinancialManager.Test
         }
 
         [TestMethod]
-        public void AddIncome()
+        public void Test1AddIncome()
         {
             Income income = new Income()
             {
@@ -33,14 +34,14 @@ namespace FinancialManager.Test
                 Id = 1
             };
 
-            Action act = () => { controller.Add(income); };
+            Income returned = (Income)controller.Add(income);
 
-            // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            // null means insert was a success            
+            Assert.AreEqual(income, returned);
         }
 
         [TestMethod]
-        public void IncomeSelect()
+        public void Test2IncomeSelect()
         {
             Income income = new Income()
             {
@@ -55,7 +56,7 @@ namespace FinancialManager.Test
         }
 
         [TestMethod]
-        public void UpdateIncome()
+        public void Test3UpdateIncome()
         {
             Income income = new Income()
             {
@@ -66,14 +67,15 @@ namespace FinancialManager.Test
                 Id = 1
             };
 
-            Action act = () => { controller.Update(income); };
+            controller.Update(income);
+            Income exists = (Income)controller.Exists(income);
 
             // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            Assert.AreEqual(income.Source, exists.Source);
         }
 
         [TestMethod]
-        public void DeleteIncome()
+        public void Test4DeleteIncome()
         {
             Income income = new Income()
             {
@@ -84,25 +86,25 @@ namespace FinancialManager.Test
                 Id = 1
             };
 
-            Action act = () => { controller.Delete(income); };
+            controller.Delete(income);
 
             // null means insert was a success
-            Assert.ThrowsException<SqliteException>(act);
+            Assert.IsNull(income);
         }
 
         [TestMethod]
-        public void GetAllIncomeByUserSuccess()
+        public void Test5GetAllIncomeByUserSuccess()
         {
             Assert.IsNotNull(controller.GetAll(1));
         }
         [TestMethod]
-        public void GetAllIncomeByUserFailure()
+        public void Test6GetAllIncomeByUserFailure()
         {
-            Assert.IsNull(controller.GetAll(1000));
+            Assert.AreNotEqual(controller.GetAll(1000).ToList().Count,1);
         }
 
         [TestMethod]
-        public void InsertNewIncome()
+        public void Test7InsertNewIncome()
         {
             Income income = new Income()
             {
@@ -122,7 +124,7 @@ namespace FinancialManager.Test
         }
 
         [TestMethod]
-        public void InsertNewIncomeFailure()
+        public void Test8InsertNewIncomeFailure()
         {
             Income income = new Income()
             {

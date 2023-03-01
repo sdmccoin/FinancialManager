@@ -22,11 +22,12 @@ namespace FinancialManagerNotificationService
 
         protected override void OnStart(string[] args)
         {
-           // log onstart -> ServiceLogger 
+            ServiceLogger.Log("Start Windows Service");
         }
 
         protected override void OnStop()
         {
+            ServiceLogger.Log("Stop Windows Service");
         }
     }
 }

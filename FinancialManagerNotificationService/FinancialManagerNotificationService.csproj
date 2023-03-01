@@ -72,11 +72,5 @@
       <DependentUpon>ServiceEngine.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FinancialManager\FinancialManager.csproj">
-      <Project>{0d145ecc-0876-42d7-8c3d-8c269a053e9f}</Project>
-      <Name>FinancialManager</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
