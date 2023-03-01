@@ -16,8 +16,7 @@ namespace FinancialManager.UI.Controllers
             {
                 "Income" => new IncomeReport(),
                 "Expense" => new ExpenseReport(),
-                "Investment" => new InvestmentReport()
-                
+                "Investment" => new InvestmentReport()                
             };
         }
     }

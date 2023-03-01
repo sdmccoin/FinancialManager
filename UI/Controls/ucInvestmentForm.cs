@@ -75,12 +75,15 @@ namespace FinancialManager.UI.Controls
         {
             // initialize controllers
             investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
-            //investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
 
             // get all the users income and associated reminders and notifications
             List<Investment> investments = (List<Investment>)controller.GetAll(ActiveUser.id);
             List<InvestmentReminder> reminders = (List<InvestmentReminder>)investmentReminderController.GetAll(ActiveUser.id);
-           // List<InvestmentNotification> notifications = (List<InvestmentNotification>)investmentNotificationController.GetAll(ActiveUser.id);
+           
+            // clear prior to reloading
+            investmentTable.Clear();
+            dgvInvestments.DataSource = investmentTable;
+            dgvInvestments.Refresh();
 
             Bitmap reminderImage;
             Bitmap notificationImage;
@@ -98,17 +101,7 @@ namespace FinancialManager.UI.Controls
                         reminderImage = new Bitmap(SystemIcons.Exclamation.ToBitmap(), 25, 25);
                         break;
                     }
-                }
-
-                // load notifications
-                //foreach (ExpenseNotification notification in notifications)
-                //{
-                //    if (notification.ExpenseId == income.Id)
-                //    {
-                //        notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 25, 25);
-                //        break;
-                //    }
-                //}
+                }              
 
                 // set a "blank" image if there is no notification or reminder
                 if (reminderImage == null)

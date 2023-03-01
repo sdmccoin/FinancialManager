@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    public class InvestmentRepository<T> : IRepository<Investment>//<Investment> where T : EntityBase
+    /// <summary>
+    /// Repository class used to help with Investment CRUD operations
+    /// </summary>
+    public class InvestmentRepository<T> : IRepository<Investment>
     {
         public Investment Create(Investment entity)
         {

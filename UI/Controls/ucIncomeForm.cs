@@ -110,6 +110,11 @@ namespace FinancialManager.UI.Controls
             List<IncomeReminder> reminders = (List<IncomeReminder>)incomeReminderController.GetAll(ActiveUser.id);
             List<IncomeNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(ActiveUser.id);
 
+            // clear prior to reloading
+            incomeTable.Clear();
+            dgvIncome.DataSource = incomeTable;
+            dgvIncome.Refresh();
+
             Bitmap reminderImage;
             Bitmap notificationImage;
             foreach (Income income in incomes)

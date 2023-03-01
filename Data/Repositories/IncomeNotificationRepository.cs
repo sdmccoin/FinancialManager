@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
+    /// <summary>
+    /// Repository class used to help with IncomeNotification CRUD operations
+    /// </summary>
     public class IncomeNotificationRepository : IRepository<IncomeNotification>
     {
         public IncomeNotification Create(IncomeNotification entity)

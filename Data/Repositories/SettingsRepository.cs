@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
+    /// <summary>
+    /// Repository class used to help with Settings CRUD operations
+    /// </summary>
     public class SettingsRepository : IRepository<Setting>
     {
         public Setting Create(Setting entity)

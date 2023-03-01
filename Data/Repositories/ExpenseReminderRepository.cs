@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
+    /// <summary>
+    /// Repository class used to help with ExpenseReminder CRUD operations
+    /// </summary>
     public class ExpenseReminderRepository : IRepository<ExpenseReminder>
     {
         public ExpenseReminder Create(ExpenseReminder entity)

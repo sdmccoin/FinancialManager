@@ -41,6 +41,7 @@ namespace FinancialManager.UI.Controls
 
         private void ucReportForm_Load(object sender, EventArgs e)
         {
+            wvReportView.Visible = false;
             lblMonthlyIncome.Text = string.Format("{0:C}", controller.GetMonthlyIncome(ActiveUser.id));
             lblYearlyIncome.Text = string.Format("{0:C}", controller.GetYearlyIncome(ActiveUser.id));
             lblMonthlyExpenses.Text = string.Format("{0:C}", controller.GetMonthlyExpenses(ActiveUser.id));
@@ -69,9 +70,10 @@ namespace FinancialManager.UI.Controls
                         report = ReportFactory.GetReport("Investment");
                         break;
                 }
-
+                
                 LoadReportData();
                 DisplayReport();
+                wvReportView.Visible = true;
             }
             else
             {
@@ -82,10 +84,13 @@ namespace FinancialManager.UI.Controls
 
         private bool FormIsValid(ref string errorMessage)
         {
-            bool isValid = false;
+            bool isValid = true;
 
-            if (Utilities.GetSelectedRadioButton(groupBox1) == null)
-                errorMessage += " - You must select a frequency\r\n";
+            if (Utilities.GetSelectedRadioButton(gbxReportType) == null)
+            {
+                errorMessage += " - You must select a report type\r\n";
+                return false;
+            }
 
             return isValid;
         }

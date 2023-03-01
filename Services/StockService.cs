@@ -23,5 +23,15 @@ namespace FinancialManager.Services
             }
             return response;
         }
+        public T GetAsync<T>(string url)
+        {
+            T response = default;
+            using (WebClient client = new WebClient())
+            {
+                Task taskA = Task.Run(() => response = JsonSerializer.Deserialize<T>(client.DownloadString(url)));
+                taskA.Wait();
+            }
+            return response;
+        }
     }
 }

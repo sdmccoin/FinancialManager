@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    internal class ReminderRepository : IRepository<Reminder>
+    /// <summary>
+    /// Repository class used to help with Reminder CRUD operations
+    /// </summary>
+    public class ReminderRepository : IRepository<Reminder>
     {
         public Reminder Create(Reminder entity)
         {

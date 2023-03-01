@@ -10,7 +10,7 @@ namespace FinancialManager.Data.Repositories
     /// <summary>
     /// Generic Repository Interface
     /// </summary>
-    public interface IRepository<T>// where T : EntityBase
+    public interface IRepository<T>
     {
         T GetById(int id);
         T GetByEntity(T entity);

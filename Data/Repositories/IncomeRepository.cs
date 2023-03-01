@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    public class IncomeRepository : IRepository<Income>// where T : IEntity
+    /// <summary>
+    /// Repository class used to help with Income CRUD operations
+    /// </summary>
+    public class IncomeRepository : IRepository<Income>
     {
         public Income Create(Income entity)
         {

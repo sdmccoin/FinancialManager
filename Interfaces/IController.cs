@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Interfaces
 {
+    /// <summary>
+    /// Interface used for the Controller Factory
+    /// </summary>
     public interface IController
     {
         IEntity Add(IEntity entity);

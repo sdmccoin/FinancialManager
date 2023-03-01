@@ -55,7 +55,12 @@ namespace FinancialManager.UI.Controls
             // get all the users income and associated reminders and notifications
             List<Expense> incomes = (List<Expense>)controller.GetAll(ActiveUser.id);
             List<ExpenseReminder> reminders = (List<ExpenseReminder>)expenseReminderController.GetAll(ActiveUser.id);
-           // List<ExpenseNotification notifications = (List<IncomeNotification>)expenseNotificationController.GetAll(ActiveUser.id);
+            // List<ExpenseNotification notifications = (List<IncomeNotification>)expenseNotificationController.GetAll(ActiveUser.id);
+
+            // clear prior to reloading
+            expenseTable.Clear();
+            dgvExpenses.DataSource = expenseTable;
+            dgvExpenses.Refresh();
 
             Bitmap reminderImage;
             Bitmap notificationImage;
@@ -130,13 +135,13 @@ namespace FinancialManager.UI.Controls
                         controller.Add(expense);
                         LoadExpensesGrid();
 
-                        MessageBox.Show("Income Added", "Success");
+                        MessageBox.Show("Expense Added", "Success");
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    MessageBox.Show("Unable to Add Income", "Failed",
+                    MessageBox.Show("Unable to Add Expense", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -226,8 +231,8 @@ namespace FinancialManager.UI.Controls
             if (row != null)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
-                txtAddress1.Text = row.Cells[3].Value.ToString();
-                txtAmount.Text = row.Cells[2].Value.ToString();
+                txtAddress1.Text = row.Cells[2].Value.ToString();
+                txtAmount.Text = row.Cells[3].Value.ToString();
 
                 Utilities.SelectRadioButton(groupBox1, row.Cells[4].Value.ToString());
             }

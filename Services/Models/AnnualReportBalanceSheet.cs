@@ -14,49 +14,77 @@ namespace FinancialManager.Services.Models
         [JsonPropertyName("reportedCurrency")]
         public string ReportedCurrency { get; set; }
         [JsonPropertyName("totalAssets")]
-        public string totalAssets { get; set; }
+        public string TotalAssets { get; set; }
+        [JsonPropertyName("totalCurrentAssets")]
+        public string TotalCurrentAssets { get; set; }
+        [JsonPropertyName("cashAndCashEquivalentsAtCarryingValue")]
+        public string CashAndCashEquivalentsAtCarryingValue { get; set; }
+        [JsonPropertyName("cashAndShortTermInvestments")]
+        public string CashAndShortTermInvestments { get; set; }
+        [JsonPropertyName("inventory")]
+        public string Inventory { get; set; }
+        [JsonPropertyName("currentNetReceivables")]
+        public string CurrentNetReceivables { get; set; }
+        [JsonPropertyName("totalNonCurrentAssets")]
+        public string TotalNonCurrentAssets { get; set; }
+        [JsonPropertyName("propertyPlantEquipment")]
+        public string PropertyPlantEquipment { get; set; }
+        [JsonPropertyName("accumulatedDepreciationAmortizationPPE")]
+        public string AccumulatedDepreciationAmortizationPPE { get; set; }
+        [JsonPropertyName("intangibleAssets")]
+        public string IntangibleAssets { get; set; }
+        [JsonPropertyName("intangibleAssetsExcludingGoodwill")]
+        public string IntangibleAssetsExcludingGoodwill { get; set; }
+        [JsonPropertyName("goodwill")]
+        public string Goodwill { get; set; }
+        [JsonPropertyName("investments")]
+        public string Investments { get; set; }
+        [JsonPropertyName("longTermInvestments")]
+        public string LongTermInvestments { get; set; }
+        [JsonPropertyName("shortTermInvestments")]
+        public string ShortTermInvestments { get; set; }
+        [JsonPropertyName("otherCurrentAssets")]
+        public string OtherCurrentAssets { get; set; }
+        [JsonPropertyName("otherNonCurrentAssets")]
+        public string OtherNonCurrentAssets { get; set; }
+        [JsonPropertyName("totalLiabilities")]
+        public string TotalLiabilities { get; set; }
+        [JsonPropertyName("totalCurrentLiabilities")]
+        public string TotalCurrentLiabilities { get; set; }
+        [JsonPropertyName("currentAccountsPayable")]
+        public string CurrentAccountsPayable { get; set; }
+        [JsonPropertyName("deferredRevenue")]
+        public string DeferredRevenue { get; set; }
+        [JsonPropertyName("currentDebt")]
+        public string CurrentDebt { get; set; }
+        [JsonPropertyName("shortTermDebt")]
+        public string ShortTermDebt { get; set; }
+        [JsonPropertyName("totalNonCurrentLiabilities")]
+        public string TotalNonCurrentLiabilities { get; set; }
+        [JsonPropertyName("capitalLeaseObligations")]
+        public string CapitalLeaseObligations { get; set; }
+        [JsonPropertyName("longTermDebt")]
+        public string LongTermDebt { get; set; }
+        [JsonPropertyName("currentLongTermDebt")]
+        public string currentLongTermDebt { get; set; }
+        [JsonPropertyName("longTermDebtNoncurrent")]
+        public string LongTermDebtNoncurrent { get; set; }
+        [JsonPropertyName("shortLongTermDebtTotal")]
+        public string ShortLongTermDebtTotal { get; set; }
+        [JsonPropertyName("otherCurrentLiabilities")]
+        public string OtherCurrentLiabilities { get; set; }
+        [JsonPropertyName("otherNonCurrentLiabilities")]
+        public string OtherNonCurrentLiabilities { get; set; }
+        [JsonPropertyName("totalShareholderEquity")]
+        public string TotalShareholderEquity { get; set; }
+        [JsonPropertyName("treasuryStock")]
+        public string TreasuryStock { get; set; }
+        [JsonPropertyName("retainedEarnings")]
+        public string RetainedEarnings { get; set; }
+        [JsonPropertyName("commonStock")]
+        public string CommonStock { get; set; }
+        [JsonPropertyName("commonStockSharesOutstanding")]
+        public string CommonStockSharesOutstanding { get; set; }
     }
 }
-/* "symbol": "IBM",
-    "annualReports": [
-        {
-            "fiscalDateEnding": "2021-12-31",
-            "reportedCurrency": "USD",
-            "": "132001000000",
-            "totalCurrentAssets": "29539000000",
-            "cashAndCashEquivalentsAtCarryingValue": "6650000000",
-            "cashAndShortTermInvestments": "6650000000",
-            "inventory": "1649000000",
-            "currentNetReceivables": "14977000000",
-            "totalNonCurrentAssets": "101786000000",
-            "propertyPlantEquipment": "5694000000",
-            "accumulatedDepreciationAmortizationPPE": "14390000000",
-            "intangibleAssets": "68154000000",
-            "intangibleAssetsExcludingGoodwill": "12511000000",
-            "goodwill": "55643000000",
-            "investments": "199000000",
-            "longTermInvestments": "159000000",
-            "shortTermInvestments": "600000000",
-            "otherCurrentAssets": "5663000000",
-            "otherNonCurrentAssets": "None",
-            "totalLiabilities": "113005000000",
-            "totalCurrentLiabilities": "33619000000",
-            "currentAccountsPayable": "3955000000",
-            "deferredRevenue": "16095000000",
-            "currentDebt": "13551000000",
-            "shortTermDebt": "6787000000",
-            "totalNonCurrentLiabilities": "90188000000",
-            "capitalLeaseObligations": "63000000",
-            "longTermDebt": "56193000000",
-            "currentLongTermDebt": "6728000000",
-            "longTermDebtNoncurrent": "44917000000",
-            "shortLongTermDebtTotal": "110496000000",
-            "otherCurrentLiabilities": "9386000000",
-            "otherNonCurrentLiabilities": "13996000000",
-            "totalShareholderEquity": "18901000000",
-            "treasuryStock": "169392000000",
-            "retainedEarnings": "154209000000",
-            "commonStock": "57319000000",
-            "commonStockSharesOutstanding": "898068600"
-        },
-        {*/
+

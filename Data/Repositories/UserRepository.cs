@@ -10,7 +10,10 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace FinancialManager.Data.Repositories
 {
-    public class UserRepository<T> : IRepository<User>//<User> where T : EntityBase
+    /// <summary>
+    /// Repository class used to help with User CRUD operations
+    /// </summary>
+    public class UserRepository<T> : IRepository<User>
     {
         public User Create(User entity)
         {

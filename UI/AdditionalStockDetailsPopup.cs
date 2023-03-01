@@ -18,10 +18,12 @@ namespace FinancialManager.UI
     {
         private string stockName;
         private string symbol;
+        private StockService ss;
 
         public AdditionalStockDetailsPopup(string stockName, string symbol)
         {
             InitializeComponent();
+            ss = new StockService();
             this.stockName = stockName; 
             this.symbol = symbol;
             this.Text = stockName+ " (" + symbol + ")";            
@@ -34,58 +36,58 @@ namespace FinancialManager.UI
 
             LoadOverviewInformation();
             LoadIncomeStatementInformation();
-            //LoadBalanceSheetInformation();
-           
+            LoadBalanceSheetInformation();
+            LoadCashFlowInformation();
         }
 
         private void LoadOverviewInformation()
         {
-            string overviewSearchUrl = API.StockCompanyOverview + symbol + "&apikey=" + API.StockKey;
             CompanyOverviewResponse response = new CompanyOverviewResponse();
-
-            using (WebClient client = new WebClient())
+            response = ss.GetAsync<CompanyOverviewResponse>(API.StockCompanyOverview + symbol + "&apikey=" + API.StockKey);
+                        
+            if (response != null)
             {
-                Task taskA = Task.Run(() => response = JsonSerializer.Deserialize<CompanyOverviewResponse>(client.DownloadString(overviewSearchUrl)));
-                taskA.Wait();
-                if (response != null)
-                {
-                    DisplayOverViewInformation(response);
-                }
+                DisplayOverViewInformation(response);
             }
+            
         }
         private void LoadIncomeStatementInformation()
-        {
-            string overviewSearchUrl = API.StockIncomeStatement + symbol + "&apikey=" + API.StockKey;
+        {            
             CompanyIncomeStatement response = new CompanyIncomeStatement();
+            response = ss.GetAsync<CompanyIncomeStatement>(API.StockIncomeStatement + symbol + "&apikey=" + API.StockKey);
 
-            using (WebClient client = new WebClient())
+            if (response != null)
             {
-                Task taskA = Task.Run(() => response = JsonSerializer.Deserialize<CompanyIncomeStatement>(client.DownloadString(overviewSearchUrl)));
-                taskA.Wait();
-                if (response != null)
+                if (response.AnnualReports != null)
                 {
-                    if (response.AnnualReports.Count > 0)
-                    {
-                        DisplayIncomeStatementInformation(response.AnnualReports[0]);
-                    }                    
-                }
-            }
+                    DisplayIncomeStatementInformation(response.AnnualReports[0]);
+                }                    
+            }            
         }
         private void LoadBalanceSheetInformation()
         {
-            string balanceSheetUrl = API.StockBalanceSheet + symbol + "&apikey=" + API.StockKey;
-            CompanyBalanceSheet response = new CompanyBalanceSheet();
-
-            using (WebClient client = new WebClient())
+            CompanyBalanceSheet response = new CompanyBalanceSheet();            
+            response = ss.GetAsync<CompanyBalanceSheet>(API.StockBalanceSheet + symbol + "&apikey=" + API.StockKey);
+           
+            if (response != null)
             {
-                Task taskA = Task.Run(() => response = JsonSerializer.Deserialize<CompanyBalanceSheet>(client.DownloadString(balanceSheetUrl)));
-                taskA.Wait();
-                if (response != null)
+                if (response.AnnualReportsBalanceSheet != null)
                 {
-                    if (response.AnnualReportsBalanceSheet.Count > 0)
-                    {
-                        DisplayBalanceSheetInformation(response.AnnualReportsBalanceSheet[0]);
-                    }
+                    DisplayBalanceSheetInformation(response.AnnualReportsBalanceSheet[0]);
+                }
+            }            
+        }
+
+        private void LoadCashFlowInformation()
+        {
+            CompanyCashFlow response = new CompanyCashFlow();
+            response = ss.GetAsync<CompanyCashFlow>(API.StockCashFlow + symbol + "&apikey=" + API.StockKey);
+
+            if (response != null)
+            {
+                if (response.AnnualReportsCashFlow != null)
+                {
+                    DisplayCashFlowInformation(response.AnnualReportsCashFlow[0]);
                 }
             }
         }
@@ -158,7 +160,78 @@ namespace FinancialManager.UI
         }
         private void DisplayBalanceSheetInformation(AnnualReportBalanceSheet response)
         {
-
+            lblFiscalDateEndingBS.Text = response.FiscalDateEnding;
+            lblReportedCurrencyBS.Text = response.ReportedCurrency;
+            lblTotalAssets.Text = Utilities.FormatCurrency(response.TotalAssets);
+            lblTotalCurrentAssets.Text = Utilities.FormatCurrency(response.TotalCurrentAssets);
+            lblCashAndCashEquiv.Text = Utilities.FormatCurrency(response.CashAndCashEquivalentsAtCarryingValue);
+            lblCashAndShortTerm.Text = Utilities.FormatCurrency(response.CashAndShortTermInvestments);
+            lblInventory.Text = Utilities.FormatCurrency(response.Inventory);
+            lblCurrentNetReceivables.Text = Utilities.FormatCurrency(response.CurrentNetReceivables);
+            lblTotalNonCurrentAssets.Text = Utilities.FormatCurrency(response.TotalNonCurrentAssets);
+            lblPropertyPlanEquip.Text = Utilities.FormatCurrency(response.PropertyPlantEquipment);
+            lblAccumulatedDepreciation.Text = Utilities.FormatCurrency(response.AccumulatedDepreciationAmortizationPPE);
+            lblIntangibleAssets.Text = Utilities.FormatCurrency(response.IntangibleAssets);
+            lblIntangibleAssetsExcluding.Text = Utilities.FormatCurrency(response.IntangibleAssetsExcludingGoodwill);
+            lblGoodwill.Text = Utilities.FormatCurrency(response.Goodwill);
+            lblInvestments.Text = Utilities.FormatCurrency(response.Investments);
+            lblLongTermInvestments.Text = Utilities.FormatCurrency(response.LongTermInvestments);
+            lblShortTermInvestments.Text = Utilities.FormatCurrency(response.ShortTermInvestments);
+            lblOtherCurrentAssets.Text = Utilities.FormatCurrency(response.OtherCurrentAssets);
+            lblOtherNonCurrentAssets.Text = Utilities.FormatCurrency(response.OtherNonCurrentAssets);
+            lblTotalLiabilities.Text = Utilities.FormatCurrency(response.TotalLiabilities);
+            lblTotalCurrentLiabilities.Text = Utilities.FormatCurrency(response.TotalCurrentLiabilities);
+            lblCurrentAccountsPayable.Text = Utilities.FormatCurrency(response.CurrentAccountsPayable);
+            lblDeferredRevenue.Text = Utilities.FormatCurrency(response.DeferredRevenue);
+            lblCurrentDebt.Text = Utilities.FormatCurrency(response.CurrentDebt);
+            lblShortTermDebt.Text = Utilities.FormatCurrency(response.ShortTermDebt);
+            lblTotalNonCurrentLiab.Text = Utilities.FormatCurrency(response.TotalNonCurrentLiabilities);
+            lblCapitalLeaseObligations.Text = Utilities.FormatCurrency(response.CapitalLeaseObligations);
+            lblLongTermDebt.Text = Utilities.FormatCurrency(response.LongTermDebt);
+            lblCurrentLongTermDebt.Text = Utilities.FormatCurrency(response.currentLongTermDebt);
+            lblLongTermDebtNonCurrent.Text = Utilities.FormatCurrency(response.LongTermDebtNoncurrent);
+            lblShortLongTermDebtTotal.Text = Utilities.FormatCurrency(response.ShortLongTermDebtTotal);
+            lblOtherCurrentLiabilities.Text = Utilities.FormatCurrency(response.OtherCurrentLiabilities);
+            lblOtherNonCurrentLiabilities.Text = Utilities.FormatCurrency(response.OtherNonCurrentLiabilities);
+            lblTotalShareholderEquity.Text = Utilities.FormatCurrency(response.TotalShareholderEquity);
+            lblTreasuryStock.Text = Utilities.FormatCurrency(response.TreasuryStock);
+            lblRetainedEarnings.Text = Utilities.FormatCurrency(response.RetainedEarnings);
+            lblCommonStock.Text = Utilities.FormatCurrency(response.CommonStock);
+            lblCommonStockSharesOut.Text = response.CommonStockSharesOutstanding;
+        }
+        private void DisplayCashFlowInformation(AnnualReportCashFlow response)
+        {
+            lblFiscalEndingCF.Text = response.FiscalDateEnding;
+            lblReportedCurrencyCF.Text = response.ReportedCurrency;
+            lblOperatingCashflow.Text = Utilities.FormatCurrency(response.OperatingCashflow);
+            lblPaymentsForOperatingActivities.Text = Utilities.FormatCurrency(response.PaymentsForOperatingActivities);
+            lblProceedsFromOperatingActivities.Text = Utilities.FormatCurrency(response.ProceedsFromOperatingActivities);
+            lblChangeInOperatingLiabilities.Text = Utilities.FormatCurrency(response.ChangeInOperatingLiabilities);
+            lblChangeInOperatingAssets.Text = Utilities.FormatCurrency(response.ChangeInOperatingAssets);
+            lblDepreciationDepletionAndAmortization.Text = Utilities.FormatCurrency(response.DepreciationDepletionAndAmortization);
+            lblCapitalExpenditures.Text = Utilities.FormatCurrency(response.CapitalExpenditures);
+            lblChangeInReceivables.Text = Utilities.FormatCurrency(response.ChangeInReceivables);
+            lblChangeInInventory.Text = Utilities.FormatCurrency(response.ChangeInInventory);
+            lblProfitLoss.Text = Utilities.FormatCurrency(response.ProfitLoss);
+            lblCashflowFromInvestment.Text = Utilities.FormatCurrency(response.CashflowFromInvestment);
+            lblCashflowFromFinancing.Text = Utilities.FormatCurrency(response.CashflowFromFinancing);
+            lblProceedsFromRepaymentsOfShortTermDebt.Text = Utilities.FormatCurrency(response.ProceedsFromRepaymentsOfShortTermDebt);
+            lblPaymentsForRepurchaseOfCommonStock.Text = Utilities.FormatCurrency(response.PaymentsForRepurchaseOfCommonStock);
+            lblPaymentsForRepurchaseOfEquity.Text = Utilities.FormatCurrency(response.PaymentsForRepurchaseOfEquity);
+            lblPaymentsForRepurchaseOfPreferredStock.Text = Utilities.FormatCurrency(response.PaymentsForRepurchaseOfPreferredStock);
+            lblDividendPayout.Text = Utilities.FormatCurrency(response.DividendPayout);
+            lblDividendPayoutCommonStock.Text = Utilities.FormatCurrency(response.DividendPayoutCommonStock);
+            lblDividendPayoutPreferredStock.Text = Utilities.FormatCurrency(response.DividendPayoutPreferredStock);
+            lblProceedsFromIssuanceOfCommonStock.Text = Utilities.FormatCurrency(response.ProceedsFromIssuanceOfCommonStock);
+            lblProceedsFromIssuanceOfPreferredStock.Text = Utilities.FormatCurrency(response.ProceedsFromIssuanceOfPreferredStock);
+            lblProceedsFromRepurchaseOfEquity.Text = Utilities.FormatCurrency(response.ProceedsFromRepurchaseOfEquity);
+            lblProceedsFromSaleOfTreasuryStock.Text = Utilities.FormatCurrency(response.ProceedsFromSaleOfTreasuryStock);
+            lblChangeInCashAndCashEquivalents.Text = Utilities.FormatCurrency(response.ChangeInCashAndCashEquivalents);
+            lblChangeInExchangeRate.Text = Utilities.FormatCurrency(response.ChangeInExchangeRate);
+            lblNetIncomeCashFlow.Text = Utilities.FormatCurrency(response.NetIncome);
+            /*
+            "lblProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet": "522000000",
+            */
         }
     }
 }

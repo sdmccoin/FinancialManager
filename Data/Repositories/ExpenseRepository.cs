@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
-    public class ExpenseRepository<T> : IRepository<Expense>//<Expense> where T : EntityBase
+    /// <summary>
+    /// Repository class used to help with Expense CRUD operations
+    /// </summary>
+    public class ExpenseRepository<T> : IRepository<Expense>
     {
         public Expense Create(Expense entity)
         {

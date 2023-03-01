@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Data.Repositories
 {
+    /// <summary>
+    /// Repository class used to help with IncomeReminder CRUD operations
+    /// </summary>
     internal class IncomeReminderRepository : IRepository<IncomeReminder>
     {
         public IncomeReminder Create(IncomeReminder entity)

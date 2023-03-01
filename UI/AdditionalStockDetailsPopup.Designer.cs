@@ -150,8 +150,142 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.tpBalanceSheet = new System.Windows.Forms.TabPage();
+            this.lblCommonStockSharesOut = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.lblRetainedEarnings = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.lblTreasuryStock = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
+            this.lblCommonStock = new System.Windows.Forms.Label();
+            this.label124 = new System.Windows.Forms.Label();
+            this.lblTotalShareholderEquity = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.lblOtherCurrentLiabilities = new System.Windows.Forms.Label();
+            this.label128 = new System.Windows.Forms.Label();
+            this.lblShortLongTermDebtTotal = new System.Windows.Forms.Label();
+            this.lblLongTermDebtNonCurrent = new System.Windows.Forms.Label();
+            this.label131 = new System.Windows.Forms.Label();
+            this.label132 = new System.Windows.Forms.Label();
+            this.lblCurrentLongTermDebt = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.lblLongTermDebt = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.lblOtherNonCurrentLiabilities = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.lblCapitalLeaseObligations = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.lblShortTermDebt = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.lblCurrentDebt = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.lblTotalNonCurrentLiab = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.lblDeferredRevenue = new System.Windows.Forms.Label();
+            this.lblIntangibleAssets = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lblTotalCurrentLiabilities = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.lblTotalLiabilities = new System.Windows.Forms.Label();
+            this.lblOtherNonCurrentAssets = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.lblOtherCurrentAssets = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.lblShortTermInvestments = new System.Windows.Forms.Label();
+            this.lblLongTermInvestments = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.lblInvestments = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.lblGoodwill = new System.Windows.Forms.Label();
+            this.lblIntangibleAssetsExcluding = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.lblCurrentAccountsPayable = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.lblAccumulatedDepreciation = new System.Windows.Forms.Label();
+            this.lblPropertyPlanEquip = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.lblTotalNonCurrentAssets = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.lblCurrentNetReceivables = new System.Windows.Forms.Label();
+            this.lblInventory = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.lblCashAndShortTerm = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.lblCashAndCashEquiv = new System.Windows.Forms.Label();
+            this.lblTotalCurrentAssets = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.lblTotalAssets = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.lblReportedCurrencyBS = new System.Windows.Forms.Label();
+            this.lblFiscalDateEndingBS = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.tpCashFlow = new System.Windows.Forms.TabPage();
+            this.lblNetIncomeCashFlow = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.lblChangeInExchangeRate = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.lblChangeInCashAndCashEquivalents = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.lblProceedsFromRepurchaseOfEquity = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.lblProceedsFromIssuanceOfPreferredStock = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.lblProceedsFromSaleOfTreasuryStock = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.lblProfitLoss = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.label129 = new System.Windows.Forms.Label();
+            this.lblDividendPayoutPreferredStock = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.lblDividendPayoutCommonStock = new System.Windows.Forms.Label();
+            this.lblDividendPayout = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.label140 = new System.Windows.Forms.Label();
+            this.lblPaymentsForRepurchaseOfPreferredStock = new System.Windows.Forms.Label();
+            this.label142 = new System.Windows.Forms.Label();
+            this.lblPaymentsForRepurchaseOfEquity = new System.Windows.Forms.Label();
+            this.lblPaymentsForRepurchaseOfCommonStock = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.label146 = new System.Windows.Forms.Label();
+            this.lblProceedsFromRepaymentsOfShortTermDebt = new System.Windows.Forms.Label();
+            this.label148 = new System.Windows.Forms.Label();
+            this.lblCashflowFromFinancing = new System.Windows.Forms.Label();
+            this.lblCashflowFromInvestment = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
+            this.label152 = new System.Windows.Forms.Label();
+            this.lblProceedsFromIssuanceOfCommonStock = new System.Windows.Forms.Label();
+            this.label154 = new System.Windows.Forms.Label();
+            this.lblChangeInInventory = new System.Windows.Forms.Label();
+            this.lblChangeInReceivables = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.lblCapitalExpenditures = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.lblDepreciationDepletionAndAmortization = new System.Windows.Forms.Label();
+            this.lblChangeInOperatingAssets = new System.Windows.Forms.Label();
+            this.label163 = new System.Windows.Forms.Label();
+            this.label164 = new System.Windows.Forms.Label();
+            this.lblChangeInOperatingLiabilities = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
+            this.lblProceedsFromOperatingActivities = new System.Windows.Forms.Label();
+            this.lblPaymentsForOperatingActivities = new System.Windows.Forms.Label();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.lblOperatingCashflow = new System.Windows.Forms.Label();
+            this.label172 = new System.Windows.Forms.Label();
+            this.lblReportedCurrencyCF = new System.Windows.Forms.Label();
+            this.lblFiscalEndingCF = new System.Windows.Forms.Label();
+            this.label175 = new System.Windows.Forms.Label();
+            this.label176 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpOverview.SuspendLayout();
@@ -1445,12 +1579,810 @@
             // tpBalanceSheet
             // 
             this.tpBalanceSheet.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tpBalanceSheet.Controls.Add(this.lblCommonStockSharesOut);
+            this.tpBalanceSheet.Controls.Add(this.label118);
+            this.tpBalanceSheet.Controls.Add(this.lblRetainedEarnings);
+            this.tpBalanceSheet.Controls.Add(this.label120);
+            this.tpBalanceSheet.Controls.Add(this.lblTreasuryStock);
+            this.tpBalanceSheet.Controls.Add(this.label122);
+            this.tpBalanceSheet.Controls.Add(this.lblCommonStock);
+            this.tpBalanceSheet.Controls.Add(this.label124);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalShareholderEquity);
+            this.tpBalanceSheet.Controls.Add(this.label126);
+            this.tpBalanceSheet.Controls.Add(this.lblOtherCurrentLiabilities);
+            this.tpBalanceSheet.Controls.Add(this.label128);
+            this.tpBalanceSheet.Controls.Add(this.lblShortLongTermDebtTotal);
+            this.tpBalanceSheet.Controls.Add(this.lblLongTermDebtNonCurrent);
+            this.tpBalanceSheet.Controls.Add(this.label131);
+            this.tpBalanceSheet.Controls.Add(this.label132);
+            this.tpBalanceSheet.Controls.Add(this.lblCurrentLongTermDebt);
+            this.tpBalanceSheet.Controls.Add(this.label134);
+            this.tpBalanceSheet.Controls.Add(this.lblLongTermDebt);
+            this.tpBalanceSheet.Controls.Add(this.label136);
+            this.tpBalanceSheet.Controls.Add(this.lblOtherNonCurrentLiabilities);
+            this.tpBalanceSheet.Controls.Add(this.label138);
+            this.tpBalanceSheet.Controls.Add(this.lblCapitalLeaseObligations);
+            this.tpBalanceSheet.Controls.Add(this.label110);
+            this.tpBalanceSheet.Controls.Add(this.lblShortTermDebt);
+            this.tpBalanceSheet.Controls.Add(this.label112);
+            this.tpBalanceSheet.Controls.Add(this.lblCurrentDebt);
+            this.tpBalanceSheet.Controls.Add(this.label114);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalNonCurrentLiab);
+            this.tpBalanceSheet.Controls.Add(this.label116);
+            this.tpBalanceSheet.Controls.Add(this.lblDeferredRevenue);
+            this.tpBalanceSheet.Controls.Add(this.lblIntangibleAssets);
+            this.tpBalanceSheet.Controls.Add(this.label49);
+            this.tpBalanceSheet.Controls.Add(this.label52);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalCurrentLiabilities);
+            this.tpBalanceSheet.Controls.Add(this.label60);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalLiabilities);
+            this.tpBalanceSheet.Controls.Add(this.lblOtherNonCurrentAssets);
+            this.tpBalanceSheet.Controls.Add(this.label66);
+            this.tpBalanceSheet.Controls.Add(this.label67);
+            this.tpBalanceSheet.Controls.Add(this.lblOtherCurrentAssets);
+            this.tpBalanceSheet.Controls.Add(this.label72);
+            this.tpBalanceSheet.Controls.Add(this.lblShortTermInvestments);
+            this.tpBalanceSheet.Controls.Add(this.lblLongTermInvestments);
+            this.tpBalanceSheet.Controls.Add(this.label77);
+            this.tpBalanceSheet.Controls.Add(this.label78);
+            this.tpBalanceSheet.Controls.Add(this.lblInvestments);
+            this.tpBalanceSheet.Controls.Add(this.label80);
+            this.tpBalanceSheet.Controls.Add(this.lblGoodwill);
+            this.tpBalanceSheet.Controls.Add(this.lblIntangibleAssetsExcluding);
+            this.tpBalanceSheet.Controls.Add(this.label83);
+            this.tpBalanceSheet.Controls.Add(this.label84);
+            this.tpBalanceSheet.Controls.Add(this.lblCurrentAccountsPayable);
+            this.tpBalanceSheet.Controls.Add(this.label86);
+            this.tpBalanceSheet.Controls.Add(this.lblAccumulatedDepreciation);
+            this.tpBalanceSheet.Controls.Add(this.lblPropertyPlanEquip);
+            this.tpBalanceSheet.Controls.Add(this.label89);
+            this.tpBalanceSheet.Controls.Add(this.label90);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalNonCurrentAssets);
+            this.tpBalanceSheet.Controls.Add(this.label92);
+            this.tpBalanceSheet.Controls.Add(this.lblCurrentNetReceivables);
+            this.tpBalanceSheet.Controls.Add(this.lblInventory);
+            this.tpBalanceSheet.Controls.Add(this.label95);
+            this.tpBalanceSheet.Controls.Add(this.label96);
+            this.tpBalanceSheet.Controls.Add(this.lblCashAndShortTerm);
+            this.tpBalanceSheet.Controls.Add(this.label98);
+            this.tpBalanceSheet.Controls.Add(this.lblCashAndCashEquiv);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalCurrentAssets);
+            this.tpBalanceSheet.Controls.Add(this.label101);
+            this.tpBalanceSheet.Controls.Add(this.label102);
+            this.tpBalanceSheet.Controls.Add(this.lblTotalAssets);
+            this.tpBalanceSheet.Controls.Add(this.label104);
+            this.tpBalanceSheet.Controls.Add(this.lblReportedCurrencyBS);
+            this.tpBalanceSheet.Controls.Add(this.lblFiscalDateEndingBS);
+            this.tpBalanceSheet.Controls.Add(this.label107);
+            this.tpBalanceSheet.Controls.Add(this.label108);
             this.tpBalanceSheet.Controls.Add(this.label38);
             this.tpBalanceSheet.Location = new System.Drawing.Point(4, 53);
             this.tpBalanceSheet.Name = "tpBalanceSheet";
             this.tpBalanceSheet.Size = new System.Drawing.Size(1529, 1599);
             this.tpBalanceSheet.TabIndex = 2;
             this.tpBalanceSheet.Text = "Balance Sheet";
+            // 
+            // lblCommonStockSharesOut
+            // 
+            this.lblCommonStockSharesOut.AutoSize = true;
+            this.lblCommonStockSharesOut.Location = new System.Drawing.Point(1335, 1507);
+            this.lblCommonStockSharesOut.Name = "lblCommonStockSharesOut";
+            this.lblCommonStockSharesOut.Size = new System.Drawing.Size(30, 41);
+            this.lblCommonStockSharesOut.TabIndex = 197;
+            this.lblCommonStockSharesOut.Text = "-";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label118.Location = new System.Drawing.Point(776, 1507);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(523, 41);
+            this.label118.TabIndex = 196;
+            this.label118.Text = "Common Stock Shares Outstanding:";
+            // 
+            // lblRetainedEarnings
+            // 
+            this.lblRetainedEarnings.AutoSize = true;
+            this.lblRetainedEarnings.Location = new System.Drawing.Point(1112, 1401);
+            this.lblRetainedEarnings.Name = "lblRetainedEarnings";
+            this.lblRetainedEarnings.Size = new System.Drawing.Size(30, 41);
+            this.lblRetainedEarnings.TabIndex = 195;
+            this.lblRetainedEarnings.Text = "-";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label120.Location = new System.Drawing.Point(776, 1401);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(280, 41);
+            this.label120.TabIndex = 194;
+            this.label120.Text = "Retained Earnings:";
+            // 
+            // lblTreasuryStock
+            // 
+            this.lblTreasuryStock.AutoSize = true;
+            this.lblTreasuryStock.Location = new System.Drawing.Point(1059, 1351);
+            this.lblTreasuryStock.Name = "lblTreasuryStock";
+            this.lblTreasuryStock.Size = new System.Drawing.Size(30, 41);
+            this.lblTreasuryStock.TabIndex = 193;
+            this.lblTreasuryStock.Text = "-";
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label122.Location = new System.Drawing.Point(776, 1351);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(232, 41);
+            this.label122.TabIndex = 192;
+            this.label122.Text = "Treasury Stock:";
+            // 
+            // lblCommonStock
+            // 
+            this.lblCommonStock.AutoSize = true;
+            this.lblCommonStock.Location = new System.Drawing.Point(1088, 1454);
+            this.lblCommonStock.Name = "lblCommonStock";
+            this.lblCommonStock.Size = new System.Drawing.Size(30, 41);
+            this.lblCommonStock.TabIndex = 191;
+            this.lblCommonStock.Text = "-";
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label124.Location = new System.Drawing.Point(776, 1454);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(239, 41);
+            this.label124.TabIndex = 190;
+            this.label124.Text = "Common Stock:";
+            // 
+            // lblTotalShareholderEquity
+            // 
+            this.lblTotalShareholderEquity.AutoSize = true;
+            this.lblTotalShareholderEquity.Location = new System.Drawing.Point(1190, 1292);
+            this.lblTotalShareholderEquity.Name = "lblTotalShareholderEquity";
+            this.lblTotalShareholderEquity.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalShareholderEquity.TabIndex = 189;
+            this.lblTotalShareholderEquity.Text = "-";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label126.Location = new System.Drawing.Point(776, 1292);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(373, 41);
+            this.label126.TabIndex = 188;
+            this.label126.Text = "Total Shareholder Equity:";
+            // 
+            // lblOtherCurrentLiabilities
+            // 
+            this.lblOtherCurrentLiabilities.AutoSize = true;
+            this.lblOtherCurrentLiabilities.Location = new System.Drawing.Point(1164, 1186);
+            this.lblOtherCurrentLiabilities.Name = "lblOtherCurrentLiabilities";
+            this.lblOtherCurrentLiabilities.Size = new System.Drawing.Size(30, 41);
+            this.lblOtherCurrentLiabilities.TabIndex = 187;
+            this.lblOtherCurrentLiabilities.Text = "-";
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label128.Location = new System.Drawing.Point(776, 1186);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(366, 41);
+            this.label128.TabIndex = 186;
+            this.label128.Text = "Other Current Liabilities:";
+            // 
+            // lblShortLongTermDebtTotal
+            // 
+            this.lblShortLongTermDebtTotal.AutoSize = true;
+            this.lblShortLongTermDebtTotal.Location = new System.Drawing.Point(1217, 1136);
+            this.lblShortLongTermDebtTotal.Name = "lblShortLongTermDebtTotal";
+            this.lblShortLongTermDebtTotal.Size = new System.Drawing.Size(30, 41);
+            this.lblShortLongTermDebtTotal.TabIndex = 185;
+            this.lblShortLongTermDebtTotal.Text = "-";
+            // 
+            // lblLongTermDebtNonCurrent
+            // 
+            this.lblLongTermDebtNonCurrent.AutoSize = true;
+            this.lblLongTermDebtNonCurrent.Location = new System.Drawing.Point(1202, 1083);
+            this.lblLongTermDebtNonCurrent.Name = "lblLongTermDebtNonCurrent";
+            this.lblLongTermDebtNonCurrent.Size = new System.Drawing.Size(30, 41);
+            this.lblLongTermDebtNonCurrent.TabIndex = 184;
+            this.lblLongTermDebtNonCurrent.Text = "-";
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label131.Location = new System.Drawing.Point(776, 1136);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(415, 41);
+            this.label131.TabIndex = 183;
+            this.label131.Text = "Short Long Term Debt Total:";
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label132.Location = new System.Drawing.Point(776, 1083);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(429, 41);
+            this.label132.TabIndex = 182;
+            this.label132.Text = "Long Term Debt Non current:";
+            // 
+            // lblCurrentLongTermDebt
+            // 
+            this.lblCurrentLongTermDebt.AutoSize = true;
+            this.lblCurrentLongTermDebt.Location = new System.Drawing.Point(1190, 1023);
+            this.lblCurrentLongTermDebt.Name = "lblCurrentLongTermDebt";
+            this.lblCurrentLongTermDebt.Size = new System.Drawing.Size(30, 41);
+            this.lblCurrentLongTermDebt.TabIndex = 181;
+            this.lblCurrentLongTermDebt.Text = "-";
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label134.Location = new System.Drawing.Point(776, 1023);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(366, 41);
+            this.label134.TabIndex = 180;
+            this.label134.Text = "Current Long Term Debt:";
+            // 
+            // lblLongTermDebt
+            // 
+            this.lblLongTermDebt.AutoSize = true;
+            this.lblLongTermDebt.Location = new System.Drawing.Point(1059, 973);
+            this.lblLongTermDebt.Name = "lblLongTermDebt";
+            this.lblLongTermDebt.Size = new System.Drawing.Size(30, 41);
+            this.lblLongTermDebt.TabIndex = 179;
+            this.lblLongTermDebt.Text = "-";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label136.Location = new System.Drawing.Point(776, 973);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(251, 41);
+            this.label136.TabIndex = 178;
+            this.label136.Text = "Long Term Debt:";
+            // 
+            // lblOtherNonCurrentLiabilities
+            // 
+            this.lblOtherNonCurrentLiabilities.AutoSize = true;
+            this.lblOtherNonCurrentLiabilities.Location = new System.Drawing.Point(1243, 1239);
+            this.lblOtherNonCurrentLiabilities.Name = "lblOtherNonCurrentLiabilities";
+            this.lblOtherNonCurrentLiabilities.Size = new System.Drawing.Size(30, 41);
+            this.lblOtherNonCurrentLiabilities.TabIndex = 177;
+            this.lblOtherNonCurrentLiabilities.Text = "-";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label138.Location = new System.Drawing.Point(776, 1239);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(434, 41);
+            this.label138.TabIndex = 176;
+            this.label138.Text = "Other Non Current Liabilities:";
+            // 
+            // lblCapitalLeaseObligations
+            // 
+            this.lblCapitalLeaseObligations.AutoSize = true;
+            this.lblCapitalLeaseObligations.Location = new System.Drawing.Point(467, 1507);
+            this.lblCapitalLeaseObligations.Name = "lblCapitalLeaseObligations";
+            this.lblCapitalLeaseObligations.Size = new System.Drawing.Size(30, 41);
+            this.lblCapitalLeaseObligations.TabIndex = 175;
+            this.lblCapitalLeaseObligations.Text = "-";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label110.Location = new System.Drawing.Point(41, 1507);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(383, 41);
+            this.label110.TabIndex = 174;
+            this.label110.Text = "Capital Lease Obligations:";
+            // 
+            // lblShortTermDebt
+            // 
+            this.lblShortTermDebt.AutoSize = true;
+            this.lblShortTermDebt.Location = new System.Drawing.Point(366, 1401);
+            this.lblShortTermDebt.Name = "lblShortTermDebt";
+            this.lblShortTermDebt.Size = new System.Drawing.Size(30, 41);
+            this.lblShortTermDebt.TabIndex = 173;
+            this.lblShortTermDebt.Text = "-";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label112.Location = new System.Drawing.Point(41, 1401);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(259, 41);
+            this.label112.TabIndex = 172;
+            this.label112.Text = "Short Term Debt:";
+            // 
+            // lblCurrentDebt
+            // 
+            this.lblCurrentDebt.AutoSize = true;
+            this.lblCurrentDebt.Location = new System.Drawing.Point(308, 1351);
+            this.lblCurrentDebt.Name = "lblCurrentDebt";
+            this.lblCurrentDebt.Size = new System.Drawing.Size(30, 41);
+            this.lblCurrentDebt.TabIndex = 171;
+            this.lblCurrentDebt.Text = "-";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label114.Location = new System.Drawing.Point(41, 1351);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(210, 41);
+            this.label114.TabIndex = 170;
+            this.label114.Text = "Current Debt:";
+            // 
+            // lblTotalNonCurrentLiab
+            // 
+            this.lblTotalNonCurrentLiab.AutoSize = true;
+            this.lblTotalNonCurrentLiab.Location = new System.Drawing.Point(464, 1454);
+            this.lblTotalNonCurrentLiab.Name = "lblTotalNonCurrentLiab";
+            this.lblTotalNonCurrentLiab.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalNonCurrentLiab.TabIndex = 169;
+            this.lblTotalNonCurrentLiab.Text = "-";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label116.Location = new System.Drawing.Point(41, 1454);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(423, 41);
+            this.label116.TabIndex = 168;
+            this.label116.Text = "Total Non Current Liabilities:";
+            // 
+            // lblDeferredRevenue
+            // 
+            this.lblDeferredRevenue.AutoSize = true;
+            this.lblDeferredRevenue.Location = new System.Drawing.Point(357, 1292);
+            this.lblDeferredRevenue.Name = "lblDeferredRevenue";
+            this.lblDeferredRevenue.Size = new System.Drawing.Size(30, 41);
+            this.lblDeferredRevenue.TabIndex = 167;
+            this.lblDeferredRevenue.Text = "-";
+            // 
+            // lblIntangibleAssets
+            // 
+            this.lblIntangibleAssets.AutoSize = true;
+            this.lblIntangibleAssets.Location = new System.Drawing.Point(329, 697);
+            this.lblIntangibleAssets.Name = "lblIntangibleAssets";
+            this.lblIntangibleAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblIntangibleAssets.TabIndex = 166;
+            this.lblIntangibleAssets.Text = "-";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label49.Location = new System.Drawing.Point(41, 1292);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(278, 41);
+            this.label49.TabIndex = 165;
+            this.label49.Text = "Deferred Revenue:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label52.Location = new System.Drawing.Point(41, 697);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(268, 41);
+            this.label52.TabIndex = 164;
+            this.label52.Text = "Intangible Assets:";
+            // 
+            // lblTotalCurrentLiabilities
+            // 
+            this.lblTotalCurrentLiabilities.AutoSize = true;
+            this.lblTotalCurrentLiabilities.Location = new System.Drawing.Point(429, 1186);
+            this.lblTotalCurrentLiabilities.Name = "lblTotalCurrentLiabilities";
+            this.lblTotalCurrentLiabilities.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalCurrentLiabilities.TabIndex = 163;
+            this.lblTotalCurrentLiabilities.Text = "-";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label60.Location = new System.Drawing.Point(41, 1186);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(355, 41);
+            this.label60.TabIndex = 162;
+            this.label60.Text = "Total Current Liabilities:";
+            // 
+            // lblTotalLiabilities
+            // 
+            this.lblTotalLiabilities.AutoSize = true;
+            this.lblTotalLiabilities.Location = new System.Drawing.Point(317, 1136);
+            this.lblTotalLiabilities.Name = "lblTotalLiabilities";
+            this.lblTotalLiabilities.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalLiabilities.TabIndex = 161;
+            this.lblTotalLiabilities.Text = "-";
+            // 
+            // lblOtherNonCurrentAssets
+            // 
+            this.lblOtherNonCurrentAssets.AutoSize = true;
+            this.lblOtherNonCurrentAssets.Location = new System.Drawing.Point(467, 1083);
+            this.lblOtherNonCurrentAssets.Name = "lblOtherNonCurrentAssets";
+            this.lblOtherNonCurrentAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblOtherNonCurrentAssets.TabIndex = 160;
+            this.lblOtherNonCurrentAssets.Text = "-";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label66.Location = new System.Drawing.Point(41, 1136);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(240, 41);
+            this.label66.TabIndex = 159;
+            this.label66.Text = "Total Liabilities:";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label67.Location = new System.Drawing.Point(41, 1083);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(386, 41);
+            this.label67.TabIndex = 158;
+            this.label67.Text = "Other Non Current Assets:";
+            // 
+            // lblOtherCurrentAssets
+            // 
+            this.lblOtherCurrentAssets.AutoSize = true;
+            this.lblOtherCurrentAssets.Location = new System.Drawing.Point(357, 1023);
+            this.lblOtherCurrentAssets.Name = "lblOtherCurrentAssets";
+            this.lblOtherCurrentAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblOtherCurrentAssets.TabIndex = 157;
+            this.lblOtherCurrentAssets.Text = "-";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label72.Location = new System.Drawing.Point(41, 1023);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(318, 41);
+            this.label72.TabIndex = 156;
+            this.label72.Text = "Other Current Assets:";
+            // 
+            // lblShortTermInvestments
+            // 
+            this.lblShortTermInvestments.AutoSize = true;
+            this.lblShortTermInvestments.Location = new System.Drawing.Point(442, 973);
+            this.lblShortTermInvestments.Name = "lblShortTermInvestments";
+            this.lblShortTermInvestments.Size = new System.Drawing.Size(30, 41);
+            this.lblShortTermInvestments.TabIndex = 155;
+            this.lblShortTermInvestments.Text = "-";
+            // 
+            // lblLongTermInvestments
+            // 
+            this.lblLongTermInvestments.AutoSize = true;
+            this.lblLongTermInvestments.Location = new System.Drawing.Point(429, 920);
+            this.lblLongTermInvestments.Name = "lblLongTermInvestments";
+            this.lblLongTermInvestments.Size = new System.Drawing.Size(30, 41);
+            this.lblLongTermInvestments.TabIndex = 154;
+            this.lblLongTermInvestments.Text = "-";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label77.Location = new System.Drawing.Point(41, 973);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(361, 41);
+            this.label77.TabIndex = 153;
+            this.label77.Text = "Short Term Investments:";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label78.Location = new System.Drawing.Point(41, 920);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(353, 41);
+            this.label78.TabIndex = 152;
+            this.label78.Text = "Long Term Investments:";
+            // 
+            // lblInvestments
+            // 
+            this.lblInvestments.AutoSize = true;
+            this.lblInvestments.Location = new System.Drawing.Point(281, 867);
+            this.lblInvestments.Name = "lblInvestments";
+            this.lblInvestments.Size = new System.Drawing.Size(30, 41);
+            this.lblInvestments.TabIndex = 151;
+            this.lblInvestments.Text = "-";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label80.Location = new System.Drawing.Point(41, 867);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(197, 41);
+            this.label80.TabIndex = 150;
+            this.label80.Text = "Investments:";
+            // 
+            // lblGoodwill
+            // 
+            this.lblGoodwill.AutoSize = true;
+            this.lblGoodwill.Location = new System.Drawing.Point(221, 817);
+            this.lblGoodwill.Name = "lblGoodwill";
+            this.lblGoodwill.Size = new System.Drawing.Size(30, 41);
+            this.lblGoodwill.TabIndex = 149;
+            this.lblGoodwill.Text = "-";
+            // 
+            // lblIntangibleAssetsExcluding
+            // 
+            this.lblIntangibleAssetsExcluding.AutoSize = true;
+            this.lblIntangibleAssetsExcluding.Location = new System.Drawing.Point(621, 764);
+            this.lblIntangibleAssetsExcluding.Name = "lblIntangibleAssetsExcluding";
+            this.lblIntangibleAssetsExcluding.Size = new System.Drawing.Size(30, 41);
+            this.lblIntangibleAssetsExcluding.TabIndex = 148;
+            this.lblIntangibleAssetsExcluding.Text = "-";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label83.Location = new System.Drawing.Point(41, 817);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(153, 41);
+            this.label83.TabIndex = 147;
+            this.label83.Text = "Goodwill:";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label84.Location = new System.Drawing.Point(41, 764);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(549, 41);
+            this.label84.TabIndex = 146;
+            this.label84.Text = "Intangible Assets Excluding Goodwill:";
+            // 
+            // lblCurrentAccountsPayable
+            // 
+            this.lblCurrentAccountsPayable.AutoSize = true;
+            this.lblCurrentAccountsPayable.Location = new System.Drawing.Point(455, 1239);
+            this.lblCurrentAccountsPayable.Name = "lblCurrentAccountsPayable";
+            this.lblCurrentAccountsPayable.Size = new System.Drawing.Size(30, 41);
+            this.lblCurrentAccountsPayable.TabIndex = 145;
+            this.lblCurrentAccountsPayable.Text = "-";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label86.Location = new System.Drawing.Point(41, 1239);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(386, 41);
+            this.label86.TabIndex = 144;
+            this.label86.Text = "Current Accounts Payable:";
+            // 
+            // lblAccumulatedDepreciation
+            // 
+            this.lblAccumulatedDepreciation.AutoSize = true;
+            this.lblAccumulatedDepreciation.Location = new System.Drawing.Point(730, 633);
+            this.lblAccumulatedDepreciation.Name = "lblAccumulatedDepreciation";
+            this.lblAccumulatedDepreciation.Size = new System.Drawing.Size(30, 41);
+            this.lblAccumulatedDepreciation.TabIndex = 143;
+            this.lblAccumulatedDepreciation.Text = "-";
+            // 
+            // lblPropertyPlanEquip
+            // 
+            this.lblPropertyPlanEquip.AutoSize = true;
+            this.lblPropertyPlanEquip.Location = new System.Drawing.Point(442, 580);
+            this.lblPropertyPlanEquip.Name = "lblPropertyPlanEquip";
+            this.lblPropertyPlanEquip.Size = new System.Drawing.Size(30, 41);
+            this.lblPropertyPlanEquip.TabIndex = 142;
+            this.lblPropertyPlanEquip.Text = "-";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label89.Location = new System.Drawing.Point(41, 633);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(654, 41);
+            this.label89.TabIndex = 141;
+            this.label89.Text = "Accumulated Depreciation Amortization PPE:";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label90.Location = new System.Drawing.Point(41, 580);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(393, 41);
+            this.label90.TabIndex = 140;
+            this.label90.Text = "Property Plant Equipment:";
+            // 
+            // lblTotalNonCurrentAssets
+            // 
+            this.lblTotalNonCurrentAssets.AutoSize = true;
+            this.lblTotalNonCurrentAssets.Location = new System.Drawing.Point(455, 527);
+            this.lblTotalNonCurrentAssets.Name = "lblTotalNonCurrentAssets";
+            this.lblTotalNonCurrentAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalNonCurrentAssets.TabIndex = 139;
+            this.lblTotalNonCurrentAssets.Text = "-";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label92.Location = new System.Drawing.Point(41, 527);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(375, 41);
+            this.label92.TabIndex = 138;
+            this.label92.Text = "Total Non Current Assets:";
+            // 
+            // lblCurrentNetReceivables
+            // 
+            this.lblCurrentNetReceivables.AutoSize = true;
+            this.lblCurrentNetReceivables.Location = new System.Drawing.Point(434, 477);
+            this.lblCurrentNetReceivables.Name = "lblCurrentNetReceivables";
+            this.lblCurrentNetReceivables.Size = new System.Drawing.Size(30, 41);
+            this.lblCurrentNetReceivables.TabIndex = 137;
+            this.lblCurrentNetReceivables.Text = "-";
+            // 
+            // lblInventory
+            // 
+            this.lblInventory.AutoSize = true;
+            this.lblInventory.Location = new System.Drawing.Point(243, 424);
+            this.lblInventory.Name = "lblInventory";
+            this.lblInventory.Size = new System.Drawing.Size(30, 41);
+            this.lblInventory.TabIndex = 136;
+            this.lblInventory.Text = "-";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label95.Location = new System.Drawing.Point(41, 477);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(364, 41);
+            this.label95.TabIndex = 135;
+            this.label95.Text = "Current Net Receivables:";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label96.Location = new System.Drawing.Point(41, 424);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(163, 41);
+            this.label96.TabIndex = 134;
+            this.label96.Text = "Inventory:";
+            // 
+            // lblCashAndShortTerm
+            // 
+            this.lblCashAndShortTerm.AutoSize = true;
+            this.lblCashAndShortTerm.Location = new System.Drawing.Point(583, 364);
+            this.lblCashAndShortTerm.Name = "lblCashAndShortTerm";
+            this.lblCashAndShortTerm.Size = new System.Drawing.Size(30, 41);
+            this.lblCashAndShortTerm.TabIndex = 133;
+            this.lblCashAndShortTerm.Text = "-";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label98.Location = new System.Drawing.Point(41, 364);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(501, 41);
+            this.label98.TabIndex = 132;
+            this.label98.Text = "Cash And Short Term Investments:";
+            // 
+            // lblCashAndCashEquiv
+            // 
+            this.lblCashAndCashEquiv.AutoSize = true;
+            this.lblCashAndCashEquiv.Location = new System.Drawing.Point(730, 313);
+            this.lblCashAndCashEquiv.Name = "lblCashAndCashEquiv";
+            this.lblCashAndCashEquiv.Size = new System.Drawing.Size(30, 41);
+            this.lblCashAndCashEquiv.TabIndex = 131;
+            this.lblCashAndCashEquiv.Text = "-";
+            // 
+            // lblTotalCurrentAssets
+            // 
+            this.lblTotalCurrentAssets.AutoSize = true;
+            this.lblTotalCurrentAssets.Location = new System.Drawing.Point(373, 263);
+            this.lblTotalCurrentAssets.Name = "lblTotalCurrentAssets";
+            this.lblTotalCurrentAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalCurrentAssets.TabIndex = 130;
+            this.lblTotalCurrentAssets.Text = "-";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label101.Location = new System.Drawing.Point(41, 313);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(657, 41);
+            this.label101.TabIndex = 129;
+            this.label101.Text = "Cash And Cash Equivalents At Carrying Value:";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label102.Location = new System.Drawing.Point(48, 263);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(299, 41);
+            this.label102.TabIndex = 128;
+            this.label102.Text = "Total CurrentAssets:";
+            // 
+            // lblTotalAssets
+            // 
+            this.lblTotalAssets.AutoSize = true;
+            this.lblTotalAssets.Location = new System.Drawing.Point(258, 208);
+            this.lblTotalAssets.Name = "lblTotalAssets";
+            this.lblTotalAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblTotalAssets.TabIndex = 127;
+            this.lblTotalAssets.Text = "-";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label104.Location = new System.Drawing.Point(41, 208);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(192, 41);
+            this.label104.TabIndex = 126;
+            this.label104.Text = "Total Assets:";
+            // 
+            // lblReportedCurrencyBS
+            // 
+            this.lblReportedCurrencyBS.AutoSize = true;
+            this.lblReportedCurrencyBS.Location = new System.Drawing.Point(357, 158);
+            this.lblReportedCurrencyBS.Name = "lblReportedCurrencyBS";
+            this.lblReportedCurrencyBS.Size = new System.Drawing.Size(30, 41);
+            this.lblReportedCurrencyBS.TabIndex = 125;
+            this.lblReportedCurrencyBS.Text = "-";
+            // 
+            // lblFiscalDateEndingBS
+            // 
+            this.lblFiscalDateEndingBS.AutoSize = true;
+            this.lblFiscalDateEndingBS.Location = new System.Drawing.Point(325, 105);
+            this.lblFiscalDateEndingBS.Name = "lblFiscalDateEndingBS";
+            this.lblFiscalDateEndingBS.Size = new System.Drawing.Size(30, 41);
+            this.lblFiscalDateEndingBS.TabIndex = 124;
+            this.lblFiscalDateEndingBS.Text = "-";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label107.Location = new System.Drawing.Point(41, 158);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(283, 41);
+            this.label107.TabIndex = 123;
+            this.label107.Text = "ReportedCurrency:";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label108.Location = new System.Drawing.Point(41, 105);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(260, 41);
+            this.label108.TabIndex = 122;
+            this.label108.Text = "FiscalDateEnding";
             // 
             // label38
             // 
@@ -1469,12 +2401,621 @@
             // tpCashFlow
             // 
             this.tpCashFlow.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tpCashFlow.Controls.Add(this.lblNetIncomeCashFlow);
+            this.tpCashFlow.Controls.Add(this.label97);
+            this.tpCashFlow.Controls.Add(this.lblChangeInExchangeRate);
+            this.tpCashFlow.Controls.Add(this.label100);
+            this.tpCashFlow.Controls.Add(this.lblChangeInCashAndCashEquivalents);
+            this.tpCashFlow.Controls.Add(this.label109);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromRepurchaseOfEquity);
+            this.tpCashFlow.Controls.Add(this.label113);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromIssuanceOfPreferredStock);
+            this.tpCashFlow.Controls.Add(this.label117);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromSaleOfTreasuryStock);
+            this.tpCashFlow.Controls.Add(this.label121);
+            this.tpCashFlow.Controls.Add(this.label123);
+            this.tpCashFlow.Controls.Add(this.lblProfitLoss);
+            this.tpCashFlow.Controls.Add(this.label127);
+            this.tpCashFlow.Controls.Add(this.label129);
+            this.tpCashFlow.Controls.Add(this.lblDividendPayoutPreferredStock);
+            this.tpCashFlow.Controls.Add(this.label133);
+            this.tpCashFlow.Controls.Add(this.lblDividendPayoutCommonStock);
+            this.tpCashFlow.Controls.Add(this.lblDividendPayout);
+            this.tpCashFlow.Controls.Add(this.label139);
+            this.tpCashFlow.Controls.Add(this.label140);
+            this.tpCashFlow.Controls.Add(this.lblPaymentsForRepurchaseOfPreferredStock);
+            this.tpCashFlow.Controls.Add(this.label142);
+            this.tpCashFlow.Controls.Add(this.lblPaymentsForRepurchaseOfEquity);
+            this.tpCashFlow.Controls.Add(this.lblPaymentsForRepurchaseOfCommonStock);
+            this.tpCashFlow.Controls.Add(this.label145);
+            this.tpCashFlow.Controls.Add(this.label146);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromRepaymentsOfShortTermDebt);
+            this.tpCashFlow.Controls.Add(this.label148);
+            this.tpCashFlow.Controls.Add(this.lblCashflowFromFinancing);
+            this.tpCashFlow.Controls.Add(this.lblCashflowFromInvestment);
+            this.tpCashFlow.Controls.Add(this.label151);
+            this.tpCashFlow.Controls.Add(this.label152);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromIssuanceOfCommonStock);
+            this.tpCashFlow.Controls.Add(this.label154);
+            this.tpCashFlow.Controls.Add(this.lblChangeInInventory);
+            this.tpCashFlow.Controls.Add(this.lblChangeInReceivables);
+            this.tpCashFlow.Controls.Add(this.label157);
+            this.tpCashFlow.Controls.Add(this.label158);
+            this.tpCashFlow.Controls.Add(this.lblCapitalExpenditures);
+            this.tpCashFlow.Controls.Add(this.label160);
+            this.tpCashFlow.Controls.Add(this.lblDepreciationDepletionAndAmortization);
+            this.tpCashFlow.Controls.Add(this.lblChangeInOperatingAssets);
+            this.tpCashFlow.Controls.Add(this.label163);
+            this.tpCashFlow.Controls.Add(this.label164);
+            this.tpCashFlow.Controls.Add(this.lblChangeInOperatingLiabilities);
+            this.tpCashFlow.Controls.Add(this.label166);
+            this.tpCashFlow.Controls.Add(this.lblProceedsFromOperatingActivities);
+            this.tpCashFlow.Controls.Add(this.lblPaymentsForOperatingActivities);
+            this.tpCashFlow.Controls.Add(this.label169);
+            this.tpCashFlow.Controls.Add(this.label170);
+            this.tpCashFlow.Controls.Add(this.lblOperatingCashflow);
+            this.tpCashFlow.Controls.Add(this.label172);
+            this.tpCashFlow.Controls.Add(this.lblReportedCurrencyCF);
+            this.tpCashFlow.Controls.Add(this.lblFiscalEndingCF);
+            this.tpCashFlow.Controls.Add(this.label175);
+            this.tpCashFlow.Controls.Add(this.label176);
             this.tpCashFlow.Controls.Add(this.label39);
             this.tpCashFlow.Location = new System.Drawing.Point(4, 53);
             this.tpCashFlow.Name = "tpCashFlow";
             this.tpCashFlow.Size = new System.Drawing.Size(1529, 1599);
             this.tpCashFlow.TabIndex = 3;
             this.tpCashFlow.Text = "Cash Flow";
+            // 
+            // lblNetIncomeCashFlow
+            // 
+            this.lblNetIncomeCashFlow.AutoSize = true;
+            this.lblNetIncomeCashFlow.Location = new System.Drawing.Point(1083, 803);
+            this.lblNetIncomeCashFlow.Name = "lblNetIncomeCashFlow";
+            this.lblNetIncomeCashFlow.Size = new System.Drawing.Size(30, 41);
+            this.lblNetIncomeCashFlow.TabIndex = 257;
+            this.lblNetIncomeCashFlow.Text = "-";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label97.Location = new System.Drawing.Point(854, 800);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(189, 41);
+            this.label97.TabIndex = 256;
+            this.label97.Text = "Net Income:";
+            // 
+            // lblChangeInExchangeRate
+            // 
+            this.lblChangeInExchangeRate.AutoSize = true;
+            this.lblChangeInExchangeRate.Location = new System.Drawing.Point(1250, 750);
+            this.lblChangeInExchangeRate.Name = "lblChangeInExchangeRate";
+            this.lblChangeInExchangeRate.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInExchangeRate.TabIndex = 255;
+            this.lblChangeInExchangeRate.Text = "-";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label100.Location = new System.Drawing.Point(854, 750);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(381, 41);
+            this.label100.TabIndex = 254;
+            this.label100.Text = "Change In Exchange Rate:";
+            // 
+            // lblChangeInCashAndCashEquivalents
+            // 
+            this.lblChangeInCashAndCashEquivalents.AutoSize = true;
+            this.lblChangeInCashAndCashEquivalents.Location = new System.Drawing.Point(620, 1493);
+            this.lblChangeInCashAndCashEquivalents.Name = "lblChangeInCashAndCashEquivalents";
+            this.lblChangeInCashAndCashEquivalents.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInCashAndCashEquivalents.TabIndex = 251;
+            this.lblChangeInCashAndCashEquivalents.Text = "-";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label109.Location = new System.Drawing.Point(53, 1493);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(552, 41);
+            this.label109.TabIndex = 250;
+            this.label109.Text = "Change In Cash And Cash Equivalents:";
+            // 
+            // lblProceedsFromRepurchaseOfEquity
+            // 
+            this.lblProceedsFromRepurchaseOfEquity.AutoSize = true;
+            this.lblProceedsFromRepurchaseOfEquity.Location = new System.Drawing.Point(620, 1387);
+            this.lblProceedsFromRepurchaseOfEquity.Name = "lblProceedsFromRepurchaseOfEquity";
+            this.lblProceedsFromRepurchaseOfEquity.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromRepurchaseOfEquity.TabIndex = 249;
+            this.lblProceedsFromRepurchaseOfEquity.Text = "-";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label113.Location = new System.Drawing.Point(53, 1387);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(543, 41);
+            this.label113.TabIndex = 248;
+            this.label113.Text = "Proceeds From Repurchase Of Equity:";
+            // 
+            // lblProceedsFromIssuanceOfPreferredStock
+            // 
+            this.lblProceedsFromIssuanceOfPreferredStock.AutoSize = true;
+            this.lblProceedsFromIssuanceOfPreferredStock.Location = new System.Drawing.Point(719, 1337);
+            this.lblProceedsFromIssuanceOfPreferredStock.Name = "lblProceedsFromIssuanceOfPreferredStock";
+            this.lblProceedsFromIssuanceOfPreferredStock.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromIssuanceOfPreferredStock.TabIndex = 247;
+            this.lblProceedsFromIssuanceOfPreferredStock.Text = "-";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label117.Location = new System.Drawing.Point(53, 1337);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(629, 41);
+            this.label117.TabIndex = 246;
+            this.label117.Text = "Proceeds From Issuance Of Preferred Stock:";
+            // 
+            // lblProceedsFromSaleOfTreasuryStock
+            // 
+            this.lblProceedsFromSaleOfTreasuryStock.AutoSize = true;
+            this.lblProceedsFromSaleOfTreasuryStock.Location = new System.Drawing.Point(638, 1440);
+            this.lblProceedsFromSaleOfTreasuryStock.Name = "lblProceedsFromSaleOfTreasuryStock";
+            this.lblProceedsFromSaleOfTreasuryStock.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromSaleOfTreasuryStock.TabIndex = 245;
+            this.lblProceedsFromSaleOfTreasuryStock.Text = "-";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label121.Location = new System.Drawing.Point(53, 1440);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(556, 41);
+            this.label121.TabIndex = 244;
+            this.label121.Text = "Proceeds From Sale Of Treasury Stock:";
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(1096, 1278);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(30, 41);
+            this.label123.TabIndex = 243;
+            this.label123.Text = "-";
+            // 
+            // lblProfitLoss
+            // 
+            this.lblProfitLoss.AutoSize = true;
+            this.lblProfitLoss.Location = new System.Drawing.Point(341, 683);
+            this.lblProfitLoss.Name = "lblProfitLoss";
+            this.lblProfitLoss.Size = new System.Drawing.Size(30, 41);
+            this.lblProfitLoss.TabIndex = 242;
+            this.lblProfitLoss.Text = "-";
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label127.Location = new System.Drawing.Point(53, 1278);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(1013, 41);
+            this.label127.TabIndex = 241;
+            this.label127.Text = "Proceeds From Issuance Of Long Term Debt And Capital Securities Net:";
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label129.Location = new System.Drawing.Point(53, 683);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(174, 41);
+            this.label129.TabIndex = 240;
+            this.label129.Text = "Profit Loss:";
+            // 
+            // lblDividendPayoutPreferredStock
+            // 
+            this.lblDividendPayoutPreferredStock.AutoSize = true;
+            this.lblDividendPayoutPreferredStock.Location = new System.Drawing.Point(568, 1172);
+            this.lblDividendPayoutPreferredStock.Name = "lblDividendPayoutPreferredStock";
+            this.lblDividendPayoutPreferredStock.Size = new System.Drawing.Size(30, 41);
+            this.lblDividendPayoutPreferredStock.TabIndex = 239;
+            this.lblDividendPayoutPreferredStock.Text = "-";
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label133.Location = new System.Drawing.Point(53, 1172);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(486, 41);
+            this.label133.TabIndex = 238;
+            this.label133.Text = "Dividend Payout Preferred Stock:";
+            // 
+            // lblDividendPayoutCommonStock
+            // 
+            this.lblDividendPayoutCommonStock.AutoSize = true;
+            this.lblDividendPayoutCommonStock.Location = new System.Drawing.Point(568, 1122);
+            this.lblDividendPayoutCommonStock.Name = "lblDividendPayoutCommonStock";
+            this.lblDividendPayoutCommonStock.Size = new System.Drawing.Size(30, 41);
+            this.lblDividendPayoutCommonStock.TabIndex = 237;
+            this.lblDividendPayoutCommonStock.Text = "-";
+            // 
+            // lblDividendPayout
+            // 
+            this.lblDividendPayout.AutoSize = true;
+            this.lblDividendPayout.Location = new System.Drawing.Point(479, 1069);
+            this.lblDividendPayout.Name = "lblDividendPayout";
+            this.lblDividendPayout.Size = new System.Drawing.Size(30, 41);
+            this.lblDividendPayout.TabIndex = 236;
+            this.lblDividendPayout.Text = "-";
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label139.Location = new System.Drawing.Point(53, 1122);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(480, 41);
+            this.label139.TabIndex = 235;
+            this.label139.Text = "Dividend Payout Common Stock:";
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label140.Location = new System.Drawing.Point(53, 1069);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(259, 41);
+            this.label140.TabIndex = 234;
+            this.label140.Text = "Dividend Payout:";
+            // 
+            // lblPaymentsForRepurchaseOfPreferredStock
+            // 
+            this.lblPaymentsForRepurchaseOfPreferredStock.AutoSize = true;
+            this.lblPaymentsForRepurchaseOfPreferredStock.Location = new System.Drawing.Point(742, 1009);
+            this.lblPaymentsForRepurchaseOfPreferredStock.Name = "lblPaymentsForRepurchaseOfPreferredStock";
+            this.lblPaymentsForRepurchaseOfPreferredStock.Size = new System.Drawing.Size(30, 41);
+            this.lblPaymentsForRepurchaseOfPreferredStock.TabIndex = 233;
+            this.lblPaymentsForRepurchaseOfPreferredStock.Text = "-";
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label142.Location = new System.Drawing.Point(53, 1009);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(654, 41);
+            this.label142.TabIndex = 232;
+            this.label142.Text = "Payments For Repurchase Of Preferred Stock:";
+            // 
+            // lblPaymentsForRepurchaseOfEquity
+            // 
+            this.lblPaymentsForRepurchaseOfEquity.AutoSize = true;
+            this.lblPaymentsForRepurchaseOfEquity.Location = new System.Drawing.Point(611, 959);
+            this.lblPaymentsForRepurchaseOfEquity.Name = "lblPaymentsForRepurchaseOfEquity";
+            this.lblPaymentsForRepurchaseOfEquity.Size = new System.Drawing.Size(30, 41);
+            this.lblPaymentsForRepurchaseOfEquity.TabIndex = 231;
+            this.lblPaymentsForRepurchaseOfEquity.Text = "-";
+            // 
+            // lblPaymentsForRepurchaseOfCommonStock
+            // 
+            this.lblPaymentsForRepurchaseOfCommonStock.AutoSize = true;
+            this.lblPaymentsForRepurchaseOfCommonStock.Location = new System.Drawing.Point(770, 906);
+            this.lblPaymentsForRepurchaseOfCommonStock.Name = "lblPaymentsForRepurchaseOfCommonStock";
+            this.lblPaymentsForRepurchaseOfCommonStock.Size = new System.Drawing.Size(30, 41);
+            this.lblPaymentsForRepurchaseOfCommonStock.TabIndex = 230;
+            this.lblPaymentsForRepurchaseOfCommonStock.Text = "-";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label145.Location = new System.Drawing.Point(53, 959);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(525, 41);
+            this.label145.TabIndex = 229;
+            this.label145.Text = "Payments For Repurchase Of Equity:";
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label146.Location = new System.Drawing.Point(53, 906);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(648, 41);
+            this.label146.TabIndex = 228;
+            this.label146.Text = "Payments For Repurchase Of Common Stock:";
+            // 
+            // lblProceedsFromRepaymentsOfShortTermDebt
+            // 
+            this.lblProceedsFromRepaymentsOfShortTermDebt.AutoSize = true;
+            this.lblProceedsFromRepaymentsOfShortTermDebt.Location = new System.Drawing.Point(770, 853);
+            this.lblProceedsFromRepaymentsOfShortTermDebt.Name = "lblProceedsFromRepaymentsOfShortTermDebt";
+            this.lblProceedsFromRepaymentsOfShortTermDebt.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromRepaymentsOfShortTermDebt.TabIndex = 227;
+            this.lblProceedsFromRepaymentsOfShortTermDebt.Text = "-";
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label148.Location = new System.Drawing.Point(53, 853);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(697, 41);
+            this.label148.TabIndex = 226;
+            this.label148.Text = "Proceeds From Repayments Of Short Term Debt:";
+            // 
+            // lblCashflowFromFinancing
+            // 
+            this.lblCashflowFromFinancing.AutoSize = true;
+            this.lblCashflowFromFinancing.Location = new System.Drawing.Point(467, 803);
+            this.lblCashflowFromFinancing.Name = "lblCashflowFromFinancing";
+            this.lblCashflowFromFinancing.Size = new System.Drawing.Size(30, 41);
+            this.lblCashflowFromFinancing.TabIndex = 225;
+            this.lblCashflowFromFinancing.Text = "-";
+            // 
+            // lblCashflowFromInvestment
+            // 
+            this.lblCashflowFromInvestment.AutoSize = true;
+            this.lblCashflowFromInvestment.Location = new System.Drawing.Point(487, 750);
+            this.lblCashflowFromInvestment.Name = "lblCashflowFromInvestment";
+            this.lblCashflowFromInvestment.Size = new System.Drawing.Size(30, 41);
+            this.lblCashflowFromInvestment.TabIndex = 224;
+            this.lblCashflowFromInvestment.Text = "-";
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label151.Location = new System.Drawing.Point(53, 803);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(381, 41);
+            this.label151.TabIndex = 223;
+            this.label151.Text = "Cashflow From Financing:";
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label152.Location = new System.Drawing.Point(53, 750);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(402, 41);
+            this.label152.TabIndex = 222;
+            this.label152.Text = "Cashflow From Investment:";
+            // 
+            // lblProceedsFromIssuanceOfCommonStock
+            // 
+            this.lblProceedsFromIssuanceOfCommonStock.AutoSize = true;
+            this.lblProceedsFromIssuanceOfCommonStock.Location = new System.Drawing.Point(696, 1225);
+            this.lblProceedsFromIssuanceOfCommonStock.Name = "lblProceedsFromIssuanceOfCommonStock";
+            this.lblProceedsFromIssuanceOfCommonStock.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromIssuanceOfCommonStock.TabIndex = 221;
+            this.lblProceedsFromIssuanceOfCommonStock.Text = "-";
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label154.Location = new System.Drawing.Point(53, 1225);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(623, 41);
+            this.label154.TabIndex = 220;
+            this.label154.Text = "Proceeds From Issuance Of Common Stock:";
+            // 
+            // lblChangeInInventory
+            // 
+            this.lblChangeInInventory.AutoSize = true;
+            this.lblChangeInInventory.Location = new System.Drawing.Point(409, 619);
+            this.lblChangeInInventory.Name = "lblChangeInInventory";
+            this.lblChangeInInventory.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInInventory.TabIndex = 219;
+            this.lblChangeInInventory.Text = "-";
+            // 
+            // lblChangeInReceivables
+            // 
+            this.lblChangeInReceivables.AutoSize = true;
+            this.lblChangeInReceivables.Location = new System.Drawing.Point(454, 566);
+            this.lblChangeInReceivables.Name = "lblChangeInReceivables";
+            this.lblChangeInReceivables.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInReceivables.TabIndex = 218;
+            this.lblChangeInReceivables.Text = "-";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label157.Location = new System.Drawing.Point(53, 619);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(313, 41);
+            this.label157.TabIndex = 217;
+            this.label157.Text = "Change In Inventory:";
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label158.Location = new System.Drawing.Point(53, 566);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(339, 41);
+            this.label158.TabIndex = 216;
+            this.label158.Text = "Change In Receivables:";
+            // 
+            // lblCapitalExpenditures
+            // 
+            this.lblCapitalExpenditures.AutoSize = true;
+            this.lblCapitalExpenditures.Location = new System.Drawing.Point(467, 513);
+            this.lblCapitalExpenditures.Name = "lblCapitalExpenditures";
+            this.lblCapitalExpenditures.Size = new System.Drawing.Size(30, 41);
+            this.lblCapitalExpenditures.TabIndex = 215;
+            this.lblCapitalExpenditures.Text = "-";
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label160.Location = new System.Drawing.Point(53, 513);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(319, 41);
+            this.label160.TabIndex = 214;
+            this.label160.Text = "Capital Expenditures:";
+            // 
+            // lblDepreciationDepletionAndAmortization
+            // 
+            this.lblDepreciationDepletionAndAmortization.AutoSize = true;
+            this.lblDepreciationDepletionAndAmortization.Location = new System.Drawing.Point(719, 463);
+            this.lblDepreciationDepletionAndAmortization.Name = "lblDepreciationDepletionAndAmortization";
+            this.lblDepreciationDepletionAndAmortization.Size = new System.Drawing.Size(30, 41);
+            this.lblDepreciationDepletionAndAmortization.TabIndex = 213;
+            this.lblDepreciationDepletionAndAmortization.Text = "-";
+            // 
+            // lblChangeInOperatingAssets
+            // 
+            this.lblChangeInOperatingAssets.AutoSize = true;
+            this.lblChangeInOperatingAssets.Location = new System.Drawing.Point(506, 410);
+            this.lblChangeInOperatingAssets.Name = "lblChangeInOperatingAssets";
+            this.lblChangeInOperatingAssets.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInOperatingAssets.TabIndex = 212;
+            this.lblChangeInOperatingAssets.Text = "-";
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label163.Location = new System.Drawing.Point(53, 463);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(615, 41);
+            this.label163.TabIndex = 211;
+            this.label163.Text = "Depreciation Depletion And Amortization:";
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label164.Location = new System.Drawing.Point(53, 410);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(416, 41);
+            this.label164.TabIndex = 210;
+            this.label164.Text = "Change In Operating Assets:";
+            // 
+            // lblChangeInOperatingLiabilities
+            // 
+            this.lblChangeInOperatingLiabilities.AutoSize = true;
+            this.lblChangeInOperatingLiabilities.Location = new System.Drawing.Point(595, 350);
+            this.lblChangeInOperatingLiabilities.Name = "lblChangeInOperatingLiabilities";
+            this.lblChangeInOperatingLiabilities.Size = new System.Drawing.Size(30, 41);
+            this.lblChangeInOperatingLiabilities.TabIndex = 209;
+            this.lblChangeInOperatingLiabilities.Text = "-";
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label166.Location = new System.Drawing.Point(53, 350);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(464, 41);
+            this.label166.TabIndex = 208;
+            this.label166.Text = "Change In Operating Liabilities:";
+            // 
+            // lblProceedsFromOperatingActivities
+            // 
+            this.lblProceedsFromOperatingActivities.AutoSize = true;
+            this.lblProceedsFromOperatingActivities.Location = new System.Drawing.Point(742, 299);
+            this.lblProceedsFromOperatingActivities.Name = "lblProceedsFromOperatingActivities";
+            this.lblProceedsFromOperatingActivities.Size = new System.Drawing.Size(30, 41);
+            this.lblProceedsFromOperatingActivities.TabIndex = 207;
+            this.lblProceedsFromOperatingActivities.Text = "-";
+            // 
+            // lblPaymentsForOperatingActivities
+            // 
+            this.lblPaymentsForOperatingActivities.AutoSize = true;
+            this.lblPaymentsForOperatingActivities.Location = new System.Drawing.Point(595, 249);
+            this.lblPaymentsForOperatingActivities.Name = "lblPaymentsForOperatingActivities";
+            this.lblPaymentsForOperatingActivities.Size = new System.Drawing.Size(30, 41);
+            this.lblPaymentsForOperatingActivities.TabIndex = 206;
+            this.lblPaymentsForOperatingActivities.Text = "-";
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label169.Location = new System.Drawing.Point(53, 299);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(524, 41);
+            this.label169.TabIndex = 205;
+            this.label169.Text = "Proceeds From Operating Activities:";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label170.Location = new System.Drawing.Point(60, 249);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(506, 41);
+            this.label170.TabIndex = 204;
+            this.label170.Text = "Payments For Operating Activities:";
+            // 
+            // lblOperatingCashflow
+            // 
+            this.lblOperatingCashflow.AutoSize = true;
+            this.lblOperatingCashflow.Location = new System.Drawing.Point(387, 194);
+            this.lblOperatingCashflow.Name = "lblOperatingCashflow";
+            this.lblOperatingCashflow.Size = new System.Drawing.Size(30, 41);
+            this.lblOperatingCashflow.TabIndex = 203;
+            this.lblOperatingCashflow.Text = "-";
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label172.Location = new System.Drawing.Point(53, 194);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(307, 41);
+            this.label172.TabIndex = 202;
+            this.label172.Text = "Operating Cashflow:";
+            // 
+            // lblReportedCurrencyCF
+            // 
+            this.lblReportedCurrencyCF.AutoSize = true;
+            this.lblReportedCurrencyCF.Location = new System.Drawing.Point(369, 144);
+            this.lblReportedCurrencyCF.Name = "lblReportedCurrencyCF";
+            this.lblReportedCurrencyCF.Size = new System.Drawing.Size(30, 41);
+            this.lblReportedCurrencyCF.TabIndex = 201;
+            this.lblReportedCurrencyCF.Text = "-";
+            // 
+            // lblFiscalEndingCF
+            // 
+            this.lblFiscalEndingCF.AutoSize = true;
+            this.lblFiscalEndingCF.Location = new System.Drawing.Point(337, 91);
+            this.lblFiscalEndingCF.Name = "lblFiscalEndingCF";
+            this.lblFiscalEndingCF.Size = new System.Drawing.Size(30, 41);
+            this.lblFiscalEndingCF.TabIndex = 200;
+            this.lblFiscalEndingCF.Text = "-";
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label175.Location = new System.Drawing.Point(53, 144);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(283, 41);
+            this.label175.TabIndex = 199;
+            this.label175.Text = "ReportedCurrency:";
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label176.Location = new System.Drawing.Point(53, 91);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(260, 41);
+            this.label176.TabIndex = 198;
+            this.label176.Text = "FiscalDateEnding";
             // 
             // label39
             // 
@@ -1508,7 +3049,9 @@
             this.tpIncome.ResumeLayout(false);
             this.tpIncome.PerformLayout();
             this.tpBalanceSheet.ResumeLayout(false);
+            this.tpBalanceSheet.PerformLayout();
             this.tpCashFlow.ResumeLayout(false);
+            this.tpCashFlow.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1640,5 +3183,139 @@
         private Label lblinterestExpense;
         private Label label74;
         private Label label75;
+        private Label lblDeferredRevenue;
+        private Label lblIntangibleAssets;
+        private Label label49;
+        private Label label52;
+        private Label lblTotalCurrentLiabilities;
+        private Label label60;
+        private Label lblTotalLiabilities;
+        private Label lblOtherNonCurrentAssets;
+        private Label label66;
+        private Label label67;
+        private Label lblOtherCurrentAssets;
+        private Label label72;
+        private Label lblShortTermInvestments;
+        private Label lblLongTermInvestments;
+        private Label label77;
+        private Label label78;
+        private Label lblInvestments;
+        private Label label80;
+        private Label lblGoodwill;
+        private Label lblIntangibleAssetsExcluding;
+        private Label label83;
+        private Label label84;
+        private Label lblCurrentAccountsPayable;
+        private Label label86;
+        private Label lblAccumulatedDepreciation;
+        private Label lblPropertyPlanEquip;
+        private Label label89;
+        private Label label90;
+        private Label lblTotalNonCurrentAssets;
+        private Label label92;
+        private Label lblCurrentNetReceivables;
+        private Label lblInventory;
+        private Label label95;
+        private Label label96;
+        private Label lblCashAndShortTerm;
+        private Label label98;
+        private Label lblCashAndCashEquiv;
+        private Label lblTotalCurrentAssets;
+        private Label label101;
+        private Label label102;
+        private Label lblTotalAssets;
+        private Label label104;
+        private Label lblReportedCurrencyBS;
+        private Label lblFiscalDateEndingBS;
+        private Label label107;
+        private Label label108;
+        private Label lblCommonStockSharesOut;
+        private Label label118;
+        private Label lblRetainedEarnings;
+        private Label label120;
+        private Label lblTreasuryStock;
+        private Label label122;
+        private Label lblCommonStock;
+        private Label label124;
+        private Label lblTotalShareholderEquity;
+        private Label label126;
+        private Label lblOtherCurrentLiabilities;
+        private Label label128;
+        private Label lblShortLongTermDebtTotal;
+        private Label lblLongTermDebtNonCurrent;
+        private Label label131;
+        private Label label132;
+        private Label lblCurrentLongTermDebt;
+        private Label label134;
+        private Label lblLongTermDebt;
+        private Label label136;
+        private Label lblOtherNonCurrentLiabilities;
+        private Label label138;
+        private Label lblCapitalLeaseObligations;
+        private Label label110;
+        private Label lblShortTermDebt;
+        private Label label112;
+        private Label lblCurrentDebt;
+        private Label label114;
+        private Label lblTotalNonCurrentLiab;
+        private Label label116;
+        private Label lblNetIncomeCashFlow;
+        private Label label97;
+        private Label lblChangeInExchangeRate;
+        private Label label100;
+        private Label lblChangeInCashAndCashEquivalents;
+        private Label label109;
+        private Label lblProceedsFromRepurchaseOfEquity;
+        private Label label113;
+        private Label lblProceedsFromIssuanceOfPreferredStock;
+        private Label label117;
+        private Label lblProceedsFromSaleOfTreasuryStock;
+        private Label label121;
+        private Label label123;
+        private Label lblProfitLoss;
+        private Label label127;
+        private Label label129;
+        private Label lblDividendPayoutPreferredStock;
+        private Label label133;
+        private Label lblDividendPayoutCommonStock;
+        private Label lblDividendPayout;
+        private Label label139;
+        private Label label140;
+        private Label lblPaymentsForRepurchaseOfPreferredStock;
+        private Label label142;
+        private Label lblPaymentsForRepurchaseOfEquity;
+        private Label lblPaymentsForRepurchaseOfCommonStock;
+        private Label label145;
+        private Label label146;
+        private Label lblProceedsFromRepaymentsOfShortTermDebt;
+        private Label label148;
+        private Label lblCashflowFromFinancing;
+        private Label lblCashflowFromInvestment;
+        private Label label151;
+        private Label label152;
+        private Label lblProceedsFromIssuanceOfCommonStock;
+        private Label label154;
+        private Label lblChangeInInventory;
+        private Label lblChangeInReceivables;
+        private Label label157;
+        private Label label158;
+        private Label lblCapitalExpenditures;
+        private Label label160;
+        private Label lblDepreciationDepletionAndAmortization;
+        private Label lblChangeInOperatingAssets;
+        private Label label163;
+        private Label label164;
+        private Label lblChangeInOperatingLiabilities;
+        private Label label166;
+        private Label lblProceedsFromOperatingActivities;
+        private Label lblPaymentsForOperatingActivities;
+        private Label label169;
+        private Label label170;
+        private Label lblOperatingCashflow;
+        private Label label172;
+        private Label lblReportedCurrencyCF;
+        private Label lblFiscalEndingCF;
+        private Label label175;
+        private Label label176;
     }
 }
