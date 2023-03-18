@@ -31,7 +31,7 @@
             // 
             // ServiceEngine
             // 
-            this.ServiceName = "ServiceEnginer";
+            this.ServiceName = "FinancialManagerServices";
 
         }
 

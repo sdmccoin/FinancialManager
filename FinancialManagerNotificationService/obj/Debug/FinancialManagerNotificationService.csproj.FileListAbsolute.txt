@@ -8,3 +8,4 @@ C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\Financ
 C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.csproj.CoreCompileInputs.cache
 C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.exe
 C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.pdb
+C:\git\src\FinancialManager\FinancialManagerNotificationService\obj\Debug\FinancialManagerNotificationService.ProjectInstaller.resources
