@@ -161,3 +161,4 @@ C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\ref\Financ
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.AddInvestmentPopup.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucSettingsForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.AdditionalStockDetailsPopup.resources
+C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucNotification.resources

@@ -19,6 +19,9 @@
     <Compile Update="UI\Controls\ucAccountForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UI\Controls\ucNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UI\Controls\ucExpenseForm.cs">
       <SubType>UserControl</SubType>
     </Compile>

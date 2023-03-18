@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManager.Test", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagerNotificationService", "..\FinancialManagerNotificationService\FinancialManagerNotificationService.csproj", "{4A97804A-6A27-403B-9BBB-3E6C110BA624}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FinancialManagerInstaller", "..\FinancialManagerInstaller\FinancialManagerInstaller.vdproj", "{C19F23A6-295D-4096-8134-2291F9CBA280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,8 @@ Global
 		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19F23A6-295D-4096-8134-2291F9CBA280}.Debug|Any CPU.ActiveCfg = Debug
+		{C19F23A6-295D-4096-8134-2291F9CBA280}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
