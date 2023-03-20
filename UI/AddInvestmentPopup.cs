@@ -1,5 +1,7 @@
 ﻿using FinancialManager.Data.Models;
 using FinancialManager.Interfaces;
+using FinancialManager.Services;
+using FinancialManager.Services.Models;
 using FinancialManager.UI.Controllers;
 using FinancialManager.Utilities;
 using System;
@@ -18,6 +20,8 @@ namespace FinancialManager.UI
     public partial class AddInvestmentPopup : Form
     {
         private string source;
+        private IController stockAnalyzerController;
+        private IController notificationController;
 
         public AddInvestmentPopup(string source)
         {
@@ -28,7 +32,7 @@ namespace FinancialManager.UI
         private void btnDone_Click(object sender, EventArgs e)
         {
             IController controller;
-
+           
             string errorMessage = "";
             if (FormIsValid(ref errorMessage))
             {
@@ -47,7 +51,14 @@ namespace FinancialManager.UI
 
                     if (controller.Exists(investment) == null)
                     {
+                        // add the investment
                         controller.Add(investment);
+
+                        // load stock analyzer table
+                        var t = Task.Run(() => {
+                            GetStockDataForML();
+                        });
+                        t.Wait();
 
                         MessageBox.Show("Investment Added", "Success");
                     }
@@ -62,6 +73,52 @@ namespace FinancialManager.UI
             {
                 MessageBox.Show(errorMessage, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GetStockDataForML()
+        {
+            StockService ss = new StockService();
+            StockDailiesResponse dailyResponse = new StockDailiesResponse();
+            string stockDailyUrl = API.StockSearchDailies + source + "&apikey=" + API.StockKey;
+
+            ss.URL = stockDailyUrl;
+            dailyResponse = ss.GetAsync<StockDailiesResponse>();
+            Dictionary<string, string> closingValues = new Dictionary<string, string>();
+
+            if (dailyResponse != null)
+            {
+                if (dailyResponse.Dailies != null)
+                {
+                    foreach (KeyValuePair<string,Dailies> daily in dailyResponse.Dailies)
+                    {
+                        closingValues.Add(daily.Key, daily.Value.Close);
+                    }
+
+                    LoadAnalyzerTable(closingValues);
+                }
+            }
+        }
+        private void LoadAnalyzerTable(Dictionary<string, string> values)
+        {
+            stockAnalyzerController = ControllerFactory.GetController("StockAnalysis");
+            StockAnalysis stockAnalysis;
+
+            foreach (KeyValuePair<string,string> value in values)
+            {
+                stockAnalysis = new StockAnalysis()
+                {
+                    ClosingValue = value.Value,
+                    Symbol = source,
+                    UserId = ActiveUser.id,
+                    Date = value.Key
+                };
+
+                // doesn't already exist, add it
+                if (stockAnalyzerController.Exists(stockAnalysis) == null)
+                {
+                    stockAnalyzerController.Add(stockAnalysis);
+                }
             }
         }
 

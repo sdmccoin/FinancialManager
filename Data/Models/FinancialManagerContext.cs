@@ -35,6 +35,8 @@ public partial class FinancialManagerContext : DbContext
 
     public virtual DbSet<Setting> Settings { get; set; }
 
+    public virtual DbSet<StockAnalysis> StockAnalyses { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -182,6 +184,16 @@ public partial class FinancialManagerContext : DbContext
 
             entity.Property(e => e.EmailAddress).HasColumnType("TEXT (50)");
             entity.Property(e => e.Phone).HasColumnType("TEXT (15)");
+        });
+
+        modelBuilder.Entity<StockAnalysis>(entity =>
+        {
+            entity.ToTable("StockAnalysis");
+
+            entity.HasIndex(e => e.Id, "IX_StockAnalysis_Id").IsUnique();
+
+            entity.Property(e => e.Date).HasColumnType("TEXT (15)");
+            entity.Property(e => e.Symbol).HasColumnType("TEXT (10)");
         });
 
         modelBuilder.Entity<User>(entity =>
