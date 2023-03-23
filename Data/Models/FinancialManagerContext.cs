@@ -51,6 +51,7 @@ public partial class FinancialManagerContext : DbContext
 
             entity.Property(e => e.Address).HasColumnType("TEXT (150)");
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
+            entity.Property(e => e.Date).HasColumnType("TEXT (25)");
             entity.Property(e => e.Frequency).HasColumnType("TEXT (25)");
             entity.Property(e => e.Source).HasColumnType("TEXT (100)");
 
@@ -80,6 +81,7 @@ public partial class FinancialManagerContext : DbContext
 
             entity.Property(e => e.Address).HasColumnType("TEXT (150)");
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
+            entity.Property(e => e.Date).HasColumnType("TEXT (25)");
             entity.Property(e => e.Frequency).HasColumnType("TEXT (20)");
             entity.Property(e => e.Source).HasColumnType("TEXT (100)");
 
@@ -119,6 +121,7 @@ public partial class FinancialManagerContext : DbContext
             entity.HasIndex(e => e.Id, "IX_Investments_Id").IsUnique();
 
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
+            entity.Property(e => e.Date).HasColumnType("TEXT (25)");
             entity.Property(e => e.Frequency)
                 .HasDefaultValueSql("Weekly")
                 .HasColumnType("TEXT (25)");

@@ -1,5 +1,5 @@
-﻿using FinancialManager.Services.Models;
-using FinancialManager.Services;
+﻿using FinancialManagerLibrary.Services.Models;
+using FinancialManagerLibrary.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

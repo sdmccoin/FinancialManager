@@ -1,4 +1,4 @@
-﻿namespace FinancialManager.UI.Controllers
+﻿namespace FinancialManagerLibrary.UI.Controllers
 {
     public interface IRepository
     {

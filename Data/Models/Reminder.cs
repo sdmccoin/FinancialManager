@@ -1,10 +1,9 @@
-﻿using FinancialManager.Data.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FinancialManager.Data.Models;
 
-public partial class Reminder : IEntity
+public partial class Reminder
 {
     public long Id { get; set; }
 

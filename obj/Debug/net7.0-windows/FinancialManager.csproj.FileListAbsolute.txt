@@ -162,3 +162,6 @@ C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialM
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucSettingsForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.AdditionalStockDetailsPopup.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucNotification.resources
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\FinancialManagerLibrary.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\FinancialManagerLibrary.pdb
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\runtimes\linux-ppc64le\native\libe_sqlite3.so

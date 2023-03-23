@@ -1,5 +1,5 @@
-﻿using FinancialManager.Data.Interfaces;
-using FinancialManager.Interfaces;
+﻿using FinancialManagerLibrary.Data.Interfaces;
+using FinancialManagerLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

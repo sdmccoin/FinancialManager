@@ -118,52 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Information_icon_1_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Information_icon_1_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Investments" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Investments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="stockup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stockup1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inceom3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inceom3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Information_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Information_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="moreInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moreInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Information_icon_1_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Information_icon_1_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reminder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reminder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReportIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportIcon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_stockdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_stockdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Expense2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expense2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alert-icon-red-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert-icon-red-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Expense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpenseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExpenseIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stockdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stockdown1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="investmentIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\investmentIcon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="reporting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reporting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IncomeImage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IncomeImage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="investicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\investicon3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_stockup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_stockup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_stockdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_stockdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IncomeCoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IncomeCoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IncomeImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IncomeImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Expense" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Expense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReportIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="moneydeleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneydeleted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moreInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moreInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpenseIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExpenseIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="incomemoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\incomemoney.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reminder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reminder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_stockup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_stockup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dollas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dollas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expense3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expense3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Investments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Investments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvestmentIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InvestmentIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="security" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\security.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moneydelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moneydelete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert-icon-red-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert-icon-red-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IncomeImage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IncomeImage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddIncome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddIncome.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

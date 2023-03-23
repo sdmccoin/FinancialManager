@@ -35,12 +35,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::FinancialManager.Properties.Resources.Alert;
+            this.pictureBox1.Image = global::FinancialManager.Properties.Resources.alert2;
             this.pictureBox1.Location = new System.Drawing.Point(1, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(44, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -48,10 +50,10 @@
             // 
             this.lblAlertCount.AutoSize = true;
             this.lblAlertCount.BackColor = System.Drawing.Color.Gold;
-            this.lblAlertCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAlertCount.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAlertCount.Location = new System.Drawing.Point(42, 3);
             this.lblAlertCount.Name = "lblAlertCount";
-            this.lblAlertCount.Size = new System.Drawing.Size(35, 41);
+            this.lblAlertCount.Size = new System.Drawing.Size(28, 31);
             this.lblAlertCount.TabIndex = 1;
             this.lblAlertCount.Text = "3";
             // 
@@ -59,10 +61,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.lblAlertCount);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ucNotification";
-            this.Size = new System.Drawing.Size(97, 57);
+            this.Size = new System.Drawing.Size(97, 48);
             this.Load += new System.EventHandler(this.ucAlert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

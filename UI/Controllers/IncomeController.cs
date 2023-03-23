@@ -4,11 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
-using FinancialManager.Data.Interfaces;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Data.Interfaces;
 using FinancialManager.Utilities;
-using FinancialManager.Interfaces;
+using FinancialManagerLibrary.Interfaces;
 using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FinancialManager.UI.Controllers

@@ -116,15 +116,15 @@
             this.cbxMonitor.Location = new System.Drawing.Point(36, 189);
             this.cbxMonitor.Name = "cbxMonitor";
             this.cbxMonitor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbxMonitor.Size = new System.Drawing.Size(637, 45);
+            this.cbxMonitor.Size = new System.Drawing.Size(318, 45);
             this.cbxMonitor.TabIndex = 5;
-            this.cbxMonitor.Text = "We can send you updates until you\'re ready";
+            this.cbxMonitor.Text = "Monitor Investment";
             this.cbxMonitor.UseVisualStyleBackColor = true;
             this.cbxMonitor.CheckedChanged += new System.EventHandler(this.cbxMonitor_CheckedChanged);
             // 
             // btnDone
             // 
-            this.btnDone.BackColor = System.Drawing.Color.Green;
+            this.btnDone.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDone.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDone.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDone.Location = new System.Drawing.Point(283, 455);

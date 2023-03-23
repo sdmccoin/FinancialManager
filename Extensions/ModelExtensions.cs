@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using FinancialManager.Models;
-using FinancialManager.Data.Models;
+using FinancialManagerLibrary.Data.Models;
 
 namespace FinancialManager.Extensions
 {

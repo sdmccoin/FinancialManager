@@ -1,4 +1,4 @@
-﻿using FinancialManager.Interfaces;
+﻿using FinancialManagerLibrary.Interfaces;
 using FinancialManager.UI.Models;
 using System;
 using System.Collections.Generic;

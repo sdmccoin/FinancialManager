@@ -63,6 +63,16 @@ namespace FinancialManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddIncome {
+            get {
+                object obj = ResourceManager.GetObject("AddIncome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Alert {
             get {
                 object obj = ResourceManager.GetObject("Alert", resourceCulture);
@@ -76,6 +86,36 @@ namespace FinancialManager.Properties {
         internal static System.Drawing.Bitmap alert_icon_red_11 {
             get {
                 object obj = ResourceManager.GetObject("alert-icon-red-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert2 {
+            get {
+                object obj = ResourceManager.GetObject("alert2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert3 {
+            get {
+                object obj = ResourceManager.GetObject("alert3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dollas {
+            get {
+                object obj = ResourceManager.GetObject("dollas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +143,56 @@ namespace FinancialManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap expense3 {
+            get {
+                object obj = ResourceManager.GetObject("expense3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExpenseIcon {
+            get {
+                object obj = ResourceManager.GetObject("ExpenseIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExpenseIcon2 {
+            get {
+                object obj = ResourceManager.GetObject("ExpenseIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inceom3 {
+            get {
+                object obj = ResourceManager.GetObject("inceom3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IncomeCoin {
+            get {
+                object obj = ResourceManager.GetObject("IncomeCoin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IncomeImage {
             get {
                 object obj = ResourceManager.GetObject("IncomeImage", resourceCulture);
@@ -116,6 +206,16 @@ namespace FinancialManager.Properties {
         internal static System.Drawing.Bitmap IncomeImage2 {
             get {
                 object obj = ResourceManager.GetObject("IncomeImage2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap incomemoney {
+            get {
+                object obj = ResourceManager.GetObject("incomemoney", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +243,59 @@ namespace FinancialManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap investicon3 {
+            get {
+                object obj = ResourceManager.GetObject("investicon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InvestmentIcon {
+            get {
+                object obj = ResourceManager.GetObject("InvestmentIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap investmentIcon2 {
+            get {
+                object obj = ResourceManager.GetObject("investmentIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Investments {
             get {
                 object obj = ResourceManager.GetObject("Investments", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moneydelete {
+            get {
+                object obj = ResourceManager.GetObject("moneydelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moneydeleted {
+            get {
+                object obj = ResourceManager.GetObject("moneydeleted", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +316,26 @@ namespace FinancialManager.Properties {
         internal static System.Drawing.Bitmap reminder2 {
             get {
                 object obj = ResourceManager.GetObject("reminder2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReportIcon {
+            get {
+                object obj = ResourceManager.GetObject("ReportIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReportIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("ReportIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +366,16 @@ namespace FinancialManager.Properties {
         internal static System.Drawing.Bitmap rsz_stockup {
             get {
                 object obj = ResourceManager.GetObject("rsz_stockup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security {
+            get {
+                object obj = ResourceManager.GetObject("security", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,10 +1,9 @@
-﻿using FinancialManager.Data.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FinancialManager.Data.Models;
 
-public partial class StockAnalysis : IEntity
+public partial class StockAnalysis
 {
     public long Id { get; set; }
 

@@ -1,9 +1,9 @@
-﻿using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.Services;
-using FinancialManager.Services.Models;
-using FinancialManager.UI.Controllers;
-using FinancialManager.Utilities;
+﻿using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Services;
+using FinancialManagerLibrary.Services.Models;
+using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,9 +44,7 @@ namespace FinancialManager.UI
                     {
                         Amount = txtAmount.Text,
                         Source = source,
-                        Type = "Stock",
                         UserId = ActiveUser.id,
-                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text
                     };
 
                     if (controller.Exists(investment) == null)

@@ -1,4 +1,4 @@
-﻿using FinancialManager.Data.Repositories;
+﻿using FinancialManagerLibrary.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialManager.Data.Models;
+using FinancialManagerLibrary.Data.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using FinancialManager.Utilities;
-using FinancialManager.UI.Controllers;
+using FinancialManagerLibrary.Utilities;
+using FinancialManagerLibrary.UI.Controllers;
 using FinancialManager.UI;
-using FinancialManager.Interfaces;
-using FinancialManager.Data.Interfaces;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Data.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System.Drawing.Imaging;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -27,11 +27,13 @@ namespace FinancialManager.UI.Controls
         IController incomeReminderController;
         IController incomeNotificationController;
         DataTable incomeTable;
+        DataTable eventsTable;
 
         public ucIncomeForm()
         {
             InitializeComponent();
             InitializeIncomeTable();
+            InitializeEventsTable();
 
             // user a factory pattern to get an income controller
             incomeController = ControllerFactory.GetController("Income");
@@ -43,17 +45,24 @@ namespace FinancialManager.UI.Controls
             incomeTable = new DataTable();
             incomeTable.Columns.Add("Id", typeof(int));
             incomeTable.Columns.Add("Name", typeof(string));
-            incomeTable.Columns.Add("Address", typeof(string));
             incomeTable.Columns.Add("Amount", typeof(string));
-            incomeTable.Columns.Add("Frequency", typeof(string));
             incomeTable.Columns.Add("Reminder", typeof(Image));
             incomeTable.Columns.Add("Notification", typeof(Image));
+            incomeTable.Columns.Add("Date", typeof(string));
+        }
+        private void InitializeEventsTable()
+        {
+            eventsTable = new DataTable();
+            eventsTable.Columns.Add("Id", typeof(int));
+            eventsTable.Columns.Add("Reminder", typeof(Image));
+            eventsTable.Columns.Add("Notification", typeof(Image));
+            eventsTable.Columns.Add("Date", typeof(string));
         }
 
 
         private void ucIncomeForm_Load(object sender, EventArgs e)
         {
-            LoadIncomeGrid();
+            LoadIncomeAndEventsGrid();
 
             // delegate to clear the form after .1 seconds 
             Action clear = () => ClearForm();
@@ -72,16 +81,15 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     // make sure the entry doesn't already exist
                     if (incomeController.Exists(income) == null)
                     {
                         incomeController.Add(income);
-                        LoadIncomeGrid();
+                        LoadIncomeAndEventsGrid();
 
                         MessageBox.Show("Income Added", "Success");
                     }
@@ -99,7 +107,8 @@ namespace FinancialManager.UI.Controls
             }
         }
 
-        private void LoadIncomeGrid()
+       
+        private void LoadIncomeAndEventsGrid()
         {
             // initialize controllers
             incomeReminderController = ControllerFactory.GetController("IncomeReminder");
@@ -114,6 +123,10 @@ namespace FinancialManager.UI.Controls
             incomeTable.Clear();
             dgvIncome.DataSource = incomeTable;
             dgvIncome.Refresh();
+
+            eventsTable.Clear();
+            dgvIncomeEvents.DataSource = eventsTable;
+            dgvIncomeEvents.Refresh();
 
             Bitmap reminderImage;
             Bitmap notificationImage;
@@ -149,18 +162,31 @@ namespace FinancialManager.UI.Controls
                 if (notificationImage == null)
                     notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
 
-                incomeTable.Rows.Add(income.Id, income.Source, income.Address, income.Amount,
-                        income.Frequency, reminderImage, notificationImage);
+                // load income
+                incomeTable.Rows.Add(income.Id, income.Source, income.Amount,
+                        reminderImage, notificationImage, income.Date);
 
                 dgvIncome.AutoSize = true;
                 dgvIncome.DataSource = incomeTable;
                 this.dgvIncome.Columns["Id"].Visible = false;
-                dgvIncome.Columns[1].Width = 200;
-                dgvIncome.Columns[2].Width = 450;
+                dgvIncome.Columns[1].Width = 540;
+                dgvIncome.Columns[2].Width = 200;
                 dgvIncome.Columns[3].Width = 150;
                 dgvIncome.Columns[4].Width = 200;
-                dgvIncome.Columns[5].Width = 150;
-                dgvIncome.Columns[6].Width = 150;
+                dgvIncome.Columns[5].Width = 280;
+
+                // load events (only if they exist)
+                if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
+                {
+                    eventsTable.Rows.Add(income.Id, reminderImage, notificationImage, income.Date);
+
+                    dgvIncomeEvents.AutoSize = true;
+                    dgvIncomeEvents.DataSource = eventsTable;
+                    this.dgvIncomeEvents.Columns["Id"].Visible = false;
+                    dgvIncomeEvents.Columns[1].Width = 175;
+                    dgvIncomeEvents.Columns[2].Width = 175;
+                    dgvIncomeEvents.Columns[3].Width = 280;
+                }
             }
         }
 
@@ -174,10 +200,7 @@ namespace FinancialManager.UI.Controls
             if (row != null && row.Index != 0)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
-                txtAddress1.Text = row.Cells[2].Value.ToString();
                 txtAmount.Text = row.Cells[3].Value.ToString();
-
-                Utilities.SelectRadioButton(groupBox1, row.Cells[4].Value.ToString());
             }
         }
 
@@ -185,10 +208,6 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
-            txtAddress1.Text = "";
-            txtAddress2.Text = "";
-
-            Utilities.UnSelectAllRadioButtons(groupBox1);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -202,14 +221,13 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString()),
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     incomeController.Update(income);
-                    LoadIncomeGrid();
+                    LoadIncomeAndEventsGrid();
 
                     MessageBox.Show("Income Updated", "Success");
                 }
@@ -248,13 +266,12 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
-                        Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString())
+                        Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString()),
+                        Date = dtpStart.Text
                     };
 
                     incomeController.Delete(income);
-                    LoadIncomeGrid();
+                    LoadIncomeAndEventsGrid();
                     MessageBox.Show("Income Deleted", "Success");
                 }
                 catch (Exception ex)
@@ -274,12 +291,8 @@ namespace FinancialManager.UI.Controls
         {
             bool isValid = false;
 
-            if (Utilities.IsEmpty(txtAddress1))
-                errorMessage += " - Address cannot be blank\r\n";
             if (Utilities.IsEmpty(txtName))
                 errorMessage += " - Name cannot be blank\r\n";
-            if (Utilities.GetSelectedRadioButton(groupBox1) == null)
-                errorMessage += " - You must select a frequency\r\n";
             if (Utilities.IsValidCurrency(txtAmount) == false)
                 errorMessage += " - Invalid Amount\r\n";           
             

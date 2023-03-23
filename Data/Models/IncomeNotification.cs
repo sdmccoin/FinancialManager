@@ -1,10 +1,9 @@
-﻿using FinancialManager.Data.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FinancialManager.Data.Models;
 
-public partial class IncomeNotification : IEntity
+public partial class IncomeNotification
 {
     public long Id { get; set; }
 

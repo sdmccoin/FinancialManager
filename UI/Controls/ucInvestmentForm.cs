@@ -1,8 +1,8 @@
-﻿using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
-using FinancialManager.Utilities;
+﻿using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +16,8 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using FinancialManager.Services.Models;
-using FinancialManager.Services;
+using FinancialManagerLibrary.Services.Models;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls
 {
@@ -28,6 +28,7 @@ namespace FinancialManager.UI.Controls
         IController investmentNotificationController;
 
         DataTable investmentTable;
+        DataTable eventsTable;
 
         AutoCompleteStringCollection symbols = new AutoCompleteStringCollection();
 
@@ -35,6 +36,7 @@ namespace FinancialManager.UI.Controls
         {
             InitializeComponent();
             InitializeInvestmentTable();
+            InitializeEventsTable();
 
             // use a factory pattern to get an income controller
             controller = ControllerFactory.GetController("Investment");
@@ -46,16 +48,23 @@ namespace FinancialManager.UI.Controls
             investmentTable.Columns.Add("Id", typeof(int));
             investmentTable.Columns.Add("Name", typeof(string));
             investmentTable.Columns.Add("Amount", typeof(string));
-            investmentTable.Columns.Add("Frequency", typeof(string));
-            investmentTable.Columns.Add("Type", typeof(string));
             investmentTable.Columns.Add("Reminder", typeof(Image));
             investmentTable.Columns.Add("Notification", typeof(Image));
+        }
+
+        private void InitializeEventsTable()
+        {
+            eventsTable = new DataTable();
+            eventsTable.Columns.Add("Id", typeof(int));
+            eventsTable.Columns.Add("Reminder", typeof(Image));
+            eventsTable.Columns.Add("Notification", typeof(Image));
+            eventsTable.Columns.Add("Date", typeof(string));
         }
 
         #region UI Event(s)
         private void ucInvestmentForm_Load(object sender, EventArgs e)
         {
-            LoadInvestmentsGrid();
+            LoadInvestmentsAndEventsGrid();
             txtSymbol.AutoCompleteCustomSource = symbols;
 
             // delegate to clear the form after .1 seconds 
@@ -71,7 +80,7 @@ namespace FinancialManager.UI.Controls
         #endregion
 
         #region CRUD Operations
-        private void LoadInvestmentsGrid()
+        private void LoadInvestmentsAndEventsGrid()
         {
             // initialize controllers
             investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
@@ -84,6 +93,10 @@ namespace FinancialManager.UI.Controls
             investmentTable.Clear();
             dgvInvestments.DataSource = investmentTable;
             dgvInvestments.Refresh();
+
+            eventsTable.Clear();
+            dgvInvestmentsEvents.DataSource = eventsTable;
+            dgvInvestmentsEvents.Refresh();
 
             Bitmap reminderImage;
             Bitmap notificationImage;
@@ -110,7 +123,7 @@ namespace FinancialManager.UI.Controls
                     notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
 
                 investmentTable.Rows.Add(investment.Id, investment.Source, investment.Amount,
-                        investment.Frequency, investment.Type, reminderImage, notificationImage);
+                        reminderImage, notificationImage);
 
                 dgvInvestments.AutoSize = true;
                 dgvInvestments.DataSource = investmentTable;
@@ -119,9 +132,20 @@ namespace FinancialManager.UI.Controls
                 dgvInvestments.Columns[2].Width = 450;
                 dgvInvestments.Columns[3].Width = 150;
                 dgvInvestments.Columns[4].Width = 200;
-                dgvInvestments.Columns[5].Width = 150;
-                dgvInvestments.Columns[6].Width = 150;
                 dgvInvestments.AutoSize = true;
+
+                // load events (only if they exist)
+                if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
+                {
+                    eventsTable.Rows.Add(investment.Id, reminderImage, notificationImage, investment.Date);
+
+                    dgvInvestmentsEvents.AutoSize = true;
+                    dgvInvestmentsEvents.DataSource = eventsTable;
+                    this.dgvInvestmentsEvents.Columns["Id"].Visible = false;
+                    dgvInvestmentsEvents.Columns[1].Width = 175;
+                    dgvInvestmentsEvents.Columns[2].Width = 175;
+                    dgvInvestmentsEvents.Columns[3].Width = 280;
+                }
             }
         }
         private void btnInsert_Click(object sender, EventArgs e)
@@ -136,15 +160,14 @@ namespace FinancialManager.UI.Controls
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
                         UserId = ActiveUser.id,
-                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                        Type = Utilities.GetSelectedRadioButton(gbxType).Text
+                        Date = dtpStart.Text
                     };
 
                     // make sure the entry doesn't already exist
                     if (controller.Exists(investment) == null)
                     {
                         controller.Add(investment);
-                        LoadInvestmentsGrid();
+                        LoadInvestmentsAndEventsGrid();
 
                         MessageBox.Show("Investment Added", "Success");
                     }
@@ -173,15 +196,14 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                        Type = Utilities.GetSelectedRadioButton(gbxType).Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
 
                     };
 
                     controller.Update(investment);
-                    LoadInvestmentsGrid();
+                    LoadInvestmentsAndEventsGrid();
 
                     MessageBox.Show("Investment Updated", "Success");
                 }
@@ -209,14 +231,13 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(gbxFrequency).Text,
-                        Type = Utilities.GetSelectedRadioButton(gbxType).Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     controller.Delete(investment);
-                    LoadInvestmentsGrid();
+                    LoadInvestmentsAndEventsGrid();
 
                     MessageBox.Show("Investment Deleted", "Success");
                 }
@@ -246,9 +267,6 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
-
-            Utilities.UnSelectAllRadioButtons(gbxFrequency);
-            Utilities.UnSelectAllRadioButtons(gbxType);
         }
 
         private void LoadRowSelection(DataGridViewRow row)
@@ -257,9 +275,6 @@ namespace FinancialManager.UI.Controls
             {
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtAmount.Text = row.Cells[2].Value.ToString();
-
-                Utilities.SelectRadioButton(gbxFrequency, row.Cells[4].Value.ToString());
-                Utilities.SelectRadioButton(gbxType, row.Cells[5].Value.ToString());
             }            
         }
         private async void DelayMilliseconds(int milliseconds, Action method)
@@ -274,10 +289,6 @@ namespace FinancialManager.UI.Controls
 
             if (Utilities.IsEmpty(txtName))
                 errorMessage += " - Name cannot be blank\r\n";
-            if (Utilities.GetSelectedRadioButton(gbxFrequency) == null)
-                errorMessage += " - You must select a frequency\r\n";
-            if (Utilities.GetSelectedRadioButton(gbxType) == null)
-                errorMessage += " - You must select a type\r\n";
             if (Utilities.IsValidCurrency(txtAmount) == false)
                 errorMessage += " - Invalid Amount\r\n";
 

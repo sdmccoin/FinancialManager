@@ -9,6 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataAdapters\**" />
+    <Compile Remove="DataSources\**" />
+    <Compile Remove="Data\**" />
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="Interfaces\**" />
+    <Compile Remove="Services\**" />
+    <Compile Remove="UI\Controllers\**" />
+    <Compile Remove="UI\Models\**" />
+    <Compile Remove="Utilities\**" />
+    <EmbeddedResource Remove="DataAdapters\**" />
+    <EmbeddedResource Remove="DataSources\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="UI\Controllers\**" />
+    <EmbeddedResource Remove="UI\Models\**" />
+    <EmbeddedResource Remove="Utilities\**" />
+    <None Remove="DataAdapters\**" />
+    <None Remove="DataSources\**" />
+    <None Remove="Data\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="Interfaces\**" />
+    <None Remove="Services\**" />
+    <None Remove="UI\Controllers\**" />
+    <None Remove="UI\Models\**" />
+    <None Remove="Utilities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -32,7 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -42,9 +72,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DataSources\sqlite\FinancialManager.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\FinancialManagerLibrary\FinancialManagerLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

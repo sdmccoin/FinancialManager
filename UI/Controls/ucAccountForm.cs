@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
 
 namespace FinancialManager.UI.Controls
 {

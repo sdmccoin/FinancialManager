@@ -1,7 +1,7 @@
-﻿using FinancialManager.Data.Interfaces;
-using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
-using FinancialManager.Interfaces;
+﻿using FinancialManagerLibrary.Data.Interfaces;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

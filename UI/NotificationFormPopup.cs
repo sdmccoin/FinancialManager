@@ -8,11 +8,11 @@ using System.Runtime.InteropServices.JavaScript;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
 using FinancialManager.UI.Controls;
-using FinancialManager.Utilities;
+using FinancialManagerLibrary.Utilities;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace FinancialManager.UI
@@ -77,8 +77,6 @@ namespace FinancialManager.UI
         {
             Income income = (Income)incomeController.GetById(typeId);
             lblName.Text = income.Source;
-            lblAddress.Text = income.Address;
-            lblFrequency.Text = income.Frequency;
             lblAmount.Text = income.Amount;
 
             // get income reminder to get reminder id
@@ -104,8 +102,6 @@ namespace FinancialManager.UI
         {
             Expense expense = (Expense)expenseController.GetById(typeId);
             lblName.Text = expense.Source;
-            lblAddress.Text = expense.Address;
-            lblFrequency.Text = expense.Frequency;
             lblAmount.Text = expense.Amount;
 
             expenseReminder = (ExpenseReminder)expenseReminderController
@@ -130,7 +126,6 @@ namespace FinancialManager.UI
         {
             Investment investment = (Investment)investmentController.GetById(typeId);
             lblName.Text = investment.Source;
-            lblFrequency.Text = investment.Frequency;
             lblAmount.Text = investment.Amount;
 
             investmentReminder = (InvestmentReminder)investmentReminderController

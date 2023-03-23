@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
-using FinancialManager.Data.Interfaces;
-using FinancialManager.Utilities;
-using FinancialManager.Services;
-using FinancialManager.Interfaces;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Data.Interfaces;
+using FinancialManagerLibrary.Utilities;
+using FinancialManagerLibrary.Services;
+using FinancialManagerLibrary.Interfaces;
 
 namespace FinancialManager.UI.Controllers
 {

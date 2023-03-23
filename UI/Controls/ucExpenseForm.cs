@@ -1,7 +1,7 @@
-﻿using FinancialManager.Data.Models;
-using FinancialManager.Data.Repositories;
-using FinancialManager.Utilities;
-using FinancialManager.UI.Controllers;
+﻿using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Utilities;
+using FinancialManagerLibrary.UI.Controllers;
 using FinancialManager.UI;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialManager.Interfaces;
+using FinancialManagerLibrary.Interfaces;
 
 namespace FinancialManager.UI.Controls
 {
@@ -23,11 +23,13 @@ namespace FinancialManager.UI.Controls
         IController expenseNotificationController;
 
         DataTable expenseTable;
+        DataTable eventsTable;
 
         public ucExpenseForm()
         {
             InitializeComponent();
             InitializeExpenseTable();
+            InitializeEventsTable();
 
             // use a factory pattern to get an income controller
             controller = ControllerFactory.GetController("Expense");
@@ -38,15 +40,22 @@ namespace FinancialManager.UI.Controls
             expenseTable = new DataTable();
             expenseTable.Columns.Add("Id", typeof(int));
             expenseTable.Columns.Add("Name", typeof(string));
-            expenseTable.Columns.Add("Address", typeof(string));
             expenseTable.Columns.Add("Amount", typeof(string));
-            expenseTable.Columns.Add("Frequency", typeof(string));
             expenseTable.Columns.Add("Reminder", typeof(Image));
             expenseTable.Columns.Add("Notification", typeof(Image));
+            expenseTable.Columns.Add("Date", typeof(string));
+        }
+        private void InitializeEventsTable()
+        {
+            eventsTable = new DataTable();
+            eventsTable.Columns.Add("Id", typeof(int));
+            eventsTable.Columns.Add("Reminder", typeof(Image));
+            eventsTable.Columns.Add("Notification", typeof(Image));
+            eventsTable.Columns.Add("Date", typeof(string));
         }
 
         #region CRUD Operations
-        private void LoadExpensesGrid()
+        private void LoadIncomeAndEventsGrid()
         {
             // initialize controllers
             expenseReminderController = ControllerFactory.GetController("ExpenseReminder");
@@ -61,6 +70,10 @@ namespace FinancialManager.UI.Controls
             expenseTable.Clear();
             dgvExpenses.DataSource = expenseTable;
             dgvExpenses.Refresh();
+
+            eventsTable.Clear();
+            dgvExpenseEvents.DataSource = eventsTable;
+            dgvExpenseEvents.Refresh();
 
             Bitmap reminderImage;
             Bitmap notificationImage;
@@ -96,19 +109,31 @@ namespace FinancialManager.UI.Controls
                 if (notificationImage == null)
                     notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
 
-                expenseTable.Rows.Add(expense.Id, expense.Source, expense.Address, expense.Amount,
-                        expense.Frequency, reminderImage, notificationImage);
+                expenseTable.Rows.Add(expense.Id, expense.Source, expense.Amount,
+                        reminderImage, notificationImage, expense.Date);
 
                 dgvExpenses.AutoSize = true;
                 dgvExpenses.DataSource = expenseTable;
                 this.dgvExpenses.Columns["Id"].Visible = false;
-                dgvExpenses.Columns[1].Width = 200;
-                dgvExpenses.Columns[2].Width = 450;
+                dgvExpenses.Columns[1].Width = 540;
+                dgvExpenses.Columns[2].Width = 200;
                 dgvExpenses.Columns[3].Width = 150;
                 dgvExpenses.Columns[4].Width = 200;
-                dgvExpenses.Columns[5].Width = 150;
-                dgvExpenses.Columns[6].Width = 150;
+                dgvExpenses.Columns[5].Width = 280;
                 dgvExpenses.AutoSize = true;
+
+                // load events (only if they exist)
+                if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
+                {
+                    eventsTable.Rows.Add(expense.Id, reminderImage, notificationImage, expense.Date);
+
+                    dgvExpenseEvents.AutoSize = true;
+                    dgvExpenseEvents.DataSource = eventsTable;
+                    this.dgvExpenseEvents.Columns["Id"].Visible = false;
+                    dgvExpenseEvents.Columns[1].Width = 175;
+                    dgvExpenseEvents.Columns[2].Width = 175;
+                    dgvExpenseEvents.Columns[3].Width = 280;
+                }
             }
            // dgvExpenses.DataSource = controller.GetAll(ActiveUser.id);
         }
@@ -124,16 +149,15 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     // make sure the entry doesn't already exist
                     if (controller.Exists(expense) == null)
                     {
                         controller.Add(expense);
-                        LoadExpensesGrid();
+                        LoadIncomeAndEventsGrid();
 
                         MessageBox.Show("Expense Added", "Success");
                     }
@@ -164,16 +188,15 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvExpenses, 0).Value.ToString()),
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     controller.Update(expense);
                     MessageBox.Show("Expense Updated", "Success");
 
-                    LoadExpensesGrid();
+                    LoadIncomeAndEventsGrid();
                 }
                 catch (Exception ex)
                 {
@@ -200,14 +223,13 @@ namespace FinancialManager.UI.Controls
                     {
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
-                        Address = txtAddress1.Text,
-                        Frequency = Utilities.GetSelectedRadioButton(groupBox1).Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvExpenses, 0).Value.ToString()),
-                        UserId = ActiveUser.id
+                        UserId = ActiveUser.id,
+                        Date = dtpStart.Text
                     };
 
                     controller.Delete(expense);
-                    LoadExpensesGrid();
+                    LoadIncomeAndEventsGrid();
 
                     MessageBox.Show("Expense Deleted", "Success");
                 }
@@ -231,10 +253,8 @@ namespace FinancialManager.UI.Controls
             if (row != null)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
-                txtAddress1.Text = row.Cells[2].Value.ToString();
-                txtAmount.Text = row.Cells[3].Value.ToString();
-
-                Utilities.SelectRadioButton(groupBox1, row.Cells[4].Value.ToString());
+                txtAmount.Text = row.Cells[2].Value.ToString();
+                dtpStart.Text = row.Cells[5].Value.ToString();
             }
         }
 
@@ -242,12 +262,8 @@ namespace FinancialManager.UI.Controls
         {
             bool isValid = false;
 
-            if (Utilities.IsEmpty(txtAddress1))
-                errorMessage += " - Address cannot be blank\r\n";
             if (Utilities.IsEmpty(txtName))
                 errorMessage += " - Name cannot be blank\r\n";
-            if (Utilities.GetSelectedRadioButton(groupBox1) == null)
-                errorMessage += " - You must select a frequency\r\n";
             if (Utilities.IsValidCurrency(txtAmount) == false)
                 errorMessage += " - Invalid Amount\r\n";
 
@@ -262,7 +278,7 @@ namespace FinancialManager.UI.Controls
 
         private void ucExpenseForm_Load(object sender, EventArgs e)
         {
-            LoadExpensesGrid();
+            LoadIncomeAndEventsGrid();
 
             // delegate to clear the form after .1 seconds 
             Action clear = () => ClearForm();
@@ -278,10 +294,6 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
-            txtAddress1.Text = "";
-            txtAddress2.Text = "";
-
-            Utilities.UnSelectAllRadioButtons(groupBox1);
         }
 
         private async void DelayMilliseconds(int milliseconds, Action method)
@@ -302,5 +314,6 @@ namespace FinancialManager.UI.Controls
             NotificationFormPopup popup = new NotificationFormPopup(ReminderType.EXPENSE, int.Parse(Utilities.GetSelectedRowCell(dgvExpenses, 0).Value.ToString()));
             popup.ShowDialog();
         }
+
     }
 }

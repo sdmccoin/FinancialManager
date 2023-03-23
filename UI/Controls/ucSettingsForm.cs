@@ -1,7 +1,7 @@
-﻿using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
-using FinancialManager.Utilities;
+﻿using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

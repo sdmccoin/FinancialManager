@@ -8,13 +8,13 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialManager.Data.Interfaces;
-using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.Services;
-using FinancialManager.UI.Controllers;
-using FinancialManager.UI.Models;
-using FinancialManager.Utilities;
+using FinancialManagerLibrary.Data.Interfaces;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Services;
+using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.UI.Models;
+using FinancialManagerLibrary.Utilities;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -42,10 +42,10 @@ namespace FinancialManager.UI.Controls
         private void ucReportForm_Load(object sender, EventArgs e)
         {
             wvReportView.Visible = false;
-            lblMonthlyIncome.Text = string.Format("{0:C}", controller.GetMonthlyIncome(ActiveUser.id));
-            lblYearlyIncome.Text = string.Format("{0:C}", controller.GetYearlyIncome(ActiveUser.id));
-            lblMonthlyExpenses.Text = string.Format("{0:C}", controller.GetMonthlyExpenses(ActiveUser.id));
-            lblYearlyExpenses.Text = string.Format("{0:C}", controller.GetYearlyExpenses(ActiveUser.id));
+            lblMonthlyIncome.Text = Utilities.FormatCurrency(decimal.Parse(controller.GetMonthlyIncome(ActiveUser.id).ToString()));
+            lblYearlyIncome.Text = Utilities.FormatCurrency(decimal.Parse(controller.GetYearlyIncome(ActiveUser.id).ToString()));
+            lblMonthlyExpenses.Text = Utilities.FormatCurrency(decimal.Parse(controller.GetMonthlyExpenses(ActiveUser.id).ToString()));
+            lblYearlyExpenses.Text = Utilities.FormatCurrency(decimal.Parse(controller.GetYearlyExpenses(ActiveUser.id).ToString()));
         }
 
         private void tsddIncomeMonthly_Click(object sender, EventArgs e)
@@ -71,6 +71,7 @@ namespace FinancialManager.UI.Controls
                         break;
                 }
                 
+                
                 LoadReportData();
                 DisplayReport();
                 wvReportView.Visible = true;
@@ -81,7 +82,7 @@ namespace FinancialManager.UI.Controls
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+              
         private bool FormIsValid(ref string errorMessage)
         {
             bool isValid = true;

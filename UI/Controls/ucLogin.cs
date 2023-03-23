@@ -1,7 +1,7 @@
-﻿using FinancialManager.Data.Repositories;
-using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
+﻿using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
 
 namespace FinancialManager.UI.Controls
 {
