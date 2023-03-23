@@ -1,0 +1,15 @@
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\bin\Debug\net6.0\FinancialManagerStockAnalyzer.exe
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\bin\Debug\net6.0\FinancialManagerStockAnalyzer.deps.json
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\bin\Debug\net6.0\FinancialManagerStockAnalyzer.runtimeconfig.json
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\bin\Debug\net6.0\FinancialManagerStockAnalyzer.dll
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\bin\Debug\net6.0\FinancialManagerStockAnalyzer.pdb
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.csproj.AssemblyReference.cache
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.AssemblyInfoInputs.cache
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.AssemblyInfo.cs
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.csproj.CoreCompileInputs.cache
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.dll
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\refint\FinancialManagerStockAnalyzer.dll
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.pdb
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\FinancialManagerStockAnalyzer.genruntimeconfig.cache
+C:\git\src\FinancialManager\FinancialManagerStockAnalyzer\obj\Debug\net6.0\ref\FinancialManagerStockAnalyzer.dll

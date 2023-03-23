@@ -1,7 +1,7 @@
-﻿using FinancialManager.Data.Models;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
-using FinancialManager.Utilities;
+﻿using FinancialManagerLibrary.Data.Models;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.Utilities;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -114,6 +114,21 @@ namespace FinancialManager.Test
         {
             expenseReminderController.Delete(er);
             Assert.IsNull(expenseReminderController.GetById(int.Parse(er.ReminderId.ToString())));
+        }
+        [TestMethod]
+        public void Test7CreateUIIncomeAlert()
+        {
+
+        }
+        [TestMethod]
+        public void Test8CreateUIExpenseAlert()
+        {
+
+        }
+        [TestMethod]
+        public void Test9CreateUIInvestmentAlert()
+        {
+
         }
     }
 }

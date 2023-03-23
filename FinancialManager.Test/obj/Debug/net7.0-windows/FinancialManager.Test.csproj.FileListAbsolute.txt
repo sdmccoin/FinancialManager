@@ -155,3 +155,6 @@ C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\refin
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.pdb
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\FinancialManager.Test.genruntimeconfig.cache
 C:\git\src\FinancialManager\FinancialManager.Test\obj\Debug\net7.0-windows\ref\FinancialManager.Test.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\FinancialManagerLibrary.dll
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\FinancialManagerLibrary.pdb
+C:\git\src\FinancialManager\FinancialManager.Test\bin\Debug\net7.0-windows\runtimes\linux-ppc64le\native\libe_sqlite3.so

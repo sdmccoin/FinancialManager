@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Test
 {
-    using FinancialManager.Data.Repositories;
-    using FinancialManager.Data.Models;
-    using FinancialManager.Interfaces;
-    using FinancialManager.UI.Controllers;
+    using FinancialManagerLibrary.Data.Repositories;
+    using FinancialManagerLibrary.Data.Models;
+    using FinancialManagerLibrary.Interfaces;
+    using FinancialManagerLibrary.UI.Controllers;
     using Microsoft.Data.Sqlite;
 
     [TestClass]
@@ -28,8 +28,6 @@ namespace FinancialManager.Test
             {
                 Source = "Car Payment",
                 Amount = "420",
-                Address = "1234 address",
-                Frequency = "Monthly"
             };
 
             Expense returned = (Expense)controller.Add(expense); 
@@ -45,8 +43,6 @@ namespace FinancialManager.Test
             {
                 Source = "Car Payment",
                 Amount = "420",
-                Address = "1234 address",
-                Frequency = "Monthly",
                 Id = 1
             };
 
@@ -60,8 +56,6 @@ namespace FinancialManager.Test
             {
                 Source = "Car Payment",
                 Amount = "420",
-                Address = "1234 address",
-                Frequency = "Monthly",
                 Id = 1
             };
 
@@ -79,8 +73,6 @@ namespace FinancialManager.Test
             {
                 Source = "Car Payment",
                 Amount = "420",
-                Address = "1234 address",
-                Frequency = "Monthly",
                 Id = 1
             };
 

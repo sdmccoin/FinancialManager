@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Test
 {
-    using FinancialManager.Data.Repositories;
-    using FinancialManager.Data.Models;
-    using FinancialManager.Interfaces;
-    using FinancialManager.UI.Controllers;
+    using FinancialManagerLibrary.Data.Repositories;
+    using FinancialManagerLibrary.Data.Models;
+    using FinancialManagerLibrary.Interfaces;
+    using FinancialManagerLibrary.UI.Controllers;
     using Microsoft.Data.Sqlite;
-    using FinancialManager.Data.Interfaces;
+    using FinancialManagerLibrary.Data.Interfaces;
 
     [TestClass]
     public class Incomes
@@ -29,8 +29,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Road",
-                Frequency = "Weekly",
                 Id = 1
             };
 
@@ -47,8 +45,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Road",
-                Frequency = "Weekly",
                 Id = 1
             };
 
@@ -62,8 +58,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Road",
-                Frequency = "Weekly",
                 Id = 1
             };
 
@@ -81,8 +75,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Road",
-                Frequency = "Weekly",
                 Id = 1
             };
 
@@ -110,8 +102,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Street",
-                Frequency = "Weekly"
             };
 
             if ((Income?)controller.Exists(income) == null)
@@ -130,8 +120,6 @@ namespace FinancialManager.Test
             {
                 Source = "Work",
                 Amount = "2,000",
-                Address = "5811 Rosebay Forest Street",
-                Frequency = "Weekly"
             };
 
             if ((Income?)controller.Exists(income) != null)

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FinancialManager.Test
 {
-    using FinancialManager.Data.Repositories;
-    using FinancialManager.Data.Models;
-    using FinancialManager.Interfaces;
-    using FinancialManager.UI.Controllers;
+    using FinancialManagerLibrary.Data.Repositories;
+    using FinancialManagerLibrary.Data.Models;
+    using FinancialManagerLibrary.Interfaces;
+    using FinancialManagerLibrary.UI.Controllers;
     using Microsoft.Data.Sqlite;
-    using FinancialManager.Services;
-    using FinancialManager.Services.Models;
+    using FinancialManagerLibrary.Services;
+    using FinancialManagerLibrary.Services.Models;
 
     [TestClass]
     public class Investments

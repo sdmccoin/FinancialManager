@@ -1,6 +1,6 @@
-﻿using FinancialManager.Data.Repositories;
-using FinancialManager.Interfaces;
-using FinancialManager.UI.Controllers;
+﻿using FinancialManagerLibrary.Data.Repositories;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +77,16 @@ namespace FinancialManager.Test
             incomeReport.ReportType = "Yearly";
             incomeReport.Generate();
             Assert.IsNotNull(incomeReport.ToString());
+        }
+        [TestMethod]
+        public void Test9GenerateMonthlyInvestmentReport()
+        {
+            //IReport incomeReport = ReportFactory.GetReport("Expense");
+            //incomeReport.StartDate = "";
+            //incomeReport.EndDate = "";
+            //incomeReport.ReportType = "Yearly";
+            //incomeReport.Generate();
+            //Assert.IsNotNull(incomeReport.ToString());
         }
     }
 }

@@ -1,7 +1,7 @@
 namespace FinancialManager.Test
 {
-    using FinancialManager.Data.Repositories;
-    using FinancialManager.Data.Models;
+    using FinancialManagerLibrary.Data.Repositories;
+    using FinancialManagerLibrary.Data.Models;
     using System.Drawing.Text;
 
     [TestClass]
