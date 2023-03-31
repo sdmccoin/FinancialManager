@@ -8,6 +8,8 @@ using FinancialManagerLibrary.Interfaces;
 using FinancialManagerLibrary.UI.Controllers;
 using FinancialManagerLibrary.Data.Interfaces;
 using System.Reflection;
+using System.Collections.Generic;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager
 {  
@@ -17,10 +19,14 @@ namespace FinancialManager
         
         private static ucNotification alertNotify = new ucNotification();
         private static ucNotification notificationNotify = new ucNotification();
+        IController settingsController;
+        long alertWindow = 0;
+        bool activeAlerts = false;
+        bool activeNotifications = false;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,6 +49,9 @@ namespace FinancialManager
             {
                 DisableUI();
             }
+
+            settingsController = ControllerFactory.GetController("Settings");
+            alertWindow = ((List<Setting>)settingsController.GetAll(ActiveUser.id)).FirstOrDefault().AlertWindowDays;
 
             // setup alert notifications
             alertNotify = new ucNotification();
@@ -160,10 +169,36 @@ namespace FinancialManager
         /// </summary>
         private void CheckForNotifications()
         {
-            IController reminders = ControllerFactory.GetController("Reminder");
-            int count = reminders.GetAll(ActiveUser.id).ToList().Count;
+            //IController reminders = ControllerFactory.GetController("Reminder");
+            //List<Reminder> remindersList = (List<Reminder>)reminders.GetAll(ActiveUser.id);
+            //var orderedList = remindersList.OrderByDescending(x => DateTime.Parse(x.Date)).ToList();
+            //List<Reminder> filteredList = new List<Reminder>();
 
-            notificationNotify.AlertCount = count.ToString();
+            //foreach (Reminder reminder in orderedList)
+            //{
+            //    // make sure the reminder date is earlier than the current date/time and within 1 day of
+            //    // predefined limit (i.e., 1 day)
+            //    if (DateTime.Compare(DateTime.Parse(reminder.Date), DateTime.Now) <= 0 &&
+            //       DateTime.Compare(DateTime.Parse(reminder.Date), DateTime.Now.AddDays(alertWindow)) <= 0)
+            //    {
+            //        if (reminder.Enabled == 1)
+            //            filteredList.Add(reminder);
+            //    }
+            //}
+            ReminderService reminderService = new ReminderService();
+            List<Reminder> filteredList = reminderService.GetAllActiveReminders();
+
+            if (filteredList.Count > 0)
+            {
+                alertNotify.AlertCount = filteredList.Count.ToString();
+                activeAlerts = true;
+            }
+            else
+            {
+                activeAlerts = false;
+            }
+            
+            //notificationNotify.AlertCount = filteredList.Count.ToString();
         }
 
         #region Backgroun Tasks
@@ -205,7 +240,7 @@ namespace FinancialManager
             int counter = 0;
             while (true)
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(3000);
                 backgroundWorker3.ReportProgress(0, counter.ToString());                
                 counter++;
             }
@@ -219,12 +254,19 @@ namespace FinancialManager
         /// <param name="e"></param>
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
-
-            // notify user of alert
-            if (alertNotify.CountLabel.Visible == false)
-                alertNotify.CountLabel.Visible = true;
+            if (activeAlerts)
+            {
+                // notify user of alert
+                if (alertNotify.CountLabel.Visible == false)
+                    alertNotify.CountLabel.Visible = true;
+                else
+                    alertNotify.CountLabel.Visible = false;
+            }
             else
+            {
                 alertNotify.CountLabel.Visible = false;
+            }
+            
 
         }
 
@@ -236,11 +278,19 @@ namespace FinancialManager
         private void backgroundWorker2_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
 
-            // notify user of notification
-            if (notificationNotify.CountLabel.Visible == false)
-                notificationNotify.CountLabel.Visible = true;
+            if (activeNotifications)
+            {
+                // notify user of notification
+                if (notificationNotify.CountLabel.Visible == false)
+                    notificationNotify.CountLabel.Visible = true;
+                else
+                    notificationNotify.CountLabel.Visible = false;
+            }
             else
+            {
                 notificationNotify.CountLabel.Visible = false;
+            }
+          
         }
 
         
@@ -275,6 +325,11 @@ namespace FinancialManager
         {
             ClearMain();
             pnlMain.Controls.Add(new ucReportForm());
+        }
+
+        private void pnlAlerts_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     // admin - Pa$$word1 - DB

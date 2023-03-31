@@ -18,6 +18,7 @@ using FinancialManagerLibrary.Data.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System.Drawing.Imaging;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls
 {
@@ -26,6 +27,9 @@ namespace FinancialManager.UI.Controls
         IController incomeController;
         IController incomeReminderController;
         IController incomeNotificationController;
+        IController reminderController;
+        IController settingsController;
+        
         DataTable incomeTable;
         DataTable eventsTable;
 
@@ -37,7 +41,9 @@ namespace FinancialManager.UI.Controls
 
             // user a factory pattern to get an income controller
             incomeController = ControllerFactory.GetController("Income");
-                       
+            reminderController = ControllerFactory.GetController("Reminder");
+            settingsController = ControllerFactory.GetController("Settings");
+
         }
 
         private void InitializeIncomeTable()
@@ -119,6 +125,8 @@ namespace FinancialManager.UI.Controls
             List<IncomeReminder> reminders = (List<IncomeReminder>)incomeReminderController.GetAll(ActiveUser.id);
             List<IncomeNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(ActiveUser.id);
 
+            ReminderService reminderService = new ReminderService();
+
             // clear prior to reloading
             incomeTable.Clear();
             dgvIncome.DataSource = incomeTable;
@@ -178,14 +186,18 @@ namespace FinancialManager.UI.Controls
                 // load events (only if they exist)
                 if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
                 {
-                    eventsTable.Rows.Add(income.Id, reminderImage, notificationImage, income.Date);
+                   // call the reminder service to only get the active alerts
+                    if (reminderService.GetActiveIncomeReminder(int.Parse(income.Id.ToString())) != null)
+                    {
+                        eventsTable.Rows.Add(income.Id, reminderImage, notificationImage, income.Date);
 
-                    dgvIncomeEvents.AutoSize = true;
-                    dgvIncomeEvents.DataSource = eventsTable;
-                    this.dgvIncomeEvents.Columns["Id"].Visible = false;
-                    dgvIncomeEvents.Columns[1].Width = 175;
-                    dgvIncomeEvents.Columns[2].Width = 175;
-                    dgvIncomeEvents.Columns[3].Width = 280;
+                        dgvIncomeEvents.AutoSize = true;
+                        dgvIncomeEvents.DataSource = eventsTable;
+                        this.dgvIncomeEvents.Columns["Id"].Visible = false;
+                        dgvIncomeEvents.Columns[1].Width = 175;
+                        dgvIncomeEvents.Columns[2].Width = 175;
+                        dgvIncomeEvents.Columns[3].Width = 280;
+                    }
                 }
             }
         }

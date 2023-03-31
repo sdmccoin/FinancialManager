@@ -142,8 +142,6 @@ C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialM
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucIncomeForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucInvestmentForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucLogin.resources
-C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucNotificationEntryForm.resources
-C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucNotificationForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucReminderForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucReportForm.resources
 C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.NotificationFormPopup.resources
@@ -165,3 +163,14 @@ C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialM
 C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\FinancialManagerLibrary.dll
 C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\FinancialManagerLibrary.pdb
 C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\Microsoft.Win32.TaskScheduler.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\de\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\es\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\fr\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\it\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\pl\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\ru\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\bin\Debug\net7.0-windows\zh-Hant\Microsoft.Win32.TaskScheduler.resources.dll
+C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ucActiveNotificationsAndAlerts.resources
+C:\git\src\FinancialManager\FinancialManager\obj\Debug\net7.0-windows\FinancialManager.UI.Controls.ActiveNotificationsAndAlerts.resources

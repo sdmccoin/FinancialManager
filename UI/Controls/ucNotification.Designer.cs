@@ -45,17 +45,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblAlertCount
             // 
-            this.lblAlertCount.AutoSize = true;
             this.lblAlertCount.BackColor = System.Drawing.Color.Gold;
             this.lblAlertCount.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAlertCount.Location = new System.Drawing.Point(42, 3);
             this.lblAlertCount.Name = "lblAlertCount";
-            this.lblAlertCount.Size = new System.Drawing.Size(28, 31);
+            this.lblAlertCount.Size = new System.Drawing.Size(52, 31);
             this.lblAlertCount.TabIndex = 1;
-            this.lblAlertCount.Text = "3";
+            this.lblAlertCount.Text = "-";
+            this.lblAlertCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucNotification
             // 
@@ -69,7 +70,6 @@
             this.Load += new System.EventHandler(this.ucAlert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

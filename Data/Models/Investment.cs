@@ -13,10 +13,6 @@ public partial class Investment
 
     public long UserId { get; set; }
 
-    public string Frequency { get; set; } = null!;
-
-    public string Type { get; set; } = null!;
-
     public string? Date { get; set; }
 
     public virtual InvestmentReminder? InvestmentReminder { get; set; }

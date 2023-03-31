@@ -24,6 +24,12 @@ namespace FinancialManager.UI.Controls
 
         public string AlertCount { get { return lblAlertCount.Text; } set { lblAlertCount.Text = value; } }
         public Label CountLabel { get { return lblAlertCount; } }
-        public PictureBox NotificationImage { get { return pictureBox1; } }       
+        public PictureBox NotificationImage { get { return pictureBox1; } }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ActiveNotificationsAndAlerts alertPopup = new ActiveNotificationsAndAlerts();
+            alertPopup.ShowDialog();
+        }
     }
 }

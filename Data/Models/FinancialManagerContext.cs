@@ -41,7 +41,7 @@ public partial class FinancialManagerContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlite("Data Source=C:\\git\\src\\FinancialManager\\FinancialManager\\DataSources\\sqlite\\FinancialManager.db");
+        => optionsBuilder.UseSqlite("Data Source=C:\\git\\src\\FinancialManager\\FinancialManagerLibrary\\DataSources\\sqlite\\FinancialManager.db");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,10 +49,8 @@ public partial class FinancialManagerContext : DbContext
         {
             entity.ToTable("Expense");
 
-            entity.Property(e => e.Address).HasColumnType("TEXT (150)");
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
             entity.Property(e => e.Date).HasColumnType("TEXT (25)");
-            entity.Property(e => e.Frequency).HasColumnType("TEXT (25)");
             entity.Property(e => e.Source).HasColumnType("TEXT (100)");
 
             entity.HasOne(d => d.User).WithMany(p => p.Expenses)
@@ -79,10 +77,8 @@ public partial class FinancialManagerContext : DbContext
         {
             entity.ToTable("Income");
 
-            entity.Property(e => e.Address).HasColumnType("TEXT (150)");
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
             entity.Property(e => e.Date).HasColumnType("TEXT (25)");
-            entity.Property(e => e.Frequency).HasColumnType("TEXT (20)");
             entity.Property(e => e.Source).HasColumnType("TEXT (100)");
 
             entity.HasOne(d => d.User).WithMany(p => p.Incomes)
@@ -122,13 +118,7 @@ public partial class FinancialManagerContext : DbContext
 
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
             entity.Property(e => e.Date).HasColumnType("TEXT (25)");
-            entity.Property(e => e.Frequency)
-                .HasDefaultValueSql("Weekly")
-                .HasColumnType("TEXT (25)");
             entity.Property(e => e.Source).HasColumnType("TEXT (150)");
-            entity.Property(e => e.Type)
-                .HasDefaultValueSql("Stock")
-                .HasColumnType("TEXT (25)");
 
             entity.HasOne(d => d.User).WithMany(p => p.Investments)
                 .HasForeignKey(d => d.UserId)
@@ -185,8 +175,10 @@ public partial class FinancialManagerContext : DbContext
         {
             entity.HasIndex(e => e.Id, "IX_Settings_Id").IsUnique();
 
+            entity.Property(e => e.ConfidenceLevel).HasDefaultValueSql("10");
             entity.Property(e => e.EmailAddress).HasColumnType("TEXT (50)");
             entity.Property(e => e.Phone).HasColumnType("TEXT (15)");
+            entity.Property(e => e.PredictionTimeInterval).HasDefaultValueSql("1");
         });
 
         modelBuilder.Entity<StockAnalysis>(entity =>

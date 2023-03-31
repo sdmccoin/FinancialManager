@@ -220,10 +220,11 @@
             // 
             // pnlAlerts
             // 
-            this.pnlAlerts.Location = new System.Drawing.Point(78, 1355);
+            this.pnlAlerts.Location = new System.Drawing.Point(67, 1355);
             this.pnlAlerts.Name = "pnlAlerts";
-            this.pnlAlerts.Size = new System.Drawing.Size(169, 45);
+            this.pnlAlerts.Size = new System.Drawing.Size(217, 45);
             this.pnlAlerts.TabIndex = 2;
+            this.pnlAlerts.Click += new System.EventHandler(this.pnlAlerts_Click);
             // 
             // label4
             // 

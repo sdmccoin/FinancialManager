@@ -11,10 +11,6 @@ public partial class Expense
 
     public string Amount { get; set; } = null!;
 
-    public string? Address { get; set; }
-
-    public string Frequency { get; set; } = null!;
-
     public long UserId { get; set; }
 
     public string? Date { get; set; }

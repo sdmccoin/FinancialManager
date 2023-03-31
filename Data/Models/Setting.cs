@@ -12,4 +12,8 @@ public partial class Setting
     public string? EmailAddress { get; set; }
 
     public string? Phone { get; set; }
+
+    public long PredictionTimeInterval { get; set; }
+
+    public long ConfidenceLevel { get; set; }
 }

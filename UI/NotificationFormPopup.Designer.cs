@@ -179,43 +179,51 @@
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClear.Location = new System.Drawing.Point(718, 712);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 58);
             this.btnClear.TabIndex = 43;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Location = new System.Drawing.Point(574, 712);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 58);
             this.btnDelete.TabIndex = 42;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUpdate.Location = new System.Drawing.Point(422, 712);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 58);
             this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
+            this.btnInsert.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInsert.Location = new System.Drawing.Point(277, 712);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(123, 58);
             this.btnInsert.TabIndex = 40;
             this.btnInsert.Text = "Add";
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // label11
@@ -347,6 +355,7 @@
             // 
             // txtMessage
             // 
+            this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMessage.Location = new System.Drawing.Point(67, 588);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
@@ -357,6 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1143, 1227);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.cbxNotification);
@@ -372,7 +382,7 @@
             this.Name = "NotificationFormPopup";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Set Reminder/Notification";
+            this.Text = "Set Reminder";
             this.Load += new System.EventHandler(this.NotificationFormPopup_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();

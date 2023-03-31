@@ -45,13 +45,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(470, 25);
+            this.label11.Location = new System.Drawing.Point(471, 99);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 41);
             this.label11.TabIndex = 27;
@@ -60,7 +61,7 @@
             // dtpTime
             // 
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(584, 19);
+            this.dtpTime.Location = new System.Drawing.Point(585, 93);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(259, 47);
             this.dtpTime.TabIndex = 26;
@@ -72,7 +73,8 @@
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.rbtnDaily);
             this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Location = new System.Drawing.Point(584, 177);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(585, 251);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(257, 348);
             this.groupBox1.TabIndex = 25;
@@ -85,7 +87,7 @@
             this.radioButton5.Location = new System.Drawing.Point(35, 261);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(132, 45);
+            this.radioButton5.Size = new System.Drawing.Size(127, 38);
             this.radioButton5.TabIndex = 21;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Yearly";
@@ -97,7 +99,7 @@
             this.radioButton2.Location = new System.Drawing.Point(35, 112);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(151, 45);
+            this.radioButton2.Size = new System.Drawing.Size(139, 38);
             this.radioButton2.TabIndex = 18;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Weekly";
@@ -109,7 +111,7 @@
             this.radioButton4.Location = new System.Drawing.Point(35, 213);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(166, 45);
+            this.radioButton4.Size = new System.Drawing.Size(153, 38);
             this.radioButton4.TabIndex = 20;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Monthly";
@@ -121,7 +123,7 @@
             this.rbtnDaily.Location = new System.Drawing.Point(35, 58);
             this.rbtnDaily.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.rbtnDaily.Name = "rbtnDaily";
-            this.rbtnDaily.Size = new System.Drawing.Size(120, 45);
+            this.rbtnDaily.Size = new System.Drawing.Size(115, 38);
             this.rbtnDaily.TabIndex = 17;
             this.rbtnDaily.TabStop = true;
             this.rbtnDaily.Text = "Daily";
@@ -133,7 +135,7 @@
             this.radioButton3.Location = new System.Drawing.Point(35, 163);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(187, 45);
+            this.radioButton3.Size = new System.Drawing.Size(176, 38);
             this.radioButton3.TabIndex = 19;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Bi-Weekly";
@@ -143,7 +145,7 @@
             // 
             this.cbxRecurrence.AutoSize = true;
             this.cbxRecurrence.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxRecurrence.Location = new System.Drawing.Point(582, 126);
+            this.cbxRecurrence.Location = new System.Drawing.Point(583, 200);
             this.cbxRecurrence.Name = "cbxRecurrence";
             this.cbxRecurrence.Size = new System.Drawing.Size(211, 45);
             this.cbxRecurrence.TabIndex = 24;
@@ -152,7 +154,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(37, 84);
+            this.monthCalendar1.Location = new System.Drawing.Point(38, 158);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 23;
@@ -160,7 +162,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 25);
+            this.label10.Location = new System.Drawing.Point(38, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 41);
             this.label10.TabIndex = 22;
@@ -169,7 +171,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 526);
+            this.label9.Location = new System.Drawing.Point(42, 600);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(136, 41);
             this.label9.TabIndex = 21;
@@ -177,7 +179,8 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(41, 570);
+            this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMessage.Location = new System.Drawing.Point(42, 644);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(800, 118);
@@ -185,50 +188,69 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(692, 694);
+            this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Location = new System.Drawing.Point(693, 768);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 58);
             this.btnClear.TabIndex = 31;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(548, 694);
+            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Location = new System.Drawing.Point(549, 768);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 58);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(396, 694);
+            this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Location = new System.Drawing.Point(397, 768);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 58);
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(251, 694);
+            this.btnInsert.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInsert.Location = new System.Drawing.Point(252, 768);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(123, 58);
             this.btnInsert.TabIndex = 28;
             this.btnInsert.Text = "Add";
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Location = new System.Drawing.Point(-1, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(935, 56);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Add a Reminder";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucReminderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -242,7 +264,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtMessage);
             this.Name = "ucReminderForm";
-            this.Size = new System.Drawing.Size(933, 807);
+            this.Size = new System.Drawing.Size(933, 866);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -269,5 +291,6 @@
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnInsert;
+        private Label label8;
     }
 }

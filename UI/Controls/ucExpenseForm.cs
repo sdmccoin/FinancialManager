@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls
 {
@@ -57,6 +58,8 @@ namespace FinancialManager.UI.Controls
         #region CRUD Operations
         private void LoadIncomeAndEventsGrid()
         {
+            ReminderService reminderService = new ReminderService();
+
             // initialize controllers
             expenseReminderController = ControllerFactory.GetController("ExpenseReminder");
             //expenseNotificationController = ControllerFactory.GetController("ExpenseNotification");
@@ -125,14 +128,18 @@ namespace FinancialManager.UI.Controls
                 // load events (only if they exist)
                 if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
                 {
-                    eventsTable.Rows.Add(expense.Id, reminderImage, notificationImage, expense.Date);
+                    // call the reminder service to only get the active alerts
+                    if (reminderService.GetActiveExpenseReminder(int.Parse(expense.Id.ToString())) != null)
+                    {
+                        eventsTable.Rows.Add(expense.Id, reminderImage, notificationImage, expense.Date);
 
-                    dgvExpenseEvents.AutoSize = true;
-                    dgvExpenseEvents.DataSource = eventsTable;
-                    this.dgvExpenseEvents.Columns["Id"].Visible = false;
-                    dgvExpenseEvents.Columns[1].Width = 175;
-                    dgvExpenseEvents.Columns[2].Width = 175;
-                    dgvExpenseEvents.Columns[3].Width = 280;
+                        dgvExpenseEvents.AutoSize = true;
+                        dgvExpenseEvents.DataSource = eventsTable;
+                        this.dgvExpenseEvents.Columns["Id"].Visible = false;
+                        dgvExpenseEvents.Columns[1].Width = 175;
+                        dgvExpenseEvents.Columns[2].Width = 175;
+                        dgvExpenseEvents.Columns[3].Width = 280;
+                    }                        
                 }
             }
            // dgvExpenses.DataSource = controller.GetAll(ActiveUser.id);

@@ -39,6 +39,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="UI\Controls\ucNotificationEntryForm.cs" />
+    <Compile Remove="UI\Controls\ucNotificationEntryForm.Designer.cs" />
+    <Compile Remove="UI\Controls\ucNotificationForm.cs" />
+    <Compile Remove="UI\Controls\ucNotificationForm.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="UI\Controls\ucNotificationEntryForm.resx" />
+    <EmbeddedResource Remove="UI\Controls\ucNotificationForm.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -69,6 +81,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+    <PackageReference Include="TaskScheduler" Version="2.10.1" />
   </ItemGroup>
 
   <ItemGroup>

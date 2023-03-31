@@ -82,6 +82,8 @@ namespace FinancialManager.UI.Controls
         #region CRUD Operations
         private void LoadInvestmentsAndEventsGrid()
         {
+            ReminderService reminderService = new ReminderService();
+
             // initialize controllers
             investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
 
@@ -137,14 +139,18 @@ namespace FinancialManager.UI.Controls
                 // load events (only if they exist)
                 if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
                 {
-                    eventsTable.Rows.Add(investment.Id, reminderImage, notificationImage, investment.Date);
+                    // call the reminder service to only get the active alerts
+                    if (reminderService.GetActiveInvestmentReminder(int.Parse(investment.Id.ToString())) != null)
+                    {
+                        eventsTable.Rows.Add(investment.Id, reminderImage, notificationImage, investment.Date);
 
-                    dgvInvestmentsEvents.AutoSize = true;
-                    dgvInvestmentsEvents.DataSource = eventsTable;
-                    this.dgvInvestmentsEvents.Columns["Id"].Visible = false;
-                    dgvInvestmentsEvents.Columns[1].Width = 175;
-                    dgvInvestmentsEvents.Columns[2].Width = 175;
-                    dgvInvestmentsEvents.Columns[3].Width = 280;
+                        dgvInvestmentsEvents.AutoSize = true;
+                        dgvInvestmentsEvents.DataSource = eventsTable;
+                        this.dgvInvestmentsEvents.Columns["Id"].Visible = false;
+                        dgvInvestmentsEvents.Columns[1].Width = 175;
+                        dgvInvestmentsEvents.Columns[2].Width = 175;
+                        dgvInvestmentsEvents.Columns[3].Width = 280;
+                    }                        
                 }
             }
         }
