@@ -88,5 +88,59 @@ namespace FinancialManager.Test
             //incomeReport.Generate();
             //Assert.IsNotNull(incomeReport.ToString());
         }
+        [TestMethod]
+        public void Test10FilterExpenseReportByDate()
+        {
+            IReport expenseReport = ReportFactory.GetReport("Expense");
+            expenseReport.StartDate = "01/01/2023";
+            expenseReport.EndDate = "12/01/2023";
+            expenseReport.Generate();
+            Assert.IsNotNull(expenseReport.ToString());
+        }
+        [TestMethod]
+        public void Test11FilterExpenseReportByDateFail()
+        {
+            IReport expenseReport = ReportFactory.GetReport("Expense");
+            expenseReport.StartDate = "01/01/2024";
+            expenseReport.EndDate = "12/01/2024";
+            expenseReport.Generate();
+            Assert.IsNull(expenseReport.ToString());
+        }
+        [TestMethod]
+        public void Test12FilterIncomeReportByDate()
+        {
+            IReport incomeReport = ReportFactory.GetReport("Income");
+            incomeReport.StartDate = "01/01/2023";
+            incomeReport.EndDate = "12/01/2023";
+            incomeReport.Generate();
+            Assert.IsNotNull(incomeReport.ToString());
+        }
+        [TestMethod]
+        public void Test13FilterIncomeReportByDateFail()
+        {
+            IReport incomeReport = ReportFactory.GetReport("Income");
+            incomeReport.StartDate = "01/01/2024";
+            incomeReport.EndDate = "12/01/2024";
+            incomeReport.Generate();
+            Assert.IsNull(incomeReport.ToString());
+        }
+        [TestMethod]
+        public void Test14FilterInvestmentReportByDate()
+        {
+            IReport investmentReport = ReportFactory.GetReport("Investment");
+            investmentReport.StartDate = "01/01/2023";
+            investmentReport.EndDate = "12/01/2023";
+            investmentReport.Generate();
+            Assert.IsNotNull(investmentReport.ToString());
+        }
+        [TestMethod]
+        public void Test15FilterInvestmentReportByDateFail()
+        {
+            IReport investmentReport = ReportFactory.GetReport("Investment");
+            investmentReport.StartDate = "01/01/2024";
+            investmentReport.EndDate = "12/01/2024";
+            investmentReport.Generate();
+            Assert.IsNull(investmentReport.ToString());
+        }
     }
 }

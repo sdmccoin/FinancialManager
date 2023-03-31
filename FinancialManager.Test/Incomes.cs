@@ -12,14 +12,23 @@ namespace FinancialManager.Test
     using FinancialManagerLibrary.UI.Controllers;
     using Microsoft.Data.Sqlite;
     using FinancialManagerLibrary.Data.Interfaces;
+    using FinancialManagerLibrary.Services.Models;
+    using FinancialManagerLibrary.Services;
+    using FinancialManagerLibrary.Utilities;
+    using System.Drawing;
 
     [TestClass]
     public class Incomes
     {
         IController controller;
+        IController incomeReminderController;
+        IController incomeNotificationController;
+
         public Incomes()
         {
             controller = ControllerFactory.GetController("Income");
+            incomeReminderController = ControllerFactory.GetController("IncomeReminder");
+            incomeNotificationController = ControllerFactory.GetController("IncomeNotification");
         }
 
         [TestMethod]
@@ -129,6 +138,94 @@ namespace FinancialManager.Test
                 // null means insert was a success
                 Assert.ThrowsException<SqliteException>(act);
             }
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsAlertsSuccess()
+        {
+            List<Income> incomes = (List<Income>)controller.GetAll(1);
+            List<IncomeReminder> reminders = (List<IncomeReminder>)incomeReminderController.GetAll(1);
+            bool match = false;
+
+            foreach (Income income in incomes)
+            {               
+                foreach (IncomeReminder reminder in reminders)
+                {
+                    if (reminder.IncomeId == income.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsTrue(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsAlertsFailure()
+        {
+            List<Income> incomes = (List<Income>)controller.GetAll(0);
+            List<IncomeReminder> reminders = (List<IncomeReminder>)incomeReminderController.GetAll(0);
+            bool match = false;
+
+            foreach (Income income in incomes)
+            {
+                foreach (IncomeReminder reminder in reminders)
+                {
+                    if (reminder.IncomeId == income.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsFalse(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsNotificationSuccess()
+        {
+            List<Income> incomes = (List<Income>)controller.GetAll(1);
+            List<IncomeNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(1);
+            bool match = false;
+
+            foreach (Income income in incomes)
+            {
+                foreach (IncomeNotification notification in notifications)
+                {
+                    if (notification.IncomeId == income.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsTrue(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsNotificationFailure()
+        {
+            List<Income> incomes = (List<Income>)controller.GetAll(0);
+            List<IncomeNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(1);
+            bool match = false;
+
+            foreach (Income income in incomes)
+            {
+                foreach (IncomeNotification notification in notifications)
+                {
+                    if (notification.IncomeId == income.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsFalse(match);
         }
     }
 }

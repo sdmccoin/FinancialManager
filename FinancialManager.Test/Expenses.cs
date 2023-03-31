@@ -16,9 +16,14 @@ namespace FinancialManager.Test
     public class Expenses
     {
         IController controller;
+        IController expenseReminderController;
+        IController expenseNotificationController;
+
         public Expenses()
         {
             controller = ControllerFactory.GetController("Expense");
+            expenseReminderController = ControllerFactory.GetController("ExpenseReminder");
+            expenseNotificationController = ControllerFactory.GetController("ExpenseNotification");
         }
 
         [TestMethod]
@@ -80,6 +85,94 @@ namespace FinancialManager.Test
 
             // null means insert was a success
             Assert.IsNull(expense);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsAlertsSuccess()
+        {
+            List<Expense> expenses = (List<Expense>)controller.GetAll(1);
+            List<ExpenseReminder> reminders = (List<ExpenseReminder>)expenseReminderController.GetAll(1);
+            bool match = false;
+
+            foreach (Expense expense in expenses)
+            {
+                foreach (ExpenseReminder reminder in reminders)
+                {
+                    if (reminder.ReminderId == expense.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsTrue(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsAlertsFailure()
+        {
+            List<Expense> expenses = (List<Expense>)controller.GetAll(0);
+            List<ExpenseReminder> reminders = (List<ExpenseReminder>)expenseReminderController.GetAll(0);
+            bool match = false;
+
+            foreach (Expense expense in expenses)
+            {
+                foreach (ExpenseReminder reminder in reminders)
+                {
+                    if (reminder.ReminderId == expense.Id)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            Assert.IsFalse(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsNotificationSuccess()
+        {
+            //List<Expense> expenses = (List<Expense>)controller.GetAll(1);
+            //List<ExpenseNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(1);
+            //bool match = false;
+
+            //foreach (Income income in incomes)
+            //{
+            //    foreach (IncomeNotification notification in notifications)
+            //    {
+            //        if (notification.IncomeId == income.Id)
+            //        {
+            //            match = true;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            //Assert.IsTrue(match);
+        }
+
+        [TestMethod]
+        public void LoadUpCommingEventsNotificationFailure()
+        {
+            //List<Income> incomes = (List<Income>)controller.GetAll(0);
+            //List<IncomeNotification> notifications = (List<IncomeNotification>)incomeNotificationController.GetAll(1);
+            //bool match = false;
+
+            //foreach (Income income in incomes)
+            //{
+            //    foreach (IncomeNotification notification in notifications)
+            //    {
+            //        if (notification.IncomeId == income.Id)
+            //        {
+            //            match = true;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            //Assert.IsFalse(match);
         }
     }
 }

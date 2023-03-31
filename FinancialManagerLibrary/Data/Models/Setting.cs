@@ -13,4 +13,12 @@ public partial class Setting : IEntity
     public string? EmailAddress { get; set; }
 
     public string? Phone { get; set; }
+
+    public long PredictionTimeInterval { get; set; }
+
+    public long ConfidenceLevel { get; set; }
+
+    public long RemindersEnabled { get; set; }
+
+    public long AlertWindowDays { get; set; }
 }

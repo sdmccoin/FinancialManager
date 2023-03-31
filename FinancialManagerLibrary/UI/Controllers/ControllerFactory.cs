@@ -27,7 +27,7 @@ namespace FinancialManagerLibrary.UI.Controllers
                 "ExpenseReminder" => new ExpenseReminderController(),
                 "InvestmentReminder" => new InvestmentReminderController(),
                 "Settings" => new SettingsController(),
-                "StockAnalysis" => new StockAnalysisController()
+                "StockAnalysis" => new StockAnalysisController(),                
             };
         }
     }

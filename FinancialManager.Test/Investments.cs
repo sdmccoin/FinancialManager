@@ -178,5 +178,17 @@ namespace FinancialManager.Test
             ss.URL = API.StockCashFlow + "IBMMMM&apikey=" + API.StockKey;
             Assert.IsNull(ss.GetAsync<CompanyCashFlow>().AnnualReportsCashFlow);
         }
+        [TestMethod]
+        public void LoadStockDataForMLSuccess()
+        {            
+            ss.URL = API.StockSearchDailies + "IBM&apikey=" + API.StockKey;
+            Assert.IsNotNull(ss.GetAsync<StockDailiesResponse>());
+        }
+        [TestMethod]
+        public void LoadStockDataForMLFail()
+        {
+            ss.URL = API.StockSearchDailies + "IBMMM&apikey=" + API.StockKey;
+            Assert.IsNull(ss.GetAsync<StockDailiesResponse>());
+        }        
     }
 }

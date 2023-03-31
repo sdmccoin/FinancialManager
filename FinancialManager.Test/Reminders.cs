@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.Test
 {
@@ -129,6 +130,48 @@ namespace FinancialManager.Test
         public void Test9CreateUIInvestmentAlert()
         {
 
+        }
+        [TestMethod]
+        public void GetActiveIncomeAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveIncomeReminder(25));
+        }
+        [TestMethod]
+        public void NoActiveIncomeAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveIncomeReminder(2500));
+        }
+        [TestMethod]
+        public void GetActiveExpenseAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveExpenseReminder(25));
+        }
+        [TestMethod]
+        public void NoActiveExpenseAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveExpenseReminder(2500));
+        }
+        [TestMethod]
+        public void GetActiveInvestmentAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveInvestmentReminder(25));
+        }
+        [TestMethod]
+        public void NoActiveInvestmentAlert()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetActiveInvestmentReminder(2500));
+        }
+        [TestMethod]
+        public void GetAllActiveAlerts()
+        {
+            ReminderService reminderService = new ReminderService();
+            Assert.IsNotNull(reminderService.GetAllActiveReminders());
         }
     }
 }
