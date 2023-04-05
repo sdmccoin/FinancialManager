@@ -20,14 +20,14 @@ namespace FinancialManager.Test
             settingsController = ControllerFactory.GetController("Settings");
         }
         [TestMethod]
-        public void AddUserPreferences()
+        public void GetMLConfidenceLevel()
         {
-
+            Assert.IsNotNull(((Setting)settingsController.GetAll(ActiveUser.id).FirstOrDefault()).ConfidenceLevel);
         }
         [TestMethod]
-        public void AddUserPreferencesMissingPhone()
+        public void GetMLSeriesLength()
         {
-
+            Assert.IsNotNull(((Setting)settingsController.GetAll(ActiveUser.id).FirstOrDefault()).PredictionTimeInterval);            
         }
 
         [TestMethod]
