@@ -55,6 +55,14 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.ML.TimeSeries": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.117, )"
@@ -135,6 +143,14 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.ML.TimeSeries": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.1518.46, )"
@@ -146,6 +162,10 @@
             "TaskScheduler": {
               "target": "Package",
               "version": "[2.10.1, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.8.0, )"
             }
           },
           "imports": [

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpOverview = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -287,20 +290,25 @@
             this.label175 = new System.Windows.Forms.Label();
             this.label176 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.tpPredictiveAnalytics = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tpOverview.SuspendLayout();
             this.tpIncome.SuspendLayout();
             this.tpBalanceSheet.SuspendLayout();
             this.tpCashFlow.SuspendLayout();
+            this.tpPredictiveAnalytics.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tpOverview);
             this.tabControl1.Controls.Add(this.tpIncome);
             this.tabControl1.Controls.Add(this.tpBalanceSheet);
             this.tabControl1.Controls.Add(this.tpCashFlow);
+            this.tabControl1.Controls.Add(this.tpOverview);
+            this.tabControl1.Controls.Add(this.tpPredictiveAnalytics);
             this.tabControl1.HotTrack = true;
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
@@ -3031,6 +3039,32 @@
             this.label39.Text = "Cash Flow";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tpPredictiveAnalytics
+            // 
+            this.tpPredictiveAnalytics.Controls.Add(this.chart1);
+            this.tpPredictiveAnalytics.Location = new System.Drawing.Point(4, 53);
+            this.tpPredictiveAnalytics.Name = "tpPredictiveAnalytics";
+            this.tpPredictiveAnalytics.Size = new System.Drawing.Size(1529, 1599);
+            this.tpPredictiveAnalytics.TabIndex = 4;
+            this.tpPredictiveAnalytics.Text = "Predictive Analytics";
+            this.tpPredictiveAnalytics.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(35, 46);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(1449, 1200);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // AdditionalStockDetailsPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -3052,6 +3086,8 @@
             this.tpBalanceSheet.PerformLayout();
             this.tpCashFlow.ResumeLayout(false);
             this.tpCashFlow.PerformLayout();
+            this.tpPredictiveAnalytics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3317,5 +3353,7 @@
         private Label lblFiscalEndingCF;
         private Label label175;
         private Label label176;
+        private TabPage tpPredictiveAnalytics;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

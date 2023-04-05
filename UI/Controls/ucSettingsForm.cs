@@ -38,7 +38,7 @@ namespace FinancialManager.UI.Controls
                 {
                     Setting setting = new Setting()
                     {
-                        ConfidenceLevel = long.Parse(txtConfidenceLevel.Text),
+                        ConfidenceLevel = txtConfidenceLevel.Text,
                         EmailAddress = txtEmailAddress.Text,
                         Phone = txtPhone.Text,
                         PredictionTimeInterval = long.Parse(txtTimeInterval.Text),
@@ -222,7 +222,7 @@ namespace FinancialManager.UI.Controls
                 {
                     Setting setting = new Setting()
                     {
-                        ConfidenceLevel = long.Parse(txtConfidenceLevel.Text),
+                        ConfidenceLevel = txtConfidenceLevel.Text,
                         EmailAddress = txtEmailAddress.Text,
                         Phone = txtPhone.Text,
                         PredictionTimeInterval = long.Parse(txtTimeInterval.Text),

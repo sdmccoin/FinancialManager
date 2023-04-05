@@ -43,6 +43,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChart = new System.Windows.Forms.Button();
             this.pnlAlerts = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReports = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -203,6 +205,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnChart);
             this.panel1.Controls.Add(this.pnlAlerts);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnReports);
@@ -217,6 +220,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 1446);
             this.panel1.TabIndex = 1;
+            // 
+            // btnChart
+            // 
+            this.btnChart.Location = new System.Drawing.Point(59, 960);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(188, 58);
+            this.btnChart.TabIndex = 9;
+            this.btnChart.Text = "Chart";
+            this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // pnlAlerts
             // 
@@ -353,6 +366,10 @@
             this.backgroundWorker3.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker3_DoWork);
             this.backgroundWorker3.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker3_ProgressChanged);
             // 
+            // backgroundWorker4
+            // 
+            this.backgroundWorker4.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker4_DoWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -414,5 +431,7 @@
         private Button btnExpense;
         private Button btnIncome;
         private Panel pnlAlerts;
+        private Button btnChart;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
     }
 }

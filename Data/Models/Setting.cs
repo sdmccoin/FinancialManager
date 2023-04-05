@@ -16,4 +16,8 @@ public partial class Setting
     public long PredictionTimeInterval { get; set; }
 
     public long ConfidenceLevel { get; set; }
+
+    public long RemindersEnabled { get; set; }
+
+    public long AlertWindowDays { get; set; }
 }

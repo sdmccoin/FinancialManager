@@ -162,6 +162,7 @@ public partial class FinancialManagerContext : DbContext
             entity.HasIndex(e => e.Id, "IX_Reminder_Id").IsUnique();
 
             entity.Property(e => e.Date).HasColumnType("TEXT (15)");
+            entity.Property(e => e.Enabled).HasDefaultValueSql("1");
             entity.Property(e => e.Frequency).HasColumnType("TEXT (10)");
             entity.Property(e => e.Message).HasColumnType("TEXT (150)");
             entity.Property(e => e.Time).HasColumnType("TEXT (10)");
@@ -179,6 +180,9 @@ public partial class FinancialManagerContext : DbContext
             entity.Property(e => e.EmailAddress).HasColumnType("TEXT (50)");
             entity.Property(e => e.Phone).HasColumnType("TEXT (15)");
             entity.Property(e => e.PredictionTimeInterval).HasDefaultValueSql("1");
+            entity.Property(e => e.RemindersEnabled)
+                .HasDefaultValueSql("1")
+                .HasColumnType("INTEGER (2)");
         });
 
         modelBuilder.Entity<StockAnalysis>(entity =>

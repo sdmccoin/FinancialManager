@@ -10,16 +10,19 @@ using FinancialManagerLibrary.Data.Interfaces;
 using System.Reflection;
 using System.Collections.Generic;
 using FinancialManagerLibrary.Services;
+using FinancialManagerLibrary.Services.Models;
 
 namespace FinancialManager
 {  
 
     public partial class Form1 : Form
-    {
-        
+    {        
         private static ucNotification alertNotify = new ucNotification();
         private static ucNotification notificationNotify = new ucNotification();
         IController settingsController;
+        IController investmentController;
+        IController stockAnalyzerController;
+        IController investmentNotificationController;
         long alertWindow = 0;
         bool activeAlerts = false;
         bool activeNotifications = false;
@@ -33,8 +36,12 @@ namespace FinancialManager
         {        
             Login login = new Login();
             DialogResult result = login.ShowDialog();
+
+            investmentController = ControllerFactory.GetController("Investment");
+            investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
+
             //if (result == DialogResult.Cancel)
-              //  this.Close();
+            //  this.Close();
 
             InitializeComponents();           
 
@@ -64,14 +71,26 @@ namespace FinancialManager
             notificationNotify.Dock = DockStyle.Left;
             pnlAlerts.Controls.Add(notificationNotify);
 
+            StartBackgroundServices();           
+        }
+
+        private void StartBackgroundServices()
+        {
+            // start alert notification service
             if (!backgroundWorker1.IsBusy)
                 backgroundWorker1.RunWorkerAsync();
 
+            // start notification alert service
             if (!backgroundWorker2.IsBusy)
                 backgroundWorker2.RunWorkerAsync();
 
+            // start notification check service
             if (!backgroundWorker3.IsBusy)
                 backgroundWorker3.RunWorkerAsync();
+
+            // start stock monitoring service
+            if (!backgroundWorker4.IsBusy)
+                backgroundWorker4.RunWorkerAsync();
         }
 
         private void tsBtnIncome_Click(object sender, EventArgs e)
@@ -201,7 +220,7 @@ namespace FinancialManager
             //notificationNotify.AlertCount = filteredList.Count.ToString();
         }
 
-        #region Backgroun Tasks
+        #region Background Tasks
         /// <summary>
         /// Alert Notification Blinker
         /// </summary>
@@ -245,6 +264,34 @@ namespace FinancialManager
                 counter++;
             }
 
+        }
+        /// <summary>
+        /// Stock monitoring service
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void backgroundWorker4_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            while (true)
+            {                
+
+                // update monitored stocks
+                List<Investment> investments = (List<Investment>)investmentController.GetAll(ActiveUser.id);
+
+                foreach(Investment investment in investments)
+                {
+                    if (investment.Monitor == 1)
+                    {
+                        var t = Task.Run(() => {
+                            GetStockDataForML(investment);
+                        });
+                        t.Wait();
+                    }
+                }
+
+                // run initially, then once every 10 minutes
+                Thread.Sleep(600000);
+            }
         }
 
         /// <summary>
@@ -303,6 +350,7 @@ namespace FinancialManager
 
         #endregion
 
+        #region Left Side Navigation
         private void btnIncome_Click(object sender, EventArgs e)
         {
             ClearMain();
@@ -330,6 +378,104 @@ namespace FinancialManager
         private void pnlAlerts_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            ClearMain();
+            pnlMain.Controls.Add(new ucStockChart());
+        }
+        #endregion
+
+        private void GetStockDataForML(Investment investment)
+        {
+            StockService ss = new StockService();
+            StockDailiesResponse dailyResponse = new StockDailiesResponse();
+            string stockDailyUrl = API.StockSearchDailies + investment.Source + "&outputsize=full&apikey=" + API.StockKey;
+
+            //string stockDailyUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&outputsize=full&apikey=PW20D2R6TX4Y8B5A";
+
+            ss.URL = stockDailyUrl;
+            dailyResponse = ss.GetAsync<StockDailiesResponse>();
+            Dictionary<string, string> closingValues = new Dictionary<string, string>();
+
+            if (dailyResponse != null)
+            {
+                if (dailyResponse.Dailies != null)
+                {
+                    foreach (KeyValuePair<string, Dailies> daily in dailyResponse.Dailies)
+                    {
+                        // only load the data since the last monitor check
+                        if (DateTime.Parse(daily.Key) > DateTime.Parse(investment.LastMonitorCheck))
+                        {
+                            closingValues.Add(daily.Key, daily.Value.Close);
+                        }
+                    }
+
+                    if (closingValues.Count >0)
+                    {
+                        LoadAnalyzerTable(closingValues, investment.Source);
+
+                        // update last monitor check
+                        Investment inv = new Investment()
+                        {
+                            UserId = ActiveUser.id,
+                            LastMonitorCheck = DateTime.Now.ToShortDateString(),
+                            Source = investment.Source,
+                            Amount = investment.Amount,
+                            Date = investment.Date, 
+                            Monitor = investment.Monitor,
+                            Id = investment.Id
+
+                        };
+
+                        investmentController.Update(inv);
+
+                        // add a notification 
+                        InvestmentNotification invNotif = new InvestmentNotification()
+                        {
+                            UserId = ActiveUser.id,
+                            Symbol = investment.Source,
+                            Date = DateTime.Now.ToShortDateString(),
+                            Message = "A new projection has been completed for your " + investment.Source + " stock on " + DateTime.Now.ToShortDateString()
+                        };
+                        
+                        // if it already exists, update it, otherwise add a new one
+                        if (investmentNotificationController.Exists(invNotif) != null)
+                        {
+                            invNotif.Id = investment.Id;
+                            investmentNotificationController.Update(invNotif);
+                        }                            
+                        else
+                        {
+                            investmentNotificationController.Add(invNotif);
+                        }
+                        
+                    }                   
+                }
+            }
+        }
+        private void LoadAnalyzerTable(Dictionary<string, string> values, string source)
+        {
+            stockAnalyzerController = ControllerFactory.GetController("StockAnalysis");
+            StockAnalysis stockAnalysis;
+
+            foreach (KeyValuePair<string, string> value in values)
+            {
+                stockAnalysis = new StockAnalysis()
+                {
+                    ClosingValue = value.Value,
+                    Symbol = source,
+                    UserId = ActiveUser.id,
+                    Date = value.Key
+                };
+
+                // doesn't already exist, add it
+                if (stockAnalyzerController.Exists(stockAnalysis) == null)
+                {
+                    stockAnalyzerController.Add(stockAnalysis);
+                }
+            }
         }
     }
     // admin - Pa$$word1 - DB

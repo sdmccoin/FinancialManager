@@ -15,6 +15,8 @@ public partial class Investment
 
     public string? Date { get; set; }
 
+    public long Monitor { get; set; }
+
     public virtual InvestmentReminder? InvestmentReminder { get; set; }
 
     public virtual User User { get; set; } = null!;

@@ -17,6 +17,8 @@ public partial class Reminder
 
     public long UserId { get; set; }
 
+    public long Enabled { get; set; }
+
     public virtual ICollection<ExpenseReminder> ExpenseReminders { get; } = new List<ExpenseReminder>();
 
     public virtual ICollection<IncomeReminder> IncomeReminders { get; } = new List<IncomeReminder>();

@@ -1,5 +1,6 @@
 ﻿using FinancialManagerLibrary.Services.Models;
 using FinancialManagerLibrary.Services;
+using FinancialManagerLibrary.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Text.Json;
+using System.Windows.Forms.DataVisualization.Charting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.ML.Data;
+using Microsoft.ML.Transforms.TimeSeries;
+using Microsoft.ML;
+using System.Data.SQLite;
+using FinancialManagerLibrary.Utilities;
 
 namespace FinancialManager.UI
 {
@@ -38,6 +46,7 @@ namespace FinancialManager.UI
             LoadIncomeStatementInformation();
             LoadBalanceSheetInformation();
             LoadCashFlowInformation();
+            RunStockAnalytics();
         }
 
         private void LoadOverviewInformation()
@@ -233,5 +242,81 @@ namespace FinancialManager.UI
             "lblProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet": "522000000",
             */
         }
+
+        private void RunStockAnalytics()
+        {
+            MachineLearning ml = new MachineLearning();            
+            DiaplayStockAnalyticsResults(ml.RunStockAnalytics(symbol, int.Parse(ActiveUser.id.ToString())));
+        }
+       
+        private void DiaplayStockAnalyticsResults(IEnumerable<ChartData> data)
+        {
+            var series1 = new Series("Actual Values");
+            series1.BorderWidth = 5;
+            series1.MarkerColor = Color.Blue;
+
+            var series2 = new Series("Lower Values");
+            series2.BorderWidth = 5;
+            series2.MarkerColor = Color.Red;
+
+            var series3 = new Series("Upper Values");
+            series3.BorderWidth = 5;
+            series3.MarkerColor = Color.Pink;
+
+            var series4 = new Series("Forecasted Values");
+            series4.BorderWidth = 5;
+            series4.MarkerColor = Color.DarkGreen;
+
+            chart1.Series.Add(series1);
+            chart1.Series.Add(series2);
+            chart1.Series.Add(series3);
+            chart1.Series.Add(series4);
+
+            IEnumerable<ChartData> filtered = data.OrderBy(x => x.Date);
+
+            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(filtered.Select(v => v.Upper).Max() + 10,0);
+            chart1.ChartAreas[0].AxisY.Minimum = Math.Round(filtered.Select(v => v.Lower).Max() - 10,0);
+            //chart1.f .ChartAreas[0].AxisY. = "C0";
+
+            foreach (var prediction in filtered)
+            {
+                series1.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Actual, 0)); 
+                series2.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Lower, 0));
+                series3.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Upper, 0));
+                series4.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Forecast, 0));
+            }
+                              
+            series1.ChartType = SeriesChartType.Line;
+            series2.ChartType= SeriesChartType.Line;
+            series3.ChartType = SeriesChartType.Line;
+            series4.ChartType = SeriesChartType.Line;            
+        }
     }
+
+    //public class ChartData
+    //{
+    //    public DateTime Date { get; set; }
+    //    public float Actual { get; set; }
+    //    public float Lower { get; set; }
+    //    public float Forecast { get; set; }
+    //    public float Upper { get; set; }
+    //}
+
+    //public class ModelInput
+    //{
+    //    public DateTime Date { get; set; }
+
+    //    public float Year { get; set; }
+
+    //    public float ClosingValue { get; set; }
+    //}
+
+    //public class ModelOutput
+    //{
+    //    public float[] ForecastedClosingValue { get; set; }
+
+    //    public float[] LowerBoundClosingValue { get; set; }
+
+    //    public float[] UpperBoundClosingValue { get; set; }
+    //}
 }

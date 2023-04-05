@@ -45,6 +45,8 @@ namespace FinancialManager.UI
                         Amount = txtAmount.Text,
                         Source = source,
                         UserId = ActiveUser.id,
+                        Monitor = (cbxMonitor.Checked == true) ? 1 : 0,
+                        Date = DateTime.Now.ToShortDateString()
                     };
 
                     if (controller.Exists(investment) == null)
@@ -54,7 +56,7 @@ namespace FinancialManager.UI
 
                         // load stock analyzer table
                         var t = Task.Run(() => {
-                            GetStockDataForML();
+                            LoadAnalyzerTable(GetStockDataForML());
                         });
                         t.Wait();
 
@@ -74,11 +76,13 @@ namespace FinancialManager.UI
             }
         }
 
-        private void GetStockDataForML()
+        private Dictionary<string, string> GetStockDataForML()
         {
             StockService ss = new StockService();
             StockDailiesResponse dailyResponse = new StockDailiesResponse();
-            string stockDailyUrl = API.StockSearchDailies + source + "&apikey=" + API.StockKey;
+            string stockDailyUrl = API.StockSearchDailies + source + "&outputsize=full&apikey=" + API.StockKey;
+
+            //string stockDailyUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&outputsize=full&apikey=PW20D2R6TX4Y8B5A";
 
             ss.URL = stockDailyUrl;
             dailyResponse = ss.GetAsync<StockDailiesResponse>();
@@ -90,75 +94,73 @@ namespace FinancialManager.UI
                 {
                     foreach (KeyValuePair<string,Dailies> daily in dailyResponse.Dailies)
                     {
-                        closingValues.Add(daily.Key, daily.Value.Close);
-                    }
-
-                    LoadAnalyzerTable(closingValues);
+                        // only load the last 2 years worth of data
+                        if (DateTime.Parse(daily.Key) > DateTime.Now.AddYears(-2))
+                        {
+                            closingValues.Add(daily.Key, daily.Value.Close);
+                        }                        
+                    }                    
                 }
             }
+            return closingValues;
         }
         private void LoadAnalyzerTable(Dictionary<string, string> values)
         {
-            stockAnalyzerController = ControllerFactory.GetController("StockAnalysis");
-            StockAnalysis stockAnalysis;
-
-            foreach (KeyValuePair<string,string> value in values)
+            if (values.Count > 0)
             {
-                stockAnalysis = new StockAnalysis()
-                {
-                    ClosingValue = value.Value,
-                    Symbol = source,
-                    UserId = ActiveUser.id,
-                    Date = value.Key
-                };
+                stockAnalyzerController = ControllerFactory.GetController("StockAnalysis");
+                StockAnalysis stockAnalysis;
 
-                // doesn't already exist, add it
-                if (stockAnalyzerController.Exists(stockAnalysis) == null)
+                foreach (KeyValuePair<string, string> value in values)
                 {
-                    stockAnalyzerController.Add(stockAnalysis);
+                    stockAnalysis = new StockAnalysis()
+                    {
+                        ClosingValue = value.Value,
+                        Symbol = source,
+                        UserId = ActiveUser.id,
+                        Date = value.Key
+                    };
+
+                    // doesn't already exist, add it
+                    if (stockAnalyzerController.Exists(stockAnalysis) == null)
+                    {
+                        stockAnalyzerController.Add(stockAnalysis);
+                    }
                 }
-            }
+            }            
         }
 
         private void cbxMonitor_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleFrequency();
+            //ToggleFrequency();
         }
 
         private bool FormIsValid(ref string errorMessage)
         {
             bool isValid = false;
-
-            if (cbxMonitor.Checked)
-            {
-                if (Utilities.GetSelectedRadioButton(gbxFrequency) == null)
-                    errorMessage += " - You must select a frequency\r\n";
-            }
-            else
-            {
-                if (Utilities.IsEmpty(txtAmount))
-                    errorMessage += " - Amount cannot be blank\r\n";
-                if (Utilities.IsValidCurrency(txtAmount) == false)
-                    errorMessage += " - Invalid Amount\r\n";
-            }
-            
+                        
+            if (Utilities.IsEmpty(txtAmount))
+                errorMessage += " - Amount cannot be blank\r\n";
+            if (Utilities.IsValidCurrency(txtAmount) == false)
+                errorMessage += " - Invalid Amount\r\n";
+                        
             if (errorMessage == "")
                 isValid = true;
 
             return isValid;
         }
 
-        private void ToggleFrequency()
-        {
-            if (cbxMonitor.Checked)
-                gbxFrequency.Enabled = false;
-            else
-                gbxFrequency.Enabled = true;
-        }
+        //private void ToggleFrequency()
+        //{
+        //    if (cbxMonitor.Checked)
+        //        gbxFrequency.Enabled = false;
+        //    else
+        //        gbxFrequency.Enabled = true;
+        //}
 
         private void AddInvestmentPopup_Load(object sender, EventArgs e)
         {
-            ToggleFrequency();
+            //ToggleFrequency();
         }
     }
 }
