@@ -16,6 +16,8 @@ public partial class Expense : IEntity
 
     public string? Date { get; set; }
 
+    public string? Notes { get; set; }
+
     public virtual ICollection<ExpenseReminder> ExpenseReminders { get; } = new List<ExpenseReminder>();
 
     public virtual User User { get; set; } = null!;

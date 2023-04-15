@@ -20,37 +20,7 @@ namespace FinancialManagerLibrary.UI.Controllers
         {
             incomeRepository = new IncomeRepository();
         }
-
-       
-        //public void Add(Income entity)
-        //{
-        //    incomeRepository.Create(entity);
-        //}
-
-        //public void Delete(Income entity)
-        //{
-        //    incomeRepository.Delete(entity);
-        //}
-
-        //public void Update(Income entity)
-        //{
-        //    incomeRepository.Update(entity);
-        //}
-        //public IEnumerable<Income> GetAll(long userId)
-        //{
-        //    return incomeRepository.GetAllEntities(userId);
-        //}
-
-        //public Income Exists(Income entity)
-        //{
-        //    return incomeRepository.GetByEntity(entity);
-        //}
-
-        //public T Exists<T>(T entity)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+               
         public IEntity Add(IEntity entity)
         {
             return incomeRepository.Create(ConvertEntity(entity));

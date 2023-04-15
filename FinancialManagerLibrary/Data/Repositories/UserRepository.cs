@@ -1,5 +1,4 @@
 ﻿using FinancialManagerLibrary.Data.Models;
-using FinancialManagerLibrary.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using FinancialManagerLibrary.Data.Interfaces;
 
 namespace FinancialManagerLibrary.Data.Repositories
 {

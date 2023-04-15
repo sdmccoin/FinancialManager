@@ -22,56 +22,68 @@ namespace FinancialManagerLibrary.Services
 
         public IEnumerable<ChartData> RunStockAnalytics(string stockSymbol, int userId)
         {
-            settingsController = ControllerFactory.GetController("Settings");
-            Setting settings = (Setting)settingsController.GetAll(ActiveUser.id).FirstOrDefault();
-            string confidenceLevel = settings.ConfidenceLevel;
-            int seriesLength = int.Parse(settings.PredictionTimeInterval.ToString());
+            IEnumerable<ChartData> chartData = new List<ChartData>();
 
-            string rootDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
-            string modelPath = Path.Combine(rootDir, "MLModel.zip");
+            try {
+                settingsController = ControllerFactory.GetController("Settings");
+                Setting settings = (Setting)settingsController.GetAll(ActiveUser.id).FirstOrDefault();
+                string confidenceLevel = settings.ConfidenceLevel;
+                int seriesLength = int.Parse(settings.PredictionTimeInterval.ToString());
 
-            MLContext mlContext = new MLContext();
+                string rootDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
+                string modelPath = Path.Combine(rootDir, "MLModel.zip");
 
-            // load the data
-            DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<ModelInput>();
-            IDataView dataView1 = loader.Load(LoadFirstYearStockData(stockSymbol, userId));
-            IDataView firstYearData = mlContext.Data.FilterRowsByColumn(dataView1, "Year", upperBound: 1);
+                MLContext mlContext = new MLContext();
 
-            IDataView dataView2 = loader.Load(SecondFirstYearStockData(stockSymbol, userId));
-            IDataView secondYearData = mlContext.Data.FilterRowsByColumn(dataView2, "Year", lowerBound: 1);
+                // load the data
+                DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<ModelInput>();
+                IDataView dataView1 = loader.Load(LoadFirstYearStockData(stockSymbol, userId));
+                IDataView firstYearData = mlContext.Data.FilterRowsByColumn(dataView1, "Year", upperBound: 1);
 
-            var forecastingPipeline = mlContext.Forecasting.ForecastBySsa(
-                outputColumnName: "ForecastedClosingValue",
-                inputColumnName: "ClosingValue",
-                windowSize: 7,
-                seriesLength: seriesLength,//30,
-                trainSize: 360,
-                horizon: 7,
-                confidenceLevel: float.Parse(confidenceLevel),//0.95f,
+                IDataView dataView2 = loader.Load(SecondFirstYearStockData(stockSymbol, userId));
+                IDataView secondYearData = mlContext.Data.FilterRowsByColumn(dataView2, "Year", lowerBound: 1);
 
-                confidenceLowerBoundColumn: "LowerBoundClosingValue",
-                confidenceUpperBoundColumn: "UpperBoundClosingValue") ;
+                var forecastingPipeline = mlContext.Forecasting.ForecastBySsa(
+                    outputColumnName: "ForecastedClosingValue",
+                    inputColumnName: "ClosingValue",
+                    windowSize: 7,
+                    seriesLength: seriesLength,//30,
+                    trainSize: 360,
+                    horizon: 7,
+                    confidenceLevel: float.Parse(confidenceLevel),//0.95f,
 
-            SsaForecastingTransformer forecaster = forecastingPipeline.Fit(firstYearData);
+                    confidenceLowerBoundColumn: "LowerBoundClosingValue",
+                    confidenceUpperBoundColumn: "UpperBoundClosingValue");
 
-            Evaluate(secondYearData, forecaster, mlContext);
+                SsaForecastingTransformer forecaster = forecastingPipeline.Fit(firstYearData);
 
-            var forecastEngine = forecaster.CreateTimeSeriesEngine<ModelInput, ModelOutput>(mlContext);
-            forecastEngine.CheckPoint(mlContext, modelPath);
+                Evaluate(secondYearData, forecaster, mlContext);
 
-            return Forecast(secondYearData, 7, forecastEngine, mlContext);
+                var forecastEngine = forecaster.CreateTimeSeriesEngine<ModelInput, ModelOutput>(mlContext);
+                forecastEngine.CheckPoint(mlContext, modelPath);
+
+                chartData = Forecast(secondYearData, 7, forecastEngine, mlContext);
+            }
+            catch(Exception ex) {
+                LoggingService.GetInstance.Log(ex.Message);
+            }
+
+            return chartData;
+            
         }
 
         private DatabaseSource LoadFirstYearStockData(string symbol, int userId)
         {
-            var connectionString = $"Data Source=C:\\git\\src\\FinancialManager\\FinancialManagerLibrary\\DataSources\\sqlite\\FinancialManager.db";// ;Version=3;";
+            var connectionString = ConfigurationService.GetInstance.GetAllConfigItems().Get("Database"); // $"Data Source=C:\\git\\src\\FinancialManager\\FinancialManagerLibrary\\DataSources\\sqlite\\FinancialManager.db";// ;Version=3;";
 
             StringBuilder sb1 = new StringBuilder();
             sb1.Append("SELECT date,0 as Year, CAST(ClosingValue as int) as ClosingValue");
             sb1.Append(" FROM StockAnalysis");
             sb1.Append(" where");
-            sb1.Append(" Date <= datetime('2023-04-04 00:00:00')");
-            sb1.Append(" AND Date >= datetime('2022-04-04 00:00:00')");
+            sb1.Append(" Date <= datetime('" + DateTime.Now.AddYears(-1).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            sb1.Append(" AND Date >= datetime('" + DateTime.Now.AddYears(-2).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            //sb1.Append(" Date <= datetime('" + DateTime.Now.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            //sb1.Append(" AND Date >= datetime('" + DateTime.Now.AddYears(-1).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");           
             sb1.Append(" AND Symbol = '" + symbol + "'");
             sb1.Append(" AND UserId = " + userId);
 
@@ -82,13 +94,16 @@ namespace FinancialManagerLibrary.Services
         }
         private DatabaseSource SecondFirstYearStockData(string symbol, int userId)
         {
-            var connectionString = $"Data Source=C:\\git\\src\\FinancialManager\\FinancialManagerLibrary\\DataSources\\sqlite\\FinancialManager.db";// ;Version=3;";
+            var connectionString = ConfigurationService.GetInstance.GetAllConfigItems().Get("Database"); //$"Data Source=C:\\git\\src\\FinancialManager\\FinancialManagerLibrary\\DataSources\\sqlite\\FinancialManager.db";// ;Version=3;";
 
             StringBuilder sb1 = new StringBuilder();
             sb1.Append("SELECT date,1 as Year, CAST(ClosingValue as int) as ClosingValue");
             sb1.Append(" FROM StockAnalysis");
             sb1.Append(" where");
-            sb1.Append(" Date <= datetime('2022-04-04 00:00:00')");
+            //sb1.Append(" Date <= datetime('" + DateTime.Now.AddYears(-1).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            //sb1.Append(" AND Date >= datetime('" + DateTime.Now.AddYears(-2).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            sb1.Append(" Date <= datetime('" + DateTime.Now.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
+            sb1.Append(" AND Date >= datetime('" + DateTime.Now.AddYears(-1).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "')");
             sb1.Append(" AND Date >= datetime('2021-04-04 00:00:00')");
             sb1.Append(" AND Symbol = '" + symbol + "'");
             sb1.Append(" AND UserId = " + userId);

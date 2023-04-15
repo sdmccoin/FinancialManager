@@ -15,4 +15,8 @@ public partial class InvestmentNotification : IEntity
     public string Symbol { get; set; } = null!;
 
     public string Date { get; set; } = null!;
+
+    public long? InvestmentId { get; set; }
+
+    public long Enabled { get; set; }
 }

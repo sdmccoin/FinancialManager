@@ -78,6 +78,9 @@ namespace FinancialManagerLibrary.Services
             // call the link table to get the reminder id based on income id
             InvestmentReminder investmentReminder = (InvestmentReminder)investmentReminderController.GetById(investmentId);
 
+            if (investmentReminder == null)
+                return null;
+            
             int reminderId = int.Parse(investmentReminder.ReminderId.ToString());
             Reminder reminder = (Reminder)reminderController.GetById(reminderId);
 
@@ -93,7 +96,7 @@ namespace FinancialManagerLibrary.Services
             else
             {
                 return null;
-            }
+            }            
         }
 
         public List<Reminder> GetAllActiveReminders()

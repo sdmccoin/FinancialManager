@@ -137,6 +137,7 @@ public partial class FinancialManagerContext : DbContext
             entity.HasIndex(e => e.Id, "IX_InvestmentNotification_Id").IsUnique();
 
             entity.Property(e => e.Date).HasColumnType("TEXT (20)");
+            entity.Property(e => e.Enabled).HasDefaultValueSql("1");
             entity.Property(e => e.Message).HasColumnType("TEXT (200)");
             entity.Property(e => e.Symbol).HasColumnType("TEXT (10)");
         });

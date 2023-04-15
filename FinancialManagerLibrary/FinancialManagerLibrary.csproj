@@ -14,10 +14,14 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ML" Version="2.0.1" />
     <PackageReference Include="Microsoft.ML.TimeSeries" Version="2.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="DataSources\sqlite\FinancialManager.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -8,7 +8,7 @@ namespace FinancialManagerLibrary.Services
 {
     public static class API
     {
-        public static string StockKey { get { return "PW20D2R6TX4Y8B5A"; } }
+        public static string StockKey { get { return ConfigurationService.GetInstance.GetAllConfigItems().Get("APIKey"); } }
         public static string StockSearchURL {  get { return "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="; } }
         public static string StockSearchDailies { get { return "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="; } }
         public static string SymbolSearch { get { return "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="; } }

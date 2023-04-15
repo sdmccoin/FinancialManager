@@ -1,0 +1,16 @@
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\DataSources\sqlite\FinancialManager.db
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\FinancialManagerLibrary.dll.config
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\FinancialManagerLibrary.deps.json
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\FinancialManagerLibrary.runtimeconfig.json
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\FinancialManagerLibrary.dll
+C:\git\src\FinancialManager\FinancialManagerLibrary\bin\Release\net6.0\FinancialManagerLibrary.pdb
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.csproj.AssemblyReference.cache
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.AssemblyInfoInputs.cache
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.AssemblyInfo.cs
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.csproj.CoreCompileInputs.cache
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.dll
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\refint\FinancialManagerLibrary.dll
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.pdb
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\FinancialManagerLibrary.genruntimeconfig.cache
+C:\git\src\FinancialManager\FinancialManagerLibrary\obj\Release\net6.0\ref\FinancialManagerLibrary.dll

@@ -1,0 +1,10 @@
+
+Log Entry : 6:45:44 PM Saturday, April 8, 2023
+  :
+  :SQLite Error 1: 'no such table: Settings'.
+-------------------------------
+
+Log Entry : 6:45:45 PM Saturday, April 8, 2023
+  :
+  :Testing 123
+-------------------------------

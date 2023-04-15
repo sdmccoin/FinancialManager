@@ -6,21 +6,39 @@ using System.Threading.Tasks;
 
 namespace FinancialManagerLibrary.Services
 {
-    public static class LoggingService
+    /// <summary>
+    /// singleton logging service
+    /// </summary>
+    public sealed class LoggingService
     {
-        public static void WriteToFile(string message)
+        private static readonly LoggingService instance = new LoggingService();
+
+        static LoggingService() { }
+        private LoggingService() { }
+
+        public static LoggingService GetInstance { get { return instance; } }
+
+        public void Log(string message)
         {
-            using (StreamWriter w = File.AppendText("log.txt"))
+            using (StreamWriter w = File.AppendText(ConfigurationService.GetInstance.GetAllConfigItems().Get("LogLocation") + "log.txt"))
             {
                 Log(message, w);
                 //Log("Test2", w);
             }
         }
+        public void ClearLogs()
+        {
+            using (StreamWriter w = File.CreateText(ConfigurationService.GetInstance.GetAllConfigItems().Get("LogLocation") + "log.txt"))
+            {
+                Log("Log File Created", w);
+                //Log("Test2", w);
+            }
+        }
 
-        public static string ReadFromFile()
+        public string ReadFromFile()
         {
             string dump = "";
-            using (StreamReader r = File.OpenText("log.txt"))
+            using (StreamReader r = File.OpenText(ConfigurationService.GetInstance.GetAllConfigItems().Get("LogLocation") + "log.txt"))
             {
                 dump = DumpLog(r);
             }
@@ -28,22 +46,25 @@ namespace FinancialManagerLibrary.Services
             return dump;
         }
 
-        public static void Log(string logMessage, TextWriter w)
+        private void Log(string logMessage, TextWriter w)
         {
-            w.Write("\r\nLog Entry : ");
+            w.Write("`"); // create new line
+            w.WriteLine("Log Entry : ");
             w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
             w.WriteLine("  :");
             w.WriteLine($"  :{logMessage}");
-            w.WriteLine("-------------------------------");
         }
 
-        private static string DumpLog(StreamReader r)
+        private string DumpLog(StreamReader r)
         {
             StringBuilder stringBuilder= new StringBuilder();
             string line;
             while ((line = r.ReadLine()) != null)
             {
-                stringBuilder.Append(line);
+                if (line.Contains("`"))
+                    stringBuilder.Append(Environment.NewLine);
+                else
+                    stringBuilder.Append(line);
             }
 
             return stringBuilder.ToString();

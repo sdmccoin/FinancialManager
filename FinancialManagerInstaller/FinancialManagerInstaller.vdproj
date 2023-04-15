@@ -15,26 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_A3D967CE07D94D64920E8732772674A9"
+        "MsmKey" = "8:_3A844479339F4C79BCCAAF530FF03938"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B6CA91804DEC481834A735A074589ACF"
-        "OwnerKey" = "8:_A3D967CE07D94D64920E8732772674A9"
+        "MsmKey" = "8:_527817C604814C998740C93009BF3356"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B6CA91804DEC481834A735A074589ACF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3D967CE07D94D64920E8732772674A9"
+        "MsmKey" = "8:_B7C92EA5D7894B8CA57E4FB3EB502C04"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -55,6 +49,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -71,37 +81,81 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_67A7CBD1D5514209B2A7707A1B416932"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_2C2D1D03E6754635B7F00F21B99E8757"
             {
-            "Name" = "8:Primary output from FinancialManagerNotificationService (Active)"
+            "Name" = "8:Primary output from FinancialManager (Active)"
             "Condition" = "8:"
-            "Object" = "8:_A3D967CE07D94D64920E8732772674A9"
-            "FileType" = "3:2"
-            "InstallAction" = "3:1"
+            "Object" = "8:_527817C604814C998740C93009BF3356"
+            "FileType" = "3:1"
+            "InstallAction" = "3:2"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_A2069267_015C_4E4C_A51E_BEC36A41502B"
+            "Identifier" = "8:_0E784ADC_FA68_410E_923A_C722BCEF6C4E"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_7D56777CEEF34A49BD8910A108511EE7"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_51CC6D2531B64F68A43A23274EA9B3DF"
             {
-            "Name" = "8:Primary output from FinancialManagerNotificationService (Active)"
+            "Name" = "8:Primary output from FinancialManager (Active)"
             "Condition" = "8:"
-            "Object" = "8:_A3D967CE07D94D64920E8732772674A9"
-            "FileType" = "3:2"
+            "Object" = "8:_527817C604814C998740C93009BF3356"
+            "FileType" = "3:1"
             "InstallAction" = "3:4"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_9CC693AB_7702_4160_98DD_74745C4D23B4"
+            "Identifier" = "8:_8F26C69B_A048_423B_A335_A90B0556B38A"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_7E7A2C84BC30451DA3F04138DEBA65B4"
+            {
+            "Name" = "8:Primary output from FinancialManager (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_527817C604814C998740C93009BF3356"
+            "FileType" = "3:1"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_BBC1A121_C7CF_49AC_B1D2_B75AEE6B376C"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C9731F8B334F406895755487F04C15FB"
+            {
+            "Name" = "8:Primary output from FinancialManager (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_527817C604814C998740C93009BF3356"
+            "FileType" = "3:1"
+            "InstallAction" = "3:3"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_BC9225A4_0424_4AB4_B9AF_7EDF6C8BB343"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -138,21 +192,10 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B6CA91804DEC481834A735A074589ACF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3A844479339F4C79BCCAAF530FF03938"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_B6CA91804DEC481834A735A074589ACF"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:C:\\Users\\steve\\Downloads\\Color-Penn-State-Logo.jpg"
+            "TargetName" = "8:Color-Penn-State-Logo.jpg"
             "Tag" = "8:"
             "Folder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
             "Condition" = "8:"
@@ -166,7 +209,27 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B7C92EA5D7894B8CA57E4FB3EB502C04"
+            {
+            "SourcePath" = "8:C:\\Users\\steve\\Downloads\\Color-Penn-State-Logo.ico"
+            "TargetName" = "8:Color-Penn-State-Logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -178,7 +241,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_1DB5897D4C1641D7A481B96890C2B77D"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -189,7 +252,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_54088FF350A34EDDBCAC4565EF1D7153"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -201,7 +264,7 @@
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -224,9 +287,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:FinancialManagerInstaller"
+        "ProductName" = "8:FinancialManager"
         "ProductCode" = "8:{FADEC541-CFAA-4194-B46B-BD8B6B79A761}"
-        "PackageCode" = "8:{DFE25126-8A47-44EE-8E88-6F4565629776}"
+        "PackageCode" = "8:{58D81AB6-D12E-4383-B02B-4B2501447CEC}"
         "UpgradeCode" = "8:{300318F9-FF42-484A-A4FB-64571FF7167B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -237,13 +300,13 @@
         "Manufacturer" = "8:PSU"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:FinancialManagerInstaller"
+        "Title" = "8:FinancialManager"
         "Subject" = "8:"
         "ARPCONTACT" = "8:SteveMcCoin"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Penn State Financial Manager"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_B7C92EA5D7894B8CA57E4FB3EB502C04"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -346,6 +409,48 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CD9C9455761842C7BFB3F8F827AE29ED"
+            {
+            "Name" = "8:FinancialManager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_527817C604814C998740C93009BF3356"
+            "Folder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
+            "WorkingFolder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
+            "Icon" = "8:_B7C92EA5D7894B8CA57E4FB3EB502C04"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D8A57385231C4A4C9C2F7F09EC22C4CD"
+            {
+            "Name" = "8:FinancialManager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_527817C604814C998740C93009BF3356"
+            "Folder" = "8:_1DB5897D4C1641D7A481B96890C2B77D"
+            "WorkingFolder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
+            "Icon" = "8:_B7C92EA5D7894B8CA57E4FB3EB502C04"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F2EE9B5B2331477596E42B24FC79043F"
+            {
+            "Name" = "8:FinancialManager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_527817C604814C998740C93009BF3356"
+            "Folder" = "8:_54088FF350A34EDDBCAC4565EF1D7153"
+            "WorkingFolder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
+            "Icon" = "8:_B7C92EA5D7894B8CA57E4FB3EB502C04"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -745,9 +850,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A3D967CE07D94D64920E8732772674A9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_527817C604814C998740C93009BF3356"
             {
-            "SourcePath" = "8:..\\FinancialManagerNotificationService\\obj\\Debug\\FinancialManagerNotificationService.exe"
+            "SourcePath" = "8:..\\FinancialManager\\obj\\Debug\\net7.0-windows\\FinancialManager.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AF59A50B52F54B11A7B7AB5C1C6216A4"
@@ -767,7 +872,7 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{4A97804A-6A27-403B-9BBB-3E6C110BA624}"
+            "OutputProjectGuid" = "8:{0D145ECC-0876-42D7-8C3D-8C269A053E9F}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

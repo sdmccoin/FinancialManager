@@ -1,4 +1,5 @@
-﻿using FinancialManagerLibrary.Data.Models;
+﻿using FinancialManagerLibrary.Data.Interfaces;
+using FinancialManagerLibrary.Data.Models;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace FinancialManagerLibrary.Data.Repositories
             using (var context = new FinancialManagerContext())
             {
                 investmentNotification = context.InvestmentNotifications
-                                   .Where(u => u.Id == id)
+                                   .Where(u => u.InvestmentId == id)
                                    .FirstOrDefault<InvestmentNotification>();
             }
             return investmentNotification;

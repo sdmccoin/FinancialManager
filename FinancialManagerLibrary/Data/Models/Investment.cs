@@ -20,6 +20,8 @@ public partial class Investment : IEntity
 
     public string LastMonitorCheck { get; set; } = null!;
 
+    public string? Notes { get; set; }
+
     public virtual InvestmentReminder? InvestmentReminder { get; set; }
 
     public virtual User User { get; set; } = null!;
