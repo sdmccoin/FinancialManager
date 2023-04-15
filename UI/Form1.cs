@@ -29,11 +29,11 @@ namespace FinancialManager
 
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();         
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {        
+        {
             Login login = new Login();
             DialogResult result = login.ShowDialog();
 
@@ -67,7 +67,7 @@ namespace FinancialManager
 
             // setup notification notifications
             notificationNotify = new ucNotification();
-            notificationNotify.NotificationImage.Image = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\notificationAlert.png");
+            notificationNotify.NotificationImage.Image = Image.FromFile(ConfigurationService.GetInstance.GetAllConfigItems().Get("NotificationImageLocation"));
             notificationNotify.Dock = DockStyle.Left;
             pnlAlerts.Controls.Add(notificationNotify);
 
@@ -188,22 +188,19 @@ namespace FinancialManager
         /// </summary>
         private void CheckForNotifications()
         {
-            //IController reminders = ControllerFactory.GetController("Reminder");
-            //List<Reminder> remindersList = (List<Reminder>)reminders.GetAll(ActiveUser.id);
-            //var orderedList = remindersList.OrderByDescending(x => DateTime.Parse(x.Date)).ToList();
-            //List<Reminder> filteredList = new List<Reminder>();
+            NotificationService notificationService = new NotificationService();
+            List<InvestmentNotification> filteredNotifications = notificationService.GetAllActiveNotifications();
 
-            //foreach (Reminder reminder in orderedList)
-            //{
-            //    // make sure the reminder date is earlier than the current date/time and within 1 day of
-            //    // predefined limit (i.e., 1 day)
-            //    if (DateTime.Compare(DateTime.Parse(reminder.Date), DateTime.Now) <= 0 &&
-            //       DateTime.Compare(DateTime.Parse(reminder.Date), DateTime.Now.AddDays(alertWindow)) <= 0)
-            //    {
-            //        if (reminder.Enabled == 1)
-            //            filteredList.Add(reminder);
-            //    }
-            //}
+            if (filteredNotifications.Count > 0)
+            {
+                notificationNotify.AlertCount = filteredNotifications.Count.ToString();
+                activeNotifications = true;
+            }
+            else
+            {
+                activeNotifications = false;
+            }
+
             ReminderService reminderService = new ReminderService();
             List<Reminder> filteredList = reminderService.GetAllActiveReminders();
 
@@ -282,10 +279,22 @@ namespace FinancialManager
                 {
                     if (investment.Monitor == 1)
                     {
-                        var t = Task.Run(() => {
-                            GetStockDataForML(investment);
-                        });
-                        t.Wait();
+                        try
+                        {
+                            Dictionary<string, string> closingValue = GetStockDataForML(investment);
+                            if (closingValue.Count > 0)
+                            {
+                                LoadAnalyzerTable(closingValue, investment.Source);
+                                UpdateInvestmentNotification(investment);
+
+                                investment.LastMonitorCheck = DateTime.Now.ToShortDateString();
+                                investmentController.Update(investment);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            LoggingService.GetInstance.Log(ex.Message);
+                        }
                     }
                 }
 
@@ -387,7 +396,7 @@ namespace FinancialManager
         }
         #endregion
 
-        private void GetStockDataForML(Investment investment)
+        private Dictionary<string, string> GetStockDataForML(Investment investment)
         {
             StockService ss = new StockService();
             StockDailiesResponse dailyResponse = new StockDailiesResponse();
@@ -411,49 +420,10 @@ namespace FinancialManager
                             closingValues.Add(daily.Key, daily.Value.Close);
                         }
                     }
-
-                    if (closingValues.Count >0)
-                    {
-                        LoadAnalyzerTable(closingValues, investment.Source);
-
-                        // update last monitor check
-                        Investment inv = new Investment()
-                        {
-                            UserId = ActiveUser.id,
-                            LastMonitorCheck = DateTime.Now.ToShortDateString(),
-                            Source = investment.Source,
-                            Amount = investment.Amount,
-                            Date = investment.Date, 
-                            Monitor = investment.Monitor,
-                            Id = investment.Id
-
-                        };
-
-                        investmentController.Update(inv);
-
-                        // add a notification 
-                        InvestmentNotification invNotif = new InvestmentNotification()
-                        {
-                            UserId = ActiveUser.id,
-                            Symbol = investment.Source,
-                            Date = DateTime.Now.ToShortDateString(),
-                            Message = "A new projection has been completed for your " + investment.Source + " stock on " + DateTime.Now.ToShortDateString()
-                        };
-                        
-                        // if it already exists, update it, otherwise add a new one
-                        if (investmentNotificationController.Exists(invNotif) != null)
-                        {
-                            invNotif.Id = investment.Id;
-                            investmentNotificationController.Update(invNotif);
-                        }                            
-                        else
-                        {
-                            investmentNotificationController.Add(invNotif);
-                        }
-                        
-                    }                   
                 }
             }
+
+            return closingValues;
         }
         private void LoadAnalyzerTable(Dictionary<string, string> values, string source)
         {
@@ -477,8 +447,53 @@ namespace FinancialManager
                 }
             }
         }
+
+        private void UpdateInvestmentNotification(Investment investment)
+        {
+            IController invNotifController = ControllerFactory.GetController("InvestmentNotification");
+           // add a notification
+           InvestmentNotification invNotif = new InvestmentNotification()
+           {
+               UserId = ActiveUser.id,
+               Symbol = investment.Source,
+               //Date = DateTime.Now.ToShortDateString(),
+               //Message = "A new projection has been completed for your " + investment.Source + " stock on " + DateTime.Now.ToShortDateString()
+           };
+
+            // if it already exists, update it, otherwise add a new one
+            InvestmentNotification savedNotif = (InvestmentNotification)invNotifController.Exists(invNotif);
+            if (savedNotif != null)
+            {
+                savedNotif.Date = DateTime.Now.ToShortDateString();
+                savedNotif.Message = "A new projection has been completed for your " + investment.Source + " stock on " + DateTime.Now.ToShortDateString();
+                invNotifController.Update(savedNotif);
+
+                DisplaySystemNotification(savedNotif.Message);
+            }
+            else
+            {
+                invNotifController.Add(invNotif);
+            }
+        }
+
+        private void DisplaySystemNotification(string message)
+        {
+            NotifyIcon trayIcon = new NotifyIcon();
+            trayIcon.Icon = SystemIcons.Information;
+            trayIcon.Text = "New message";
+            trayIcon.Visible = true;
+            trayIcon.ShowBalloonTip(5000, "Information", message, ToolTipIcon.Info);
+            
+        }
+
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearMain();
+            pnlMain.Controls.Add(new ucLogsForm());
+        }
     }
+}
+    
     // admin - Pa$$word1 - DB
     // root - flannelman
     
-}

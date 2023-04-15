@@ -15,6 +15,8 @@ public partial class Income
 
     public string? Date { get; set; }
 
+    public string? Notes { get; set; }
+
     public virtual ICollection<IncomeReminder> IncomeReminders { get; } = new List<IncomeReminder>();
 
     public virtual User User { get; set; } = null!;

@@ -251,45 +251,63 @@ namespace FinancialManager.UI
        
         private void DiaplayStockAnalyticsResults(IEnumerable<ChartData> data)
         {
-            var series1 = new Series("Actual Values");
-            series1.BorderWidth = 5;
-            series1.MarkerColor = Color.Blue;
-
-            var series2 = new Series("Lower Values");
-            series2.BorderWidth = 5;
-            series2.MarkerColor = Color.Red;
-
-            var series3 = new Series("Upper Values");
-            series3.BorderWidth = 5;
-            series3.MarkerColor = Color.Pink;
-
-            var series4 = new Series("Forecasted Values");
-            series4.BorderWidth = 5;
-            series4.MarkerColor = Color.DarkGreen;
-
-            chart1.Series.Add(series1);
-            chart1.Series.Add(series2);
-            chart1.Series.Add(series3);
-            chart1.Series.Add(series4);
-
-            IEnumerable<ChartData> filtered = data.OrderBy(x => x.Date);
-
-            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(filtered.Select(v => v.Upper).Max() + 10,0);
-            chart1.ChartAreas[0].AxisY.Minimum = Math.Round(filtered.Select(v => v.Lower).Max() - 10,0);
-            //chart1.f .ChartAreas[0].AxisY. = "C0";
-
-            foreach (var prediction in filtered)
+            try
             {
-                series1.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Actual, 0)); 
-                series2.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Lower, 0));
-                series3.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Upper, 0));
-                series4.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Forecast, 0));
+                IEnumerable<ChartData> filtered = data.OrderBy(x => x.Date);
+
+                if (filtered.Count() == 0)
+                {
+                    lblNotMonitored.Visible = true;
+                    chart1.Visible = false;
+                }
+                else
+                {
+                    lblNotMonitored.Visible = false;
+                    chart1.Visible = true;
+
+                    var series1 = new Series("Actual Values");
+                    series1.BorderWidth = 5;
+                    series1.MarkerColor = Color.Blue;
+
+                    var series2 = new Series("Lower Values");
+                    series2.BorderWidth = 5;
+                    series2.MarkerColor = Color.Red;
+
+                    var series3 = new Series("Upper Values");
+                    series3.BorderWidth = 5;
+                    series3.MarkerColor = Color.Pink;
+
+                    var series4 = new Series("Forecasted Values");
+                    series4.BorderWidth = 5;
+                    series4.MarkerColor = Color.DarkGreen;
+
+                    chart1.Series.Add(series1);
+                    chart1.Series.Add(series2);
+                    chart1.Series.Add(series3);
+                    chart1.Series.Add(series4);
+
+                    chart1.ChartAreas[0].AxisY.Maximum = Math.Round(filtered.Select(v => v.Upper).Max() + 10, 0);
+                    chart1.ChartAreas[0].AxisY.Minimum = Math.Round(filtered.Select(v => v.Lower).Max() - 10, 0);
+                    //chart1.f .ChartAreas[0].AxisY. = "C0";
+
+                    foreach (var prediction in filtered)
+                    {
+                        series1.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Actual, 0));
+                        series2.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Lower, 0));
+                        series3.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Upper, 0));
+                        series4.Points.AddXY(prediction.Date.ToShortDateString(), Math.Round(prediction.Forecast, 0));
+                    }
+
+                    series1.ChartType = SeriesChartType.Line;
+                    series2.ChartType = SeriesChartType.Line;
+                    series3.ChartType = SeriesChartType.Line;
+                    series4.ChartType = SeriesChartType.Line;
+                }                
             }
-                              
-            series1.ChartType = SeriesChartType.Line;
-            series2.ChartType= SeriesChartType.Line;
-            series3.ChartType = SeriesChartType.Line;
-            series4.ChartType = SeriesChartType.Line;            
+            catch(Exception ex)
+            {
+                LoggingService.GetInstance.Log(ex.Message);
+            }                       
         }
     }
 

@@ -27,6 +27,8 @@ public partial class FinancialManagerContext : DbContext
 
     public virtual DbSet<Investment> Investments { get; set; }
 
+    public virtual DbSet<InvestmentNotification> InvestmentNotifications { get; set; }
+
     public virtual DbSet<InvestmentReminder> InvestmentReminders { get; set; }
 
     public virtual DbSet<Notification> Notifications { get; set; }
@@ -118,11 +120,26 @@ public partial class FinancialManagerContext : DbContext
 
             entity.Property(e => e.Amount).HasColumnType("TEXT (50)");
             entity.Property(e => e.Date).HasColumnType("TEXT (25)");
+            entity.Property(e => e.LastMonitorCheck)
+                .HasDefaultValueSql("4 / 1 / 2023")
+                .HasColumnType("TEXT (25)");
             entity.Property(e => e.Source).HasColumnType("TEXT (150)");
 
             entity.HasOne(d => d.User).WithMany(p => p.Investments)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+        });
+
+        modelBuilder.Entity<InvestmentNotification>(entity =>
+        {
+            entity.ToTable("InvestmentNotification");
+
+            entity.HasIndex(e => e.Id, "IX_InvestmentNotification_Id").IsUnique();
+
+            entity.Property(e => e.Date).HasColumnType("TEXT (20)");
+            entity.Property(e => e.Enabled).HasDefaultValueSql("1");
+            entity.Property(e => e.Message).HasColumnType("TEXT (200)");
+            entity.Property(e => e.Symbol).HasColumnType("TEXT (10)");
         });
 
         modelBuilder.Entity<InvestmentReminder>(entity =>
@@ -176,7 +193,9 @@ public partial class FinancialManagerContext : DbContext
         {
             entity.HasIndex(e => e.Id, "IX_Settings_Id").IsUnique();
 
-            entity.Property(e => e.ConfidenceLevel).HasDefaultValueSql("10");
+            entity.Property(e => e.ConfidenceLevel)
+                .HasDefaultValueSql("0.95")
+                .HasColumnType("TEXT (10)");
             entity.Property(e => e.EmailAddress).HasColumnType("TEXT (50)");
             entity.Property(e => e.Phone).HasColumnType("TEXT (15)");
             entity.Property(e => e.PredictionTimeInterval).HasDefaultValueSql("1");

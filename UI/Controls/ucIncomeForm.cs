@@ -55,6 +55,7 @@ namespace FinancialManager.UI.Controls
             incomeTable.Columns.Add("Reminder", typeof(Image));
             incomeTable.Columns.Add("Notification", typeof(Image));
             incomeTable.Columns.Add("Date", typeof(string));
+            incomeTable.Columns.Add("Notes", typeof(string));
         }
         private void InitializeEventsTable()
         {
@@ -88,7 +89,8 @@ namespace FinancialManager.UI.Controls
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes = txtNotes.Text
                     };
 
                     // make sure the entry doesn't already exist
@@ -102,6 +104,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Add Income", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -172,16 +175,17 @@ namespace FinancialManager.UI.Controls
 
                 // load income
                 incomeTable.Rows.Add(income.Id, income.Source, income.Amount,
-                        reminderImage, notificationImage, income.Date);
+                        reminderImage, notificationImage, income.Date, income.Notes);
 
                 dgvIncome.AutoSize = true;
                 dgvIncome.DataSource = incomeTable;
                 this.dgvIncome.Columns["Id"].Visible = false;
-                dgvIncome.Columns[1].Width = 540;
+                dgvIncome.Columns[1].Width = 340;
                 dgvIncome.Columns[2].Width = 200;
                 dgvIncome.Columns[3].Width = 150;
                 dgvIncome.Columns[4].Width = 200;
                 dgvIncome.Columns[5].Width = 280;
+                dgvIncome.Columns[6].Width = 200;
 
                 // load events (only if they exist)
                 if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
@@ -212,7 +216,8 @@ namespace FinancialManager.UI.Controls
             if (row != null && row.Index != 0)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
-                txtAmount.Text = row.Cells[3].Value.ToString();
+                txtAmount.Text = row.Cells[2].Value.ToString();
+                txtNotes.Text = row.Cells[6].Value.ToString();
             }
         }
 
@@ -220,6 +225,7 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
+            txtNotes.Text = "";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -235,7 +241,8 @@ namespace FinancialManager.UI.Controls
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString()),
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes = txtNotes.Text
                     };
 
                     incomeController.Update(income);
@@ -245,7 +252,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Update Income", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -279,7 +286,8 @@ namespace FinancialManager.UI.Controls
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvIncome, 0).Value.ToString()),
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes = txtNotes.Text
                     };
 
                     incomeController.Delete(income);
@@ -288,6 +296,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Delete Income", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

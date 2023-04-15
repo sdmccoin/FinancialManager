@@ -16,6 +16,7 @@ using System.Xml.Linq;
 using System.Net.Mail;
 using System.Net;
 using Microsoft.Win32.TaskScheduler;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls
 {
@@ -58,6 +59,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Add Settings", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -92,89 +94,7 @@ namespace FinancialManager.UI.Controls
                 else
                     rbnEnabled.Checked = true;                
             }
-        }
-        
-
-            // Get the service on the local machine
-            //using (TaskService ts = new TaskService())
-            //{
-            //    if(ts.FindTask("Financial Manager Alerts and Notifications") == null)
-            //    {
-            //        // Create a new task definition and assign properties
-            //        TaskDefinition td = ts.NewTask();
-            //        td.RegistrationInfo.Description = "Financial Manager Alerts and Notifications";
-                    
-            //        // Create a trigger that will fire the task at this time every other day
-            //        td.Triggers.Add(new DailyTrigger { DaysInterval = 2 });
-
-            //        // Create an action that will launch Notepad whenever the trigger fires
-            //        td.Actions.Add(new ExecAction("notepad.exe", "c:\\test.log", null));
-            //        //td.Actions.Add(new ExecAction(CheckForNotifications());
-                    
-            //        // Register the task in the root folder
-            //        ts.RootFolder.RegisterTaskDefinition(@"Test", td);
-
-            //        // Remove the task we just created
-            //        ts.RootFolder.DeleteTask("Test");
-            //    }
-                
-            //}
-            //NotifyIcon trayIcon = new NotifyIcon();
-            //trayIcon.Icon = SystemIcons.Information;
-            //trayIcon.Text = "New message";
-            //trayIcon.Visible = true;
-            //trayIcon.ShowBalloonTip(5000, "Information", "A new message received!", ToolTipIcon.Info);
-            //var smtpClient = new SmtpClient("smtp.psu.com")
-            //{
-            //    Port = 587,
-            //    Credentials = new NetworkCredential("sdm283@psu.edu", "Flannelman11"),
-            //    EnableSsl = true,
-            //};
-            //var mailMessage = new MailMessage
-            //{
-            //    From = new MailAddress("mccoin6@gmail.com"),
-            //    Subject = "Just a test",
-            //    Body = "<h1>Hello</h1>",
-            //    IsBodyHtml = true,
-            //};
-            //mailMessage.To.Add("mccoin4321@gmail.com");
-
-            //smtpClient.Send(mailMessage);
-            //string errorMessage = "";
-            //if (FormIsValid(ref errorMessage))
-            //{
-            //    try
-            //    {
-            //        Setting setting = new Setting()
-            //        {
-            //            EmailAddress = txtEmailAddress.Text,
-            //            Phone = txtPhone.Text,
-            //            UserId = ActiveUser.id
-            //        };
-
-            //        // make sure the entry doesn't already exist
-            //        if (settingsController.Exists(setting) == null)
-            //        {
-            //            settingsController.Add(setting);
-            //            MessageBox.Show("Settings Added", "Success");                        
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Already Exists", "Failed");
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Unable to Add Settings", "Failed",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show(errorMessage, "Error",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-        //}
+        } 
 
         private void CheckForNotifications()
         {
@@ -242,7 +162,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message); 
                     MessageBox.Show("Unable to Update Settings", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

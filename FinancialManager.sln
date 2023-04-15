@@ -12,13 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManager.Test", "..\FinancialManager.Test\FinancialManager.Test.csproj", "{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagerNotificationService", "..\FinancialManagerNotificationService\FinancialManagerNotificationService.csproj", "{4A97804A-6A27-403B-9BBB-3E6C110BA624}"
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FinancialManagerInstaller", "..\FinancialManagerInstaller\FinancialManagerInstaller.vdproj", "{C19F23A6-295D-4096-8134-2291F9CBA280}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagerLibrary", "..\FinancialManagerLibrary\FinancialManagerLibrary.csproj", "{920EEF15-5370-49BF-9AA7-8D38B524AF35}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagerMLStockAnalyzer", "..\FinancialManagerMLStockAnalyzer\FinancialManagerMLStockAnalyzer.csproj", "{6FC39B45-A14E-4FD4-944B-43008FF1F99D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,20 +30,12 @@ Global
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEDFE6C0-7740-49ED-A4E9-19CF8BFEE315}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A97804A-6A27-403B-9BBB-3E6C110BA624}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C19F23A6-295D-4096-8134-2291F9CBA280}.Debug|Any CPU.ActiveCfg = Debug
 		{C19F23A6-295D-4096-8134-2291F9CBA280}.Release|Any CPU.ActiveCfg = Release
 		{920EEF15-5370-49BF-9AA7-8D38B524AF35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{920EEF15-5370-49BF-9AA7-8D38B524AF35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{920EEF15-5370-49BF-9AA7-8D38B524AF35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{920EEF15-5370-49BF-9AA7-8D38B524AF35}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FC39B45-A14E-4FD4-944B-43008FF1F99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FC39B45-A14E-4FD4-944B-43008FF1F99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FC39B45-A14E-4FD4-944B-43008FF1F99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FC39B45-A14E-4FD4-944B-43008FF1F99D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

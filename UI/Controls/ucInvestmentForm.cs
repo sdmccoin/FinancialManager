@@ -50,6 +50,7 @@ namespace FinancialManager.UI.Controls
             investmentTable.Columns.Add("Amount", typeof(string));
             investmentTable.Columns.Add("Reminder", typeof(Image));
             investmentTable.Columns.Add("Notification", typeof(Image));
+            investmentTable.Columns.Add("Notes", typeof(string));
         }
 
         private void InitializeEventsTable()
@@ -83,14 +84,17 @@ namespace FinancialManager.UI.Controls
         private void LoadInvestmentsAndEventsGrid()
         {
             ReminderService reminderService = new ReminderService();
+            NotificationService notificationService = new NotificationService();
 
             // initialize controllers
             investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
+            investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
 
             // get all the users income and associated reminders and notifications
             List<Investment> investments = (List<Investment>)controller.GetAll(ActiveUser.id);
             List<InvestmentReminder> reminders = (List<InvestmentReminder>)investmentReminderController.GetAll(ActiveUser.id);
-           
+            List<InvestmentNotification> notifications = (List<InvestmentNotification>)investmentNotificationController.GetAll(ActiveUser.id);
+
             // clear prior to reloading
             investmentTable.Clear();
             dgvInvestments.DataSource = investmentTable;
@@ -116,7 +120,18 @@ namespace FinancialManager.UI.Controls
                         reminderImage = new Bitmap(SystemIcons.Exclamation.ToBitmap(), 25, 25);
                         break;
                     }
-                }              
+                }
+
+                // load Notifications
+                foreach (InvestmentNotification notification in notifications)
+                {
+                    // determine whether to show reminder image
+                    if (notification.InvestmentId == investment.Id)
+                    {
+                        notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 25, 25);
+                        break;
+                    }
+                }
 
                 // set a "blank" image if there is no notification or reminder
                 if (reminderImage == null)
@@ -125,20 +140,21 @@ namespace FinancialManager.UI.Controls
                     notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
 
                 investmentTable.Rows.Add(investment.Id, investment.Source, investment.Amount,
-                        reminderImage, notificationImage);
+                        reminderImage, notificationImage, investment.Notes);
 
                 dgvInvestments.AutoSize = true;
                 dgvInvestments.DataSource = investmentTable;
                 this.dgvInvestments.Columns["Id"].Visible = false;
-                dgvInvestments.Columns[1].Width = 200;
-                dgvInvestments.Columns[2].Width = 450;
+                dgvInvestments.Columns[1].Width = 350;
+                dgvInvestments.Columns[2].Width = 150;
                 dgvInvestments.Columns[3].Width = 150;
                 dgvInvestments.Columns[4].Width = 200;
+                dgvInvestments.Columns[5].Width = 510;
                 dgvInvestments.AutoSize = true;
 
                 // load events (only if they exist)
                 if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
-                {
+                {                    
                     // call the reminder service to only get the active alerts
                     if (reminderService.GetActiveInvestmentReminder(int.Parse(investment.Id.ToString())) != null)
                     {
@@ -150,7 +166,22 @@ namespace FinancialManager.UI.Controls
                         dgvInvestmentsEvents.Columns[1].Width = 175;
                         dgvInvestmentsEvents.Columns[2].Width = 175;
                         dgvInvestmentsEvents.Columns[3].Width = 280;
-                    }                        
+                    }                    
+                }
+                if (notificationImage.Size.Width != 1 || notificationImage.Size.Width != 1)
+                {
+                    // call the reminder service to only get the active alerts
+                    if (notificationService.GetActiveInvestmentNotification(int.Parse(investment.Id.ToString())) != null)
+                    {
+                        eventsTable.Rows.Add(investment.Id, reminderImage, notificationImage, investment.Date);
+
+                        dgvInvestmentsEvents.AutoSize = true;
+                        dgvInvestmentsEvents.DataSource = eventsTable;
+                        this.dgvInvestmentsEvents.Columns["Id"].Visible = false;
+                        dgvInvestmentsEvents.Columns[1].Width = 175;
+                        dgvInvestmentsEvents.Columns[2].Width = 175;
+                        dgvInvestmentsEvents.Columns[3].Width = 280;
+                    }
                 }
             }
         }
@@ -166,7 +197,8 @@ namespace FinancialManager.UI.Controls
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes= txtNotes.Text,
                     };
 
                     // make sure the entry doesn't already exist
@@ -180,6 +212,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Add Investment", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -204,7 +237,9 @@ namespace FinancialManager.UI.Controls
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes = txtNotes.Text,
+                        LastMonitorCheck = "4/01/2023"  // database default value isn't working
 
                     };
 
@@ -215,7 +250,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Update Investment", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -239,7 +274,8 @@ namespace FinancialManager.UI.Controls
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvInvestments, 0).Value.ToString()),
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes= txtNotes.Text,
                     };
 
                     controller.Delete(investment);
@@ -249,7 +285,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Delete Investment", "Failed", 
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -273,6 +309,7 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
+            txtNotes.Text = "";
         }
 
         private void LoadRowSelection(DataGridViewRow row)
@@ -281,6 +318,7 @@ namespace FinancialManager.UI.Controls
             {
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtAmount.Text = row.Cells[2].Value.ToString();
+                txtNotes.Text = row.Cells[5].Value.ToString();
             }            
         }
         private async void DelayMilliseconds(int milliseconds, Action method)
@@ -324,8 +362,8 @@ namespace FinancialManager.UI.Controls
             decimal yesterdayStockPrice = 0;
             decimal twoDayAgoStockPrice = 0;
             decimal fourMonthAveragePrice = 0;
-            Image stockUp = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\rsz_stockup.png");
-            Image stockDown = Image.FromFile("C:\\git\\src\\FinancialManager\\FinancialManager\\Resources\\rsz_stockdown.png");
+            Image stockUp = Image.FromFile(ConfigurationService.GetInstance.GetAllConfigItems().Get("StockUpImageLocation"));
+            Image stockDown = Image.FromFile(ConfigurationService.GetInstance.GetAllConfigItems().Get("StockDownImageLocation"));
 
             ss.URL = QUERY_URL;
             json_data = ss.GetAsync<StockSearchResponse>();
@@ -392,13 +430,11 @@ namespace FinancialManager.UI.Controls
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine(ex);
+                                LoggingService.GetInstance.Log(ex.Message);
                             }
                         }
                     }
-                });
-                //response = JsonSerializer.Deserialize<StockSearchResponse>(client.DownloadString(symbolSearchUrl));
-                
+                });                
             }
         }
 
@@ -414,146 +450,4 @@ namespace FinancialManager.UI.Controls
             popup.ShowDialog();
         }
     }
-
-
-
-    /* 
-     * 
-     * 
-     * "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=PW20D2R6TX4Y8B5A"
-     * https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo
-     * "1. symbol": "TSCO.LON",
-            "2. name": "Tesco PLC",
-            "3. type": "Equity",
-            "4. region": "United Kingdom",
-            "5. marketOpen": "08:00",
-            "6. marketClose": "16:30",
-            "7. timezone": "UTC+01",
-            "8. currency": "GBX",
-            "9. matchScore": "0.7273"*/
-
-    //       "1. symbol": "TSCO.LON",
-    //       "2. name": "Tesco PLC",
-    //       "3. type": "Equity",
-    //       "4. region": "United Kingdom",
-    //       "5. marketOpen": "08:00",
-    //       "6. marketClose": "16:30",
-    //       "7. timezone": "UTC+01",
-    //       "8. currency": "GBX",
-    //       "9. matchScore": "0.7273"
-
-    /*
-     +		entry.Value	ValueKind = Array : "[
-        {
-            "1. symbol": "IBM",
-            "2. name": "International Business Machines Corp",
-            "3. type": "Equity",
-            "4. region": "United States",
-            "5. marketOpen": "09:30",
-            "6. marketClose": "16:00",
-            "7. timezone": "UTC-04",
-            "8. currency": "USD",
-            "9. matchScore": "1.0000"
-        },
-        {
-            "1. symbol": "IBML",
-            "2. name": "iShares iBonds Dec 2023 Term Muni Bond ETF",
-            "3. type": "ETF",
-            "4. region": "United States",
-            "5. marketOpen": "09:30",
-            "6. marketClose": "16:00",
-            "7. timezone": "UTC-04",
-            "8. currency": "USD",
-            "9. matchScore": "0.8571"
-        },
-        {
-            "1. symbol": "IBMM",
-            "2. name": "iShares iBonds Dec 2024 Term Muni Bond ETF",
-            "3. type": "ETF",
-            "4. region": "United States",
-            "5. marketOpen": "09:30",
-            "6. marketClose": "16:00",
-            "7. timezone": "UTC-04",
-            "8. currency": "USD",
-            "9. matchScore": "0.8571"
-        },
-        {
-            "1. symbol": "IBMN",
-            "2. name": "iShares iBonds Dec 2025 Term Muni Bond ETF",
-            "3. type": "ETF",
-            "4. region": "United States",
-            "5. marketOpen": "09:30",
-            "6. marketClose": "16:00",
-            "7. timezone": "UTC-04",
-            "8. currency": "USD",
-            "9. matchScore": "0.8571"
-        },
-        {
-            "1. symbol": "IBMO",
-            "2. name": "iShares iBonds Dec 2026 Term Muni Bond ETF",
-            "3. type": "ETF",
-            "4. region": "United States",
-            "5. marketOpen": "09:30",
-            "6. marketClose": "16:00",
-            "7. timezone": "UTC-04",
-            "8. currency": "USD",
-            "9. matchScore": "0.8571"
-        },
-        {
-            "1. symbol": "IBM.FRK",
-            "2. name": "International Business Machines",
-            "3. type": "Equity",
-            "4. region": "Frankfurt",
-            "5. marketOpen": "08:00",
-            "6. marketClose": "20:00",
-            "7. timezone": "UTC+02",
-            "8. currency": "EUR",
-            "9. matchScore": "0.7500"
-        },
-        {
-            "1. symbol": "IBM.LON",
-            "2. name": "International Business Machines Corporation",
-            "3. type": "Equity",
-            "4. region": "United Kingdom",
-            "5. marketOpen": "08:00",
-            "6. marketClose": "16:30",
-            "7. timezone": "UTC+01",
-            "8. currency": "USD",
-            "9. matchScore": "0.7500"
-        },
-        {
-            "1. symbol": "IBM.DEX",
-            "2. name": "International Business Machines",
-            "3. type": "Equity",
-            "4. region": "XETRA",
-            "5. marketOpen": "08:00",
-            "6. marketClose": "20:00",
-            "7. timezone": "UTC+02",
-            "8. currency": "EUR",
-            "9. matchScore": "0.6667"
-        },
-        {
-            "1. symbol": "IBM0.FRK",
-            "2. name": "IBM CDR",
-            "3. type": "Equity",
-            "4. region": "Frankfurt",
-            "5. marketOpen": "08:00",
-            "6. marketClose": "20:00",
-            "7. timezone": "UTC+02",
-            "8. currency": "EUR",
-            "9. matchScore": "0.6667"
-        },
-        {
-            "1. symbol": "IBMB34.SAO",
-            "2. name": "International Business Machines Corp",
-            "3. type": "Equity",
-            "4. region": "Brazil/Sao Paolo",
-            "5. marketOpen": "10:00",
-            "6. marketClose": "17:30",
-            "7. timezone": "UTC-03",
-            "8. currency": "BRL",
-            "9. matchScore": "0.5000"
-        }
-    ]"	object {System.Text.Json.JsonElement}
-*/
 }

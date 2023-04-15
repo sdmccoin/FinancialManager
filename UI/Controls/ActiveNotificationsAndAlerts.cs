@@ -1,5 +1,6 @@
 ﻿using FinancialManagerLibrary.Data.Models;
 using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Services;
 using FinancialManagerLibrary.UI.Controllers;
 using FinancialManagerLibrary.Utilities;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -32,11 +33,10 @@ namespace FinancialManager.UI.Controls
         {
             InitializeComponent();
             reminderController = ControllerFactory.GetController("Reminder");
+            investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
 
             InitializedgvAlertsAndNotificationsTable();
             LoaddgvAlertsAndNotificationsGrid();
-
-            
         }
 
         private void InitializedgvAlertsAndNotificationsTable()
@@ -52,25 +52,7 @@ namespace FinancialManager.UI.Controls
         }
 
         private void LoaddgvAlertsAndNotificationsGrid()
-        {
-            // initialize controllers
-            //reminderController = ControllerFactory.GetController("Reminder");
-            //investmentReminderController = ControllerFactory.GetController("InvestmentReminder");
-            //incomeReminderController = ControllerFactory.GetController("IncomeReminder");
-            //expenseReminderController = ControllerFactory.GetController("ExpenseReminder");
-
-            //incomeNotificationController = ControllerFactory.GetController("IncomeNotification");
-
-            //expenseNotificationController = ControllerFactory.GetController("ExpenseNotification");
-
-            // get all alerts and notifications for this user
-            //List<InvestmentReminder> investmentReminders = (List<InvestmentReminder>)investmentReminderController.GetAll(ActiveUser.id);
-            //List<IncomeReminder> incomeReminders = (List<IncomeReminder>)incomeReminderController.GetAll(ActiveUser.id);
-            //List<ExpenseReminder> expenseReminders = (List<ExpenseReminder>)expenseReminderController.GetAll(ActiveUser.id);
-
-            //List<IncomeNotification> incomeNotifications = (List<IncomeNotification>)incomeNotificationController.GetAll(ActiveUser.id);
-            // List<ExpenseNotification notifications = (List<IncomeNotification>)expenseNotificationController.GetAll(ActiveUser.id);
-
+        {            
             // filter based on daterange
             eventsTable.Clear();
             dgvAlertsAndNotifications.DataSource = eventsTable;
@@ -91,6 +73,37 @@ namespace FinancialManager.UI.Controls
 
             IController settingsController = ControllerFactory.GetController("Settings");
             long alertWindow = ((List<Setting>)settingsController.GetAll(ActiveUser.id)).FirstOrDefault().AlertWindowDays;
+
+            NotificationService notificationService = new NotificationService();
+            List<InvestmentNotification> filteredNotifications = (List<InvestmentNotification>)investmentNotificationController.GetAll(ActiveUser.id);
+
+            // load the notifications
+            foreach (InvestmentNotification notification in filteredNotifications)
+            {
+                // make sure the reminder date is earlier than the current date/time and within 1 day of
+                // predefined limit (i.e., 1 day)
+                if (DateTime.Compare(DateTime.Parse(notification.Date), DateTime.Now) <= 0 &&
+                   DateTime.Compare(DateTime.Parse(notification.Date), DateTime.Now.AddDays(alertWindow)) <= 0)
+                {
+                    eventsTable.Rows.Add(notification.InvestmentId,
+                        new Bitmap(SystemIcons.Information.ToBitmap(), 26, 26),
+                        notification.Message,
+                        notification.Date,
+                        "",
+                        "",
+                        notification.Enabled);
+
+                    dgvAlertsAndNotifications.AutoSize = true;
+                    dgvAlertsAndNotifications.DataSource = eventsTable;
+                    this.dgvAlertsAndNotifications.Columns["Id"].Visible = false;
+                    dgvAlertsAndNotifications.Columns[1].Width = 200;
+                    dgvAlertsAndNotifications.Columns[2].Width = 420;
+                    dgvAlertsAndNotifications.Columns[3].Width = 300;
+                    dgvAlertsAndNotifications.Columns[4].Visible = false;
+                    dgvAlertsAndNotifications.Columns[5].Visible = false;
+                    dgvAlertsAndNotifications.Columns[6].Visible = false;
+                }
+            }
 
             List<Reminder> remindersList = (List<Reminder>)reminderController.GetAll(ActiveUser.id);
             var orderedList = remindersList.OrderByDescending(x => DateTime.Parse(x.Date)).ToList();
@@ -122,45 +135,9 @@ namespace FinancialManager.UI.Controls
                     dgvAlertsAndNotifications.Columns[6].Visible = false;
 
 
-                    //filteredList.Add(reminder);
                 }
             }
 
-            // set the grid row to indicate disabled
-            foreach (DataGridViewRow row in dgvAlertsAndNotifications.Rows)
-            {
-                
-            }
-
-           
-
-            /*List<Income> allIncome = (List<Income>)incomeController.GetAll(userId);
-            var orderedList = allIncome.OrderByDescending(x => DateTime.Parse(x.Date)).ToList();
-            List<Income> filteredList = new List<Income>();
-
-            foreach (var income in orderedList)
-            {
-                // make sure the date is within our filter range
-                if (DateTime.Compare(DateTime.Parse(income.Date), DateTime.Parse(start)) >= 0 &&
-                    DateTime.Compare(DateTime.Parse(income.Date), DateTime.Parse(end)) <= 0)
-                {
-                    filteredList.Add(income);
-                }
-            }
-
-            return filteredList;
-            // load alerts and notifications (only if they exist)
-            if (reminderImage.Size.Width != 1 || notificationImage.Size.Width != 1)
-            {
-                eventsTable.Rows.Add(investment.Id, reminderImage, notificationImage, investment.Date);
-
-                dgvInvestmentsEvents.AutoSize = true;
-                dgvInvestmentsEvents.DataSource = eventsTable;
-                this.dgvInvestmentsEvents.Columns["Id"].Visible = false;
-                dgvInvestmentsEvents.Columns[1].Width = 175;
-                dgvInvestmentsEvents.Columns[2].Width = 175;
-                dgvInvestmentsEvents.Columns[3].Width = 280;
-            }*/
         }
 
         private void ActiveNotificationsAndAlerts_Load(object sender, EventArgs e)
@@ -172,25 +149,44 @@ namespace FinancialManager.UI.Controls
         {
             try
             {
-                Reminder reminder = new Reminder()
+                if(((Bitmap)Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[1].Value).Height == 26)
                 {
-                     Id = int.Parse(Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[0].Value.ToString()),
-                     Date = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[3].Value.ToString(),
-                     Enabled = (rbnEnable.Checked == true) ? 1 : 0,
-                     UserId = ActiveUser.id,
-                     Message = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[2].Value.ToString(),
-                     Time = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[4].Value.ToString(),
-                     Frequency = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[5].Value.ToString()
-                };
+                    InvestmentNotification inv = (InvestmentNotification)investmentNotificationController.GetById(
+                        int.Parse(Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[0].Value.ToString()));
 
-                // make sure the entry already exist
-                if (reminderController.Exists(reminder) != null)
-                {
-                    reminderController.Update(reminder);
-                    LoaddgvAlertsAndNotificationsGrid();
-
-                    MessageBox.Show("Reminder Updated", "Success");
+                    // make sure the entry already exists
+                    if (investmentNotificationController.Exists(inv) != null)
+                    {
+                        inv.Enabled = (rbnEnable.Checked == true) ? 1 : 0;
+                        investmentNotificationController.Update(inv);
+                        LoaddgvAlertsAndNotificationsGrid();
+                        MessageBox.Show("Notification status Updated", "Success");
+                    }
                 }
+                else
+                {
+                    Reminder reminder = new Reminder()
+                    {
+                        Id = int.Parse(Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[0].Value.ToString()),
+                        Date = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[3].Value.ToString(),
+                        Enabled = (rbnEnable.Checked == true) ? 1 : 0,
+                        UserId = ActiveUser.id,
+                        Message = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[2].Value.ToString(),
+                        Time = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[4].Value.ToString(),
+                        Frequency = Utilities.GetSelectedRow(dgvAlertsAndNotifications).Cells[5].Value.ToString()
+                    };
+
+                    // make sure the entry already exist
+                    if (reminderController.Exists(reminder) != null)
+                    {
+                        reminderController.Update(reminder);
+                        LoaddgvAlertsAndNotificationsGrid();
+
+                        MessageBox.Show("Reminder status Updated", "Success");
+                    }
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -222,7 +218,7 @@ namespace FinancialManager.UI.Controls
 
         private void LoadRowSelection(DataGridViewRow row)
         {
-            if (row != null && row.Index != 0)
+            if (row != null)// && row.Index != 0)
             {
                 rbnDisable.Checked = (row.Cells[6].Value.ToString() == "0") ? true : false;
                 rbnEnable.Checked = (row.Cells[6].Value.ToString() == "1") ? true : false;                

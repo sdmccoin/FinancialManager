@@ -45,6 +45,7 @@ namespace FinancialManager.UI.Controls
             expenseTable.Columns.Add("Reminder", typeof(Image));
             expenseTable.Columns.Add("Notification", typeof(Image));
             expenseTable.Columns.Add("Date", typeof(string));
+            expenseTable.Columns.Add("Notes", typeof(string));
         }
         private void InitializeEventsTable()
         {
@@ -113,16 +114,17 @@ namespace FinancialManager.UI.Controls
                     notificationImage = new Bitmap(SystemIcons.Information.ToBitmap(), 1, 1);
 
                 expenseTable.Rows.Add(expense.Id, expense.Source, expense.Amount,
-                        reminderImage, notificationImage, expense.Date);
+                        reminderImage, notificationImage, expense.Date, expense.Notes);
 
                 dgvExpenses.AutoSize = true;
                 dgvExpenses.DataSource = expenseTable;
                 this.dgvExpenses.Columns["Id"].Visible = false;
-                dgvExpenses.Columns[1].Width = 540;
+                dgvExpenses.Columns[1].Width = 340;
                 dgvExpenses.Columns[2].Width = 200;
                 dgvExpenses.Columns[3].Width = 150;
                 dgvExpenses.Columns[4].Width = 200;
                 dgvExpenses.Columns[5].Width = 280;
+                dgvExpenses.Columns[6].Width = 200;
                 dgvExpenses.AutoSize = true;
 
                 // load events (only if they exist)
@@ -157,7 +159,8 @@ namespace FinancialManager.UI.Controls
                         Source = txtName.Text,
                         Amount = txtAmount.Text,
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes= txtNotes.Text,
                     };
 
                     // make sure the entry doesn't already exist
@@ -171,7 +174,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Add Expense", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -197,7 +200,8 @@ namespace FinancialManager.UI.Controls
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvExpenses, 0).Value.ToString()),
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes= txtNotes.Text,
                     };
 
                     controller.Update(expense);
@@ -207,7 +211,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Update Expense", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -232,7 +236,8 @@ namespace FinancialManager.UI.Controls
                         Amount = txtAmount.Text,
                         Id = long.Parse(Utilities.GetSelectedRowCell(dgvExpenses, 0).Value.ToString()),
                         UserId = ActiveUser.id,
-                        Date = dtpStart.Text
+                        Date = dtpStart.Text,
+                        Notes= txtNotes.Text,
                     };
 
                     controller.Delete(expense);
@@ -242,6 +247,7 @@ namespace FinancialManager.UI.Controls
                 }
                 catch (Exception ex)
                 {
+                    LoggingService.GetInstance.Log(ex.Message);
                     MessageBox.Show("Unable to Delete Expense", "Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -262,6 +268,7 @@ namespace FinancialManager.UI.Controls
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtAmount.Text = row.Cells[2].Value.ToString();
                 dtpStart.Text = row.Cells[5].Value.ToString();
+                txtNotes.Text = row.Cells[6].Value.ToString();
             }
         }
 
@@ -301,6 +308,7 @@ namespace FinancialManager.UI.Controls
         {
             txtName.Text = "";
             txtAmount.Text = "";
+            txtNotes.Text = "";
         }
 
         private async void DelayMilliseconds(int milliseconds, Action method)

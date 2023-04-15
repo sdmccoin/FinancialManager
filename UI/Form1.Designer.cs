@@ -40,10 +40,10 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnChart = new System.Windows.Forms.Button();
             this.pnlAlerts = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReports = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1817, 51);
+            this.menuStrip1.Size = new System.Drawing.Size(1817, 54);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,7 +145,7 @@
             this.exitToolStripMenuItem1,
             this.exitToolStripMenuItem2});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -178,14 +178,23 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 45);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(106, 48);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // logsToolStripMenuItem
+            // 
+            this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.logsToolStripMenuItem.Text = "Logs";
+            this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(149, 45);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(149, 48);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -195,17 +204,16 @@
             this.pnlLeft.Controls.Add(this.panel1);
             this.pnlLeft.Controls.Add(this.toolStrip1);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 51);
+            this.pnlLeft.Location = new System.Drawing.Point(0, 54);
             this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(323, 1589);
+            this.pnlLeft.Size = new System.Drawing.Size(323, 1586);
             this.pnlLeft.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnChart);
             this.panel1.Controls.Add(this.pnlAlerts);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnReports);
@@ -220,16 +228,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 1446);
             this.panel1.TabIndex = 1;
-            // 
-            // btnChart
-            // 
-            this.btnChart.Location = new System.Drawing.Point(59, 960);
-            this.btnChart.Name = "btnChart";
-            this.btnChart.Size = new System.Drawing.Size(188, 58);
-            this.btnChart.TabIndex = 9;
-            this.btnChart.Text = "Chart";
-            this.btnChart.UseVisualStyleBackColor = true;
-            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // pnlAlerts
             // 
@@ -431,7 +429,7 @@
         private Button btnExpense;
         private Button btnIncome;
         private Panel pnlAlerts;
-        private Button btnChart;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private ToolStripMenuItem logsToolStripMenuItem;
     }
 }

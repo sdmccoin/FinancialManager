@@ -32,78 +32,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tpOverview = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSharesOutstanding = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.lblTwoHundredDayMovingAverage = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lblFiftyDayMovingAverage = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.lblFiftyTwoWeekLow = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.lblFiftyTwoWeekHigh = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lblEVToRevenue = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.lblPriceToBookRatio = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblPriceToSalesRatioTTM = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.lblForwardPE = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblTrailingPE = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.lblAnalystTargetPrice = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lblQuarterlyRevenueGrowthYOY = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblQuarterlyEarningsGrowthYOY = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblGrossProfitTTM = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblRevenueTTM = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lblReturnOnEquity = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblReturnOnAssetsTTM = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblOperatingMarginTTM = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lblProfitMargin = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblRevenuePerShareTTM = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblEPS = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblDividendYield = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblDividendPerShare = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblBookValue = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblMarketCapitalization = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblIndustry = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblSector = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblCurrency = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblExchange = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblAssetType = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblSymbol = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpIncome = new System.Windows.Forms.TabPage();
             this.lblnetIncome = new System.Windows.Forms.Label();
             this.lblcomprehensiveIncomeNetOfTax = new System.Windows.Forms.Label();
@@ -290,13 +218,86 @@
             this.label175 = new System.Windows.Forms.Label();
             this.label176 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.tpOverview = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSharesOutstanding = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.lblTwoHundredDayMovingAverage = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblFiftyDayMovingAverage = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblFiftyTwoWeekLow = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lblFiftyTwoWeekHigh = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblEVToRevenue = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblPriceToBookRatio = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblPriceToSalesRatioTTM = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lblForwardPE = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblTrailingPE = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lblAnalystTargetPrice = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblQuarterlyRevenueGrowthYOY = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblQuarterlyEarningsGrowthYOY = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblGrossProfitTTM = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblRevenueTTM = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblReturnOnEquity = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblReturnOnAssetsTTM = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblOperatingMarginTTM = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblProfitMargin = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblRevenuePerShareTTM = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblEPS = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblDividendYield = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblDividendPerShare = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblBookValue = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblMarketCapitalization = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblIndustry = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblSector = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCurrency = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblExchange = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblAssetType = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tpPredictiveAnalytics = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblNotMonitored = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tpOverview.SuspendLayout();
             this.tpIncome.SuspendLayout();
             this.tpBalanceSheet.SuspendLayout();
             this.tpCashFlow.SuspendLayout();
+            this.tpOverview.SuspendLayout();
             this.tpPredictiveAnalytics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -315,766 +316,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1537, 1656);
             this.tabControl1.TabIndex = 70;
-            // 
-            // tpOverview
-            // 
-            this.tpOverview.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tpOverview.Controls.Add(this.label4);
-            this.tpOverview.Controls.Add(this.lblSharesOutstanding);
-            this.tpOverview.Controls.Add(this.label36);
-            this.tpOverview.Controls.Add(this.lblTwoHundredDayMovingAverage);
-            this.tpOverview.Controls.Add(this.label35);
-            this.tpOverview.Controls.Add(this.lblFiftyDayMovingAverage);
-            this.tpOverview.Controls.Add(this.label34);
-            this.tpOverview.Controls.Add(this.lblFiftyTwoWeekLow);
-            this.tpOverview.Controls.Add(this.label33);
-            this.tpOverview.Controls.Add(this.lblFiftyTwoWeekHigh);
-            this.tpOverview.Controls.Add(this.label32);
-            this.tpOverview.Controls.Add(this.lblEVToRevenue);
-            this.tpOverview.Controls.Add(this.label31);
-            this.tpOverview.Controls.Add(this.lblPriceToBookRatio);
-            this.tpOverview.Controls.Add(this.label30);
-            this.tpOverview.Controls.Add(this.lblPriceToSalesRatioTTM);
-            this.tpOverview.Controls.Add(this.label29);
-            this.tpOverview.Controls.Add(this.lblForwardPE);
-            this.tpOverview.Controls.Add(this.label28);
-            this.tpOverview.Controls.Add(this.lblTrailingPE);
-            this.tpOverview.Controls.Add(this.label27);
-            this.tpOverview.Controls.Add(this.lblAnalystTargetPrice);
-            this.tpOverview.Controls.Add(this.label26);
-            this.tpOverview.Controls.Add(this.lblQuarterlyRevenueGrowthYOY);
-            this.tpOverview.Controls.Add(this.label25);
-            this.tpOverview.Controls.Add(this.lblQuarterlyEarningsGrowthYOY);
-            this.tpOverview.Controls.Add(this.label24);
-            this.tpOverview.Controls.Add(this.lblGrossProfitTTM);
-            this.tpOverview.Controls.Add(this.label23);
-            this.tpOverview.Controls.Add(this.lblRevenueTTM);
-            this.tpOverview.Controls.Add(this.label22);
-            this.tpOverview.Controls.Add(this.lblReturnOnEquity);
-            this.tpOverview.Controls.Add(this.label21);
-            this.tpOverview.Controls.Add(this.lblReturnOnAssetsTTM);
-            this.tpOverview.Controls.Add(this.label20);
-            this.tpOverview.Controls.Add(this.lblOperatingMarginTTM);
-            this.tpOverview.Controls.Add(this.label19);
-            this.tpOverview.Controls.Add(this.lblProfitMargin);
-            this.tpOverview.Controls.Add(this.label18);
-            this.tpOverview.Controls.Add(this.lblRevenuePerShareTTM);
-            this.tpOverview.Controls.Add(this.label17);
-            this.tpOverview.Controls.Add(this.lblEPS);
-            this.tpOverview.Controls.Add(this.label16);
-            this.tpOverview.Controls.Add(this.lblDividendYield);
-            this.tpOverview.Controls.Add(this.label15);
-            this.tpOverview.Controls.Add(this.lblDividendPerShare);
-            this.tpOverview.Controls.Add(this.label14);
-            this.tpOverview.Controls.Add(this.lblBookValue);
-            this.tpOverview.Controls.Add(this.label13);
-            this.tpOverview.Controls.Add(this.lblMarketCapitalization);
-            this.tpOverview.Controls.Add(this.label12);
-            this.tpOverview.Controls.Add(this.lblAddress);
-            this.tpOverview.Controls.Add(this.label11);
-            this.tpOverview.Controls.Add(this.lblIndustry);
-            this.tpOverview.Controls.Add(this.label10);
-            this.tpOverview.Controls.Add(this.lblSector);
-            this.tpOverview.Controls.Add(this.label9);
-            this.tpOverview.Controls.Add(this.lblCountry);
-            this.tpOverview.Controls.Add(this.label8);
-            this.tpOverview.Controls.Add(this.lblCurrency);
-            this.tpOverview.Controls.Add(this.label7);
-            this.tpOverview.Controls.Add(this.lblExchange);
-            this.tpOverview.Controls.Add(this.label6);
-            this.tpOverview.Controls.Add(this.lblDescription);
-            this.tpOverview.Controls.Add(this.label5);
-            this.tpOverview.Controls.Add(this.lblAssetType);
-            this.tpOverview.Controls.Add(this.label3);
-            this.tpOverview.Controls.Add(this.lblName);
-            this.tpOverview.Controls.Add(this.lblSymbol);
-            this.tpOverview.Controls.Add(this.label2);
-            this.tpOverview.Controls.Add(this.label1);
-            this.tpOverview.Location = new System.Drawing.Point(4, 53);
-            this.tpOverview.Name = "tpOverview";
-            this.tpOverview.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOverview.Size = new System.Drawing.Size(1529, 1599);
-            this.tpOverview.TabIndex = 0;
-            this.tpOverview.Text = "Overview";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1523, 53);
-            this.label4.TabIndex = 140;
-            this.label4.Text = "Overview";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSharesOutstanding
-            // 
-            this.lblSharesOutstanding.AutoSize = true;
-            this.lblSharesOutstanding.Location = new System.Drawing.Point(1123, 867);
-            this.lblSharesOutstanding.Name = "lblSharesOutstanding";
-            this.lblSharesOutstanding.Size = new System.Drawing.Size(30, 41);
-            this.lblSharesOutstanding.TabIndex = 139;
-            this.lblSharesOutstanding.Text = "-";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label36.Location = new System.Drawing.Point(784, 867);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(303, 41);
-            this.label36.TabIndex = 138;
-            this.label36.Text = "Shares Outstanding:";
-            // 
-            // lblTwoHundredDayMovingAverage
-            // 
-            this.lblTwoHundredDayMovingAverage.AutoSize = true;
-            this.lblTwoHundredDayMovingAverage.Location = new System.Drawing.Point(1187, 1521);
-            this.lblTwoHundredDayMovingAverage.Name = "lblTwoHundredDayMovingAverage";
-            this.lblTwoHundredDayMovingAverage.Size = new System.Drawing.Size(30, 41);
-            this.lblTwoHundredDayMovingAverage.TabIndex = 137;
-            this.lblTwoHundredDayMovingAverage.Text = "-";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label35.Location = new System.Drawing.Point(784, 1521);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(379, 41);
-            this.label35.TabIndex = 136;
-            this.label35.Text = "200 Day Moving Average:";
-            // 
-            // lblFiftyDayMovingAverage
-            // 
-            this.lblFiftyDayMovingAverage.AutoSize = true;
-            this.lblFiftyDayMovingAverage.Location = new System.Drawing.Point(1176, 1469);
-            this.lblFiftyDayMovingAverage.Name = "lblFiftyDayMovingAverage";
-            this.lblFiftyDayMovingAverage.Size = new System.Drawing.Size(30, 41);
-            this.lblFiftyDayMovingAverage.TabIndex = 135;
-            this.lblFiftyDayMovingAverage.Text = "-";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label34.Location = new System.Drawing.Point(784, 1469);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(363, 41);
-            this.label34.TabIndex = 134;
-            this.label34.Text = "50 Day Moving AVerage:";
-            // 
-            // lblFiftyTwoWeekLow
-            // 
-            this.lblFiftyTwoWeekLow.AutoSize = true;
-            this.lblFiftyTwoWeekLow.Location = new System.Drawing.Point(1020, 1415);
-            this.lblFiftyTwoWeekLow.Name = "lblFiftyTwoWeekLow";
-            this.lblFiftyTwoWeekLow.Size = new System.Drawing.Size(30, 41);
-            this.lblFiftyTwoWeekLow.TabIndex = 133;
-            this.lblFiftyTwoWeekLow.Text = "-";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label33.Location = new System.Drawing.Point(784, 1415);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(211, 41);
-            this.label33.TabIndex = 132;
-            this.label33.Text = "52 Week Low:";
-            // 
-            // lblFiftyTwoWeekHigh
-            // 
-            this.lblFiftyTwoWeekHigh.AutoSize = true;
-            this.lblFiftyTwoWeekHigh.Location = new System.Drawing.Point(1034, 1360);
-            this.lblFiftyTwoWeekHigh.Name = "lblFiftyTwoWeekHigh";
-            this.lblFiftyTwoWeekHigh.Size = new System.Drawing.Size(30, 41);
-            this.lblFiftyTwoWeekHigh.TabIndex = 131;
-            this.lblFiftyTwoWeekHigh.Text = "-";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label32.Location = new System.Drawing.Point(784, 1360);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(223, 41);
-            this.label32.TabIndex = 130;
-            this.label32.Text = "52 Week High:";
-            // 
-            // lblEVToRevenue
-            // 
-            this.lblEVToRevenue.AutoSize = true;
-            this.lblEVToRevenue.Location = new System.Drawing.Point(1034, 1306);
-            this.lblEVToRevenue.Name = "lblEVToRevenue";
-            this.lblEVToRevenue.Size = new System.Drawing.Size(30, 41);
-            this.lblEVToRevenue.TabIndex = 129;
-            this.lblEVToRevenue.Text = "-";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(784, 1306);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(227, 41);
-            this.label31.TabIndex = 128;
-            this.label31.Text = "EV to Revenue:";
-            // 
-            // lblPriceToBookRatio
-            // 
-            this.lblPriceToBookRatio.AutoSize = true;
-            this.lblPriceToBookRatio.Location = new System.Drawing.Point(1107, 1250);
-            this.lblPriceToBookRatio.Name = "lblPriceToBookRatio";
-            this.lblPriceToBookRatio.Size = new System.Drawing.Size(30, 41);
-            this.lblPriceToBookRatio.TabIndex = 127;
-            this.lblPriceToBookRatio.Text = "-";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(784, 1250);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(296, 41);
-            this.label30.TabIndex = 126;
-            this.label30.Text = "Price to Book Ratio:";
-            // 
-            // lblPriceToSalesRatioTTM
-            // 
-            this.lblPriceToSalesRatioTTM.AutoSize = true;
-            this.lblPriceToSalesRatioTTM.Location = new System.Drawing.Point(1187, 1200);
-            this.lblPriceToSalesRatioTTM.Name = "lblPriceToSalesRatioTTM";
-            this.lblPriceToSalesRatioTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblPriceToSalesRatioTTM.TabIndex = 125;
-            this.lblPriceToSalesRatioTTM.Text = "-";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(784, 1200);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(369, 41);
-            this.label29.TabIndex = 124;
-            this.label29.Text = "Price to Sales Ratio TTM:";
-            // 
-            // lblForwardPE
-            // 
-            this.lblForwardPE.AutoSize = true;
-            this.lblForwardPE.Location = new System.Drawing.Point(990, 1150);
-            this.lblForwardPE.Name = "lblForwardPE";
-            this.lblForwardPE.Size = new System.Drawing.Size(30, 41);
-            this.lblForwardPE.TabIndex = 123;
-            this.lblForwardPE.Text = "-";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(784, 1150);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(186, 41);
-            this.label28.TabIndex = 122;
-            this.label28.Text = "Forward PE:";
-            // 
-            // lblTrailingPE
-            // 
-            this.lblTrailingPE.AutoSize = true;
-            this.lblTrailingPE.Location = new System.Drawing.Point(990, 1098);
-            this.lblTrailingPE.Name = "lblTrailingPE";
-            this.lblTrailingPE.Size = new System.Drawing.Size(30, 41);
-            this.lblTrailingPE.TabIndex = 121;
-            this.lblTrailingPE.Text = "-";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(784, 1098);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(176, 41);
-            this.label27.TabIndex = 120;
-            this.label27.Text = "Trailing PE:";
-            // 
-            // lblAnalystTargetPrice
-            // 
-            this.lblAnalystTargetPrice.AutoSize = true;
-            this.lblAnalystTargetPrice.Location = new System.Drawing.Point(1123, 1045);
-            this.lblAnalystTargetPrice.Name = "lblAnalystTargetPrice";
-            this.lblAnalystTargetPrice.Size = new System.Drawing.Size(30, 41);
-            this.lblAnalystTargetPrice.TabIndex = 119;
-            this.lblAnalystTargetPrice.Text = "-";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(784, 1045);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(306, 41);
-            this.label26.TabIndex = 118;
-            this.label26.Text = "Analyst Target Price:";
-            // 
-            // lblQuarterlyRevenueGrowthYOY
-            // 
-            this.lblQuarterlyRevenueGrowthYOY.AutoSize = true;
-            this.lblQuarterlyRevenueGrowthYOY.Location = new System.Drawing.Point(1288, 989);
-            this.lblQuarterlyRevenueGrowthYOY.Name = "lblQuarterlyRevenueGrowthYOY";
-            this.lblQuarterlyRevenueGrowthYOY.Size = new System.Drawing.Size(30, 41);
-            this.lblQuarterlyRevenueGrowthYOY.TabIndex = 117;
-            this.lblQuarterlyRevenueGrowthYOY.Text = "-";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(784, 989);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(466, 41);
-            this.label25.TabIndex = 116;
-            this.label25.Text = "Quarterly Revenue Growth YOY:";
-            // 
-            // lblQuarterlyEarningsGrowthYOY
-            // 
-            this.lblQuarterlyEarningsGrowthYOY.AutoSize = true;
-            this.lblQuarterlyEarningsGrowthYOY.Location = new System.Drawing.Point(1288, 928);
-            this.lblQuarterlyEarningsGrowthYOY.Name = "lblQuarterlyEarningsGrowthYOY";
-            this.lblQuarterlyEarningsGrowthYOY.Size = new System.Drawing.Size(30, 41);
-            this.lblQuarterlyEarningsGrowthYOY.TabIndex = 115;
-            this.lblQuarterlyEarningsGrowthYOY.Text = "-";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(784, 928);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(468, 41);
-            this.label24.TabIndex = 114;
-            this.label24.Text = "Quarterly Earnings Growth YOY:";
-            // 
-            // lblGrossProfitTTM
-            // 
-            this.lblGrossProfitTTM.AutoSize = true;
-            this.lblGrossProfitTTM.Location = new System.Drawing.Point(369, 1521);
-            this.lblGrossProfitTTM.Name = "lblGrossProfitTTM";
-            this.lblGrossProfitTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblGrossProfitTTM.TabIndex = 113;
-            this.lblGrossProfitTTM.Text = "-";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(67, 1521);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(266, 41);
-            this.label23.TabIndex = 112;
-            this.label23.Text = "Gross Profit TTM:";
-            // 
-            // lblRevenueTTM
-            // 
-            this.lblRevenueTTM.AutoSize = true;
-            this.lblRevenueTTM.Location = new System.Drawing.Point(308, 1469);
-            this.lblRevenueTTM.Name = "lblRevenueTTM";
-            this.lblRevenueTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblRevenueTTM.TabIndex = 111;
-            this.lblRevenueTTM.Text = "-";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(67, 1469);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(219, 41);
-            this.label22.TabIndex = 110;
-            this.label22.Text = "Revenue TTM:";
-            // 
-            // lblReturnOnEquity
-            // 
-            this.lblReturnOnEquity.AutoSize = true;
-            this.lblReturnOnEquity.Location = new System.Drawing.Point(435, 1415);
-            this.lblReturnOnEquity.Name = "lblReturnOnEquity";
-            this.lblReturnOnEquity.Size = new System.Drawing.Size(30, 41);
-            this.lblReturnOnEquity.TabIndex = 109;
-            this.lblReturnOnEquity.Text = "-";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(67, 1415);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(337, 41);
-            this.label21.TabIndex = 108;
-            this.label21.Text = "Return on Equity TTM:";
-            // 
-            // lblReturnOnAssetsTTM
-            // 
-            this.lblReturnOnAssetsTTM.AutoSize = true;
-            this.lblReturnOnAssetsTTM.Location = new System.Drawing.Point(435, 1360);
-            this.lblReturnOnAssetsTTM.Name = "lblReturnOnAssetsTTM";
-            this.lblReturnOnAssetsTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblReturnOnAssetsTTM.TabIndex = 107;
-            this.lblReturnOnAssetsTTM.Text = "-";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(67, 1360);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(335, 41);
-            this.label20.TabIndex = 106;
-            this.label20.Text = "Return on Assets TTM:";
-            // 
-            // lblOperatingMarginTTM
-            // 
-            this.lblOperatingMarginTTM.AutoSize = true;
-            this.lblOperatingMarginTTM.Location = new System.Drawing.Point(450, 1306);
-            this.lblOperatingMarginTTM.Name = "lblOperatingMarginTTM";
-            this.lblOperatingMarginTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblOperatingMarginTTM.TabIndex = 105;
-            this.lblOperatingMarginTTM.Text = "-";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(67, 1306);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(355, 41);
-            this.label19.TabIndex = 104;
-            this.label19.Text = "Operating Margin TTM:";
-            // 
-            // lblProfitMargin
-            // 
-            this.lblProfitMargin.AutoSize = true;
-            this.lblProfitMargin.Location = new System.Drawing.Point(308, 1250);
-            this.lblProfitMargin.Name = "lblProfitMargin";
-            this.lblProfitMargin.Size = new System.Drawing.Size(30, 41);
-            this.lblProfitMargin.TabIndex = 103;
-            this.lblProfitMargin.Text = "-";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(67, 1250);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(218, 41);
-            this.label18.TabIndex = 102;
-            this.label18.Text = "Profit Margin:";
-            // 
-            // lblRevenuePerShareTTM
-            // 
-            this.lblRevenuePerShareTTM.AutoSize = true;
-            this.lblRevenuePerShareTTM.Location = new System.Drawing.Point(450, 1200);
-            this.lblRevenuePerShareTTM.Name = "lblRevenuePerShareTTM";
-            this.lblRevenuePerShareTTM.Size = new System.Drawing.Size(30, 41);
-            this.lblRevenuePerShareTTM.TabIndex = 101;
-            this.lblRevenuePerShareTTM.Text = "-";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(67, 1200);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(359, 41);
-            this.label17.TabIndex = 100;
-            this.label17.Text = "Revenue Per Share TTM:";
-            // 
-            // lblEPS
-            // 
-            this.lblEPS.AutoSize = true;
-            this.lblEPS.Location = new System.Drawing.Point(160, 1150);
-            this.lblEPS.Name = "lblEPS";
-            this.lblEPS.Size = new System.Drawing.Size(30, 41);
-            this.lblEPS.TabIndex = 99;
-            this.lblEPS.Text = "-";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(67, 1150);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 41);
-            this.label16.TabIndex = 98;
-            this.label16.Text = "EPS:";
-            // 
-            // lblDividendYield
-            // 
-            this.lblDividendYield.AutoSize = true;
-            this.lblDividendYield.Location = new System.Drawing.Point(321, 1098);
-            this.lblDividendYield.Name = "lblDividendYield";
-            this.lblDividendYield.Size = new System.Drawing.Size(30, 41);
-            this.lblDividendYield.TabIndex = 97;
-            this.lblDividendYield.Text = "-";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(67, 1098);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(233, 41);
-            this.label15.TabIndex = 96;
-            this.label15.Text = "Dividend Yield:";
-            // 
-            // lblDividendPerShare
-            // 
-            this.lblDividendPerShare.AutoSize = true;
-            this.lblDividendPerShare.Location = new System.Drawing.Point(390, 1045);
-            this.lblDividendPerShare.Name = "lblDividendPerShare";
-            this.lblDividendPerShare.Size = new System.Drawing.Size(30, 41);
-            this.lblDividendPerShare.TabIndex = 95;
-            this.lblDividendPerShare.Text = "-";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(67, 1045);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(294, 41);
-            this.label14.TabIndex = 94;
-            this.label14.Text = "Dividend Per Share:";
-            // 
-            // lblBookValue
-            // 
-            this.lblBookValue.AutoSize = true;
-            this.lblBookValue.Location = new System.Drawing.Point(270, 989);
-            this.lblBookValue.Name = "lblBookValue";
-            this.lblBookValue.Size = new System.Drawing.Size(30, 41);
-            this.lblBookValue.TabIndex = 93;
-            this.lblBookValue.Text = "-";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(67, 989);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(183, 41);
-            this.label13.TabIndex = 92;
-            this.label13.Text = "Book Value:";
-            // 
-            // lblMarketCapitalization
-            // 
-            this.lblMarketCapitalization.AutoSize = true;
-            this.lblMarketCapitalization.Location = new System.Drawing.Point(422, 928);
-            this.lblMarketCapitalization.Name = "lblMarketCapitalization";
-            this.lblMarketCapitalization.Size = new System.Drawing.Size(30, 41);
-            this.lblMarketCapitalization.TabIndex = 91;
-            this.lblMarketCapitalization.Text = "-";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(67, 928);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(332, 41);
-            this.label12.TabIndex = 90;
-            this.label12.Text = "Market Capitalization:";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(244, 867);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(30, 41);
-            this.lblAddress.TabIndex = 89;
-            this.lblAddress.Text = "-";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(67, 867);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 41);
-            this.label11.TabIndex = 88;
-            this.label11.Text = "Address:";
-            // 
-            // lblIndustry
-            // 
-            this.lblIndustry.AutoSize = true;
-            this.lblIndustry.Location = new System.Drawing.Point(244, 805);
-            this.lblIndustry.Name = "lblIndustry";
-            this.lblIndustry.Size = new System.Drawing.Size(30, 41);
-            this.lblIndustry.TabIndex = 87;
-            this.lblIndustry.Text = "-";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(67, 805);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 41);
-            this.label10.TabIndex = 86;
-            this.label10.Text = "Industry:";
-            // 
-            // lblSector
-            // 
-            this.lblSector.AutoSize = true;
-            this.lblSector.Location = new System.Drawing.Point(244, 742);
-            this.lblSector.Name = "lblSector";
-            this.lblSector.Size = new System.Drawing.Size(30, 41);
-            this.lblSector.TabIndex = 85;
-            this.lblSector.Text = "-";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(67, 742);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 41);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "Sector:";
-            // 
-            // lblCountry
-            // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(244, 684);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(30, 41);
-            this.lblCountry.TabIndex = 83;
-            this.lblCountry.Text = "-";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(67, 684);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 41);
-            this.label8.TabIndex = 82;
-            this.label8.Text = "Country:";
-            // 
-            // lblCurrency
-            // 
-            this.lblCurrency.AutoSize = true;
-            this.lblCurrency.Location = new System.Drawing.Point(244, 628);
-            this.lblCurrency.Name = "lblCurrency";
-            this.lblCurrency.Size = new System.Drawing.Size(30, 41);
-            this.lblCurrency.TabIndex = 81;
-            this.lblCurrency.Text = "-";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(67, 628);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 41);
-            this.label7.TabIndex = 80;
-            this.label7.Text = "Currency:";
-            // 
-            // lblExchange
-            // 
-            this.lblExchange.AutoSize = true;
-            this.lblExchange.Location = new System.Drawing.Point(244, 569);
-            this.lblExchange.Name = "lblExchange";
-            this.lblExchange.Size = new System.Drawing.Size(30, 41);
-            this.lblExchange.TabIndex = 79;
-            this.lblExchange.Text = "-";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(67, 569);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 41);
-            this.label6.TabIndex = 78;
-            this.label6.Text = "Exchange:";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDescription.Location = new System.Drawing.Point(270, 230);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(1276, 323);
-            this.lblDescription.TabIndex = 77;
-            this.lblDescription.Text = "-";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(67, 230);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 41);
-            this.label5.TabIndex = 76;
-            this.label5.Text = "Description:";
-            // 
-            // lblAssetType
-            // 
-            this.lblAssetType.AutoSize = true;
-            this.lblAssetType.Location = new System.Drawing.Point(270, 175);
-            this.lblAssetType.Name = "lblAssetType";
-            this.lblAssetType.Size = new System.Drawing.Size(30, 41);
-            this.lblAssetType.TabIndex = 75;
-            this.lblAssetType.Text = "-";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(67, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 41);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "Asset Type:";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(208, 125);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(30, 41);
-            this.lblName.TabIndex = 73;
-            this.lblName.Text = "-";
-            // 
-            // lblSymbol
-            // 
-            this.lblSymbol.AutoSize = true;
-            this.lblSymbol.Location = new System.Drawing.Point(208, 72);
-            this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(30, 41);
-            this.lblSymbol.TabIndex = 72;
-            this.lblSymbol.Text = "-";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(67, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 41);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(67, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 41);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Symbol";
             // 
             // tpIncome
             // 
@@ -3039,8 +2280,769 @@
             this.label39.Text = "Cash Flow";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tpOverview
+            // 
+            this.tpOverview.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tpOverview.Controls.Add(this.label4);
+            this.tpOverview.Controls.Add(this.lblSharesOutstanding);
+            this.tpOverview.Controls.Add(this.label36);
+            this.tpOverview.Controls.Add(this.lblTwoHundredDayMovingAverage);
+            this.tpOverview.Controls.Add(this.label35);
+            this.tpOverview.Controls.Add(this.lblFiftyDayMovingAverage);
+            this.tpOverview.Controls.Add(this.label34);
+            this.tpOverview.Controls.Add(this.lblFiftyTwoWeekLow);
+            this.tpOverview.Controls.Add(this.label33);
+            this.tpOverview.Controls.Add(this.lblFiftyTwoWeekHigh);
+            this.tpOverview.Controls.Add(this.label32);
+            this.tpOverview.Controls.Add(this.lblEVToRevenue);
+            this.tpOverview.Controls.Add(this.label31);
+            this.tpOverview.Controls.Add(this.lblPriceToBookRatio);
+            this.tpOverview.Controls.Add(this.label30);
+            this.tpOverview.Controls.Add(this.lblPriceToSalesRatioTTM);
+            this.tpOverview.Controls.Add(this.label29);
+            this.tpOverview.Controls.Add(this.lblForwardPE);
+            this.tpOverview.Controls.Add(this.label28);
+            this.tpOverview.Controls.Add(this.lblTrailingPE);
+            this.tpOverview.Controls.Add(this.label27);
+            this.tpOverview.Controls.Add(this.lblAnalystTargetPrice);
+            this.tpOverview.Controls.Add(this.label26);
+            this.tpOverview.Controls.Add(this.lblQuarterlyRevenueGrowthYOY);
+            this.tpOverview.Controls.Add(this.label25);
+            this.tpOverview.Controls.Add(this.lblQuarterlyEarningsGrowthYOY);
+            this.tpOverview.Controls.Add(this.label24);
+            this.tpOverview.Controls.Add(this.lblGrossProfitTTM);
+            this.tpOverview.Controls.Add(this.label23);
+            this.tpOverview.Controls.Add(this.lblRevenueTTM);
+            this.tpOverview.Controls.Add(this.label22);
+            this.tpOverview.Controls.Add(this.lblReturnOnEquity);
+            this.tpOverview.Controls.Add(this.label21);
+            this.tpOverview.Controls.Add(this.lblReturnOnAssetsTTM);
+            this.tpOverview.Controls.Add(this.label20);
+            this.tpOverview.Controls.Add(this.lblOperatingMarginTTM);
+            this.tpOverview.Controls.Add(this.label19);
+            this.tpOverview.Controls.Add(this.lblProfitMargin);
+            this.tpOverview.Controls.Add(this.label18);
+            this.tpOverview.Controls.Add(this.lblRevenuePerShareTTM);
+            this.tpOverview.Controls.Add(this.label17);
+            this.tpOverview.Controls.Add(this.lblEPS);
+            this.tpOverview.Controls.Add(this.label16);
+            this.tpOverview.Controls.Add(this.lblDividendYield);
+            this.tpOverview.Controls.Add(this.label15);
+            this.tpOverview.Controls.Add(this.lblDividendPerShare);
+            this.tpOverview.Controls.Add(this.label14);
+            this.tpOverview.Controls.Add(this.lblBookValue);
+            this.tpOverview.Controls.Add(this.label13);
+            this.tpOverview.Controls.Add(this.lblMarketCapitalization);
+            this.tpOverview.Controls.Add(this.label12);
+            this.tpOverview.Controls.Add(this.lblAddress);
+            this.tpOverview.Controls.Add(this.label11);
+            this.tpOverview.Controls.Add(this.lblIndustry);
+            this.tpOverview.Controls.Add(this.label10);
+            this.tpOverview.Controls.Add(this.lblSector);
+            this.tpOverview.Controls.Add(this.label9);
+            this.tpOverview.Controls.Add(this.lblCountry);
+            this.tpOverview.Controls.Add(this.label8);
+            this.tpOverview.Controls.Add(this.lblCurrency);
+            this.tpOverview.Controls.Add(this.label7);
+            this.tpOverview.Controls.Add(this.lblExchange);
+            this.tpOverview.Controls.Add(this.label6);
+            this.tpOverview.Controls.Add(this.lblDescription);
+            this.tpOverview.Controls.Add(this.label5);
+            this.tpOverview.Controls.Add(this.lblAssetType);
+            this.tpOverview.Controls.Add(this.label3);
+            this.tpOverview.Controls.Add(this.lblName);
+            this.tpOverview.Controls.Add(this.lblSymbol);
+            this.tpOverview.Controls.Add(this.label2);
+            this.tpOverview.Controls.Add(this.label1);
+            this.tpOverview.Location = new System.Drawing.Point(4, 53);
+            this.tpOverview.Name = "tpOverview";
+            this.tpOverview.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOverview.Size = new System.Drawing.Size(1529, 1599);
+            this.tpOverview.TabIndex = 0;
+            this.tpOverview.Text = "Overview";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1523, 53);
+            this.label4.TabIndex = 140;
+            this.label4.Text = "Overview";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSharesOutstanding
+            // 
+            this.lblSharesOutstanding.AutoSize = true;
+            this.lblSharesOutstanding.Location = new System.Drawing.Point(1123, 867);
+            this.lblSharesOutstanding.Name = "lblSharesOutstanding";
+            this.lblSharesOutstanding.Size = new System.Drawing.Size(30, 41);
+            this.lblSharesOutstanding.TabIndex = 139;
+            this.lblSharesOutstanding.Text = "-";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.Location = new System.Drawing.Point(784, 867);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(303, 41);
+            this.label36.TabIndex = 138;
+            this.label36.Text = "Shares Outstanding:";
+            // 
+            // lblTwoHundredDayMovingAverage
+            // 
+            this.lblTwoHundredDayMovingAverage.AutoSize = true;
+            this.lblTwoHundredDayMovingAverage.Location = new System.Drawing.Point(1187, 1521);
+            this.lblTwoHundredDayMovingAverage.Name = "lblTwoHundredDayMovingAverage";
+            this.lblTwoHundredDayMovingAverage.Size = new System.Drawing.Size(30, 41);
+            this.lblTwoHundredDayMovingAverage.TabIndex = 137;
+            this.lblTwoHundredDayMovingAverage.Text = "-";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.Location = new System.Drawing.Point(784, 1521);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(379, 41);
+            this.label35.TabIndex = 136;
+            this.label35.Text = "200 Day Moving Average:";
+            // 
+            // lblFiftyDayMovingAverage
+            // 
+            this.lblFiftyDayMovingAverage.AutoSize = true;
+            this.lblFiftyDayMovingAverage.Location = new System.Drawing.Point(1176, 1469);
+            this.lblFiftyDayMovingAverage.Name = "lblFiftyDayMovingAverage";
+            this.lblFiftyDayMovingAverage.Size = new System.Drawing.Size(30, 41);
+            this.lblFiftyDayMovingAverage.TabIndex = 135;
+            this.lblFiftyDayMovingAverage.Text = "-";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(784, 1469);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(363, 41);
+            this.label34.TabIndex = 134;
+            this.label34.Text = "50 Day Moving AVerage:";
+            // 
+            // lblFiftyTwoWeekLow
+            // 
+            this.lblFiftyTwoWeekLow.AutoSize = true;
+            this.lblFiftyTwoWeekLow.Location = new System.Drawing.Point(1020, 1415);
+            this.lblFiftyTwoWeekLow.Name = "lblFiftyTwoWeekLow";
+            this.lblFiftyTwoWeekLow.Size = new System.Drawing.Size(30, 41);
+            this.lblFiftyTwoWeekLow.TabIndex = 133;
+            this.lblFiftyTwoWeekLow.Text = "-";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.Location = new System.Drawing.Point(784, 1415);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(211, 41);
+            this.label33.TabIndex = 132;
+            this.label33.Text = "52 Week Low:";
+            // 
+            // lblFiftyTwoWeekHigh
+            // 
+            this.lblFiftyTwoWeekHigh.AutoSize = true;
+            this.lblFiftyTwoWeekHigh.Location = new System.Drawing.Point(1034, 1360);
+            this.lblFiftyTwoWeekHigh.Name = "lblFiftyTwoWeekHigh";
+            this.lblFiftyTwoWeekHigh.Size = new System.Drawing.Size(30, 41);
+            this.lblFiftyTwoWeekHigh.TabIndex = 131;
+            this.lblFiftyTwoWeekHigh.Text = "-";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.Location = new System.Drawing.Point(784, 1360);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(223, 41);
+            this.label32.TabIndex = 130;
+            this.label32.Text = "52 Week High:";
+            // 
+            // lblEVToRevenue
+            // 
+            this.lblEVToRevenue.AutoSize = true;
+            this.lblEVToRevenue.Location = new System.Drawing.Point(1034, 1306);
+            this.lblEVToRevenue.Name = "lblEVToRevenue";
+            this.lblEVToRevenue.Size = new System.Drawing.Size(30, 41);
+            this.lblEVToRevenue.TabIndex = 129;
+            this.lblEVToRevenue.Text = "-";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(784, 1306);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(227, 41);
+            this.label31.TabIndex = 128;
+            this.label31.Text = "EV to Revenue:";
+            // 
+            // lblPriceToBookRatio
+            // 
+            this.lblPriceToBookRatio.AutoSize = true;
+            this.lblPriceToBookRatio.Location = new System.Drawing.Point(1107, 1250);
+            this.lblPriceToBookRatio.Name = "lblPriceToBookRatio";
+            this.lblPriceToBookRatio.Size = new System.Drawing.Size(30, 41);
+            this.lblPriceToBookRatio.TabIndex = 127;
+            this.lblPriceToBookRatio.Text = "-";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.Location = new System.Drawing.Point(784, 1250);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(296, 41);
+            this.label30.TabIndex = 126;
+            this.label30.Text = "Price to Book Ratio:";
+            // 
+            // lblPriceToSalesRatioTTM
+            // 
+            this.lblPriceToSalesRatioTTM.AutoSize = true;
+            this.lblPriceToSalesRatioTTM.Location = new System.Drawing.Point(1187, 1200);
+            this.lblPriceToSalesRatioTTM.Name = "lblPriceToSalesRatioTTM";
+            this.lblPriceToSalesRatioTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblPriceToSalesRatioTTM.TabIndex = 125;
+            this.lblPriceToSalesRatioTTM.Text = "-";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(784, 1200);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(369, 41);
+            this.label29.TabIndex = 124;
+            this.label29.Text = "Price to Sales Ratio TTM:";
+            // 
+            // lblForwardPE
+            // 
+            this.lblForwardPE.AutoSize = true;
+            this.lblForwardPE.Location = new System.Drawing.Point(990, 1150);
+            this.lblForwardPE.Name = "lblForwardPE";
+            this.lblForwardPE.Size = new System.Drawing.Size(30, 41);
+            this.lblForwardPE.TabIndex = 123;
+            this.lblForwardPE.Text = "-";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(784, 1150);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(186, 41);
+            this.label28.TabIndex = 122;
+            this.label28.Text = "Forward PE:";
+            // 
+            // lblTrailingPE
+            // 
+            this.lblTrailingPE.AutoSize = true;
+            this.lblTrailingPE.Location = new System.Drawing.Point(990, 1098);
+            this.lblTrailingPE.Name = "lblTrailingPE";
+            this.lblTrailingPE.Size = new System.Drawing.Size(30, 41);
+            this.lblTrailingPE.TabIndex = 121;
+            this.lblTrailingPE.Text = "-";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(784, 1098);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(176, 41);
+            this.label27.TabIndex = 120;
+            this.label27.Text = "Trailing PE:";
+            // 
+            // lblAnalystTargetPrice
+            // 
+            this.lblAnalystTargetPrice.AutoSize = true;
+            this.lblAnalystTargetPrice.Location = new System.Drawing.Point(1123, 1045);
+            this.lblAnalystTargetPrice.Name = "lblAnalystTargetPrice";
+            this.lblAnalystTargetPrice.Size = new System.Drawing.Size(30, 41);
+            this.lblAnalystTargetPrice.TabIndex = 119;
+            this.lblAnalystTargetPrice.Text = "-";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(784, 1045);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(306, 41);
+            this.label26.TabIndex = 118;
+            this.label26.Text = "Analyst Target Price:";
+            // 
+            // lblQuarterlyRevenueGrowthYOY
+            // 
+            this.lblQuarterlyRevenueGrowthYOY.AutoSize = true;
+            this.lblQuarterlyRevenueGrowthYOY.Location = new System.Drawing.Point(1288, 989);
+            this.lblQuarterlyRevenueGrowthYOY.Name = "lblQuarterlyRevenueGrowthYOY";
+            this.lblQuarterlyRevenueGrowthYOY.Size = new System.Drawing.Size(30, 41);
+            this.lblQuarterlyRevenueGrowthYOY.TabIndex = 117;
+            this.lblQuarterlyRevenueGrowthYOY.Text = "-";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(784, 989);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(466, 41);
+            this.label25.TabIndex = 116;
+            this.label25.Text = "Quarterly Revenue Growth YOY:";
+            // 
+            // lblQuarterlyEarningsGrowthYOY
+            // 
+            this.lblQuarterlyEarningsGrowthYOY.AutoSize = true;
+            this.lblQuarterlyEarningsGrowthYOY.Location = new System.Drawing.Point(1288, 928);
+            this.lblQuarterlyEarningsGrowthYOY.Name = "lblQuarterlyEarningsGrowthYOY";
+            this.lblQuarterlyEarningsGrowthYOY.Size = new System.Drawing.Size(30, 41);
+            this.lblQuarterlyEarningsGrowthYOY.TabIndex = 115;
+            this.lblQuarterlyEarningsGrowthYOY.Text = "-";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(784, 928);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(468, 41);
+            this.label24.TabIndex = 114;
+            this.label24.Text = "Quarterly Earnings Growth YOY:";
+            // 
+            // lblGrossProfitTTM
+            // 
+            this.lblGrossProfitTTM.AutoSize = true;
+            this.lblGrossProfitTTM.Location = new System.Drawing.Point(369, 1521);
+            this.lblGrossProfitTTM.Name = "lblGrossProfitTTM";
+            this.lblGrossProfitTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblGrossProfitTTM.TabIndex = 113;
+            this.lblGrossProfitTTM.Text = "-";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(67, 1521);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(266, 41);
+            this.label23.TabIndex = 112;
+            this.label23.Text = "Gross Profit TTM:";
+            // 
+            // lblRevenueTTM
+            // 
+            this.lblRevenueTTM.AutoSize = true;
+            this.lblRevenueTTM.Location = new System.Drawing.Point(308, 1469);
+            this.lblRevenueTTM.Name = "lblRevenueTTM";
+            this.lblRevenueTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblRevenueTTM.TabIndex = 111;
+            this.lblRevenueTTM.Text = "-";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(67, 1469);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(219, 41);
+            this.label22.TabIndex = 110;
+            this.label22.Text = "Revenue TTM:";
+            // 
+            // lblReturnOnEquity
+            // 
+            this.lblReturnOnEquity.AutoSize = true;
+            this.lblReturnOnEquity.Location = new System.Drawing.Point(435, 1415);
+            this.lblReturnOnEquity.Name = "lblReturnOnEquity";
+            this.lblReturnOnEquity.Size = new System.Drawing.Size(30, 41);
+            this.lblReturnOnEquity.TabIndex = 109;
+            this.lblReturnOnEquity.Text = "-";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(67, 1415);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(337, 41);
+            this.label21.TabIndex = 108;
+            this.label21.Text = "Return on Equity TTM:";
+            // 
+            // lblReturnOnAssetsTTM
+            // 
+            this.lblReturnOnAssetsTTM.AutoSize = true;
+            this.lblReturnOnAssetsTTM.Location = new System.Drawing.Point(435, 1360);
+            this.lblReturnOnAssetsTTM.Name = "lblReturnOnAssetsTTM";
+            this.lblReturnOnAssetsTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblReturnOnAssetsTTM.TabIndex = 107;
+            this.lblReturnOnAssetsTTM.Text = "-";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(67, 1360);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(335, 41);
+            this.label20.TabIndex = 106;
+            this.label20.Text = "Return on Assets TTM:";
+            // 
+            // lblOperatingMarginTTM
+            // 
+            this.lblOperatingMarginTTM.AutoSize = true;
+            this.lblOperatingMarginTTM.Location = new System.Drawing.Point(450, 1306);
+            this.lblOperatingMarginTTM.Name = "lblOperatingMarginTTM";
+            this.lblOperatingMarginTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblOperatingMarginTTM.TabIndex = 105;
+            this.lblOperatingMarginTTM.Text = "-";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(67, 1306);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(355, 41);
+            this.label19.TabIndex = 104;
+            this.label19.Text = "Operating Margin TTM:";
+            // 
+            // lblProfitMargin
+            // 
+            this.lblProfitMargin.AutoSize = true;
+            this.lblProfitMargin.Location = new System.Drawing.Point(308, 1250);
+            this.lblProfitMargin.Name = "lblProfitMargin";
+            this.lblProfitMargin.Size = new System.Drawing.Size(30, 41);
+            this.lblProfitMargin.TabIndex = 103;
+            this.lblProfitMargin.Text = "-";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(67, 1250);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(218, 41);
+            this.label18.TabIndex = 102;
+            this.label18.Text = "Profit Margin:";
+            // 
+            // lblRevenuePerShareTTM
+            // 
+            this.lblRevenuePerShareTTM.AutoSize = true;
+            this.lblRevenuePerShareTTM.Location = new System.Drawing.Point(450, 1200);
+            this.lblRevenuePerShareTTM.Name = "lblRevenuePerShareTTM";
+            this.lblRevenuePerShareTTM.Size = new System.Drawing.Size(30, 41);
+            this.lblRevenuePerShareTTM.TabIndex = 101;
+            this.lblRevenuePerShareTTM.Text = "-";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(67, 1200);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(359, 41);
+            this.label17.TabIndex = 100;
+            this.label17.Text = "Revenue Per Share TTM:";
+            // 
+            // lblEPS
+            // 
+            this.lblEPS.AutoSize = true;
+            this.lblEPS.Location = new System.Drawing.Point(160, 1150);
+            this.lblEPS.Name = "lblEPS";
+            this.lblEPS.Size = new System.Drawing.Size(30, 41);
+            this.lblEPS.TabIndex = 99;
+            this.lblEPS.Text = "-";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(67, 1150);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 41);
+            this.label16.TabIndex = 98;
+            this.label16.Text = "EPS:";
+            // 
+            // lblDividendYield
+            // 
+            this.lblDividendYield.AutoSize = true;
+            this.lblDividendYield.Location = new System.Drawing.Point(321, 1098);
+            this.lblDividendYield.Name = "lblDividendYield";
+            this.lblDividendYield.Size = new System.Drawing.Size(30, 41);
+            this.lblDividendYield.TabIndex = 97;
+            this.lblDividendYield.Text = "-";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(67, 1098);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(233, 41);
+            this.label15.TabIndex = 96;
+            this.label15.Text = "Dividend Yield:";
+            // 
+            // lblDividendPerShare
+            // 
+            this.lblDividendPerShare.AutoSize = true;
+            this.lblDividendPerShare.Location = new System.Drawing.Point(390, 1045);
+            this.lblDividendPerShare.Name = "lblDividendPerShare";
+            this.lblDividendPerShare.Size = new System.Drawing.Size(30, 41);
+            this.lblDividendPerShare.TabIndex = 95;
+            this.lblDividendPerShare.Text = "-";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(67, 1045);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(294, 41);
+            this.label14.TabIndex = 94;
+            this.label14.Text = "Dividend Per Share:";
+            // 
+            // lblBookValue
+            // 
+            this.lblBookValue.AutoSize = true;
+            this.lblBookValue.Location = new System.Drawing.Point(270, 989);
+            this.lblBookValue.Name = "lblBookValue";
+            this.lblBookValue.Size = new System.Drawing.Size(30, 41);
+            this.lblBookValue.TabIndex = 93;
+            this.lblBookValue.Text = "-";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(67, 989);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(183, 41);
+            this.label13.TabIndex = 92;
+            this.label13.Text = "Book Value:";
+            // 
+            // lblMarketCapitalization
+            // 
+            this.lblMarketCapitalization.AutoSize = true;
+            this.lblMarketCapitalization.Location = new System.Drawing.Point(422, 928);
+            this.lblMarketCapitalization.Name = "lblMarketCapitalization";
+            this.lblMarketCapitalization.Size = new System.Drawing.Size(30, 41);
+            this.lblMarketCapitalization.TabIndex = 91;
+            this.lblMarketCapitalization.Text = "-";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(67, 928);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(332, 41);
+            this.label12.TabIndex = 90;
+            this.label12.Text = "Market Capitalization:";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(244, 867);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(30, 41);
+            this.lblAddress.TabIndex = 89;
+            this.lblAddress.Text = "-";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(67, 867);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 41);
+            this.label11.TabIndex = 88;
+            this.label11.Text = "Address:";
+            // 
+            // lblIndustry
+            // 
+            this.lblIndustry.AutoSize = true;
+            this.lblIndustry.Location = new System.Drawing.Point(244, 805);
+            this.lblIndustry.Name = "lblIndustry";
+            this.lblIndustry.Size = new System.Drawing.Size(30, 41);
+            this.lblIndustry.TabIndex = 87;
+            this.lblIndustry.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(67, 805);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 41);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "Industry:";
+            // 
+            // lblSector
+            // 
+            this.lblSector.AutoSize = true;
+            this.lblSector.Location = new System.Drawing.Point(244, 742);
+            this.lblSector.Name = "lblSector";
+            this.lblSector.Size = new System.Drawing.Size(30, 41);
+            this.lblSector.TabIndex = 85;
+            this.lblSector.Text = "-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(67, 742);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 41);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "Sector:";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Location = new System.Drawing.Point(244, 684);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(30, 41);
+            this.lblCountry.TabIndex = 83;
+            this.lblCountry.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(67, 684);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 41);
+            this.label8.TabIndex = 82;
+            this.label8.Text = "Country:";
+            // 
+            // lblCurrency
+            // 
+            this.lblCurrency.AutoSize = true;
+            this.lblCurrency.Location = new System.Drawing.Point(244, 628);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(30, 41);
+            this.lblCurrency.TabIndex = 81;
+            this.lblCurrency.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(67, 628);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 41);
+            this.label7.TabIndex = 80;
+            this.label7.Text = "Currency:";
+            // 
+            // lblExchange
+            // 
+            this.lblExchange.AutoSize = true;
+            this.lblExchange.Location = new System.Drawing.Point(244, 569);
+            this.lblExchange.Name = "lblExchange";
+            this.lblExchange.Size = new System.Drawing.Size(30, 41);
+            this.lblExchange.TabIndex = 79;
+            this.lblExchange.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(67, 569);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(159, 41);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "Exchange:";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDescription.Location = new System.Drawing.Point(270, 230);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(1276, 323);
+            this.lblDescription.TabIndex = 77;
+            this.lblDescription.Text = "-";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(67, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 41);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Description:";
+            // 
+            // lblAssetType
+            // 
+            this.lblAssetType.AutoSize = true;
+            this.lblAssetType.Location = new System.Drawing.Point(270, 175);
+            this.lblAssetType.Name = "lblAssetType";
+            this.lblAssetType.Size = new System.Drawing.Size(30, 41);
+            this.lblAssetType.TabIndex = 75;
+            this.lblAssetType.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(67, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 41);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "Asset Type:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(208, 125);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(30, 41);
+            this.lblName.TabIndex = 73;
+            this.lblName.Text = "-";
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Location = new System.Drawing.Point(208, 72);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(30, 41);
+            this.lblSymbol.TabIndex = 72;
+            this.lblSymbol.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(67, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 41);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(67, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 41);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Symbol";
+            // 
             // tpPredictiveAnalytics
             // 
+            this.tpPredictiveAnalytics.Controls.Add(this.lblNotMonitored);
             this.tpPredictiveAnalytics.Controls.Add(this.chart1);
             this.tpPredictiveAnalytics.Location = new System.Drawing.Point(4, 53);
             this.tpPredictiveAnalytics.Name = "tpPredictiveAnalytics";
@@ -3055,7 +3057,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(35, 46);
+            this.chart1.Location = new System.Drawing.Point(37, 125);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -3064,6 +3066,16 @@
             this.chart1.Size = new System.Drawing.Size(1449, 1200);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            // 
+            // lblNotMonitored
+            // 
+            this.lblNotMonitored.AutoSize = true;
+            this.lblNotMonitored.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNotMonitored.Location = new System.Drawing.Point(0, 25);
+            this.lblNotMonitored.Name = "lblNotMonitored";
+            this.lblNotMonitored.Size = new System.Drawing.Size(1489, 62);
+            this.lblNotMonitored.TabIndex = 1;
+            this.lblNotMonitored.Text = "To Review Stock Analytics, Please Add This Stock To Your Portfolio";
             // 
             // AdditionalStockDetailsPopup
             // 
@@ -3078,15 +3090,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.AdditionalStockDetailsPopup_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tpOverview.ResumeLayout(false);
-            this.tpOverview.PerformLayout();
             this.tpIncome.ResumeLayout(false);
             this.tpIncome.PerformLayout();
             this.tpBalanceSheet.ResumeLayout(false);
             this.tpBalanceSheet.PerformLayout();
             this.tpCashFlow.ResumeLayout(false);
             this.tpCashFlow.PerformLayout();
+            this.tpOverview.ResumeLayout(false);
+            this.tpOverview.PerformLayout();
             this.tpPredictiveAnalytics.ResumeLayout(false);
+            this.tpPredictiveAnalytics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
@@ -3355,5 +3368,6 @@
         private Label label176;
         private TabPage tpPredictiveAnalytics;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Label lblNotMonitored;
     }
 }

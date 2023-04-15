@@ -1,5 +1,6 @@
 ﻿using FinancialManagerLibrary.Data.Models;
 using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.Services;
 using FinancialManagerLibrary.UI.Controllers;
 using FinancialManagerLibrary.Utilities;
 using System;
@@ -46,9 +47,7 @@ namespace FinancialManager.UI.Controls
         {
             switch (reminderType)
             {
-                case ReminderType.INCOME:
-                    //Income income = (Income)incomeReminderController.GetById(typeId);
-                    
+                case ReminderType.INCOME:                    
                     break;
                 case ReminderType.EXPENSE:
                     break;
@@ -132,6 +131,7 @@ namespace FinancialManager.UI.Controls
             }
             catch (Exception ex)
             {
+                LoggingService.GetInstance.Log(ex.Message);
                 MessageBox.Show("Unable to Add Income", "Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -171,6 +171,7 @@ namespace FinancialManager.UI.Controls
             }
             catch (Exception ex)
             {
+                LoggingService.GetInstance.Log(ex.Message);
                 MessageBox.Show("Unable to Add Income", "Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -209,6 +210,7 @@ namespace FinancialManager.UI.Controls
             }
             catch (Exception ex)
             {
+                LoggingService.GetInstance.Log(ex.Message);
                 MessageBox.Show("Unable to Add Income", "Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

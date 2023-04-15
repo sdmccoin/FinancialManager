@@ -36,8 +36,6 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblFrequency = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.cbxReminder = new System.Windows.Forms.CheckBox();
-            this.cbxNotification = new System.Windows.Forms.CheckBox();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -45,17 +43,16 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.rbtnDaily = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.cbxRecurrence = new System.Windows.Forms.CheckBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMessage = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnDaily = new System.Windows.Forms.RadioButton();
+            this.rbnWeekly = new System.Windows.Forms.RadioButton();
+            this.rbnMonthly = new System.Windows.Forms.RadioButton();
+            this.rbnYearly = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -132,56 +129,29 @@
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "...";
             // 
-            // cbxReminder
-            // 
-            this.cbxReminder.AutoSize = true;
-            this.cbxReminder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxReminder.Location = new System.Drawing.Point(101, 320);
-            this.cbxReminder.Name = "cbxReminder";
-            this.cbxReminder.Size = new System.Drawing.Size(245, 45);
-            this.cbxReminder.TabIndex = 8;
-            this.cbxReminder.Text = "Set Reminder";
-            this.cbxReminder.UseVisualStyleBackColor = true;
-            this.cbxReminder.Visible = false;
-            this.cbxReminder.CheckedChanged += new System.EventHandler(this.cbxReminder_CheckedChanged);
-            // 
-            // cbxNotification
-            // 
-            this.cbxNotification.AutoSize = true;
-            this.cbxNotification.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxNotification.Location = new System.Drawing.Point(381, 320);
-            this.cbxNotification.Name = "cbxNotification";
-            this.cbxNotification.Size = new System.Drawing.Size(280, 45);
-            this.cbxNotification.TabIndex = 9;
-            this.cbxNotification.Text = "Set Notification";
-            this.cbxNotification.UseVisualStyleBackColor = true;
-            this.cbxNotification.Visible = false;
-            this.cbxNotification.CheckedChanged += new System.EventHandler(this.cbxNotification_CheckedChanged);
-            // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.label6);
+            this.pnlMain.Controls.Add(this.groupBox1);
             this.pnlMain.Controls.Add(this.btnClear);
             this.pnlMain.Controls.Add(this.btnDelete);
             this.pnlMain.Controls.Add(this.btnUpdate);
             this.pnlMain.Controls.Add(this.btnInsert);
             this.pnlMain.Controls.Add(this.label11);
             this.pnlMain.Controls.Add(this.dtpTime);
-            this.pnlMain.Controls.Add(this.groupBox1);
-            this.pnlMain.Controls.Add(this.cbxRecurrence);
             this.pnlMain.Controls.Add(this.monthCalendar1);
-            this.pnlMain.Controls.Add(this.label10);
             this.pnlMain.Controls.Add(this.label9);
             this.pnlMain.Controls.Add(this.txtMessage);
             this.pnlMain.Location = new System.Drawing.Point(101, 384);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(933, 807);
+            this.pnlMain.Size = new System.Drawing.Size(858, 807);
             this.pnlMain.TabIndex = 10;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(718, 712);
+            this.btnClear.Location = new System.Drawing.Point(461, 712);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 58);
             this.btnClear.TabIndex = 43;
@@ -193,7 +163,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(574, 712);
+            this.btnDelete.Location = new System.Drawing.Point(318, 712);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 58);
             this.btnDelete.TabIndex = 42;
@@ -205,7 +175,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(422, 712);
+            this.btnUpdate.Location = new System.Drawing.Point(172, 712);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 58);
             this.btnUpdate.TabIndex = 41;
@@ -217,7 +187,7 @@
             // 
             this.btnInsert.BackColor = System.Drawing.Color.SteelBlue;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsert.Location = new System.Drawing.Point(277, 712);
+            this.btnInsert.Location = new System.Drawing.Point(39, 712);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(123, 58);
@@ -229,7 +199,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(496, 43);
+            this.label11.Location = new System.Drawing.Point(103, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 41);
             this.label11.TabIndex = 39;
@@ -238,116 +208,22 @@
             // dtpTime
             // 
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(610, 37);
+            this.dtpTime.Location = new System.Drawing.Point(213, 30);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(259, 47);
             this.dtpTime.TabIndex = 38;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.rbtnDaily);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Location = new System.Drawing.Point(610, 195);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(257, 348);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Frequency";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(35, 261);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(132, 45);
-            this.radioButton5.TabIndex = 21;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Yearly";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(35, 112);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(151, 45);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Weekly";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(35, 213);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(166, 45);
-            this.radioButton4.TabIndex = 20;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Monthly";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // rbtnDaily
-            // 
-            this.rbtnDaily.AutoSize = true;
-            this.rbtnDaily.Location = new System.Drawing.Point(35, 58);
-            this.rbtnDaily.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.rbtnDaily.Name = "rbtnDaily";
-            this.rbtnDaily.Size = new System.Drawing.Size(120, 45);
-            this.rbtnDaily.TabIndex = 17;
-            this.rbtnDaily.TabStop = true;
-            this.rbtnDaily.Text = "Daily";
-            this.rbtnDaily.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(35, 163);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(187, 45);
-            this.radioButton3.TabIndex = 19;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Bi-Weekly";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // cbxRecurrence
-            // 
-            this.cbxRecurrence.AutoSize = true;
-            this.cbxRecurrence.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxRecurrence.Location = new System.Drawing.Point(608, 144);
-            this.cbxRecurrence.Name = "cbxRecurrence";
-            this.cbxRecurrence.Size = new System.Drawing.Size(211, 45);
-            this.cbxRecurrence.TabIndex = 36;
-            this.cbxRecurrence.Text = "Recurrence";
-            this.cbxRecurrence.UseVisualStyleBackColor = true;
-            // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(63, 102);
+            this.monthCalendar1.Location = new System.Drawing.Point(59, 102);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 35;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(63, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 41);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "Date:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 544);
+            this.label9.Location = new System.Drawing.Point(39, 544);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(136, 41);
             this.label9.TabIndex = 33;
@@ -356,21 +232,96 @@
             // txtMessage
             // 
             this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMessage.Location = new System.Drawing.Point(67, 588);
+            this.txtMessage.Location = new System.Drawing.Point(39, 588);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(800, 118);
+            this.txtMessage.Size = new System.Drawing.Size(743, 118);
             this.txtMessage.TabIndex = 32;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Location = new System.Drawing.Point(101, 328);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(855, 56);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Reminder Details";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbnYearly);
+            this.groupBox1.Controls.Add(this.rbnMonthly);
+            this.groupBox1.Controls.Add(this.rbnWeekly);
+            this.groupBox1.Controls.Add(this.rbnDaily);
+            this.groupBox1.Location = new System.Drawing.Point(590, 80);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(192, 421);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            // 
+            // rbnDaily
+            // 
+            this.rbnDaily.AutoSize = true;
+            this.rbnDaily.Location = new System.Drawing.Point(34, 46);
+            this.rbnDaily.Name = "rbnDaily";
+            this.rbnDaily.Size = new System.Drawing.Size(120, 45);
+            this.rbnDaily.TabIndex = 0;
+            this.rbnDaily.TabStop = true;
+            this.rbnDaily.Text = "Daily";
+            this.rbnDaily.UseVisualStyleBackColor = true;
+            // 
+            // rbnWeekly
+            // 
+            this.rbnWeekly.AutoSize = true;
+            this.rbnWeekly.Location = new System.Drawing.Point(34, 97);
+            this.rbnWeekly.Name = "rbnWeekly";
+            this.rbnWeekly.Size = new System.Drawing.Size(151, 45);
+            this.rbnWeekly.TabIndex = 1;
+            this.rbnWeekly.TabStop = true;
+            this.rbnWeekly.Text = "Weekly";
+            this.rbnWeekly.UseVisualStyleBackColor = true;
+            // 
+            // rbnMonthly
+            // 
+            this.rbnMonthly.AutoSize = true;
+            this.rbnMonthly.Location = new System.Drawing.Point(34, 148);
+            this.rbnMonthly.Name = "rbnMonthly";
+            this.rbnMonthly.Size = new System.Drawing.Size(166, 45);
+            this.rbnMonthly.TabIndex = 2;
+            this.rbnMonthly.TabStop = true;
+            this.rbnMonthly.Text = "Monthly";
+            this.rbnMonthly.UseVisualStyleBackColor = true;
+            // 
+            // rbnYearly
+            // 
+            this.rbnYearly.AutoSize = true;
+            this.rbnYearly.Location = new System.Drawing.Point(34, 199);
+            this.rbnYearly.Name = "rbnYearly";
+            this.rbnYearly.Size = new System.Drawing.Size(132, 45);
+            this.rbnYearly.TabIndex = 3;
+            this.rbnYearly.TabStop = true;
+            this.rbnYearly.Text = "Yearly";
+            this.rbnYearly.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(590, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(163, 41);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Frequency:";
             // 
             // NotificationFormPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1143, 1227);
+            this.ClientSize = new System.Drawing.Size(997, 1227);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.cbxNotification);
-            this.Controls.Add(this.cbxReminder);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblFrequency);
             this.Controls.Add(this.lblAddress);
@@ -403,8 +354,6 @@
         private Label lblAddress;
         private Label lblFrequency;
         private Label lblAmount;
-        private CheckBox cbxReminder;
-        private CheckBox cbxNotification;
         private Panel pnlMain;
         private Button btnClear;
         private Button btnDelete;
@@ -412,16 +361,15 @@
         private Button btnInsert;
         private Label label11;
         private DateTimePicker dtpTime;
-        private GroupBox groupBox1;
-        private RadioButton radioButton5;
-        private RadioButton radioButton2;
-        private RadioButton radioButton4;
-        private RadioButton rbtnDaily;
-        private RadioButton radioButton3;
-        private CheckBox cbxRecurrence;
         private MonthCalendar monthCalendar1;
-        private Label label10;
         private Label label9;
         private TextBox txtMessage;
+        private Label label5;
+        private Label label6;
+        private GroupBox groupBox1;
+        private RadioButton rbnYearly;
+        private RadioButton rbnMonthly;
+        private RadioButton rbnWeekly;
+        private RadioButton rbnDaily;
     }
 }

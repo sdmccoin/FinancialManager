@@ -15,7 +15,7 @@ public partial class Setting
 
     public long PredictionTimeInterval { get; set; }
 
-    public long ConfidenceLevel { get; set; }
+    public string ConfidenceLevel { get; set; } = null!;
 
     public long RemindersEnabled { get; set; }
 

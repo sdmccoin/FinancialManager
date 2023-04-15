@@ -2,6 +2,7 @@
 using FinancialManagerLibrary.Data.Models;
 using FinancialManagerLibrary.Interfaces;
 using FinancialManagerLibrary.UI.Controllers;
+using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls
 {
@@ -25,7 +26,7 @@ namespace FinancialManager.UI.Controls
 
             if (user != null)
             {
-                Console.WriteLine("continue");
+                LoggingService.GetInstance.Log("");
             }
             else
             {

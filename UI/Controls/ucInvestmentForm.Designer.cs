@@ -32,6 +32,7 @@
             this.dgvInvestments = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvInvestmentsEvents = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvestments)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -96,6 +96,7 @@
             this.dgvInvestments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvestments.Location = new System.Drawing.Point(48, 937);
             this.dgvInvestments.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvInvestments.MaximumSize = new System.Drawing.Size(1370, 364);
             this.dgvInvestments.MultiSelect = false;
             this.dgvInvestments.Name = "dgvInvestments";
             this.dgvInvestments.ReadOnly = true;
@@ -145,6 +146,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1486, 1446);
             this.panel1.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(48, 879);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(1370, 56);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Current Investments";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -596,16 +607,6 @@
             this.btnInsert.Text = "Save";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(48, 879);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1370, 56);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Current Investments";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucInvestmentForm
             // 

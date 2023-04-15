@@ -423,6 +423,11 @@ namespace FinancialManager.UI
                 MessageBox.Show("Unable to Delete Income Reminder", "Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }        
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

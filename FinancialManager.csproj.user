@@ -7,6 +7,9 @@
     <Compile Update="UI\Controls\ucActiveNotificationsAndAlerts.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UI\Controls\ucLogsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UI\Controls\ucStockChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
