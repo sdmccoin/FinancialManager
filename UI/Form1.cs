@@ -1,14 +1,8 @@
 using FinancialManager.UI.Controls;
-using FinancialManagerLibrary.Data.Repositories;
 using FinancialManagerLibrary.Data.Models;
-//using FinancialManagerLibrary.Extensions;
 using FinancialManagerLibrary.Utilities;
-using System.Diagnostics.Metrics;
 using FinancialManagerLibrary.Interfaces;
 using FinancialManagerLibrary.UI.Controllers;
-using FinancialManagerLibrary.Data.Interfaces;
-using System.Reflection;
-using System.Collections.Generic;
 using FinancialManagerLibrary.Services;
 using FinancialManagerLibrary.Services.Models;
 
@@ -41,7 +35,7 @@ namespace FinancialManager
             investmentNotificationController = ControllerFactory.GetController("InvestmentNotification");
 
             //if (result == DialogResult.Cancel)
-            //  this.Close();
+             // this.Close();
 
             InitializeComponents();           
 
@@ -58,20 +52,25 @@ namespace FinancialManager
             }
 
             settingsController = ControllerFactory.GetController("Settings");
-            alertWindow = ((List<Setting>)settingsController.GetAll(ActiveUser.id)).FirstOrDefault().AlertWindowDays;
+            var settings = (List<Setting>)settingsController.GetAll(ActiveUser.id);
 
-            // setup alert notifications
-            alertNotify = new ucNotification();
-            alertNotify.Dock = DockStyle.Left;
-            pnlAlerts.Controls.Add(alertNotify);
+            if (settings.Count > 0)
+            {
+                alertWindow = settings.FirstOrDefault().AlertWindowDays;
 
-            // setup notification notifications
-            notificationNotify = new ucNotification();
-            notificationNotify.NotificationImage.Image = Image.FromFile(ConfigurationService.GetInstance.GetAllConfigItems().Get("NotificationImageLocation"));
-            notificationNotify.Dock = DockStyle.Left;
-            pnlAlerts.Controls.Add(notificationNotify);
+                // setup alert notifications
+                alertNotify = new ucNotification();
+                alertNotify.Dock = DockStyle.Left;
+                pnlAlerts.Controls.Add(alertNotify);
 
-            StartBackgroundServices();           
+                // setup notification notifications
+                notificationNotify = new ucNotification();
+                notificationNotify.NotificationImage.Image = Image.FromFile(ConfigurationService.GetInstance.GetAllConfigItems().Get("NotificationImageLocation"));
+                notificationNotify.Dock = DockStyle.Left;
+                pnlAlerts.Controls.Add(notificationNotify);
+
+                StartBackgroundServices();
+            }                       
         }
 
         private void StartBackgroundServices()

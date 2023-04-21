@@ -2,20 +2,6 @@
 using FinancialManagerLibrary.Interfaces;
 using FinancialManagerLibrary.UI.Controllers;
 using FinancialManagerLibrary.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using System.Xml.Linq;
-using System.Net.Mail;
-using System.Net;
-using Microsoft.Win32.TaskScheduler;
 using FinancialManagerLibrary.Services;
 
 namespace FinancialManager.UI.Controls

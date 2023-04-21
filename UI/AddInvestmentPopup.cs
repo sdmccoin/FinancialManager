@@ -61,6 +61,7 @@ namespace FinancialManager.UI
                         t.Wait();
 
                         MessageBox.Show("Investment Added", "Success");
+                        
                     }
                 } 
                 catch(Exception ex)

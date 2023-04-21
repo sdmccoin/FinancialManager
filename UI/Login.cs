@@ -33,22 +33,30 @@ namespace FinancialManager
             lblLoginMessage.Text = "";
             attempts++;
             UserRepository<User> userRepository = new UserRepository<User>();
-            User user = userRepository.GetByEntity(
-                new User() { UserName = txtUserName.Text, Password = txtPassword.Text });
 
-            if (user != null)
+            try
             {
-                Console.WriteLine("continue");
-                ActiveUser.id = user.Id;
-                this.Close();
-            }
-            else
-            {                
-                Console.WriteLine("Failed to Login");
-                lblLoginMessage.Text = "Login Failed (Attempt " +attempts+ " of 3)";                
+                User user = userRepository.GetByEntity(
+               new User() { UserName = txtUserName.Text, Password = txtPassword.Text });
 
-                if (attempts >= 3) Application.Exit();
+                if (user != null)
+                {
+                    Console.WriteLine("continue");
+                    ActiveUser.id = user.Id;
+                    this.Close();
+                }
+                else
+                {
+                    Console.WriteLine("Failed to Login");
+                    lblLoginMessage.Text = "Login Failed (Attempt " + attempts + " of 3)";
+
+                    if (attempts >= 3) Application.Exit();
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
             }
+           
         }
     }
 }

@@ -80,7 +80,7 @@ namespace FinancialManager.UI
         }
         public static string FormatCurrency(string value)
         {
-            return (value == null || value == "None") ? "-" : string.Format("{0:C}", decimal.Parse(value));
+            return (value == null || value == "None" || value == "-") ? "-" : string.Format("{0:C}", decimal.Parse(value));
         }
         #endregion
     }

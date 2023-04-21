@@ -19,6 +19,8 @@ using Microsoft.ML.Transforms.TimeSeries;
 using Microsoft.ML;
 using System.Data.SQLite;
 using FinancialManagerLibrary.Utilities;
+using FinancialManagerLibrary.Interfaces;
+using FinancialManagerLibrary.UI.Controllers;
 
 namespace FinancialManager.UI
 {
@@ -27,6 +29,7 @@ namespace FinancialManager.UI
         private string stockName;
         private string symbol;
         private StockService ss;
+        private IController stockAnalyzerController;
 
         public AdditionalStockDetailsPopup(string stockName, string symbol)
         {
@@ -34,7 +37,8 @@ namespace FinancialManager.UI
             ss = new StockService();
             this.stockName = stockName; 
             this.symbol = symbol;
-            this.Text = stockName+ " (" + symbol + ")";            
+            this.Text = stockName+ " (" + symbol + ")";    
+            stockAnalyzerController = ControllerFactory.GetController("StockAnalysis");
         }
 
         private void AdditionalStockDetailsPopup_Load(object sender, EventArgs e)
@@ -42,11 +46,19 @@ namespace FinancialManager.UI
             this.Text= this.stockName;
             this.Icon = SystemIcons.Information;
 
-            LoadOverviewInformation();
-            LoadIncomeStatementInformation();
-            LoadBalanceSheetInformation();
-            LoadCashFlowInformation();
-            RunStockAnalytics();
+            try
+            {
+                LoadOverviewInformation();
+                LoadIncomeStatementInformation();
+                LoadBalanceSheetInformation();
+                LoadCashFlowInformation();
+                RunStockAnalytics();
+            }
+            catch (Exception ex)
+            {
+                LoggingService.GetInstance.Log(ex.ToString());
+            }
+            
         }
 
         private void LoadOverviewInformation()
@@ -238,14 +250,12 @@ namespace FinancialManager.UI
             lblChangeInCashAndCashEquivalents.Text = Utilities.FormatCurrency(response.ChangeInCashAndCashEquivalents);
             lblChangeInExchangeRate.Text = Utilities.FormatCurrency(response.ChangeInExchangeRate);
             lblNetIncomeCashFlow.Text = Utilities.FormatCurrency(response.NetIncome);
-            /*
-            "lblProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet": "522000000",
-            */
+          
         }
 
         private void RunStockAnalytics()
         {
-            MachineLearning ml = new MachineLearning();            
+            MachineLearning ml = new MachineLearning();
             DiaplayStockAnalyticsResults(ml.RunStockAnalytics(symbol, int.Parse(ActiveUser.id.ToString())));
         }
        
@@ -309,32 +319,5 @@ namespace FinancialManager.UI
                 LoggingService.GetInstance.Log(ex.Message);
             }                       
         }
-    }
-
-    //public class ChartData
-    //{
-    //    public DateTime Date { get; set; }
-    //    public float Actual { get; set; }
-    //    public float Lower { get; set; }
-    //    public float Forecast { get; set; }
-    //    public float Upper { get; set; }
-    //}
-
-    //public class ModelInput
-    //{
-    //    public DateTime Date { get; set; }
-
-    //    public float Year { get; set; }
-
-    //    public float ClosingValue { get; set; }
-    //}
-
-    //public class ModelOutput
-    //{
-    //    public float[] ForecastedClosingValue { get; set; }
-
-    //    public float[] LowerBoundClosingValue { get; set; }
-
-    //    public float[] UpperBoundClosingValue { get; set; }
-    //}
+    }   
 }
